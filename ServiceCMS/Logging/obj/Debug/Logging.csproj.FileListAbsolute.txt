@@ -1,0 +1,5 @@
+F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\bin\Debug\Logging.dll
+F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\bin\Debug\Logging.pdb
+F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\obj\Debug\Logging.csprojResolveAssemblyReference.cache
+F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\obj\Debug\Logging.dll
+F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\obj\Debug\Logging.pdb
