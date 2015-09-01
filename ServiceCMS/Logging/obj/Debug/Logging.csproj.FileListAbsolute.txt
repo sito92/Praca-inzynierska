@@ -13,3 +13,8 @@ C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\bin\Debug\Entit
 C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\bin\Debug\EntityFramework.xml
 C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\bin\Debug\EntityFramework.SqlServer.xml
+F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\bin\Debug\Logging.dll.config
+F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\bin\Debug\EntityFramework.dll
+F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\bin\Debug\EntityFramework.SqlServer.dll
+F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\bin\Debug\EntityFramework.xml
+F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\bin\Debug\EntityFramework.SqlServer.xml
