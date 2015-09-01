@@ -3,3 +3,13 @@ F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\bin\Debug\Logging.pdb
 F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\obj\Debug\Logging.csprojResolveAssemblyReference.cache
 F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\obj\Debug\Logging.dll
 F:\Projekty\Praca-Inzynierska\ServiceCMS\Logging\obj\Debug\Logging.pdb
+C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\bin\Debug\Logging.dll
+C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\bin\Debug\Logging.pdb
+C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\obj\Debug\Logging.csprojResolveAssemblyReference.cache
+C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\obj\Debug\Logging.dll
+C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\obj\Debug\Logging.pdb
+C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\bin\Debug\Logging.dll.config
+C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\bin\Debug\EntityFramework.dll
+C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\bin\Debug\EntityFramework.xml
+C:\Users\Kamil Ślusarczyk\Desktop\ServiceCMS\ServiceCMS\Logging\bin\Debug\EntityFramework.SqlServer.xml
