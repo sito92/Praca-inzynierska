@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{D6EA4BC5-7939-48DA-8120-BCF4D6FC3864}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{2C569C22-8774-444A-BE3A-BA804A524DEA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Common", "Logic.Common\Logic.Common.csproj", "{96DF7B56-1B0C-47D9-A96C-C47FA96C948D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIRegister", "DIRegister\DIRegister.csproj", "{D20C9247-5CBC-40EE-90DA-47EC36951AE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{96DF7B56-1B0C-47D9-A96C-C47FA96C948D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96DF7B56-1B0C-47D9-A96C-C47FA96C948D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96DF7B56-1B0C-47D9-A96C-C47FA96C948D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D20C9247-5CBC-40EE-90DA-47EC36951AE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D20C9247-5CBC-40EE-90DA-47EC36951AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D20C9247-5CBC-40EE-90DA-47EC36951AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D20C9247-5CBC-40EE-90DA-47EC36951AE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,5 +69,6 @@ Global
 		{2E03269A-326D-4561-A7A6-85C3941A6440} = {D4487622-8E70-421F-9DBA-ED03FEB1B75D}
 		{2C569C22-8774-444A-BE3A-BA804A524DEA} = {2E03269A-326D-4561-A7A6-85C3941A6440}
 		{96DF7B56-1B0C-47D9-A96C-C47FA96C948D} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
+		{D20C9247-5CBC-40EE-90DA-47EC36951AE1} = {F6FD34CC-A343-4696-9DE5-186DB72DB37A}
 	EndGlobalSection
 EndGlobal

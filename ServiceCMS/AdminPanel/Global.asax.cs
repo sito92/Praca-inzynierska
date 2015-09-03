@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminPanel.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,8 @@ namespace AdminPanel
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+            var autofac = new AutofacConfig();
+            autofac.Configure();
         }
     }
 }
