@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D20C9247-5CBC-40EE-90DA-47EC36951AE1}</ProjectGuid>
+    <ProjectGuid>{DCCA9978-F924-4BB6-BC8F-A40A6192EC79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DIRegister</RootNamespace>
-    <AssemblyName>DIRegister</AssemblyName>
+    <RootNamespace>Modules.Cryptography</RootNamespace>
+    <AssemblyName>Modules.Cryptography</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,25 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DIRegister.cs" />
+    <Compile Include="HashComputer.cs" />
+    <Compile Include="Interfaces\IHashComputer.cs" />
+    <Compile Include="Interfaces\IPasswordManager.cs" />
+    <Compile Include="PasswordManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{537e20b2-92a9-4d7b-9e28-5673a5726839}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.News\Logic.News.csproj">
-      <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
-      <Name>Logic.News</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modules.Cryptography\Modules.Cryptography.csproj">
-      <Project>{dcca9978-f924-4bb6-bc8f-a40a6192ec79}</Project>
-      <Name>Modules.Cryptography</Name>
-    </ProjectReference>
+    <Compile Include="SaltGenerator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

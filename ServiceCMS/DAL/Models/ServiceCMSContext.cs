@@ -9,6 +9,11 @@ namespace DAL.Models
 {
     public class ServiceCMSContext:DbContext
     {
+        public ServiceCMSContext()
+            : base("DefaultConnection")
+        {
+            
+        }
         public DbSet<News> News { get; set; } 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

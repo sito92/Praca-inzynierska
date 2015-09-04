@@ -8,6 +8,8 @@ using Common.Interfaces;
 using Common.Managers;
 using Logic.News.Interfaces;
 using Logic.News.Services;
+using Modules.Cryptography;
+using Modules.Cryptography.Interfaces;
 
 namespace DIRegister
 {
@@ -33,7 +35,8 @@ namespace DIRegister
 
         private static void RegisterModules(ContainerBuilder builder)
         {
-
+            builder.RegisterType<PasswordManager>().As<IPasswordManager>();
+            builder.RegisterType<HashComputer>().As<IHashComputer>();
         }
         private static void RegisterJobs(ContainerBuilder builder)
         {

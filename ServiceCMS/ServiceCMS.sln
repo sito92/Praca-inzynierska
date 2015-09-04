@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.News", "Logic.News\Logic.News.csproj", "{5A700E42-4CEE-4863-ABB0-AB91BA188DB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Cryptography", "Modules.Cryptography\Modules.Cryptography.csproj", "{DCCA9978-F924-4BB6-BC8F-A40A6192EC79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{5A700E42-4CEE-4863-ABB0-AB91BA188DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A700E42-4CEE-4863-ABB0-AB91BA188DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A700E42-4CEE-4863-ABB0-AB91BA188DB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCCA9978-F924-4BB6-BC8F-A40A6192EC79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCCA9978-F924-4BB6-BC8F-A40A6192EC79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCCA9978-F924-4BB6-BC8F-A40A6192EC79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCCA9978-F924-4BB6-BC8F-A40A6192EC79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,5 +91,6 @@ Global
 		{2C569C22-8774-444A-BE3A-BA804A524DEA} = {D4487622-8E70-421F-9DBA-ED03FEB1B75D}
 		{45667F6F-9598-48AE-96BD-01AAA89E90ED} = {D4487622-8E70-421F-9DBA-ED03FEB1B75D}
 		{5A700E42-4CEE-4863-ABB0-AB91BA188DB7} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
+		{DCCA9978-F924-4BB6-BC8F-A40A6192EC79} = {F6FD34CC-A343-4696-9DE5-186DB72DB37A}
 	EndGlobalSection
 EndGlobal
