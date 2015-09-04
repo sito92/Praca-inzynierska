@@ -199,7 +199,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1121,9 +1123,17 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{537e20b2-92a9-4d7b-9e28-5673a5726839}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DIRegister\DIRegister.csproj">
       <Project>{d20c9247-5cbc-40ee-90da-47ec36951ae1}</Project>
       <Name>DIRegister</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules.Resources\Modules.Resources.csproj">
+      <Project>{dc937e5f-1d71-488e-b00c-525fdfdd3b0d}</Project>
+      <Name>Modules.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
