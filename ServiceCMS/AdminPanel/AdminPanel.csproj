@@ -199,6 +199,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\ServiceCMSAuthorizeAttribute.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
@@ -1130,6 +1131,10 @@
     <ProjectReference Include="..\DIRegister\DIRegister.csproj">
       <Project>{d20c9247-5cbc-40ee-90da-47ec36951ae1}</Project>
       <Name>DIRegister</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Common\Logic.Common.csproj">
+      <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>
+      <Name>Logic.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules.Resources\Modules.Resources.csproj">
       <Project>{dc937e5f-1d71-488e-b00c-525fdfdd3b0d}</Project>

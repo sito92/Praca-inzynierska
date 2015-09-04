@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConstStrings\SessionKeys.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="Interfaces\ISessionManager.cs" />
     <Compile Include="Managers\SessionManager.cs" />
