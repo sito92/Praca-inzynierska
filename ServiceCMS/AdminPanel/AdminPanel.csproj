@@ -207,6 +207,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\User\AuthenticatedViewModel.cs" />
+    <Compile Include="Models\User\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +216,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Styles.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -1099,15 +1102,6 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -1116,10 +1110,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\Welcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1136,6 +1131,18 @@
     <ProjectReference Include="..\Logic.Common\Logic.Common.csproj">
       <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>
       <Name>Logic.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.News\Logic.News.csproj">
+      <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
+      <Name>Logic.News</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.User\Logic.User.csproj">
+      <Project>{9f83685c-a7ae-495a-8303-4b3d70290ab1}</Project>
+      <Name>Logic.User</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules.Cryptography\Modules.Cryptography.csproj">
+      <Project>{dcca9978-f924-4bb6-bc8f-a40a6192ec79}</Project>
+      <Name>Modules.Cryptography</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules.Resources\Modules.Resources.csproj">
       <Project>{dc937e5f-1d71-488e-b00c-525fdfdd3b0d}</Project>

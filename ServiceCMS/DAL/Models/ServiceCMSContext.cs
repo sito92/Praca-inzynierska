@@ -14,7 +14,8 @@ namespace DAL.Models
         {
             
         }
-        public DbSet<News> News { get; set; } 
+        public DbSet<News> Newses { get; set; }
+        public DbSet<User> Users { get; set; } 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<News>() //Encja News

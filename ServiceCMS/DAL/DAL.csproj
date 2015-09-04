@@ -52,6 +52,10 @@
     <Compile Include="Interfaces\IGenericRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IUnitOfWorkFactory.cs" />
+    <Compile Include="Migrations\201509041612534_InitMigration.cs" />
+    <Compile Include="Migrations\201509041612534_InitMigration.Designer.cs">
+      <DependentUpon>201509041612534_InitMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\Forum.cs" />
@@ -70,10 +74,20 @@
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509041612534_InitMigration.resx">
+      <DependentUpon>201509041612534_InitMigration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modules.Cryptography\Modules.Cryptography.csproj">
+      <Project>{dcca9978-f924-4bb6-bc8f-a40a6192ec79}</Project>
+      <Name>Modules.Cryptography</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

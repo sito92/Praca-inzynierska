@@ -12,7 +12,7 @@ namespace Modules.Cryptography
         private IHashComputer _hashComputer;
         public PasswordManager(IHashComputer hashComputer)
         {
-            _hashComputer = _hashComputer;
+            _hashComputer = hashComputer;
         }
 
         public string GeneratePasswordHash(string plainTextPassword, out string salt)

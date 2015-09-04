@@ -1,3 +1,8 @@
+using System.CodeDom;
+using DAL.Models;
+using Modules.Cryptography;
+using Modules.Cryptography.Interfaces;
+
 namespace DAL.Migrations
 {
     using System;
@@ -7,8 +12,11 @@ namespace DAL.Migrations
 
     internal sealed class Configuration : DbMigrationsConfiguration<DAL.Models.ServiceCMSContext>
     {
+        private IPasswordManager _passwordManager;
         public Configuration()
         {
+
+            _passwordManager = new PasswordManager(new HashComputer());
             AutomaticMigrationsEnabled = false;
         }
 
@@ -26,6 +34,19 @@ namespace DAL.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            //if (System.Diagnostics.Debugger.IsAttached == false)
+            //    System.Diagnostics.Debugger.Launch();
+            SeedUsers(context);
+        }
+
+        private void SeedUsers(ServiceCMSContext context)
+        {
+            IPasswordManager pManager = new PasswordManager(new HashComputer());
+            string salt1;
+            context.Users.AddOrUpdate(x => x.Login,
+                new User() { Login = "test", Password = _passwordManager.GeneratePasswordHash("test", out salt1), Salt = salt1 }
+                );
+            context.SaveChanges();
         }
     }
 }
