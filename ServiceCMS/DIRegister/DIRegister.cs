@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common.Interfaces;
+using Common.Managers;
 
 namespace DIRegister
 {
@@ -19,7 +21,7 @@ namespace DIRegister
 
         private static void RegisterCore(ContainerBuilder builder)
         {
-
+            builder.RegisterType<SessionManager>().As<ISessionManager>();
         }
 
         private static void RegisterLogic(ContainerBuilder builder)
