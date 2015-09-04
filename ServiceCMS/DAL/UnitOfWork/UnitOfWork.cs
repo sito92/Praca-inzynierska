@@ -13,7 +13,21 @@ namespace DAL.UnitOfWork
     {
         private ServiceCMSContext context = new ServiceCMSContext();
 
-       
+        private GenericRepository<News> newsRepository;
+
+        public GenericRepository<News> NewsRepository
+        {
+            get
+            {
+
+                if (this.newsRepository == null)
+                {
+                    this.newsRepository = new GenericRepository<News>(context);
+                }
+                return newsRepository;
+            }
+        }
+
 
         public void Save()
         {

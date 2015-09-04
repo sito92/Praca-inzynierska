@@ -53,6 +53,10 @@
       <Project>{537e20b2-92a9-4d7b-9e28-5673a5726839}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logic.News\Logic.News.csproj">
+      <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
+      <Name>Logic.News</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

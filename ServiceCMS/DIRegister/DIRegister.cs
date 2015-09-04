@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Common.Interfaces;
 using Common.Managers;
+using Logic.News.Interfaces;
+using Logic.News.Services;
 
 namespace DIRegister
 {
@@ -26,7 +28,7 @@ namespace DIRegister
 
         private static void RegisterLogic(ContainerBuilder builder)
         {
-
+            builder.RegisterType<NewsService>().As<INewsService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)
