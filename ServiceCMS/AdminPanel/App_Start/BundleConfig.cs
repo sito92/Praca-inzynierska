@@ -17,6 +17,12 @@ namespace AdminPanel
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                       "~/Scripts/angular.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/appModule").Include(
+                       "~/Scripts/Modules/AppModule.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
@@ -30,7 +36,8 @@ namespace AdminPanel
                 "~/Content/site.css",
                  "~/Content/Styles.css",
                 "~/Content/bootstrap.css",
-                 "~/Content/bootstrap-theme.css"
+                 "~/Content/bootstrap-theme.css",
+                 "~/Content/simple-sidebar.css"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -46,6 +53,9 @@ namespace AdminPanel
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/leftMenu").Include(
+                      "~/Scripts/Controllers/LeftMenuController.js"));
         }
     }
 }

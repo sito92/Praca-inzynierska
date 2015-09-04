@@ -8,45 +8,21 @@
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/angular")
+        @Scripts.Render("~/bundles/appModule")
+        
     </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+<body>
+    <div id="wrapper" ng-app="AppModule">
+        @Html.Partial("_LeftMenu")
+        <div id="page-content-wrapper">
 
-                            @Html.ActionLink("EN", "SetCulture", "Language", new { Area = "", culture = "en-US" }, new { @class = "btn btn-default" })
-                            @Html.ActionLink("PL", "SetCulture", "Language", new { Area = "", culture = "pl-PL" }, new { @class = "btn btn-default" })                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-    <div id="body">
-        <h1>@Presentation.Welcome</h1>
-        @RenderSection("featured", required: false)
-        <section class="content-wrapper main-content clear-fix">
             @RenderBody()
-        </section>
-    </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-                </div>
-            </div>
-        </footer>
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    </body>
+        </div>
+    </div>
+
+@Scripts.Render("~/bundles/jquery")
+@RenderSection("scripts", required: false)
+</body>
 </html>

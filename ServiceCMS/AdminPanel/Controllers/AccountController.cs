@@ -56,8 +56,6 @@ namespace AdminPanel.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             _sessionManager.Remove(SessionKeys.USER_VIEW_MODEL);
