@@ -12,6 +12,7 @@ namespace DAL.Interfaces
     public interface IUnitOfWork : IDisposable
     {
         GenericRepository<News> NewsRepository { get; }
+        GenericRepository<User> UserRepository { get; }
         void Save();
     }
 }

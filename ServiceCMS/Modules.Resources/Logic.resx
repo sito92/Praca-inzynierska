@@ -123,16 +123,34 @@
   <data name="ModifyNewsSuccess" xml:space="preserve">
     <value>Modify news succeed.</value>
   </data>
+  <data name="ModifyUserFailed" xml:space="preserve">
+    <value>Modify user failed.</value>
+  </data>
+  <data name="ModifyUserSuccess" xml:space="preserve">
+    <value>Modify user succeed.</value>
+  </data>
   <data name="RemoveNewsFailed" xml:space="preserve">
     <value>Remove news failed.</value>
   </data>
   <data name="RemoveNewsSuccess" xml:space="preserve">
     <value>Remove news succeed.</value>
   </data>
+  <data name="RemoveUserFailed" xml:space="preserve">
+    <value>Remove user failed.</value>
+  </data>
+  <data name="RemoveUserSuccess" xml:space="preserve">
+    <value>Remove user succeed.</value>
+  </data>
   <data name="SaveNewsFailed" xml:space="preserve">
     <value>Saving news failed.</value>
   </data>
   <data name="SaveNewsSuccess" xml:space="preserve">
     <value>Saving news succeed.</value>
+  </data>
+  <data name="SaveUserFailed" xml:space="preserve">
+    <value>Saving user failed.</value>
+  </data>
+  <data name="SaveUserSuccess" xml:space="preserve">
+    <value>Saving user succeed.</value>
   </data>
 </root>
