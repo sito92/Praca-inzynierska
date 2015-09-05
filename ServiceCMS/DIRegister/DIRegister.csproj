@@ -53,9 +53,25 @@
       <Project>{537e20b2-92a9-4d7b-9e28-5673a5726839}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{45667f6f-9598-48ae-96bd-01aaa89e90ed}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{2c569c22-8774-444a-be3a-ba804a524dea}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic.News\Logic.News.csproj">
       <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
       <Name>Logic.News</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.User\Logic.User.csproj">
+      <Project>{9f83685c-a7ae-495a-8303-4b3d70290ab1}</Project>
+      <Name>Logic.User</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules.Cryptography\Modules.Cryptography.csproj">
+      <Project>{dcca9978-f924-4bb6-bc8f-a40a6192ec79}</Project>
+      <Name>Modules.Cryptography</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

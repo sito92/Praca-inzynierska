@@ -9,7 +9,13 @@ namespace DAL.Models
 {
     public class ServiceCMSContext:DbContext
     {
-        public DbSet<News> News { get; set; } 
+        public ServiceCMSContext()
+            : base("DefaultConnection")
+        {
+            
+        }
+        public DbSet<News> Newses { get; set; }
+        public DbSet<User> Users { get; set; } 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<News>() //Encja News

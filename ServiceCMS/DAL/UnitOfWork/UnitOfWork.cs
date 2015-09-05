@@ -14,6 +14,7 @@ namespace DAL.UnitOfWork
         private ServiceCMSContext context = new ServiceCMSContext();
 
         private GenericRepository<News> newsRepository;
+        private GenericRepository<User> userRepository;
 
         public GenericRepository<News> NewsRepository
         {
@@ -27,7 +28,18 @@ namespace DAL.UnitOfWork
                 return newsRepository;
             }
         }
+        public GenericRepository<User> UserRepository
+        {
+            get
+            {
 
+                if (this.userRepository == null)
+                {
+                    this.userRepository = new GenericRepository<User>(context);
+                }
+                return userRepository;
+            }
+        }
 
         public void Save()
         {

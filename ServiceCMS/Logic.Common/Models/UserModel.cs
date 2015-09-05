@@ -10,13 +10,27 @@ namespace Logic.Common.Models
     public class UserModel
     {
         public int Id { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public string Salt { get; set; }
+
         public UserModel(User entity)
-        {            
+        {
+            Id = entity.Id;
+            Login = entity.Login;
+            Password = entity.Password;
+            Salt = entity.Salt;
         }
 
         public User ToEntity()
         {
-            return new User();
+            return new User()
+            {
+                Id = this.Id,
+                Login = this.Login,
+                Password = this.Password,
+                Salt = this.Salt
+            };
         }
     }
 }
