@@ -32,8 +32,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.Cryptography", "Modules.Cryptography\Modules.Cryptography.csproj", "{DCCA9978-F924-4BB6-BC8F-A40A6192EC79}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Users", "Logic.Users\Logic.Users.csproj", "{9F83685C-A7AE-495A-8303-4B3D70290AB1}"
+
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.NewsCategory", "Logic.NewsCategory\Logic.NewsCategory.csproj", "{B9FB03B5-8809-40DF-8BFF-5D9E8C052B49}"
+
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
