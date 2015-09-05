@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using AdminPanel.Attributes;
 using AdminPanel.Models.User;
 using Common.ConstStrings;
 using Common.Interfaces;
@@ -37,7 +38,7 @@ namespace AdminPanel.Controllers
 
             return RedirectToAction("Login", "Account");
         }
-        [Authorize]
+        
         public ActionResult Welcome()
         {
             var model = new AuthenticatedViewModel()
