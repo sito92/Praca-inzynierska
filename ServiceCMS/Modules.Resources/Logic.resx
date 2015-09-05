@@ -129,6 +129,24 @@
   <data name="ModifyUserSuccess" xml:space="preserve">
     <value>Modify user succeed.</value>
   </data>
+  <data name="NewsCategoryDeleteFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsCategoryDeleteSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsCategoryInsertFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsCategoryInsertSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsCategoryUpdateFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsCategoryUpdateSuccess" xml:space="preserve">
+    <value />
+  </data>
   <data name="RemoveNewsFailed" xml:space="preserve">
     <value>Remove news failed.</value>
   </data>

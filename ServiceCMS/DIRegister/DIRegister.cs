@@ -14,6 +14,8 @@ using Logging;
 using Logging.Interfaces;
 using Logic.News.Interfaces;
 using Logic.News.Services;
+using Logic.NewsCategory.Interfaces;
+using Logic.NewsCategory.Services;
 using Logic.User.Interfaces;
 using Logic.User.Services;
 using Modules.Cryptography;
@@ -45,6 +47,7 @@ namespace DIRegister
         {
             builder.RegisterType<NewsService>().As<INewsService>();
             builder.RegisterType<UserService>().As<IUserService>();
+            builder.RegisterType<NewsCategoryService>().As<INewsCategoryService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)

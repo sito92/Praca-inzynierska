@@ -120,6 +120,24 @@
   <data name="Login" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="NewsCategoryDeleteFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsCategoryDeleteSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsCategoryInsertFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsCategoryInsertSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsCategoryUpdateFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsCategoryUpdateSuccess" xml:space="preserve">
+    <value />
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>

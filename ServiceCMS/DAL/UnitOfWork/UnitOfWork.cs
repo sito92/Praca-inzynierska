@@ -15,6 +15,7 @@ namespace DAL.UnitOfWork
 
         private GenericRepository<News> newsRepository;
         private GenericRepository<User> userRepository;
+        private GenericRepository<NewsCategory> newsCategoryRepository; 
 
         public GenericRepository<News> NewsRepository
         {
@@ -38,6 +39,18 @@ namespace DAL.UnitOfWork
                     this.userRepository = new GenericRepository<User>(context);
                 }
                 return userRepository;
+            }
+        }
+
+        public GenericRepository<NewsCategory> NewsCategoryRepository
+        {
+            get
+            {
+                if (this.newsCategoryRepository == null)
+                {
+                    this.newsCategoryRepository = new GenericRepository<NewsCategory>(context);
+                }
+                return newsCategoryRepository;
             }
         }
 

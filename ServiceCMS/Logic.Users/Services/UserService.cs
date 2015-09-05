@@ -60,7 +60,7 @@ namespace Logic.User.Services
                 {
                     _logger.LogToFile(_logger.CreateErrorMessage(e));
                 }
-            }efdfasefaef
+            }
             return userModel;
         }
 

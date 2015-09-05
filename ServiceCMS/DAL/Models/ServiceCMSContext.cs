@@ -15,7 +15,9 @@ namespace DAL.Models
             
         }
         public DbSet<News> Newses { get; set; }
-        public DbSet<User> Users { get; set; } 
+        public DbSet<User> Users { get; set; }
+        public DbSet<NewsCategory> NewsCategories { get; set; } 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<News>() //Encja News
@@ -24,6 +26,11 @@ namespace DAL.Models
                 .HasForeignKey(x=>x.AuthorId) // News ma foreign key AuthorId
                 .WillCascadeOnDelete(true); //Usuwając Autora usuwany jego newsy
 
+            modelBuilder.Entity<News>()
+                .HasOptional(x => x.NewsCategory)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+            //czy to ma szanse działać? ^
 
             base.OnModelCreating(modelBuilder);
         }

@@ -37,6 +37,7 @@ namespace DAL.Migrations
             //if (System.Diagnostics.Debugger.IsAttached == false)
             //    System.Diagnostics.Debugger.Launch();
             SeedUsers(context);
+            SeedNewsCategories(context);
         }
 
         private void SeedUsers(ServiceCMSContext context)
@@ -46,6 +47,13 @@ namespace DAL.Migrations
             context.Users.AddOrUpdate(x => x.Login,
                 new User() { Login = "test", Password = _passwordManager.GeneratePasswordHash("test", out salt1), Salt = salt1 }
                 );
+            context.SaveChanges();
+        }
+
+        private void SeedNewsCategories(ServiceCMSContext context)
+        {
+            context.NewsCategories.AddOrUpdate(x => x.Category,
+                new NewsCategory() {Category = "Handlowy"});
             context.SaveChanges();
         }
     }

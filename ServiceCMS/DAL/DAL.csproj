@@ -62,6 +62,7 @@
     <Compile Include="Models\ForumReply.cs" />
     <Compile Include="Models\ForumThread.cs" />
     <Compile Include="Models\News.cs" />
+    <Compile Include="Models\NewsCategory.cs" />
     <Compile Include="Models\Newsletter.cs" />
     <Compile Include="Models\PopUp.cs" />
     <Compile Include="Models\ServiceChatHistory.cs" />
