@@ -23,6 +23,7 @@ namespace AdminPanel.Controllers
             _userService = userService;
             _passwordManager = passwordManager;
             _sessionManager = sessionManager;
+           
         }
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)

@@ -1109,14 +1109,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\Shared\Error.cshtml" />
-    <Content Include="Scripts\Shared\_LoginPartial.cshtml" />
-    <Content Include="Scripts\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Home\Welcome.cshtml" />
-    <Content Include="Scripts\Shared\_LeftMenu.cshtml" />
+    <Content Include="Views\Shared\_LeftMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1141,9 +1141,9 @@
       <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
       <Name>Logic.News</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Logic.User\Logic.User.csproj">
+    <ProjectReference Include="..\Logic.Users\Logic.Users.csproj">
       <Project>{9f83685c-a7ae-495a-8303-4b3d70290ab1}</Project>
-      <Name>Logic.User</Name>
+      <Name>Logic.Users</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules.Cryptography\Modules.Cryptography.csproj">
       <Project>{dcca9978-f924-4bb6-bc8f-a40a6192ec79}</Project>
