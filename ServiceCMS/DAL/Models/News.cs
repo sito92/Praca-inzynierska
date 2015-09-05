@@ -20,7 +20,7 @@ namespace DAL.Models
 
         #region Navigation Properties
         public User Author { get; set; }
-        public NewsCategory NewsCategory { get; set; }
+        public ICollection<NewsCategory> NewsCategories { get; set; }
         #endregion
     }
 }

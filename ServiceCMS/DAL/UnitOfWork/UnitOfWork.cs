@@ -15,8 +15,10 @@ namespace DAL.UnitOfWork
 
         private GenericRepository<News> newsRepository;
         private GenericRepository<User> userRepository;
-        private GenericRepository<NewsCategory> newsCategoryRepository; 
-
+        private GenericRepository<NewsCategory> newsCategoryRepository;
+        private GenericRepository<Settings> settingsRepository;
+        private GenericRepository<NewsletterReceiver> newsletterReceiverRepository; 
+ 
         public GenericRepository<News> NewsRepository
         {
             get
@@ -51,6 +53,31 @@ namespace DAL.UnitOfWork
                     this.newsCategoryRepository = new GenericRepository<NewsCategory>(context);
                 }
                 return newsCategoryRepository;
+            }
+        }
+
+        public GenericRepository<Settings> SettingsRepository
+        {
+            get
+            {
+                if (this.settingsRepository == null)
+                {
+                    this.newsCategoryRepository = new GenericRepository<NewsCategory>(context);
+                }
+                return settingsRepository;
+            }
+            
+        }
+
+        public GenericRepository<NewsletterReceiver> NewsletterReceiverRepository
+        {
+            get
+            {
+                if (this.newsletterReceiverRepository == null)
+                {
+                    this.newsletterReceiverRepository = new GenericRepository<NewsletterReceiver>(context);
+                }
+                return newsletterReceiverRepository;
             }
         }
 

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    class Newsletter
+    public class NewsletterReceiver
     {
+        public int Id { get; set; }
+
+        public string EmailAddress { get; set; }
     }
 }

@@ -16,7 +16,9 @@ namespace DAL.Models
         }
         public DbSet<News> Newses { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<NewsCategory> NewsCategories { get; set; } 
+        public DbSet<NewsCategory> NewsCategories { get; set; }
+        public DbSet<Settings> Settings { get; set; }
+        public DbSet<NewsletterReceiver> NewslettersReceivers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -27,10 +29,8 @@ namespace DAL.Models
                 .WillCascadeOnDelete(true); //Usuwając Autora usuwany jego newsy
 
             modelBuilder.Entity<News>()
-                .HasOptional(x => x.NewsCategory)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-            //czy to ma szanse działać? ^
+                .HasMany(x => x.NewsCategories)
+                .WithMany();
 
             base.OnModelCreating(modelBuilder);
         }

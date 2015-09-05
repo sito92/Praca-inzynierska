@@ -61,6 +61,24 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ContactFormEmailSendFailed {
+            get {
+                return ResourceManager.GetString("ContactFormEmailSendFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ContactFormEmailSendSuccess {
+            get {
+                return ResourceManager.GetString("ContactFormEmailSendSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modify news failed..
         /// </summary>
         public static string ModifyNewsFailed {
@@ -151,6 +169,42 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NewsletterReceiverDeleteFailed {
+            get {
+                return ResourceManager.GetString("NewsletterReceiverDeleteFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NewsletterReceiverDeleteSuccess {
+            get {
+                return ResourceManager.GetString("NewsletterReceiverDeleteSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NewsletterReceiverInsertFailed {
+            get {
+                return ResourceManager.GetString("NewsletterReceiverInsertFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NewsletterReceiverInsertSuccess {
+            get {
+                return ResourceManager.GetString("NewsletterReceiverInsertSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove news failed..
         /// </summary>
         public static string RemoveNewsFailed {
@@ -219,6 +273,24 @@ namespace Modules.Resources {
         public static string SaveUserSuccess {
             get {
                 return ResourceManager.GetString("SaveUserSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string UpdateSettingsFailed {
+            get {
+                return ResourceManager.GetString("UpdateSettingsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string UpdateSettingsSuccess {
+            get {
+                return ResourceManager.GetString("UpdateSettingsSuccess", resourceCulture);
             }
         }
     }

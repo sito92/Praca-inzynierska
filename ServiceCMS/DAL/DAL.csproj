@@ -63,11 +63,12 @@
     <Compile Include="Models\ForumThread.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\NewsCategory.cs" />
-    <Compile Include="Models\Newsletter.cs" />
+    <Compile Include="Models\NewsletterReceiver.cs" />
     <Compile Include="Models\PopUp.cs" />
     <Compile Include="Models\ServiceChatHistory.cs" />
     <Compile Include="Models\ServiceCMSContext.cs" />
     <Compile Include="Models\ServiceEntity.cs" />
+    <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\SiteMapLink.cs" />
     <Compile Include="Models\SiteUsageReport.cs" />
     <Compile Include="Models\User.cs" />

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D20C9247-5CBC-40EE-90DA-47EC36951AE1}</ProjectGuid>
+    <ProjectGuid>{01589098-1030-40E4-B85C-0E2E13A70424}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DIRegister</RootNamespace>
-    <AssemblyName>DIRegister</AssemblyName>
+    <RootNamespace>Modules.MailSender</RootNamespace>
+    <AssemblyName>Modules.MailSender</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,48 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DIRegister.cs" />
+    <Compile Include="IMailSender.cs" />
+    <Compile Include="MailSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{537e20b2-92a9-4d7b-9e28-5673a5726839}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{45667f6f-9598-48ae-96bd-01aaa89e90ed}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logging\Logging.csproj">
-      <Project>{2c569c22-8774-444a-be3a-ba804a524dea}</Project>
-      <Name>Logging</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.NewsCategory\Logic.NewsCategory.csproj">
-      <Project>{b9fb03b5-8809-40df-8bff-5d9e8c052b49}</Project>
-      <Name>Logic.NewsCategory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.Newsletter\Logic.Newsletter.csproj">
-      <Project>{181771e1-4abe-4fc1-8e45-4c38a75b75c7}</Project>
-      <Name>Logic.Newsletter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.News\Logic.News.csproj">
-      <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
-      <Name>Logic.News</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.Users\Logic.Users.csproj">
-      <Project>{9f83685c-a7ae-495a-8303-4b3d70290ab1}</Project>
-      <Name>Logic.Users</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modules.Cryptography\Modules.Cryptography.csproj">
-      <Project>{dcca9978-f924-4bb6-bc8f-a40a6192ec79}</Project>
-      <Name>Modules.Cryptography</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

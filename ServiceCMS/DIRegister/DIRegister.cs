@@ -8,14 +8,19 @@ using Common.Interfaces;
 using Common.Managers;
 using DAL.Factory;
 using DAL.Interfaces;
+using DAL.Models;
 using DAL.Repository;
 using DAL.UnitOfWork;
 using Logging;
 using Logging.Interfaces;
+using Logic.ContactForm.Interfaces;
+using Logic.ContactForm.Services;
 using Logic.News.Interfaces;
 using Logic.News.Services;
 using Logic.NewsCategory.Interfaces;
 using Logic.NewsCategory.Services;
+using Logic.Newsletter.Interfaces;
+using Logic.Newsletter.Services;
 using Logic.User.Interfaces;
 using Logic.User.Services;
 using Modules.Cryptography;
@@ -48,6 +53,8 @@ namespace DIRegister
             builder.RegisterType<NewsService>().As<INewsService>();
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<NewsCategoryService>().As<INewsCategoryService>();
+            builder.RegisterType<ContactFormService>().As<IContactFormService>();
+            builder.RegisterType<NewsletterReceiverService>().As<INewsletterReceiverService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)
