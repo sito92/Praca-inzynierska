@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Settings", "Logic.Set
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Newsletter", "Logic.Newsletter\Logic.Newsletter.csproj", "{181771E1-4ABE-4FC1-8E45-4C38A75B75C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Inset", "Logic.Inset\Logic.Inset.csproj", "{B9A9E81E-DE7C-4C2F-996A-DFB24AD44444}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{181771E1-4ABE-4FC1-8E45-4C38A75B75C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{181771E1-4ABE-4FC1-8E45-4C38A75B75C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{181771E1-4ABE-4FC1-8E45-4C38A75B75C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A9E81E-DE7C-4C2F-996A-DFB24AD44444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A9E81E-DE7C-4C2F-996A-DFB24AD44444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A9E81E-DE7C-4C2F-996A-DFB24AD44444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A9E81E-DE7C-4C2F-996A-DFB24AD44444}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,5 +140,6 @@ Global
 		{E3255DE6-C3F3-4FE5-8449-897FF42D8EBB} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
 		{1C7CA7DA-A639-49B5-ADCF-5A7C343E89CE} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
 		{181771E1-4ABE-4FC1-8E45-4C38A75B75C7} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
+		{B9A9E81E-DE7C-4C2F-996A-DFB24AD44444} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
 	EndGlobalSection
 EndGlobal

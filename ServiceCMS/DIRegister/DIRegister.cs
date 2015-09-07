@@ -15,6 +15,8 @@ using Logging;
 using Logging.Interfaces;
 using Logic.ContactForm.Interfaces;
 using Logic.ContactForm.Services;
+using Logic.Inset.Interfaces;
+using Logic.Inset.Services;
 using Logic.News.Interfaces;
 using Logic.News.Services;
 using Logic.NewsCategory.Interfaces;
@@ -55,6 +57,11 @@ namespace DIRegister
             builder.RegisterType<NewsCategoryService>().As<INewsCategoryService>();
             builder.RegisterType<ContactFormService>().As<IContactFormService>();
             builder.RegisterType<NewsletterReceiverService>().As<INewsletterReceiverService>();
+
+            builder.RegisterType<ParsersFactory>().As<IParsersFactory>();
+            builder.RegisterType<InsetRecognizer>().As<IInsetRecognizer>();
+            builder.RegisterType<InsetParser>().As<IInsetParser>();
+            builder.RegisterType<ArgumentValidator>().As<IArgumentValidator>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)
