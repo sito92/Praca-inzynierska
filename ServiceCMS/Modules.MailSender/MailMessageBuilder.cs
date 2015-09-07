@@ -11,70 +11,41 @@ using Logging.Interfaces;
 
 namespace Modules.MailSender
 {
-    public class MailMessageBuilder
+    public class MailMessageBuilder : IMailMessageBuilder
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly ILogger _logger;
-
-        public MailMessageBuilder(IUnitOfWork unitOfWork, ILogger logger)
+        public MailMessage Build(string topic, string content, string internalMail, string authorEmailAddress)
         {
-            _unitOfWork = unitOfWork;
-            _logger = logger;
-        }
+            MailMessage message = BuildBaseMail(topic,content);
+            message.From = new MailAddress(authorEmailAddress);
+            message.To.Add(internalMail);
 
-        public MailMessage BuildContactFormMail(string authorEmailAddress, string topic, string content)
-        {
-            MailMessage message = null;
-            try
-            {
-                message = new MailMessage()
-                {
-                    From = new MailAddress(authorEmailAddress),
-                    Subject = topic,
-                    Body = content,
-                    IsBodyHtml = true,
-                    Priority = MailPriority.High,
-                };
-
-                var settings = _unitOfWork.SettingsRepository.Get().FirstOrDefault();
-                if (settings != null)
-                    message.To.Add(settings.EmailAddress);
-            }
-            catch (Exception e)
-            {
-                _logger.LogToFile(_logger.CreateErrorMessage(e));
-            }
             return message;
         }
 
-        public MailMessage BuildNewsletterMail(string topic, string content)
+        public MailMessage Build(string topic, string content, string internalMail, List<string> receiversList )
         {
-            MailMessage message = null;
-            try
+            MailMessage message = BuildBaseMail(topic, content);
+            
+            message.From = new MailAddress(internalMail);
+            foreach (var receiver in receiversList)
             {
-                message = new MailMessage()
-                {
-                    From = new MailAddress(_unitOfWork.SettingsRepository.Get().FirstOrDefault().EmailAddress),
-                    Subject = topic,
-                    Body = content,
-                    IsBodyHtml = true,
-                    Priority = MailPriority.High,
-                };
+                message.To.Add(receiver);
+            }
 
-                var settings = _unitOfWork.NewsletterReceiverRepository.Get();
-                if (settings != null)
-                {
-                    foreach (var entity in settings)
-                    {
-                        message.To.Add(new MailAddress(entity.EmailAddress));
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                _logger.LogToFile(_logger.CreateErrorMessage(e));
-            }
             return message;
+        }
+
+        private MailMessage BuildBaseMail(string topic, string content)
+        {
+            var baseMessage = new MailMessage()
+            {
+                Subject = topic,
+                Body = content,
+                IsBodyHtml = true,
+                Priority = MailPriority.High,
+            };
+
+            return baseMessage;
         }
     }
 }

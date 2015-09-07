@@ -10,7 +10,16 @@ namespace Modules.MailSender
 {
     public interface IMailSender
     {
-        ResponseBase ContactFormMail(string authorEmailAddress, string topic, string content);
-        ResponseBase NewsletterMail(string topic, string content);
+        ResponseBase SendMail(string topic, 
+            string content, 
+            string internalMail, 
+            string authorEmailAddress,
+            SmtpClient client);
+
+        ResponseBase SendMail(string topic, 
+            string content, 
+            string internalMail, 
+            List<string> receivers,
+            SmtpClient client);
     }
 }

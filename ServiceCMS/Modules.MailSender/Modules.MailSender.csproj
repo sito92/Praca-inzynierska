@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMailMessageBuilder.cs" />
     <Compile Include="IMailSender.cs" />
     <Compile Include="MailMessageBuilder.cs" />
     <Compile Include="MailSender.cs" />

@@ -1,4 +1,6 @@
 using System.CodeDom;
+using System.Net;
+using System.Security;
 using DAL.Models;
 using Modules.Cryptography;
 using Modules.Cryptography.Interfaces;
@@ -53,10 +55,8 @@ namespace DAL.Migrations
 
         private void SeedSettings(ServiceCMSContext context)
         {
-            IPasswordManager pManager = new PasswordManager(new HashComputer());
-            string salt1;
             context.Settings.AddOrUpdate(x => x.EmailAddress,
-                new Settings(){EmailAddress = "servicecmsthesis@gmail.com", EmailPassword = _passwordManager.GeneratePasswordHash("arturikamil", out salt1), Salt = salt1});
+                new Settings(){EmailAddress = "servicecmsthesis@gmail.com", EmailPassword = new NetworkCredential("", "arturikamil").SecurePassword});
             context.SaveChanges();
         }
 
