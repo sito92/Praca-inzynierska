@@ -40,13 +40,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMailSender.cs" />
+    <Compile Include="MailMessageBuilder.cs" />
     <Compile Include="MailSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmtpClientHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{537e20b2-92a9-4d7b-9e28-5673a5726839}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{45667f6f-9598-48ae-96bd-01aaa89e90ed}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{2c569c22-8774-444a-be3a-ba804a524dea}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules.Resources\Modules.Resources.csproj">
+      <Project>{dc937e5f-1d71-488e-b00c-525fdfdd3b0d}</Project>
+      <Name>Modules.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
