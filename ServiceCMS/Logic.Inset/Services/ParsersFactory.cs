@@ -1,23 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Logic.Inset.Interfaces;
 using Logic.Inset.Parsers;
+using Logic.User.Interfaces;
 
 namespace Logic.Inset.Services
 {
-    public class ParsersFactory:IParsersFactory
+    public class ParsersFactory : IParsersFactory
     {
-        
-        private Dictionary<string, IParser> parsers = new Dictionary<string, IParser>()
+        private static IUserService _userService;
+
+        public ParsersFactory(IUserService userService)
         {
-            {"link", new LinkParser()}
+            _userService = userService;
+        }
+        private Dictionary<string, Func<IParser>> parsers = new Dictionary<string, Func<IParser>>()
+        {
+            {"link", ()=>new LinkParser()},
+            {"user",()=>new UserParser(_userService)}
         };
         public IParser GetParser(string name)
         {
-            return parsers[name];
+            return parsers[name]();
         }
+
     }
 }

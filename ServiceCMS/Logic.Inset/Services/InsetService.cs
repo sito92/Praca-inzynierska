@@ -16,23 +16,17 @@ namespace Logic.Inset.Services
             return new InsetModel()
             {
                 Id = 1,
-                Name = "link",
+                Name = "user",
                 Arguments = new List<InsetArgumentModel>()
                 {
                     new InsetArgumentModel()
                     {
-                        Name = "url",
+                        Name = "id",
                         Id=1,
                         IsRequierd = true,
-                        Type = InsetArgumentTypeEnum.String
-                    },
-                    new InsetArgumentModel()
-                    {
-                        Name = "text",
-                        Id =2,
-                        IsRequierd = true,
-                        Type = InsetArgumentTypeEnum.String
+                        Type = InsetArgumentTypeEnum.Number
                     }
+                
                 }
             };
         }

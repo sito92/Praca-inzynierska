@@ -81,6 +81,7 @@
     <Compile Include="Interfaces\IParsersFactory.cs" />
     <Compile Include="Parsers\LinkParser.cs" />
     <Compile Include="Parsers\Parser.cs" />
+    <Compile Include="Parsers\UserParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ArgumentValidator.cs" />
     <Compile Include="Services\InsetParser.cs" />
@@ -96,6 +97,10 @@
     <ProjectReference Include="..\Logic.Common\Logic.Common.csproj">
       <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>
       <Name>Logic.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Users\Logic.Users.csproj">
+      <Project>{9f83685c-a7ae-495a-8303-4b3d70290ab1}</Project>
+      <Name>Logic.Users</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

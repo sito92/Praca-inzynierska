@@ -13,19 +13,23 @@ namespace Logic.Inset.Parsers
     {
         private string url = "url";
         private string text = "text";
+
+        public override string Tag
+        {
+            get { return "a"; }
+        }
+
         public override string Parse(string inset)
         {
             var arguments = InsetHelper.GetArgumetnsDictionary(inset);
             var urlData = arguments[url];
             var textData = arguments[text];
-
-            TagBuilder tagBuilder = new TagBuilder("a");
             
-            tagBuilder.Attributes.Add("href",urlData);
-            tagBuilder.SetInnerText(textData);
+            ParserTagBuilder.Attributes.Add("href",urlData);
+            ParserTagBuilder.SetInnerText(textData);
 
 
-            return tagBuilder.ToString();
+            return ParserTagBuilder.ToString();
 
         }
     }

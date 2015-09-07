@@ -20,7 +20,7 @@ namespace AdminPanel.Controllers
 
         public ActionResult Test()
         {
-            string content = "dsfsda sd sd asdf asd fdsf af [link;text=mój url]";
+            string content = "dsfsda sd sd asdf asd fdsf af [user;id=asfasdf]";
             var parsedContent = _insetParser.ParseContent(content);
             return Content(parsedContent);
         }
