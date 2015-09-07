@@ -204,6 +204,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1136,6 +1137,10 @@
     <ProjectReference Include="..\Logic.Common\Logic.Common.csproj">
       <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>
       <Name>Logic.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Inset\Logic.Inset.csproj">
+      <Project>{b9a9e81e-de7c-4c2f-996a-dfb24ad44444}</Project>
+      <Name>Logic.Inset</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.News\Logic.News.csproj">
       <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>

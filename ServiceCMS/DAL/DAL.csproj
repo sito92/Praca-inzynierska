@@ -56,11 +56,17 @@
     <Compile Include="Migrations\201509041612534_InitMigration.Designer.cs">
       <DependentUpon>201509041612534_InitMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509070504191_NewEntities.cs" />
+    <Compile Include="Migrations\201509070504191_NewEntities.Designer.cs">
+      <DependentUpon>201509070504191_NewEntities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\Forum.cs" />
     <Compile Include="Models\ForumReply.cs" />
     <Compile Include="Models\ForumThread.cs" />
+    <Compile Include="Models\Inset.cs" />
+    <Compile Include="Models\InsetArgument.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\NewsCategory.cs" />
     <Compile Include="Models\NewsletterReceiver.cs" />
@@ -79,6 +85,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201509041612534_InitMigration.resx">
       <DependentUpon>201509041612534_InitMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509070504191_NewEntities.resx">
+      <DependentUpon>201509070504191_NewEntities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
