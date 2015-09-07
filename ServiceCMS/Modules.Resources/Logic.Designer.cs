@@ -297,6 +297,24 @@ namespace Modules.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string SendNewsletterEmailFailed {
+            get {
+                return ResourceManager.GetString("SendNewsletterEmailFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string SendNewsletterEmailSuccess {
+            get {
+                return ResourceManager.GetString("SendNewsletterEmailSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string UpdateSettingsFailed {
             get {
                 return ResourceManager.GetString("UpdateSettingsFailed", resourceCulture);

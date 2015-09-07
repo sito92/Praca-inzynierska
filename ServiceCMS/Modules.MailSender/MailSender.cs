@@ -46,12 +46,12 @@ namespace Modules.MailSender
             try
             {
                 _client.Send(_message);
-                return new ResponseBase() { IsSucceed = true, Message = Resources.Logic };
+                return new ResponseBase() { IsSucceed = true, Message = Resources.Logic.SendNewsletterEmailSuccess };
             }
             catch (Exception e)
             {
                 _logger.LogToFile(_logger.CreateErrorMessage(e));
-                return new ResponseBase() { IsSucceed = false, Message = Resources.Logic };
+                return new ResponseBase() { IsSucceed = false, Message = Resources.Logic.SendNewsletterEmailFailed };
             }
         }
     }
