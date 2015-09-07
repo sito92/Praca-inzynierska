@@ -62,6 +62,7 @@ namespace DIRegister
             builder.RegisterType<InsetRecognizer>().As<IInsetRecognizer>();
             builder.RegisterType<InsetParser>().As<IInsetParser>();
             builder.RegisterType<ArgumentValidator>().As<IArgumentValidator>();
+            builder.RegisterType<InsetService>().As<IInsetService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)

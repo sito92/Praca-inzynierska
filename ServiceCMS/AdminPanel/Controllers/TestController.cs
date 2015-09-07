@@ -20,9 +20,9 @@ namespace AdminPanel.Controllers
 
         public ActionResult Test()
         {
-            string content = "dsfsda sd sd asdf asd fdsf af [link url=http://google.pl]";
+            string content = "dsfsda sd sd asdf asd fdsf af [link;text=mój url]";
             var parsedContent = _insetParser.ParseContent(content);
-            return View();
+            return Content(parsedContent);
         }
 
     }

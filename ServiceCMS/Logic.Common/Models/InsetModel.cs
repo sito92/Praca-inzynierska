@@ -14,7 +14,10 @@ namespace Logic.Common.Models
 
         public ICollection<InsetArgumentModel> Arguments { get; set; }
 
-
+        public InsetModel()
+        {
+            
+        }
         public InsetModel(Inset entity)
         {
             Id = entity.Id;

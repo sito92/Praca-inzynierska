@@ -12,15 +12,20 @@ namespace Logic.Inset.Parsers
     class LinkParser:Parser
     {
         private string url = "url";
+        private string text = "text";
         public override string Parse(string inset)
         {
             var arguments = InsetHelper.GetArgumetnsDictionary(inset);
             var urlData = arguments[url];
+            var textData = arguments[text];
 
-            TagBuilder tagBuilder = new TagBuilder("<a>");
-            tagBuilder.Attributes.Add(url,urlData);
+            TagBuilder tagBuilder = new TagBuilder("a");
+            
+            tagBuilder.Attributes.Add("href",urlData);
+            tagBuilder.SetInnerText(textData);
 
-            return tagBuilder.ToString(TagRenderMode.SelfClosing);
+
+            return tagBuilder.ToString();
 
         }
     }

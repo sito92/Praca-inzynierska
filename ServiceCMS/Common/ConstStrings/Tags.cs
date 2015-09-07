@@ -8,7 +8,7 @@ namespace Common.ConstStrings
 {
     public class Tags
     {
-        public const string OpenInsetTag = "<[";
-        public const string CloseInsetTag = "]>";
+        public const string OpenInsetTag = "[";
+        public const string CloseInsetTag = "]";
     }
 }

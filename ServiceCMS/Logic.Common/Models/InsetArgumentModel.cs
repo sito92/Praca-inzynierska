@@ -14,6 +14,11 @@ namespace Logic.Common.Models
         public string Name { get; set; }
         public bool IsRequierd { get; set; }
         public InsetArgumentTypeEnum Type { get; set; }
+
+        public InsetArgumentModel()
+        {
+            
+        }
         public InsetArgumentModel(InsetArgument entity)
         {
             Id = entity.Id;

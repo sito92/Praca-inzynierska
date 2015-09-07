@@ -30,14 +30,14 @@ namespace Logic.Inset.Services
             {
                 return false;
             }
-            var arguments = InsetHelper.GetArguments(inset);
+            var arguments = InsetHelper.GetArgumetnsDictionary(inset);
 
             if (!ContainsAllRequired(arguments, insetModel))
             {
                 return false;
             }
 
-            if (CheckAllArgumentValues(arguments,insetModel))
+            if (!CheckAllArgumentValues(arguments, insetModel))
             {
                 return false;
             }
@@ -47,22 +47,35 @@ namespace Logic.Inset.Services
         }
 
 
-        private bool ContainsAllRequired(IEnumerable<string> arguments, InsetModel model)
+        private bool ContainsAllRequired(Dictionary<string,string> arguments, InsetModel model)
         {
-            return model.Arguments.Where(argument => argument.IsRequierd).All(argument => arguments.Contains(argument.Name));
+
+            foreach (var argument in model.Arguments)
+            {
+                if (argument.IsRequierd)
+                {
+                    var temp = arguments.Where(x => x.Key ==argument.Name);
+                    if (!temp.Any())
+                    {
+                        return false;
+                    }
+                }
+
+            }
+            return true;
+            //return model.Arguments.Where(argument => argument.IsRequierd).All(argument => arguments.Contains(argument.Name));
         }
 
-        private bool CheckAllArgumentValues(IEnumerable<string> arguments, InsetModel model)
+        private bool CheckAllArgumentValues(Dictionary<string,string> arguments, InsetModel model)
         {
             foreach (var argument in arguments)
             {
-                var argumentData = argument.Split(equalChar);
 
-                var argModel = model.Arguments.FirstOrDefault(x => x.Name == argumentData[0]);
+                var argModel = model.Arguments.FirstOrDefault(x => x.Name == argument.Key);
 
                 if (argModel != null)
                 {
-                    if (!_argumentValidator.IsValid(argModel.Type, argumentData[1]))
+                    if (!_argumentValidator.IsValid(argModel.Type, argument.Value))
                     {
                         return false;
                     }

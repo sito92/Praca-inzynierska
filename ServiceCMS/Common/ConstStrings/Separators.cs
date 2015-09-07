@@ -8,6 +8,6 @@ namespace Common.ConstStrings
 {
     public static class Separators
     {
-        public const char InsetArgumentSpliter = ' ';
+        public const char InsetArgumentSpliter = ';';
     }
 }
