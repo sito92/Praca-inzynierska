@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,13 +41,17 @@ namespace Logic.ContactForm.Services
 
         private SmtpClient ConfigureClient(string authorEmailAddress)
         {
-            var selectedEmailSettings = _settings.SmtpClientDictionary.
-                FirstOrDefault(x => x.Key.Contains( authorEmailAddress.Substring(authorEmailAddress.LastIndexOf('@')+1)));
+            //var selectedEmailSettings = _settings.SmtpClientDictionary.
+            //    FirstOrDefault(x => x.Key.Contains( authorEmailAddress.Substring(authorEmailAddress.LastIndexOf('@')+1)));
+
+            var selectedEmailSettings =
+                _settings.SmtpClientDictionary.FirstOrDefault(x => x.Key.Contains(_settings.EmailDomain));
 
             var client = new SmtpClient()
             {
-                Host =  selectedEmailSettings.Key,
+                Host = selectedEmailSettings.Key,
                 Port = selectedEmailSettings.Value,
+                Credentials = new NetworkCredential(_settings.EmailAddress, _settings.EmailPassword)
             };
 
             return client;
