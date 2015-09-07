@@ -60,6 +60,10 @@
     <Compile Include="Migrations\201509070504191_NewEntities.Designer.cs">
       <DependentUpon>201509070504191_NewEntities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509071740341_AddedColumnsToSettings.cs" />
+    <Compile Include="Migrations\201509071740341_AddedColumnsToSettings.Designer.cs">
+      <DependentUpon>201509071740341_AddedColumnsToSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\Forum.cs" />
@@ -88,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509070504191_NewEntities.resx">
       <DependentUpon>201509070504191_NewEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509071740341_AddedColumnsToSettings.resx">
+      <DependentUpon>201509071740341_AddedColumnsToSettings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

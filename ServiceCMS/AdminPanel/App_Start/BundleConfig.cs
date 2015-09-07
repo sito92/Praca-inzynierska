@@ -20,6 +20,9 @@ namespace AdminPanel
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                        "~/Scripts/angular.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angular-ui").Include(
+                       "~/Scripts/angular-ui/ui-bootstrap-tpls.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/appModule").Include(
                        "~/Scripts/Modules/AppModule.js"));
 
@@ -56,6 +59,9 @@ namespace AdminPanel
 
             bundles.Add(new ScriptBundle("~/bundles/leftMenu").Include(
                       "~/Scripts/Controllers/LeftMenuController.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/newsModule").Include(
+                      "~/Scripts/Controllers/NewsController.js"));
         }
     }
 }
