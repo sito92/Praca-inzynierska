@@ -13,10 +13,16 @@ namespace Logic.Common.Models
 
         public string EmailAddress { get; set; }
 
+        public string EmailPassword { get; set; }
+
+        public string Salt { get; set; }
+
         public SettingsModel(Settings entity)
         {
             this.Id = entity.Id;
             this.EmailAddress = entity.EmailAddress;
+            this.EmailPassword = entity.EmailPassword;
+            this.Salt = entity.Salt;
         }
 
         public Settings ToEntity()
@@ -24,7 +30,9 @@ namespace Logic.Common.Models
             return new Settings()
             {
                 Id = this.Id,
-                EmailAddress = this.EmailAddress
+                EmailAddress = this.EmailAddress,
+                EmailPassword = this.EmailPassword,
+                Salt = this.Salt
             };
         }
 

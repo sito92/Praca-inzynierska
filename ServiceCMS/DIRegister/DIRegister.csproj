@@ -65,6 +65,7 @@
       <Project>{e3255de6-c3f3-4fe5-8449-897ff42d8ebb}</Project>
       <Name>Logic.ContactForm</Name>
     </ProjectReference>
+
     <ProjectReference Include="..\Logic.Inset\Logic.Inset.csproj">
       <Project>{b9a9e81e-de7c-4c2f-996a-dfb24ad44444}</Project>
       <Name>Logic.Inset</Name>

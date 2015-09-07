@@ -11,5 +11,9 @@ namespace DAL.Models
         public int Id { get; set; }
 
         public string EmailAddress { get; set; }
+
+        public string EmailPassword { get; set; }
+
+        public string Salt { get; set; }
     }
 }

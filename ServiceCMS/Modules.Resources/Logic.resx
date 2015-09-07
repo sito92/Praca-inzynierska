@@ -189,6 +189,18 @@
   <data name="SaveUserSuccess" xml:space="preserve">
     <value>Saving user succeed.</value>
   </data>
+  <data name="SendContactFormEmailFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SendContactFormEmailSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SendNewsletterEmailFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SendNewsletterEmailSuccess" xml:space="preserve">
+    <value />
+  </data>
   <data name="UpdateSettingsFailed" xml:space="preserve">
     <value />
   </data>

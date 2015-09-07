@@ -38,6 +38,7 @@ namespace DAL.Migrations
             //    System.Diagnostics.Debugger.Launch();
             SeedUsers(context);
             SeedNewsCategories(context);
+            SeedSettings(context);
         }
 
         private void SeedUsers(ServiceCMSContext context)
@@ -47,6 +48,15 @@ namespace DAL.Migrations
             context.Users.AddOrUpdate(x => x.Login,
                 new User() { Login = "test", Password = _passwordManager.GeneratePasswordHash("test", out salt1), Salt = salt1 }
                 );
+            context.SaveChanges();
+        }
+
+        private void SeedSettings(ServiceCMSContext context)
+        {
+            IPasswordManager pManager = new PasswordManager(new HashComputer());
+            string salt1;
+            context.Settings.AddOrUpdate(x => x.EmailAddress,
+                new Settings(){EmailAddress = "servicecmsthesis@gmail.com", EmailPassword = _passwordManager.GeneratePasswordHash("arturikamil", out salt1), Salt = salt1});
             context.SaveChanges();
         }
 
