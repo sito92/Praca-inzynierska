@@ -19,6 +19,7 @@ namespace DAL.Models
         public DbSet<NewsCategory> NewsCategories { get; set; }
         public DbSet<Settings> Settings { get; set; }
         public DbSet<NewsletterReceiver> NewslettersReceivers { get; set; }
+        public DbSet<DomainAndPorts> DomainAndPorts { get; set; } 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -31,6 +32,11 @@ namespace DAL.Models
             modelBuilder.Entity<News>()
                 .HasMany(x => x.NewsCategories)
                 .WithMany();
+
+            modelBuilder.Entity<Settings>()
+                .HasRequired(x => x.DomainAndPorts)
+                .WithMany()
+                .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
         }

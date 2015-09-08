@@ -17,6 +17,6 @@ namespace DAL.Models
 
         public SecureString EmailPassword { get; set; }
 
-        public Dictionary<string, int> SmtpClientDictionary { get; set; } 
+        public ICollection<DomainAndPorts> DomainAndPorts { get; set; } 
     }
 }

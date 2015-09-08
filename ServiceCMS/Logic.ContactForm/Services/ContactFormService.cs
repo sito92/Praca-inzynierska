@@ -2,28 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using Common.Responses;
 using DAL.Interfaces;
 using DAL.Models;
+using Logic.Common.Models;
 using Logic.ContactForm.Interfaces;
+using Logic.Settings.Interfaces;
+using Logic.Settings.Services;
 using Modules.MailSender;
 
 namespace Logic.ContactForm.Services
 {
     public class ContactFormService : IContactFormService
     {
-        private readonly MailSender _mailSender;
-        private IUnitOfWork _unitOfWork;
-        private Settings _settings;
+        private readonly IMailSender _mailSender;
+        private ISettingsService _settings;
+        private SmtpClientDataRetrieval _smtpClient;
 
-        public ContactFormService(MailSender mailSender, IUnitOfWork unitOfWork)
+        public ContactFormService(IMailSender mailSender, ISettingsService settingsService, SmtpClientDataRetrieval smtpClient)
         {
             _mailSender = mailSender;
-            _unitOfWork = unitOfWork;
-            _settings = unitOfWork.SettingsRepository.Get().FirstOrDefault();
+            _settings = settingsService;
+            _smtpClient = smtpClient;
         }
 
         public ResponseBase Send(string authorEmailAddress, string topic, string content)
@@ -32,29 +32,15 @@ namespace Logic.ContactForm.Services
             //if(!EmailAddressValidation.CheckIfEmailAddress(authorEmailAddress))
             //    return new ResponseBase() {IsSucceed = false, Message = Modules.Resources.Logic.ContactFormEmailSendFailed };
 
+            var set = _settings.Get();
+
             return _mailSender.SendMail(topic,
                 content,
-                _settings.EmailAddress,
+                set.EmailAddress,
                 authorEmailAddress,
-                ConfigureClient(authorEmailAddress));
+                _smtpClient.ConfigureClient());
         }
 
-        private SmtpClient ConfigureClient(string authorEmailAddress)
-        {
-            //var selectedEmailSettings = _settings.SmtpClientDictionary.
-            //    FirstOrDefault(x => x.Key.Contains( authorEmailAddress.Substring(authorEmailAddress.LastIndexOf('@')+1)));
-
-            var selectedEmailSettings =
-                _settings.SmtpClientDictionary.FirstOrDefault(x => x.Key.Contains(_settings.EmailDomain));
-
-            var client = new SmtpClient()
-            {
-                Host = selectedEmailSettings.Key,
-                Port = selectedEmailSettings.Value,
-                Credentials = new NetworkCredential(_settings.EmailAddress, _settings.EmailPassword)
-            };
-
-            return client;
-        }
+        
     }
 }

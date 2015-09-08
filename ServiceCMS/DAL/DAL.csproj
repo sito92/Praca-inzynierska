@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
+    <Compile Include="Models\DomainAndPorts.cs" />
     <Compile Include="Models\Forum.cs" />
     <Compile Include="Models\ForumReply.cs" />
     <Compile Include="Models\ForumThread.cs" />
