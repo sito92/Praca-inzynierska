@@ -18,6 +18,7 @@ namespace AdminPanel
                         "~/Scripts/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                "~/Scripts/Globals/Events.js",
                        "~/Scripts/angular.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular-ui").Include(
@@ -61,7 +62,10 @@ namespace AdminPanel
                       "~/Scripts/Controllers/LeftMenuController.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/newsModule").Include(
-                      "~/Scripts/Controllers/NewsController.js"));
+                      "~/Scripts/Controllers/NewsController.js",
+                      "~/Scripts/Directives/InsetDirective.js",
+                      "~/Scripts/Directives/InsetController.js"
+                      ));
         }
     }
 }

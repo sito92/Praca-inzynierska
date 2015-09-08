@@ -25,3 +25,7 @@
 /// <reference path="angular.min.js" />
 /// <reference path="angular-ui/ui-bootstrap-tpls.min.js" />
 /// <reference path="angular-ui/ui-bootstrap.js" />
+/// <reference path="services/newsservice.js" />
+/// <reference path="directives/insetdirective.js" />
+/// <reference path="controllers/insetcontroller.js" />
+/// <reference path="globals/events.js" />
