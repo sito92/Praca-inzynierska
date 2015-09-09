@@ -17,8 +17,21 @@ namespace DAL.UnitOfWork
         private GenericRepository<User> userRepository;
         private GenericRepository<NewsCategory> newsCategoryRepository;
         private GenericRepository<Settings> settingsRepository;
-        private GenericRepository<NewsletterReceiver> newsletterReceiverRepository; 
- 
+        private GenericRepository<NewsletterReceiver> newsletterReceiverRepository;
+        private GenericRepository<Inset> insetRepository;
+
+        public GenericRepository<Inset> InsetRepository
+        {
+            get
+            {
+
+                if (this.insetRepository == null)
+                {
+                    this.insetRepository = new GenericRepository<Inset>(context);
+                }
+                return insetRepository;
+            }
+        }
         public GenericRepository<News> NewsRepository
         {
             get

@@ -45,6 +45,7 @@
     <Compile Include="ConstStrings\Separators.cs" />
     <Compile Include="ConstStrings\Tags.cs" />
     <Compile Include="Enums\InsetArgumentTypeEnum.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
     <Compile Include="Interfaces\ISessionManager.cs" />
     <Compile Include="Managers\SessionManager.cs" />

@@ -29,3 +29,6 @@
 /// <reference path="directives/insetdirective.js" />
 /// <reference path="controllers/insetcontroller.js" />
 /// <reference path="globals/events.js" />
+/// <reference path="services/insetservice.js" />
+/// <reference path="interceptors/httpinterceptor.js" />
+/// <reference path="directives/loaderdirective.js" />

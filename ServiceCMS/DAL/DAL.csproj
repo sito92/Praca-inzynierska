@@ -64,6 +64,14 @@
     <Compile Include="Migrations\201509071740341_AddedColumnsToSettings.Designer.cs">
       <DependentUpon>201509071740341_AddedColumnsToSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509081937289_AddedInsetAndArguments.cs" />
+    <Compile Include="Migrations\201509081937289_AddedInsetAndArguments.Designer.cs">
+      <DependentUpon>201509081937289_AddedInsetAndArguments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509091523557_ManyToManyInInsets.cs" />
+    <Compile Include="Migrations\201509091523557_ManyToManyInInsets.Designer.cs">
+      <DependentUpon>201509091523557_ManyToManyInInsets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\Forum.cs" />
@@ -95,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509071740341_AddedColumnsToSettings.resx">
       <DependentUpon>201509071740341_AddedColumnsToSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509081937289_AddedInsetAndArguments.resx">
+      <DependentUpon>201509081937289_AddedInsetAndArguments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509091523557_ManyToManyInInsets.resx">
+      <DependentUpon>201509091523557_ManyToManyInInsets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -33,12 +33,14 @@ namespace DAL.Migrations
             //      new Person { FullName = "Brice Lambson" },
             //      new Person { FullName = "Rowan Miller" }
             //    );
-            //
+            ////
             //if (System.Diagnostics.Debugger.IsAttached == false)
             //    System.Diagnostics.Debugger.Launch();
             SeedUsers(context);
             SeedNewsCategories(context);
             SeedSettings(context);
+            SeedInsetArguments(context);
+            SeedInset(context);
         }
 
         private void SeedUsers(ServiceCMSContext context)
@@ -64,6 +66,29 @@ namespace DAL.Migrations
         {
             context.NewsCategories.AddOrUpdate(x => x.Category,
                 new NewsCategory() {Category = "Handlowy"});
+            context.SaveChanges();
+        }
+
+        private void SeedInsetArguments(ServiceCMSContext context)
+        {
+            context.InsetArguments.AddOrUpdate(x=>x.Name,
+                new InsetArgument() { IsRequierd = true,Name = "id",ArgumentType = 1},
+                new InsetArgument() { IsRequierd = true, Name = "url", ArgumentType = 2}
+                );
+            context.SaveChanges();
+        }
+        private void SeedInset(ServiceCMSContext context)
+        {
+            
+            var linkArguments = context.InsetArguments.Where(x => x.Id == 2);
+            context.Insets.Add(
+                new Inset() { Name = "externalLink",Arguments = linkArguments.ToList()}
+                
+                );
+            context.Insets.Add(
+               new Inset() { Name = "localLink", Arguments = linkArguments.ToList() }
+
+               );
             context.SaveChanges();
         }
     }

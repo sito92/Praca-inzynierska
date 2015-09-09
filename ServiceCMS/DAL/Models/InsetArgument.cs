@@ -12,5 +12,6 @@ namespace DAL.Models
         public string Name { get; set; }
         public bool IsRequierd { get; set; }
         public byte ArgumentType { get; set; }
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common.Extensions;
 using DAL.Models;
 
 namespace Logic.Common.Models
@@ -11,6 +12,14 @@ namespace Logic.Common.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public string LocalizedName
+        {
+            get
+            {
+                return Modules.Resources.Logic.ResourceManager.GetString(Name.UpperFirst());
+            }
+        }
 
         public ICollection<InsetArgumentModel> Arguments { get; set; }
 

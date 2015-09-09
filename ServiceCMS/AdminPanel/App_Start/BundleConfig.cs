@@ -18,14 +18,17 @@ namespace AdminPanel
                         "~/Scripts/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                "~/Scripts/Globals/Events.js",
+                "~/Scripts/Globals/Events.js",               
                        "~/Scripts/angular.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular-ui").Include(
                        "~/Scripts/angular-ui/ui-bootstrap-tpls.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/appModule").Include(
-                       "~/Scripts/Modules/AppModule.js"));
+                       "~/Scripts/Modules/AppModule.js",
+                       "~/Scripts/Directives/LoaderDirective.js",
+                       "~/Scripts/Interceptors/HttpInterceptor.js"
+                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
@@ -64,7 +67,8 @@ namespace AdminPanel
             bundles.Add(new ScriptBundle("~/bundles/newsModule").Include(
                       "~/Scripts/Controllers/NewsController.js",
                       "~/Scripts/Directives/InsetDirective.js",
-                      "~/Scripts/Directives/InsetController.js"
+                      "~/Scripts/Directives/InsetController.js",
+                      "~/Scripts/Services/InsetService.js"
                       ));
         }
     }

@@ -11,9 +11,10 @@
 </div>
 <div class="modal-body">
     <div class="form-group form-field row">
-        <div class="col-md-3"><label class="control-label">@Presentation.Title</label></div>
-        <div class="col-md-9"><input class="control-label" ng-model="news.Title" /></div>
+        <div class="col-md-3"><label class="control-label">@Presentation.Type</label></div>
+        <select ng-model="choosedInset" ng-options="inset.LocalizedName for inset in avaiableInsets" ng-change="changeInsetType()"></select>
     </div>
+    <div id="insetPartContainer" class="animate-show" ng-hide="processing"></div>
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" ng-click="send()">@Presentation.Add</button>

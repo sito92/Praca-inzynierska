@@ -1,5 +1,4 @@
 ﻿app.directive('ngInset', function ($timeout) {
-
     var template = "<div class='btn btn-default btn-sm' ng-click='open()'>wstawka</div>";
     var setCursorPsoition = function (elem, caretPos) {
         if (elem != null) {
@@ -30,20 +29,16 @@
             var selectionStart = elem[0].selectionStart;
             var updatedVal = insertText(elem, ngModelCtrl.$viewValue, inset);
             $timeout(function () {
-             
-                setCursorPsoition(elem[0], selectionStart+inset.length);
+
+                setCursorPsoition(elem[0], selectionStart + inset.length);
             });
             ngModelCtrl.$setViewValue(updatedVal);
             ngModelCtrl.$render();
         });
     };
     return {
-
         restrict: 'A',
         require: '^ngModel',
-        //scope: {
-        //    ngModel:'='
-        //},
         controller: ['$scope', '$modal', function ($scope, $modal) {
 
             $scope.open = function () {
@@ -65,14 +60,33 @@
     }
 
 });
-app.controller('InsetAddModalCtrl', function ($scope, $modalInstance, $rootScope) {
+app.controller('InsetAddModalCtrl', function ($scope, $modalInstance, $rootScope, InsetService, $compile) {
+    InsetService.getAll().then(function (jsonResult) {
+        if (jsonResult.success) {
+            $scope.avaiableInsets = jsonResult.data;
+        }
+    }, function () {
+        alert("Error");
+        $modalInstance.dismiss('cancel');;
+    });
 
     $scope.send = function () {
         $scope.insetString = "[osiem]";
         $rootScope.$broadcast(customEvents.addedInset, $scope.insetString);
         $modalInstance.close();
     };
+    $scope.changeInsetType = function () {
+        $scope.processing = true;
+        InsetService.getInsetPart($scope.choosedInset.Name).then(function (jsonResult) {
+            var html = $.parseHTML(jsonResult);
+            $("#insetPartContainer").html($compile(html)($scope));
 
+        }, function () {
+            alert("Error");
+            $modalInstance.dismiss('cancel');;
+        });
+        $scope.processing = false;
+    };
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');;
     };

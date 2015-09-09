@@ -219,6 +219,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\ajax_loader.gif" />
     <Content Include="Content\Styles.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -318,6 +319,7 @@
     <Content Include="Scripts\Controllers\LeftMenuController.js" />
     <Content Include="Scripts\Controllers\NewsController.js" />
     <Content Include="Scripts\Directives\InsetDirective.js" />
+    <Content Include="Scripts\Directives\LoaderDirective.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -1078,6 +1080,7 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <Content Include="Scripts\Interceptors\HttpInterceptor.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -1094,6 +1097,7 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Modules\AppModule.js" />
+    <Content Include="Scripts\Services\InsetService.js" />
     <Content Include="Scripts\Services\NewsService.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1133,6 +1137,9 @@
     <Content Include="Views\News\Modals\Add.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Inset\Modals\Add.cshtml" />
+    <Content Include="Views\Picker\ExternalLink.cshtml" />
+    <Content Include="Views\Inset\InsetParts\ExternalLink.cshtml" />
+    <Content Include="Views\Inset\InsetParts\LocalLink.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

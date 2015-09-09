@@ -117,100 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ContactFormEmailSendFailed" xml:space="preserve">
-    <value />
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="ContactFormEmailSendSuccess" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ExternalLink" xml:space="preserve">
-    <value>External link</value>
-  </data>
-  <data name="LocalLink" xml:space="preserve">
-    <value>Local link</value>
-  </data>
-  <data name="ModifyNewsFailed" xml:space="preserve">
-    <value>Modify news failed.</value>
-  </data>
-  <data name="ModifyNewsSuccess" xml:space="preserve">
-    <value>Modify news succeed.</value>
-  </data>
-  <data name="ModifyUserFailed" xml:space="preserve">
-    <value>Modify user failed.</value>
-  </data>
-  <data name="ModifyUserSuccess" xml:space="preserve">
-    <value>Modify user succeed.</value>
-  </data>
-  <data name="NewsCategoryDeleteFailed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsCategoryDeleteSuccess" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsCategoryInsertFailed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsCategoryInsertSuccess" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsCategoryUpdateFailed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsCategoryUpdateSuccess" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsletterReceiverDeleteFailed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsletterReceiverDeleteSuccess" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsletterReceiverInsertFailed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsletterReceiverInsertSuccess" xml:space="preserve">
-    <value />
-  </data>
-  <data name="RemoveNewsFailed" xml:space="preserve">
-    <value>Remove news failed.</value>
-  </data>
-  <data name="RemoveNewsSuccess" xml:space="preserve">
-    <value>Remove news succeed.</value>
-  </data>
-  <data name="RemoveUserFailed" xml:space="preserve">
-    <value>Remove user failed.</value>
-  </data>
-  <data name="RemoveUserSuccess" xml:space="preserve">
-    <value>Remove user succeed.</value>
-  </data>
-  <data name="SaveNewsFailed" xml:space="preserve">
-    <value>Saving news failed.</value>
-  </data>
-  <data name="SaveNewsSuccess" xml:space="preserve">
-    <value>Saving news succeed.</value>
-  </data>
-  <data name="SaveUserFailed" xml:space="preserve">
-    <value>Saving user failed.</value>
-  </data>
-  <data name="SaveUserSuccess" xml:space="preserve">
-    <value>Saving user succeed.</value>
-  </data>
-  <data name="SendContactFormEmailFailed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="SendContactFormEmailSuccess" xml:space="preserve">
-    <value />
-  </data>
-  <data name="SendNewsletterEmailFailed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="SendNewsletterEmailSuccess" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UpdateSettingsFailed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UpdateSettingsSuccess" xml:space="preserve">
-    <value />
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

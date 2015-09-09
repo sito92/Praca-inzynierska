@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Logic.Inset.Interfaces;
 
 namespace AdminPanel.Controllers
 {
-    public class InsetController : Controller
+    public class InsetController : BaseController
     {
-        //
-        // GET: /Inset/
+        private IInsetService _insetService;
 
+        public InsetController(IInsetService insetService)
+        {
+            _insetService = insetService;
+        }
         public ActionResult Index()
         {
             return View();
@@ -18,7 +22,18 @@ namespace AdminPanel.Controllers
         public PartialViewResult GetModal(string name)
         {
             return PartialView("Modals/" + name);
+        }
 
+        public ActionResult GetAll()
+        {
+            var insets = _insetService.GetAll();
+            var localizedName = insets[0].LocalizedName;
+            return Json(new {success = true, data = insets},JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetInsetPart(string name)
+        {
+            return PartialView("InsetParts/" + name);
         }
     }
 }

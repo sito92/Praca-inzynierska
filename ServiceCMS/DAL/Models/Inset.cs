@@ -11,6 +11,6 @@ namespace DAL.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<InsetArgument> Arguments { get; set; } 
+        public virtual ICollection<InsetArgument> Arguments { get; set; } 
     }
 }

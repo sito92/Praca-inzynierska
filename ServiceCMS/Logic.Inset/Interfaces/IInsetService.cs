@@ -11,5 +11,7 @@ namespace Logic.Inset.Interfaces
     public interface IInsetService
     {
         InsetModel GetByName(string name);
+
+        IList<InsetModel> GetAll();
     }
 }

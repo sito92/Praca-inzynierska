@@ -8,7 +8,7 @@ namespace Common.Enums
 {
     public enum InsetArgumentTypeEnum
     {
-        Number,
+        Number =1,
         String
     }
 }
