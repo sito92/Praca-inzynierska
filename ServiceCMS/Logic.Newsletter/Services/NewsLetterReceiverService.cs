@@ -1,29 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Common.Responses;
 using DAL.Interfaces;
 using DAL.Models;
 using Logging.Interfaces;
 using Logic.Common.Models;
 using Logic.Newsletter.Interfaces;
+using Logic.Settings.Interfaces;
+using Logic.Settings.Services;
 using Modules.MailSender;
 
 namespace Logic.Newsletter.Services
 {
     public class NewsletterReceiverService : INewsletterReceiverService
     {
-        private readonly MailSender _mailSender;
+        private readonly IMailSender _mailSender;
         private IUnitOfWorkFactory _unitOfWorkFactory;
         private ILogger _logger;
+        private ISettingsService _settings;
+        private SmtpClientDataRetrieval _smtpClient;
 
-        public NewsletterReceiverService(MailSender mailSender, IUnitOfWorkFactory unitOfWorkFactory, ILogger logger)
+        public NewsletterReceiverService(IMailSender mailSender, 
+            IUnitOfWorkFactory unitOfWorkFactory, 
+            ILogger logger, 
+            ISettingsService settingsService,
+            SmtpClientDataRetrieval smtpClient)
         {
             this._unitOfWorkFactory = unitOfWorkFactory;
             this._mailSender = mailSender;
             this._logger = logger;
+            this._settings = settingsService;
+            this._smtpClient = smtpClient;
         }
 
         public ResponseBase Insert(NewsletterReceiverModel newsletterReceiver)
@@ -71,9 +79,18 @@ namespace Logic.Newsletter.Services
 
         public ResponseBase Send(string topic, string content)
         {
-            return _mailSender.NewsletterMail(topic, content); 
-            //wydaje mi się, że sama treść newsletter potrzebuje
-            //wypełnienia treści i tematu gdzie indziej. prawda?
+            var set = _settings.Get();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                
+            
+            return _mailSender.SendMail(topic,
+                content,
+                set.EmailAddress,
+                unitOfWork.NewsletterReceiverRepository.Get().Select(x => x.EmailAddress).ToList(), 
+                _smtpClient.ConfigureClient()
+                );
+            }
         }
     }
 }

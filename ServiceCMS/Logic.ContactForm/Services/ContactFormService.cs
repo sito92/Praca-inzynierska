@@ -1,29 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using Common.Responses;
+using DAL.Interfaces;
+using DAL.Models;
+using Logic.Common.Models;
 using Logic.ContactForm.Interfaces;
+using Logic.Settings.Interfaces;
+using Logic.Settings.Services;
 using Modules.MailSender;
 
 namespace Logic.ContactForm.Services
 {
     public class ContactFormService : IContactFormService
     {
-        private readonly MailSender _mailSender;
+        private readonly IMailSender _mailSender;
+        private ISettingsService _settings;
+        private SmtpClientDataRetrieval _smtpClient;
 
-        public ContactFormService(MailSender mailSender)
+        public ContactFormService(IMailSender mailSender, ISettingsService settingsService, SmtpClientDataRetrieval smtpClient)
         {
             _mailSender = mailSender;
+            _settings = settingsService;
+            _smtpClient = smtpClient;
         }
 
         public ResponseBase Send(string authorEmailAddress, string topic, string content)
         {
-            if(!EmailAddressValidation.CheckIfEmailAddress(authorEmailAddress))
-                return new ResponseBase() {IsSucceed = false, Message = Modules.Resources.Logic.ContactFormEmailSendFailed };
+            //sprawdzenie, czy mail który podał klient jest mailem - do przeniesienia
+            //if(!EmailAddressValidation.CheckIfEmailAddress(authorEmailAddress))
+            //    return new ResponseBase() {IsSucceed = false, Message = Modules.Resources.Logic.ContactFormEmailSendFailed };
 
-            return _mailSender.ContactFormMail(authorEmailAddress, topic, content);
+            var set = _settings.Get();
+
+            return _mailSender.SendMail(topic,
+                content,
+                set.EmailAddress,
+                authorEmailAddress,
+                _smtpClient.ConfigureClient());
         }
+
+        
     }
 }

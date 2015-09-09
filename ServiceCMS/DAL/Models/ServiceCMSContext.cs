@@ -21,6 +21,8 @@ namespace DAL.Models
         public DbSet<NewsletterReceiver> NewslettersReceivers { get; set; }
         public DbSet<InsetArgument> InsetArguments { get; set; }
         public DbSet<Inset> Insets { get; set; }
+        public DbSet<DomainAndPorts> DomainAndPorts { get; set; } 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<News>() //Encja News
@@ -33,9 +35,15 @@ namespace DAL.Models
                 .HasMany(x => x.NewsCategories)
                 .WithMany();
 
+
             modelBuilder.Entity<Inset>()
                 .HasMany(x => x.Arguments)
                 .WithMany();
+
+            modelBuilder.Entity<Settings>()
+                .HasRequired(x => x.DomainAndPorts)
+                .WithMany()
+                .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
         }
