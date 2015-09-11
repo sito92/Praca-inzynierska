@@ -65,7 +65,6 @@
       <Project>{e3255de6-c3f3-4fe5-8449-897ff42d8ebb}</Project>
       <Name>Logic.ContactForm</Name>
     </ProjectReference>
-
     <ProjectReference Include="..\Logic.Inset\Logic.Inset.csproj">
       <Project>{b9a9e81e-de7c-4c2f-996a-dfb24ad44444}</Project>
       <Name>Logic.Inset</Name>
@@ -81,6 +80,10 @@
     <ProjectReference Include="..\Logic.News\Logic.News.csproj">
       <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
       <Name>Logic.News</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Page\Logic.Page.csproj">
+      <Project>{12a69c8e-3f8a-41d4-bd4c-8b776c46e769}</Project>
+      <Name>Logic.Page</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.Users\Logic.Users.csproj">
       <Project>{9f83685c-a7ae-495a-8303-4b3d70290ab1}</Project>

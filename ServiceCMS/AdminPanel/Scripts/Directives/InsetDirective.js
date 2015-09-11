@@ -47,8 +47,7 @@
                 var modalInstance = $modal.open({
                     animation: true,
                     templateUrl: '/Inset/GetModal?name=Add',
-                    controller: 'InsetAddModalCtrl'
-                    //size: "lg"
+                    controller: 'InsetAddModalCtrl',
                 });
                 modalInstance.rendered.then(function () {
                 });
@@ -92,6 +91,7 @@ app.controller('InsetAddModalCtrl', function ($scope, $modalInstance, $rootScope
        
     };
     $scope.changeInsetType = function () {
+        $scope.arguments = {};
         $scope.processing = true;
         InsetService.getInsetPart($scope.choosedInset.Name).then(function (jsonResult) {
             var html = $.parseHTML(jsonResult);

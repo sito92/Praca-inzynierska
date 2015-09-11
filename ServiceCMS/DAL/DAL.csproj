@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201509091749438_AddedSettings.Designer.cs">
       <DependentUpon>201509091749438_AddedSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509111529472_AddedPage.cs" />
+    <Compile Include="Migrations\201509111529472_AddedPage.Designer.cs">
+      <DependentUpon>201509111529472_AddedPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -87,6 +91,7 @@
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\NewsCategory.cs" />
     <Compile Include="Models\NewsletterReceiver.cs" />
+    <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PopUp.cs" />
     <Compile Include="Models\ServiceChatHistory.cs" />
     <Compile Include="Models\ServiceCMSContext.cs" />
@@ -117,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509091749438_AddedSettings.resx">
       <DependentUpon>201509091749438_AddedSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509111529472_AddedPage.resx">
+      <DependentUpon>201509111529472_AddedPage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

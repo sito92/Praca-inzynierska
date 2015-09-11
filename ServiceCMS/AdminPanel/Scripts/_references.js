@@ -34,3 +34,5 @@
 /// <reference path="directives/loaderdirective.js" />
 /// <reference path="controllers/insetpartscontrollers/externallinkcontroller.js" />
 /// <reference path="directives/insetargument.js" />
+/// <reference path="directives/pickers/locallinkpicker.js" />
+/// <reference path="services/pageservice.js" />

@@ -1,0 +1,34 @@
+﻿@using Modules.Resources
+@{
+    ViewBag.Title = "LocalLink";
+}
+
+
+<span ng-repeat="page in avaiablePages">{{page.Name}}</span>
+
+
+<div class="modal-header">
+    Wstawka!!!!
+    <div class="row text-center">
+        <h2 class="text-modal-heading">@Presentation.ChoosePage</h2>
+    </div>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>@Presentation.Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="page in avaiablePages" ng-click="choosePage(page)">
+                    <td ng-bind="page.Name"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
+</div>

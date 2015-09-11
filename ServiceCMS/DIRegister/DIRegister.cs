@@ -23,6 +23,8 @@ using Logic.NewsCategory.Interfaces;
 using Logic.NewsCategory.Services;
 using Logic.Newsletter.Interfaces;
 using Logic.Newsletter.Services;
+using Logic.Page.Interfaces;
+using Logic.Page.Services;
 using Logic.User.Interfaces;
 using Logic.User.Services;
 using Modules.Cryptography;
@@ -64,6 +66,7 @@ namespace DIRegister
             builder.RegisterType<InsetParser>().As<IInsetParser>();
             builder.RegisterType<ArgumentValidator>().As<IArgumentValidator>();
             builder.RegisterType<InsetService>().As<IInsetService>();
+            builder.RegisterType<PageService>().As<IPageService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)

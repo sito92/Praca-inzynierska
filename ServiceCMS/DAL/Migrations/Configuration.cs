@@ -43,6 +43,7 @@ namespace DAL.Migrations
             SeedSettings(context);
             SeedInsetArguments(context);
             SeedInset(context);
+            SeedPage(context);
         }
 
         private void SeedUsers(ServiceCMSContext context)
@@ -81,14 +82,26 @@ namespace DAL.Migrations
         {
             
             var linkArguments = context.InsetArguments.Where(x => x.Id == 2);
-            context.Insets.Add(
+            context.Insets.AddOrUpdate(x=>x.Name,
                 new Inset() { Name = "externalLink",Arguments = linkArguments.ToList()}
                 
                 );
-            context.Insets.Add(
+            context.Insets.AddOrUpdate(x=>x.Name,
                new Inset() { Name = "localLink", Arguments = linkArguments.ToList() }
 
                );
+            context.SaveChanges();
+        }
+
+        private void SeedPage(ServiceCMSContext context)
+        {
+            context.Page.AddOrUpdate(x=>x.Name,
+                new Page() {Name = "Strona g³owna"},
+                new Page() { Name = "Strona1"},
+                new Page() { Name = "Strona2"},
+                new Page() { Name = "Strona3"}
+                
+                );
             context.SaveChanges();
         }
     }

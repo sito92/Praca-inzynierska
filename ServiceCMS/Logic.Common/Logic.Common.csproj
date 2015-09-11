@@ -46,6 +46,7 @@
     <Compile Include="Models\NewsCategoryModel.cs" />
     <Compile Include="Models\NewsletterReceiverModel.cs" />
     <Compile Include="Models\NewsModel.cs" />
+    <Compile Include="Models\PageModel.cs" />
     <Compile Include="Models\SettingsModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

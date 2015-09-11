@@ -206,6 +206,8 @@
     <Compile Include="Controllers\InsetController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\PickerController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -322,6 +324,7 @@
     <Content Include="Scripts\Directives\InsetArgument.js" />
     <Content Include="Scripts\Directives\InsetDirective.js" />
     <Content Include="Scripts\Directives\LoaderDirective.js" />
+    <Content Include="Scripts\Directives\Pickers\LocalLinkPicker.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -1101,6 +1104,7 @@
     <Content Include="Scripts\Modules\AppModule.js" />
     <Content Include="Scripts\Services\InsetService.js" />
     <Content Include="Scripts\Services\NewsService.js" />
+    <Content Include="Scripts\Services\PageService.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1139,9 +1143,9 @@
     <Content Include="Views\News\Modals\Add.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Inset\Modals\Add.cshtml" />
-    <Content Include="Views\Picker\ExternalLink.cshtml" />
     <Content Include="Views\Inset\InsetParts\ExternalLink.cshtml" />
     <Content Include="Views\Inset\InsetParts\LocalLink.cshtml" />
+    <Content Include="Views\Picker\LocalLink.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1169,6 +1173,10 @@
     <ProjectReference Include="..\Logic.News\Logic.News.csproj">
       <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
       <Name>Logic.News</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Page\Logic.Page.csproj">
+      <Project>{12a69c8e-3f8a-41d4-bd4c-8b776c46e769}</Project>
+      <Name>Logic.Page</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.Users\Logic.Users.csproj">
       <Project>{9f83685c-a7ae-495a-8303-4b3d70290ab1}</Project>

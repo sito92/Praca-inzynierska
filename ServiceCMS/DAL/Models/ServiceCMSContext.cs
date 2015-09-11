@@ -22,6 +22,7 @@ namespace DAL.Models
         public DbSet<InsetArgument> InsetArguments { get; set; }
         public DbSet<Inset> Insets { get; set; }
         public DbSet<DomainAndPorts> DomainAndPorts { get; set; } 
+        public DbSet<Page> Page { get; set; } 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
