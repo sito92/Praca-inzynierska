@@ -135,6 +135,12 @@
   <data name="ModifyNewsSuccess" xml:space="preserve">
     <value>Modify news succeed.</value>
   </data>
+  <data name="ModifyPageFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ModifyPageSuccess" xml:space="preserve">
+    <value />
+  </data>
   <data name="ModifyUserFailed" xml:space="preserve">
     <value>Modify user failed.</value>
   </data>
@@ -177,6 +183,12 @@
   <data name="RemoveNewsSuccess" xml:space="preserve">
     <value>Remove news succeed.</value>
   </data>
+  <data name="RemovePageFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RemovePageSuccess" xml:space="preserve">
+    <value />
+  </data>
   <data name="RemoveUserFailed" xml:space="preserve">
     <value>Remove user failed.</value>
   </data>
@@ -188,6 +200,12 @@
   </data>
   <data name="SaveNewsSuccess" xml:space="preserve">
     <value>Saving news succeed.</value>
+  </data>
+  <data name="SavePageFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SavePageSuccess" xml:space="preserve">
+    <value />
   </data>
   <data name="SaveUserFailed" xml:space="preserve">
     <value>Saving user failed.</value>

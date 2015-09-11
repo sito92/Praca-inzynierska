@@ -115,6 +115,24 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ModifyPageFailed {
+            get {
+                return ResourceManager.GetString("ModifyPageFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ModifyPageSuccess {
+            get {
+                return ResourceManager.GetString("ModifyPageSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modify user failed..
         /// </summary>
         public static string ModifyUserFailed {
@@ -241,6 +259,24 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string RemovePageFailed {
+            get {
+                return ResourceManager.GetString("RemovePageFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string RemovePageSuccess {
+            get {
+                return ResourceManager.GetString("RemovePageSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove user failed..
         /// </summary>
         public static string RemoveUserFailed {
@@ -273,6 +309,24 @@ namespace Modules.Resources {
         public static string SaveNewsSuccess {
             get {
                 return ResourceManager.GetString("SaveNewsSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string SavePageFailed {
+            get {
+                return ResourceManager.GetString("SavePageFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string SavePageSuccess {
+            get {
+                return ResourceManager.GetString("SavePageSuccess", resourceCulture);
             }
         }
         

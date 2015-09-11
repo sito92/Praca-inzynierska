@@ -16,7 +16,8 @@ namespace DAL.Interfaces
         GenericRepository<NewsCategory> NewsCategoryRepository { get; }
         GenericRepository<Settings> SettingsRepository { get; }
         GenericRepository<NewsletterReceiver> NewsletterReceiverRepository { get; }
-        GenericRepository<Inset> InsetRepository { get; } 
+        GenericRepository<Inset> InsetRepository { get; }
+        GenericRepository<Page> PageRepository { get; } 
         void Save();
     }
 }

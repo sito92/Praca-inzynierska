@@ -19,6 +19,7 @@ namespace DAL.UnitOfWork
         private GenericRepository<Settings> settingsRepository;
         private GenericRepository<NewsletterReceiver> newsletterReceiverRepository;
         private GenericRepository<Inset> insetRepository;
+        private GenericRepository<Page> pageRepository;
 
         public GenericRepository<Inset> InsetRepository
         {
@@ -93,7 +94,17 @@ namespace DAL.UnitOfWork
                 return newsletterReceiverRepository;
             }
         }
-
+        public GenericRepository<Page> PageRepository
+        {
+            get
+            {
+                if (this.pageRepository == null)
+                {
+                    this.pageRepository = new GenericRepository<Page>(context);
+                }
+                return pageRepository;
+            }
+        }
         public void Save()
         {
             context.SaveChanges();
