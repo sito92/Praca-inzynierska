@@ -79,7 +79,7 @@
     <Compile Include="Interfaces\IInsetService.cs" />
     <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Interfaces\IParsersFactory.cs" />
-    <Compile Include="Parsers\LinkParser.cs" />
+    <Compile Include="Parsers\ExternalLinkParser.cs" />
     <Compile Include="Parsers\Parser.cs" />
     <Compile Include="Parsers\UserParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

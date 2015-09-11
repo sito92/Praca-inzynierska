@@ -9,7 +9,7 @@ using Logic.Inset.Helpers;
 
 namespace Logic.Inset.Parsers
 {
-    class LinkParser:Parser
+    class ExternalLinkParser:Parser
     {
         private string url = "url";
         private string text = "text";
@@ -22,11 +22,19 @@ namespace Logic.Inset.Parsers
         public override string Parse(string inset)
         {
             var arguments = InsetHelper.GetArgumetnsDictionary(inset);
+
             var urlData = arguments[url];
-            var textData = arguments[text];
+            ParserTagBuilder.Attributes.Add("href", urlData);
+
+            if (arguments.ContainsKey(text))
+            {
+                var textData = arguments[text];
+                ParserTagBuilder.SetInnerText(textData);
+            }
             
-            ParserTagBuilder.Attributes.Add("href",urlData);
-            ParserTagBuilder.SetInnerText(textData);
+            
+            
+           
 
 
             return ParserTagBuilder.ToString();

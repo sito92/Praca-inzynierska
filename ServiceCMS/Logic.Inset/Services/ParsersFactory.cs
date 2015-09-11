@@ -20,7 +20,7 @@ namespace Logic.Inset.Services
         }
         private Dictionary<string, Func<IParser>> parsers = new Dictionary<string, Func<IParser>>()
         {
-            {"link", ()=>new LinkParser()},
+            {"externalLink", ()=>new ExternalLinkParser()},
             {"user",()=>new UserParser(_userService)}
         };
         public IParser GetParser(string name)

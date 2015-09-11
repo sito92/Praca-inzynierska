@@ -13,8 +13,6 @@
   line-height: 20px;
   opacity: 1;
   padding: 10px;
-  border: 1px solid black;
-  background: white;
 }
 
 .animate-show.ng-hide-add, .animate-show.ng-hide-remove {

@@ -16,6 +16,8 @@
         }
     };
     var insertText = function (elem, model, val) {
+        if (model == undefined)
+            model = "";
         var domElement = elem[0];
         if (domElement.selectionStart || domElement.selectionStart === 0) {
             var startPos = domElement.selectionStart;
@@ -45,8 +47,8 @@
                 var modalInstance = $modal.open({
                     animation: true,
                     templateUrl: '/Inset/GetModal?name=Add',
-                    controller: 'InsetAddModalCtrl',
-                    size: "sm"
+                    controller: 'InsetAddModalCtrl'
+                    //size: "lg"
                 });
                 modalInstance.rendered.then(function () {
                 });
@@ -61,6 +63,8 @@
 
 });
 app.controller('InsetAddModalCtrl', function ($scope, $modalInstance, $rootScope, InsetService, $compile) {
+
+    $scope.arguments = {};
     InsetService.getAll().then(function (jsonResult) {
         if (jsonResult.success) {
             $scope.avaiableInsets = jsonResult.data;
@@ -69,11 +73,23 @@ app.controller('InsetAddModalCtrl', function ($scope, $modalInstance, $rootScope
         alert("Error");
         $modalInstance.dismiss('cancel');;
     });
-
+    $scope.$watch("arguments", function (newVal, oldVal) {
+        console.log(newVal);
+    });
     $scope.send = function () {
-        $scope.insetString = "[osiem]";
-        $rootScope.$broadcast(customEvents.addedInset, $scope.insetString);
-        $modalInstance.close();
+        InsetService.validate($scope.insetString()).then(function(jsonResult) {
+            if (jsonResult.success) {
+                $rootScope.$broadcast(customEvents.addedInset, $scope.insetString());
+                $modalInstance.close();
+            } else {
+                alert(jsonResult.message);
+            }
+        }, function () {
+            alert("Error");
+            $modalInstance.dismiss('cancel');;
+        });
+
+       
     };
     $scope.changeInsetType = function () {
         $scope.processing = true;
@@ -90,4 +106,16 @@ app.controller('InsetAddModalCtrl', function ($scope, $modalInstance, $rootScope
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');;
     };
+
+    $scope.insetString = function () {
+        if ($scope.choosedInset != null) {
+            var result = "[" + $scope.choosedInset.Name;
+            angular.forEach($scope.arguments, function(val, key) {
+                result += ";";
+                result += key + "=" + "\"" + val + "\"";
+            });
+            return result + "]";
+        }
+        return null;
+    }
 });

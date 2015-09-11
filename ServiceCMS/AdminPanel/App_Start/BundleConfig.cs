@@ -68,8 +68,11 @@ namespace AdminPanel
                       "~/Scripts/Controllers/NewsController.js",
                       "~/Scripts/Directives/InsetDirective.js",
                       "~/Scripts/Directives/InsetController.js",
-                      "~/Scripts/Services/InsetService.js"
+                      "~/Scripts/Services/InsetService.js",
+                      "~/Scripts/Controllers/InsetPartsControllers/ExternalLinkController.js",
+                      "~/Scripts/Directives/InsetArgument.js"
                       ));
+
         }
     }
 }

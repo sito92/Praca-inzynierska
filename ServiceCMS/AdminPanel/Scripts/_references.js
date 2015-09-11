@@ -32,3 +32,5 @@
 /// <reference path="services/insetservice.js" />
 /// <reference path="interceptors/httpinterceptor.js" />
 /// <reference path="directives/loaderdirective.js" />
+/// <reference path="controllers/insetpartscontrollers/externallinkcontroller.js" />
+/// <reference path="directives/insetargument.js" />

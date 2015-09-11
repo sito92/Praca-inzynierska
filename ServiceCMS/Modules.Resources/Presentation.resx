@@ -123,6 +123,9 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="InsetType" xml:space="preserve">
+    <value>Inset type</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -164,6 +167,9 @@
   </data>
   <data name="Type" xml:space="preserve">
     <value>Type</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>

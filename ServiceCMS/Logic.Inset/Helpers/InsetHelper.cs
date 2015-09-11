@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.WebPages;
 using Common.ConstStrings;
 
 namespace Logic.Inset.Helpers
@@ -23,9 +25,14 @@ namespace Logic.Inset.Helpers
         {
             var insetWithOutTags = GetInsetWithOutTags(inset);
 
-            var insetData = GetInsetData(insetWithOutTags).Where(x=>x.Contains(equalChar));
+            var insetData = GetInsetData(insetWithOutTags).Where(x => x.Contains(equalChar));
 
-            return  insetData.Select(data => data.Split(equalChar)).ToDictionary(splitedArgument => splitedArgument[0], splitedArgument => splitedArgument[1]);
+            var splited = Regex.Split(insetData.FirstOrDefault(), RegularExpressions.ArgumentValue).Skip(1);
+            return new Dictionary<string, string>()
+            {
+              {splited.First(),splited.Last()}
+            };
+
         }
         public static IEnumerable<string> GetArguments(string inset)
         {
@@ -42,7 +49,8 @@ namespace Logic.Inset.Helpers
 
         private static string[] GetInsetData(string insetWithOutTags)
         {
-            return insetWithOutTags.Split(Separators.InsetArgumentSpliter);
+            return Regex.Split(insetWithOutTags, RegularExpressions.InsetSeparator);
+            return insetWithOutTags.Split();
         }
     }
 }

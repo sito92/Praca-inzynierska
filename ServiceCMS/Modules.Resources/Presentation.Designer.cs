@@ -79,6 +79,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inset type.
+        /// </summary>
+        public static string InsetType {
+            get {
+                return ResourceManager.GetString("InsetType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string Login {
@@ -201,6 +210,15 @@ namespace Modules.Resources {
         public static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Url.
+        /// </summary>
+        public static string Url {
+            get {
+                return ResourceManager.GetString("Url", resourceCulture);
             }
         }
         

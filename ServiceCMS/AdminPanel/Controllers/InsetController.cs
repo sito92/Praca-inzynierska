@@ -10,10 +10,11 @@ namespace AdminPanel.Controllers
     public class InsetController : BaseController
     {
         private IInsetService _insetService;
-
-        public InsetController(IInsetService insetService)
+        private IInsetRecognizer _insetRecognizer;
+        public InsetController(IInsetService insetService,IInsetRecognizer insetRecognizer)
         {
             _insetService = insetService;
+            _insetRecognizer = insetRecognizer;
         }
         public ActionResult Index()
         {
@@ -34,6 +35,13 @@ namespace AdminPanel.Controllers
         public ActionResult GetInsetPart(string name)
         {
             return PartialView("InsetParts/" + name);
+        }
+
+        public ActionResult Validate(string inset)
+        {
+            var isValid = _insetRecognizer.IsValid(inset);
+
+            return Json(new {success = isValid},JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -8,6 +8,9 @@ namespace Common.ConstStrings
 {
     public static class RegularExpressions
     {
-        public const string Inset = @"\[(.*?)\]";
+        public const string NotInQuotes = @"(?<=^(([^""]*(?<!\\)""[^""]*(?<!\\)""[^""]*)*|[^""]*))";
+        public const string Inset = NotInQuotes+@"\[(.*?)\]";
+        public const string InsetSeparator = NotInQuotes+@";";
+        public const string ArgumentValue = NotInQuotes + @"=";
     }
 }
