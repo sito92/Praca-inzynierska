@@ -319,6 +319,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\Controllers\InsetController.js" />
     <Content Include="Scripts\Controllers\InsetPartsControllers\ExternalLinkController.js" />
+    <Content Include="Scripts\Controllers\InsetPartsControllers\LocalLinkController.js" />
     <Content Include="Scripts\Controllers\LeftMenuController.js" />
     <Content Include="Scripts\Controllers\NewsController.js" />
     <Content Include="Scripts\Directives\InsetArgument.js" />

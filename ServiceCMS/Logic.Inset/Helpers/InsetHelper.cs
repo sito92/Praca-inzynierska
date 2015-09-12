@@ -23,15 +23,23 @@ namespace Logic.Inset.Helpers
 
         public static Dictionary<string, string> GetArgumetnsDictionary(string inset)
         {
+            var result = new Dictionary<string,string>();
             var insetWithOutTags = GetInsetWithOutTags(inset);
 
-            var insetData = GetInsetData(insetWithOutTags).Where(x => x.Contains(equalChar));
+            var insetData = GetInsetData(insetWithOutTags).Where(x => x.Contains(equalChar)).Distinct();
 
-            var splited = Regex.Split(insetData.FirstOrDefault(), RegularExpressions.ArgumentValue).Skip(1);
-            return new Dictionary<string, string>()
+
+            foreach (var data in insetData)
             {
-              {splited.First(),splited.Last()}
-            };
+                var splited = Regex.Split(data, RegularExpressions.ArgumentValue,RegexOptions.ExplicitCapture);
+                var argument = splited.Last().Remove(0, 1);
+
+                result.Add(splited.First(), argument.Remove(argument.Length-1));
+            }
+
+
+
+            return result;
 
         }
         public static IEnumerable<string> GetArguments(string inset)
@@ -49,7 +57,7 @@ namespace Logic.Inset.Helpers
 
         private static string[] GetInsetData(string insetWithOutTags)
         {
-            return Regex.Split(insetWithOutTags, RegularExpressions.InsetSeparator);
+            return Regex.Split(insetWithOutTags, RegularExpressions.InsetSeparator,RegexOptions.ExplicitCapture);
             return insetWithOutTags.Split();
         }
     }

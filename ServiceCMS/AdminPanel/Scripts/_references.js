@@ -36,3 +36,4 @@
 /// <reference path="directives/insetargument.js" />
 /// <reference path="directives/pickers/locallinkpicker.js" />
 /// <reference path="services/pageservice.js" />
+/// <reference path="controllers/insetpartscontrollers/locallinkcontroller.js" />

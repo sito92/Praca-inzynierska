@@ -2,11 +2,19 @@
 @{
     Layout = null;
 }
-<div ng-controller="ExternalLinkController">
+<div ng-controller="LocalLinkController">
+    <div class="form-group form-field row">
+        <div class="col-md-3">
+            <label class="control-label">@Presentation.Text</label>
+        </div>
+        <div class="col-md-9"><input type="text" inset-argument="text" ng-model="text" class="form-control"></div>
+    </div>
     <div class="form-group form-field row">
         <div class="col-md-3">
             <label class="control-label">@Presentation.Url</label>
         </div>
-        <div class="col-md-9"><input type="text" ng-model="url" class="form-control" local-link-picker="id"></div>
+        <div class="col-md-9">
+            <input type="text" ng-model="url" class="form-control" local-link-picker="id">
+        </div>
     </div>
 </div>

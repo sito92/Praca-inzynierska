@@ -12,7 +12,6 @@
 .animate-show {
   line-height: 20px;
   opacity: 1;
-  padding: 10px;
 }
 
 .animate-show.ng-hide-add, .animate-show.ng-hide-remove {

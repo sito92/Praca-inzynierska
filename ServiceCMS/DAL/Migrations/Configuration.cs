@@ -74,20 +74,21 @@ namespace DAL.Migrations
         {
             context.InsetArguments.AddOrUpdate(x=>x.Name,
                 new InsetArgument() { IsRequierd = true,Name = "id",ArgumentType = 1},
-                new InsetArgument() { IsRequierd = true, Name = "url", ArgumentType = 2}
+                new InsetArgument() { IsRequierd = true, Name = "url", ArgumentType = 2},
+                new InsetArgument() { IsRequierd = false, Name = "text", ArgumentType = 2 }
                 );
             context.SaveChanges();
         }
         private void SeedInset(ServiceCMSContext context)
         {
             
-            var linkArguments = context.InsetArguments.Where(x => x.Id == 2);
+            //var linkArguments = context.InsetArguments.Where(x => x.Id == 2);
             context.Insets.AddOrUpdate(x=>x.Name,
-                new Inset() { Name = "externalLink",Arguments = linkArguments.ToList()}
+                new Inset() { Name = "localLink", Arguments = context.InsetArguments.Where(x => x.Name == "id" || x.Name == "text").ToList() }
                 
                 );
             context.Insets.AddOrUpdate(x=>x.Name,
-               new Inset() { Name = "localLink", Arguments = linkArguments.ToList() }
+               new Inset() { Name = "externalLink", Arguments = context.InsetArguments.Where(x=>x.Name=="url" || x.Name=="text").ToList() }
 
                );
             context.SaveChanges();

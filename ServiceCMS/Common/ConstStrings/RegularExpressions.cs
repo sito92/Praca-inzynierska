@@ -12,5 +12,6 @@ namespace Common.ConstStrings
         public const string Inset = NotInQuotes+@"\[(.*?)\]";
         public const string InsetSeparator = NotInQuotes+@";";
         public const string ArgumentValue = NotInQuotes + @"=";
+        
     }
 }
