@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HashComputer.cs" />
-    <Compile Include="Interfaces\IHashComputer.cs" />
+    <Compile Include="Interfaces\C.cs" />
     <Compile Include="Interfaces\IPasswordManager.cs" />
     <Compile Include="PasswordManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

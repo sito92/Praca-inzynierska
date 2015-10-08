@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\FileModel.cs" />
     <Compile Include="Models\InsetArgumentModel.cs" />
     <Compile Include="Models\InsetModel.cs" />
     <Compile Include="Models\NewsCategoryModel.cs" />

@@ -1,5 +1,6 @@
 ﻿var customEvents = {
     reloadTable: "reloadTable",
     addedInset: "addedInset",
-    choosedPage: "choosedPage"
+    choosedPage: "choosedPage",
+    choosedImages: "choosedImages"
 };

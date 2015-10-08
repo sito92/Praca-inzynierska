@@ -123,11 +123,17 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="ChooseImages" xml:space="preserve">
+    <value>Choose images</value>
+  </data>
   <data name="ChoosePage" xml:space="preserve">
     <value>Choose page</value>
   </data>
   <data name="InsetType" xml:space="preserve">
     <value>Inset type</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>

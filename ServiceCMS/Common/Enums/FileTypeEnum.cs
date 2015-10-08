@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Common.Enums
 {
-    public enum InsetArgumentTypeEnum
+    public enum FileTypeEnum
     {
-        Int =1,
-        String,
-        IntCollection
+        Image=1
     }
 }

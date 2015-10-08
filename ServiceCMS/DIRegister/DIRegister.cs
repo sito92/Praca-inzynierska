@@ -15,6 +15,8 @@ using Logging;
 using Logging.Interfaces;
 using Logic.ContactForm.Interfaces;
 using Logic.ContactForm.Services;
+using Logic.File.Interfaces;
+using Logic.File.Services;
 using Logic.Inset.Interfaces;
 using Logic.Inset.Services;
 using Logic.News.Interfaces;
@@ -67,6 +69,7 @@ namespace DIRegister
             builder.RegisterType<ArgumentValidator>().As<IArgumentValidator>();
             builder.RegisterType<InsetService>().As<IInsetService>();
             builder.RegisterType<PageService>().As<IPageService>();
+            builder.RegisterType<FileService>().As<IFileService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)

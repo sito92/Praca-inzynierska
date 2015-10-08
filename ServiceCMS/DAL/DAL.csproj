@@ -80,9 +80,14 @@
     <Compile Include="Migrations\201509111529472_AddedPage.Designer.cs">
       <DependentUpon>201509111529472_AddedPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509141540279_AddedFile.cs" />
+    <Compile Include="Migrations\201509141540279_AddedFile.Designer.cs">
+      <DependentUpon>201509141540279_AddedFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
+    <Compile Include="Models\File.cs" />
     <Compile Include="Models\Forum.cs" />
     <Compile Include="Models\ForumReply.cs" />
     <Compile Include="Models\ForumThread.cs" />
@@ -125,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509111529472_AddedPage.resx">
       <DependentUpon>201509111529472_AddedPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509141540279_AddedFile.resx">
+      <DependentUpon>201509141540279_AddedFile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

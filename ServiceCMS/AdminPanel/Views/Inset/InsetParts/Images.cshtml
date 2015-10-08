@@ -1,0 +1,20 @@
+﻿@using Modules.Resources
+@{
+    Layout = null;
+}
+<div ng-controller="ImagesController">
+    <div class="form-group form-field row">
+        <div class="col-md-3">
+            <label class="control-label">@Presentation.Text</label>
+        </div>
+        <div class="col-md-9"><input type="text" inset-argument="text" ng-model="text" class="form-control"></div>
+    </div>
+    <div class="form-group form-field row">
+        <div class="col-md-3">
+            <label class="control-label">@Presentation.Url</label>
+        </div>
+        <div class="col-md-9">
+            <input type="text" images-picker="ids" ng-model="imagesNames" class="form-control">
+        </div>
+    </div>
+</div>

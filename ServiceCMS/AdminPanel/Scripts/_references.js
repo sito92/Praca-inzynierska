@@ -37,3 +37,6 @@
 /// <reference path="directives/pickers/locallinkpicker.js" />
 /// <reference path="services/pageservice.js" />
 /// <reference path="controllers/insetpartscontrollers/locallinkcontroller.js" />
+/// <reference path="controllers/insetpartscontrollers/imagescontroller.js" />
+/// <reference path="directives/pickers/imagespicker.js" />
+/// <reference path="services/fileservice.js" />

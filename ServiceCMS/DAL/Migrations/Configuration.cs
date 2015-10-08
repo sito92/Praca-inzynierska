@@ -44,6 +44,7 @@ namespace DAL.Migrations
             SeedInsetArguments(context);
             SeedInset(context);
             SeedPage(context);
+            SeedImages(context);
         }
 
         private void SeedUsers(ServiceCMSContext context)
@@ -66,29 +67,34 @@ namespace DAL.Migrations
         private void SeedNewsCategories(ServiceCMSContext context)
         {
             context.NewsCategories.AddOrUpdate(x => x.Category,
-                new NewsCategory() {Category = "Handlowy"});
+                new NewsCategory() { Category = "Handlowy" });
             context.SaveChanges();
         }
 
         private void SeedInsetArguments(ServiceCMSContext context)
         {
-            context.InsetArguments.AddOrUpdate(x=>x.Name,
-                new InsetArgument() { IsRequierd = true,Name = "id",ArgumentType = 1},
-                new InsetArgument() { IsRequierd = true, Name = "url", ArgumentType = 2},
-                new InsetArgument() { IsRequierd = false, Name = "text", ArgumentType = 2 }
+            context.InsetArguments.AddOrUpdate(x => x.Name,
+                new InsetArgument() { IsRequierd = true, Name = "id", ArgumentType = 1 },
+                new InsetArgument() { IsRequierd = true, Name = "url", ArgumentType = 2 },
+                new InsetArgument() { IsRequierd = false, Name = "text", ArgumentType = 2 },
+                new InsetArgument() { IsRequierd = true, Name = "ids", ArgumentType = 3 }
                 );
             context.SaveChanges();
         }
         private void SeedInset(ServiceCMSContext context)
         {
-            
+
             //var linkArguments = context.InsetArguments.Where(x => x.Id == 2);
-            context.Insets.AddOrUpdate(x=>x.Name,
+            context.Insets.AddOrUpdate(x => x.Name,
                 new Inset() { Name = "localLink", Arguments = context.InsetArguments.Where(x => x.Name == "id" || x.Name == "text").ToList() }
-                
+
                 );
-            context.Insets.AddOrUpdate(x=>x.Name,
-               new Inset() { Name = "externalLink", Arguments = context.InsetArguments.Where(x=>x.Name=="url" || x.Name=="text").ToList() }
+            context.Insets.AddOrUpdate(x => x.Name,
+               new Inset() { Name = "externalLink", Arguments = context.InsetArguments.Where(x => x.Name == "url" || x.Name == "text").ToList() }
+
+               );
+            context.Insets.AddOrUpdate(x => x.Name,
+                new Inset() { Name = "images", Arguments = context.InsetArguments.Where(x => x.Name == "ids").ToList() }
 
                );
             context.SaveChanges();
@@ -96,14 +102,25 @@ namespace DAL.Migrations
 
         private void SeedPage(ServiceCMSContext context)
         {
-            context.Page.AddOrUpdate(x=>x.Name,
-                new Page() {Name = "Strona g³owna"},
-                new Page() { Name = "Strona1"},
-                new Page() { Name = "Strona2"},
-                new Page() { Name = "Strona3"}
-                
+            context.Page.AddOrUpdate(x => x.Name,
+                new Page() { Name = "Strona g³owna" },
+                new Page() { Name = "Strona1" },
+                new Page() { Name = "Strona2" },
+                new Page() { Name = "Strona3" }
+
                 );
             context.SaveChanges();
+        }
+
+        private void SeedImages(ServiceCMSContext context)
+        {
+            context.Files.AddOrUpdate(x=>x.Name,
+                new File() { Name = "Plik 1",Extension = ".jpg",FileType = 1,Path = "C:/obrazek.jpg"},
+                new File() { Name = "Ulubiony obrazek",Extension = ".jpg",FileType = 1,Path = "C:/obraeksdfsd.jpg"},
+                new File() { Name = "Inny picture",Extension = ".jpg",FileType = 1,Path = "C:/obrasdzek.jpg"},
+                new File() { Name = "T³o",Extension = ".jpg",FileType = 1,Path = "C:/tlo.jpg"},
+                new File() { Name = "Do newsa",Extension = ".jpg",FileType = 1,Path = "C:/news.jpg"}
+                );
         }
     }
 }

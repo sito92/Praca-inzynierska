@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D20C9247-5CBC-40EE-90DA-47EC36951AE1}</ProjectGuid>
+    <ProjectGuid>{6E7DA60F-7779-421A-9AF1-08E456396B62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DIRegister</RootNamespace>
-    <AssemblyName>DIRegister</AssemblyName>
+    <RootNamespace>Logic.File</RootNamespace>
+    <AssemblyName>Logic.File</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,11 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DIRegister.cs" />
+    <Compile Include="Interfaces\IFileService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <Compile Include="Services\FileService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
@@ -61,45 +56,14 @@
       <Project>{2c569c22-8774-444a-be3a-ba804a524dea}</Project>
       <Name>Logging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Logic.ContactForm\Logic.ContactForm.csproj">
-      <Project>{e3255de6-c3f3-4fe5-8449-897ff42d8ebb}</Project>
-      <Name>Logic.ContactForm</Name>
+    <ProjectReference Include="..\Logic.Common\Logic.Common.csproj">
+      <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>
+      <Name>Logic.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Logic.File\Logic.File.csproj">
-      <Project>{6e7da60f-7779-421a-9af1-08e456396b62}</Project>
-      <Name>Logic.File</Name>
+    <ProjectReference Include="..\Modules.Resources\Modules.Resources.csproj">
+      <Project>{dc937e5f-1d71-488e-b00c-525fdfdd3b0d}</Project>
+      <Name>Modules.Resources</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Logic.Inset\Logic.Inset.csproj">
-      <Project>{b9a9e81e-de7c-4c2f-996a-dfb24ad44444}</Project>
-      <Name>Logic.Inset</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.NewsCategory\Logic.NewsCategory.csproj">
-      <Project>{b9fb03b5-8809-40df-8bff-5d9e8c052b49}</Project>
-      <Name>Logic.NewsCategory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.Newsletter\Logic.Newsletter.csproj">
-      <Project>{181771e1-4abe-4fc1-8e45-4c38a75b75c7}</Project>
-      <Name>Logic.Newsletter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.News\Logic.News.csproj">
-      <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
-      <Name>Logic.News</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.Page\Logic.Page.csproj">
-      <Project>{12a69c8e-3f8a-41d4-bd4c-8b776c46e769}</Project>
-      <Name>Logic.Page</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.Users\Logic.Users.csproj">
-      <Project>{9f83685c-a7ae-495a-8303-4b3d70290ab1}</Project>
-      <Name>Logic.Users</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modules.Cryptography\Modules.Cryptography.csproj">
-      <Project>{dcca9978-f924-4bb6-bc8f-a40a6192ec79}</Project>
-      <Name>Modules.Cryptography</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

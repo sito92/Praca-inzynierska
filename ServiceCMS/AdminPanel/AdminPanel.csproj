@@ -202,6 +202,7 @@
     <Compile Include="Attributes\ServiceCMSAuthorizeAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsetController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
@@ -319,12 +320,14 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\Controllers\InsetController.js" />
     <Content Include="Scripts\Controllers\InsetPartsControllers\ExternalLinkController.js" />
+    <Content Include="Scripts\Controllers\InsetPartsControllers\ImagesController.js" />
     <Content Include="Scripts\Controllers\InsetPartsControllers\LocalLinkController.js" />
     <Content Include="Scripts\Controllers\LeftMenuController.js" />
     <Content Include="Scripts\Controllers\NewsController.js" />
     <Content Include="Scripts\Directives\InsetArgument.js" />
     <Content Include="Scripts\Directives\InsetDirective.js" />
     <Content Include="Scripts\Directives\LoaderDirective.js" />
+    <Content Include="Scripts\Directives\Pickers\ImagesPicker.js" />
     <Content Include="Scripts\Directives\Pickers\LocalLinkPicker.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -1103,6 +1106,7 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Modules\AppModule.js" />
+    <Content Include="Scripts\Services\FileService.js" />
     <Content Include="Scripts\Services\InsetService.js" />
     <Content Include="Scripts\Services\NewsService.js" />
     <Content Include="Scripts\Services\PageService.js" />
@@ -1147,6 +1151,9 @@
     <Content Include="Views\Inset\InsetParts\ExternalLink.cshtml" />
     <Content Include="Views\Inset\InsetParts\LocalLink.cshtml" />
     <Content Include="Views\Picker\LocalLink.cshtml" />
+    <Content Include="Views\Inset\InsetParts\Images.cshtml" />
+    <Content Include="Views\Picker\Images.cshtml" />
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1166,6 +1173,10 @@
     <ProjectReference Include="..\Logic.Common\Logic.Common.csproj">
       <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>
       <Name>Logic.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.File\Logic.File.csproj">
+      <Project>{6e7da60f-7779-421a-9af1-08e456396b62}</Project>
+      <Name>Logic.File</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.Inset\Logic.Inset.csproj">
       <Project>{b9a9e81e-de7c-4c2f-996a-dfb24ad44444}</Project>

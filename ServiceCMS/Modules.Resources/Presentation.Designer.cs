@@ -79,6 +79,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose images.
+        /// </summary>
+        public static string ChooseImages {
+            get {
+                return ResourceManager.GetString("ChooseImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose page.
         /// </summary>
         public static string ChoosePage {
@@ -93,6 +102,15 @@ namespace Modules.Resources {
         public static string InsetType {
             get {
                 return ResourceManager.GetString("InsetType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
             }
         }
         

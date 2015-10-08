@@ -70,11 +70,16 @@ namespace AdminPanel
                       "~/Scripts/Directives/InsetController.js",
                       "~/Scripts/Services/InsetService.js",
                       "~/Scripts/Services/PageService.js",
+                      "~/Scripts/Services/FileService.js",
                       "~/Scripts/Controllers/InsetPartsControllers/ExternalLinkController.js",
                       "~/Scripts/Controllers/InsetPartsControllers/LocalLinkController.js",
+                      "~/Scripts/Controllers/InsetPartsControllers/ImagesController.js",
                       "~/Scripts/Directives/InsetArgument.js",
-                      "~/Scripts/Directives/Pickers/LocalLinkPicker.js"
+                      "~/Scripts/Directives/Pickers/LocalLinkPicker.js",
+                      "~/Scripts/Directives/Pickers/ImagesPicker.js"
                       ));
+
+
 
         }
     }

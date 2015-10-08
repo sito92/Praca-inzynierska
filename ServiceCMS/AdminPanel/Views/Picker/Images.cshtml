@@ -1,0 +1,30 @@
+﻿@using Modules.Resources
+@{
+    ViewBag.Title = "LocalLink";
+}
+<div class="modal-header">
+    <div class="row text-center">
+        <h2 class="text-modal-heading">@Presentation.ChooseImages</h2>
+    </div>
+</div>
+<div class="modal-body">
+    <span ng-bind="choosedImages | json"></span>
+    <div class="row">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>@Presentation.Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="image in avaiableImages" ng-click="chooseImage(image)" ng-class="contains(image) ? 'success' : 'dwe'">
+                <td ng-bind="image.Name"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="apply()">@Presentation.Add</button>
+    <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
+</div>

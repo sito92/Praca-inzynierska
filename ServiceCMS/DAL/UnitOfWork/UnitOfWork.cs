@@ -20,7 +20,22 @@ namespace DAL.UnitOfWork
         private GenericRepository<NewsletterReceiver> newsletterReceiverRepository;
         private GenericRepository<Inset> insetRepository;
         private GenericRepository<Page> pageRepository;
+        private GenericRepository<File> fileRepository;
 
+
+
+        public GenericRepository<File> FileRepository
+        {
+            get
+            {
+
+                if (this.fileRepository == null)
+                {
+                    this.fileRepository = new GenericRepository<File>(context);
+                }
+                return fileRepository;
+            }
+        }
         public GenericRepository<Inset> InsetRepository
         {
             get
