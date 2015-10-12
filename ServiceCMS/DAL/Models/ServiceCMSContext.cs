@@ -24,6 +24,9 @@ namespace DAL.Models
         public DbSet<DomainAndPorts> DomainAndPorts { get; set; } 
         public DbSet<Page> Page { get; set; }
         public DbSet<File> Files { get; set; }
+        public DbSet<ServiceType> ServiceTypes { get; set; }
+        public DbSet<ServiceProvider> ServiceProviders { get; set; }
+        public DbSet<RegistratedService> RegistratedServices { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<News>() //Encja News
@@ -45,6 +48,21 @@ namespace DAL.Models
                 .HasRequired(x => x.DomainAndPorts)
                 .WithMany()
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ServiceProvider>()
+                .HasMany(x=>x.AvailableServvices)
+                .WithOptional()
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<RegistratedService>()
+                .HasRequired(x=>x.ServiceProvider)
+                .WithMany()
+                .WillCascadeOnDelete(true);
+                
+            modelBuilder.Entity<RegistratedService>()
+                .HasRequired(x=>x.ServiceType)
+                .WithMany()
+                .WillCascadeOnDelete(true);
 
             base.OnModelCreating(modelBuilder);
         }

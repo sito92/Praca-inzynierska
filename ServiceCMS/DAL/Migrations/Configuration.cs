@@ -45,6 +45,11 @@ namespace DAL.Migrations
             SeedInset(context);
             SeedPage(context);
             SeedImages(context);
+
+
+            SeedServiceTypes(context);
+            SeedServiceProviders(context);
+            SeedRegistratedServices(context);
         }
 
         private void SeedUsers(ServiceCMSContext context)
@@ -121,6 +126,42 @@ namespace DAL.Migrations
                 new File() { Name = "T³o",Extension = ".jpg",FileType = 1,Path = "C:/tlo.jpg"},
                 new File() { Name = "Do newsa",Extension = ".jpg",FileType = 1,Path = "C:/news.jpg"}
                 );
+        }
+
+        private void SeedServiceTypes(ServiceCMSContext context)
+        {
+            context.ServiceTypes.AddOrUpdate(x=>x.Name,
+                new ServiceType() { Name = "Strzy¿enie mêskie",DurationInSeconds = 1800},
+                new ServiceType() { Name = "Strzy¿enie damskie", DurationInSeconds = 3600},
+                new ServiceType() { Name = "Modelowanie",DurationInSeconds = 900},
+                new ServiceType() { Name = "Prostowanie",DurationInSeconds = 7200},
+                new ServiceType() { Name = "Koloryzacja", DurationInSeconds = 4500 },
+                new ServiceType() { Name = "Diagnoza", DurationInSeconds = 600 }
+                );
+            context.SaveChanges();
+        }
+
+        private void SeedServiceProviders(ServiceCMSContext context)
+        {
+            var sampleServiceTypes = context.ServiceTypes.Where(x => x.Id == 1 || x.Id == 2 || x.Id == 3);
+            context.ServiceProviders.AddOrUpdate(x=>x.Name,
+                new ServiceProvider() { Name = "Pani Krysia",AvailableServvices = context.ServiceTypes.ToList()},
+                new ServiceProvider() { Name = "Pan Marek", AvailableServvices = sampleServiceTypes.ToList()},
+                new ServiceProvider() { Name = "st. spec. Zenos³aw", AvailableServvices = context.ServiceTypes.ToList()}               
+                );
+            context.SaveChanges();
+        }
+
+        private void SeedRegistratedServices(ServiceCMSContext context)
+        {
+            context.RegistratedServices.AddOrUpdate(x=>x.Id,
+                new RegistratedService() { ServiceProviderId = 1,ServiceTypeId = 1,StartDate = DateTime.Now.AddDays(1)},           
+                new RegistratedService() { ServiceProviderId = 1,ServiceTypeId = 2,StartDate = DateTime.Now.AddDays(2)},               
+                new RegistratedService() { ServiceProviderId = 2,ServiceTypeId = 3,StartDate = DateTime.Now.AddDays(3)},
+                new RegistratedService() { ServiceProviderId = 2,ServiceTypeId = 3,StartDate = DateTime.Now.AddDays(1)},
+                new RegistratedService() { ServiceProviderId = 3,ServiceTypeId = 4,StartDate = DateTime.Now.AddDays(1)}             
+                );
+            context.SaveChanges();
         }
     }
 }
