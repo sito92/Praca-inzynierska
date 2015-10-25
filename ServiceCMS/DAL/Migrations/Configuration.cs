@@ -46,8 +46,9 @@ namespace DAL.Migrations
             SeedPage(context);
             SeedImages(context);
 
-
+           
             SeedServiceTypes(context);
+            SeedServicePhrases(context);
             SeedServiceProviders(context);
             SeedRegistratedServices(context);
         }
@@ -119,47 +120,62 @@ namespace DAL.Migrations
 
         private void SeedImages(ServiceCMSContext context)
         {
-            context.Files.AddOrUpdate(x=>x.Name,
-                new File() { Name = "Plik 1",Extension = ".jpg",FileType = 1,Path = "C:/obrazek.jpg"},
-                new File() { Name = "Ulubiony obrazek",Extension = ".jpg",FileType = 1,Path = "C:/obraeksdfsd.jpg"},
-                new File() { Name = "Inny picture",Extension = ".jpg",FileType = 1,Path = "C:/obrasdzek.jpg"},
-                new File() { Name = "T³o",Extension = ".jpg",FileType = 1,Path = "C:/tlo.jpg"},
-                new File() { Name = "Do newsa",Extension = ".jpg",FileType = 1,Path = "C:/news.jpg"}
+            context.Files.AddOrUpdate(x => x.Name,
+                new File() { Name = "Plik 1", Extension = ".jpg", FileType = 1, Path = "C:/obrazek.jpg" },
+                new File() { Name = "Ulubiony obrazek", Extension = ".jpg", FileType = 1, Path = "C:/obraeksdfsd.jpg" },
+                new File() { Name = "Inny picture", Extension = ".jpg", FileType = 1, Path = "C:/obrasdzek.jpg" },
+                new File() { Name = "T³o", Extension = ".jpg", FileType = 1, Path = "C:/tlo.jpg" },
+                new File() { Name = "Do newsa", Extension = ".jpg", FileType = 1, Path = "C:/news.jpg" }
                 );
         }
 
         private void SeedServiceTypes(ServiceCMSContext context)
         {
-            context.ServiceTypes.AddOrUpdate(x=>x.Name,
-                new ServiceType() { Name = "Strzy¿enie mêskie",DurationInSeconds = 1800},
-                new ServiceType() { Name = "Strzy¿enie damskie", DurationInSeconds = 3600},
-                new ServiceType() { Name = "Modelowanie",DurationInSeconds = 900},
-                new ServiceType() { Name = "Prostowanie",DurationInSeconds = 7200},
-                new ServiceType() { Name = "Koloryzacja", DurationInSeconds = 4500 },
-                new ServiceType() { Name = "Diagnoza", DurationInSeconds = 600 }
+
+
+            context.ServiceTypes.AddOrUpdate(x => x.Name,
+                new ServiceType() { Name = "Strzy¿enie mêskie" },
+                new ServiceType() { Name = "Strzy¿enie damskie" }
                 );
             context.SaveChanges();
         }
 
         private void SeedServiceProviders(ServiceCMSContext context)
         {
-            var sampleServiceTypes = context.ServiceTypes.Where(x => x.Id == 1 || x.Id == 2 || x.Id == 3);
-            context.ServiceProviders.AddOrUpdate(x=>x.Name,
-                new ServiceProvider() { Name = "Pani Krysia",AvailableServvices = context.ServiceTypes.ToList()},
-                new ServiceProvider() { Name = "Pan Marek", AvailableServvices = sampleServiceTypes.ToList()},
-                new ServiceProvider() { Name = "st. spec. Zenos³aw", AvailableServvices = context.ServiceTypes.ToList()}               
+            var sampleServiceTypes = context.ServiceTypes.Where(x => x.Id == 1 || x.Id == 2);
+            context.ServiceProviders.AddOrUpdate(x => x.Name,
+                new ServiceProvider() { Name = "Pani Krysia", AvailableServvices = context.ServiceTypes.ToList() },
+                new ServiceProvider() { Name = "Pan Marek", AvailableServvices = sampleServiceTypes.ToList() },
+                new ServiceProvider() { Name = "st. spec. Zenos³aw", AvailableServvices = context.ServiceTypes.ToList() }
                 );
             context.SaveChanges();
         }
 
         private void SeedRegistratedServices(ServiceCMSContext context)
         {
-            context.RegistratedServices.AddOrUpdate(x=>x.Id,
-                new RegistratedService() { ServiceProviderId = 1,ServiceTypeId = 1,StartDate = DateTime.Now.AddDays(1)},           
-                new RegistratedService() { ServiceProviderId = 1,ServiceTypeId = 2,StartDate = DateTime.Now.AddDays(2)},               
-                new RegistratedService() { ServiceProviderId = 2,ServiceTypeId = 3,StartDate = DateTime.Now.AddDays(3)},
-                new RegistratedService() { ServiceProviderId = 2,ServiceTypeId = 3,StartDate = DateTime.Now.AddDays(1)},
-                new RegistratedService() { ServiceProviderId = 3,ServiceTypeId = 4,StartDate = DateTime.Now.AddDays(1)}             
+            context.RegistratedServices.AddOrUpdate(x => x.Id,
+                new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 1, StartDate = DateTime.Now.AddDays(1) },
+                new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 1, StartDate = DateTime.Now.AddDays(2) },
+                new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 2, StartDate = DateTime.Now.AddDays(3) },
+                new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 1, StartDate = DateTime.Now.AddDays(1) },
+                new RegistratedService() { ServiceProviderId = 3, ServiceTypeId = 2, StartDate = DateTime.Now.AddDays(1) }
+                );
+            context.SaveChanges();
+        }
+
+        private void SeedServicePhrases(ServiceCMSContext context)
+        {
+            context.Phrases.AddOrUpdate(x => x.Name,
+                // Strzy¿enie damskie
+                new ServicePhrase() { Name = "Diagnoza", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 2},
+                new ServicePhrase() { Name = "Strzy¿enie", DelayInSeconds = 0, DurationInSeconds = 1800, Order = 3, ServiceTypeId = 2 },
+                new ServicePhrase() { Name = "Modelowanie", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 2 },
+                new ServicePhrase() { Name = "Farbowanie", DelayInSeconds = 1800, DurationInSeconds = 900, Order = 2, ServiceTypeId = 2 },
+
+                 // Strzy¿enie mêskie
+                new ServicePhrase() { Name = "Diagnoza", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 1},
+                new ServicePhrase() { Name = "Strzy¿enie", DelayInSeconds = 0, DurationInSeconds = 1200, Order = 2, ServiceTypeId = 1 },
+                new ServicePhrase() { Name = "Modelowanie", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 1 }
                 );
             context.SaveChanges();
         }

@@ -88,6 +88,10 @@
     <Compile Include="Migrations\201510101413000_ServiceEntities.Designer.cs">
       <DependentUpon>201510101413000_ServiceEntities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510251305597_AddedServicePhrases.cs" />
+    <Compile Include="Migrations\201510251305597_AddedServicePhrases.Designer.cs">
+      <DependentUpon>201510251305597_AddedServicePhrases.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -106,6 +110,7 @@
     <Compile Include="Models\ServiceChatHistory.cs" />
     <Compile Include="Models\ServiceCMSContext.cs" />
     <Compile Include="Models\ServiceEntity.cs" />
+    <Compile Include="Models\ServicePhrase.cs" />
     <Compile Include="Models\ServiceProvider.cs" />
     <Compile Include="Models\ServiceType.cs" />
     <Compile Include="Models\Settings.cs" />
@@ -143,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510101413000_ServiceEntities.resx">
       <DependentUpon>201510101413000_ServiceEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510251305597_AddedServicePhrases.resx">
+      <DependentUpon>201510251305597_AddedServicePhrases.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -27,6 +27,8 @@ namespace DAL.Models
         public DbSet<ServiceType> ServiceTypes { get; set; }
         public DbSet<ServiceProvider> ServiceProviders { get; set; }
         public DbSet<RegistratedService> RegistratedServices { get; set; }
+        public DbSet<ServicePhrase> Phrases { get; set; } 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<News>() //Encja News

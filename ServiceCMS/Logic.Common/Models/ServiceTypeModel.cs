@@ -11,7 +11,8 @@ namespace Logic.Common.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int DurationInSeconds { get; set; }
+
+        public ICollection<ServicePhrase> Phrases { get; set; } 
 
         public ServiceTypeModel()
         {
@@ -22,7 +23,7 @@ namespace Logic.Common.Models
         {
             Id = entity.Id;
             Name = entity.Name;
-            DurationInSeconds = entity.DurationInSeconds;
+            Phrases = entity.Phrases;
         }
 
         public ServiceType ToEntity()
@@ -31,7 +32,7 @@ namespace Logic.Common.Models
             {
                 Id = this.Id,
                 Name = this.Name,
-                DurationInSeconds = this.DurationInSeconds
+                Phrases = this.Phrases
             };
         }
     }
