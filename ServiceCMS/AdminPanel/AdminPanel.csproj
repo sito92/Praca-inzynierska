@@ -209,6 +209,7 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PickerController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -222,6 +223,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\calendarDemo.css" />
+    <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\fullcalendar.min.css" />
+    <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Content\Images\ajax_loader.gif" />
     <Content Include="Content\Styles.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -318,12 +323,18 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\calendar\calendar.js" />
+    <Content Include="Scripts\calendar\fullcalendar.js" />
+    <Content Include="Scripts\calendar\gcal.js" />
+    <Content Include="Scripts\calendar\lang-all.js" />
+    <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\Controllers\InsetController.js" />
     <Content Include="Scripts\Controllers\InsetPartsControllers\ExternalLinkController.js" />
     <Content Include="Scripts\Controllers\InsetPartsControllers\ImagesController.js" />
     <Content Include="Scripts\Controllers\InsetPartsControllers\LocalLinkController.js" />
     <Content Include="Scripts\Controllers\LeftMenuController.js" />
     <Content Include="Scripts\Controllers\NewsController.js" />
+    <Content Include="Scripts\Controllers\ServicesController.js" />
     <Content Include="Scripts\Directives\InsetArgument.js" />
     <Content Include="Scripts\Directives\InsetDirective.js" />
     <Content Include="Scripts\Directives\LoaderDirective.js" />
@@ -1117,7 +1128,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
@@ -1154,6 +1164,7 @@
     <Content Include="Views\Inset\InsetParts\Images.cshtml" />
     <Content Include="Views\Picker\Images.cshtml" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\Services\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1189,6 +1200,10 @@
     <ProjectReference Include="..\Logic.Page\Logic.Page.csproj">
       <Project>{12a69c8e-3f8a-41d4-bd4c-8b776c46e769}</Project>
       <Name>Logic.Page</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Service\Logic.Service.csproj">
+      <Project>{e7026b9b-377f-48e8-9938-bc6e2660f6c9}</Project>
+      <Name>Logic.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.Users\Logic.Users.csproj">
       <Project>{9f83685c-a7ae-495a-8303-4b3d70290ab1}</Project>

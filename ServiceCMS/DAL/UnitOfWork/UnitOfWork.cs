@@ -21,9 +21,20 @@ namespace DAL.UnitOfWork
         private GenericRepository<Inset> insetRepository;
         private GenericRepository<Page> pageRepository;
         private GenericRepository<File> fileRepository;
+        private GenericRepository<RegistratedService> registretedServiceRepository;
 
+        public GenericRepository<RegistratedService> RegistratedServiceRepository
+        {
+            get
+            {
 
-
+                if (this.registretedServiceRepository == null)
+                {
+                    this.registretedServiceRepository = new GenericRepository<RegistratedService>(context);
+                }
+                return registretedServiceRepository;
+            }
+        }
         public GenericRepository<File> FileRepository
         {
             get

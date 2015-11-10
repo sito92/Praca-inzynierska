@@ -18,7 +18,8 @@ namespace DAL.Interfaces
         GenericRepository<NewsletterReceiver> NewsletterReceiverRepository { get; }
         GenericRepository<Inset> InsetRepository { get; }
         GenericRepository<Page> PageRepository { get; }
-        GenericRepository<File> FileRepository { get; } 
+        GenericRepository<File> FileRepository { get; }
+        GenericRepository<RegistratedService> RegistratedServiceRepository { get; } 
         void Save();
     }
 }

@@ -27,6 +27,8 @@ using Logic.Newsletter.Interfaces;
 using Logic.Newsletter.Services;
 using Logic.Page.Interfaces;
 using Logic.Page.Services;
+using Logic.Service.Interfaces;
+using Logic.Service.Services;
 using Logic.User.Interfaces;
 using Logic.User.Services;
 using Modules.Cryptography;
@@ -70,6 +72,7 @@ namespace DIRegister
             builder.RegisterType<InsetService>().As<IInsetService>();
             builder.RegisterType<PageService>().As<IPageService>();
             builder.RegisterType<FileService>().As<IFileService>();
+            builder.RegisterType<ServicesService>().As<IServicesService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)

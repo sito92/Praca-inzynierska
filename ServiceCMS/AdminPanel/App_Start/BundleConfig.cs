@@ -9,7 +9,12 @@ namespace AdminPanel
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/moment.js"
+                        ));
+
+            bundles.Add(new ScriptBundle("~/bundles/calendar").Include(
+                                "~/Scripts/calendar/*.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/bootstrap.js"));
@@ -39,12 +44,13 @@ namespace AdminPanel
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/site.css",
+            bundles.Add(new StyleBundle("~/Content/css").Include(               
                  "~/Content/Styles.css",
                 "~/Content/bootstrap.css",
                  "~/Content/bootstrap-theme.css",
-                 "~/Content/simple-sidebar.css"
+                 "~/Content/simple-sidebar.css",
+                 "~/Content/fullcalendar.css",
+                 "~/Content/calendarDemo.css"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -64,7 +70,7 @@ namespace AdminPanel
             bundles.Add(new ScriptBundle("~/bundles/leftMenu").Include(
                       "~/Scripts/Controllers/LeftMenuController.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/newsModule").Include(
+            bundles.Add(new ScriptBundle("~/bundles/news").Include(
                       "~/Scripts/Controllers/NewsController.js",
                       "~/Scripts/Directives/InsetDirective.js",
                       "~/Scripts/Directives/InsetController.js",
@@ -78,7 +84,9 @@ namespace AdminPanel
                       "~/Scripts/Directives/Pickers/LocalLinkPicker.js",
                       "~/Scripts/Directives/Pickers/ImagesPicker.js"
                       ));
-
+            bundles.Add(new ScriptBundle("~/bundles/services").Include(
+                   "~/Scripts/Controllers/ServicesController.js"                 
+                   ));
 
 
         }
