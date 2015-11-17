@@ -92,6 +92,10 @@
     <Compile Include="Migrations\201510251305597_AddedServicePhrases.Designer.cs">
       <DependentUpon>201510251305597_AddedServicePhrases.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511172002000_StatisticsFilterArchitecture.cs" />
+    <Compile Include="Migrations\201511172002000_StatisticsFilterArchitecture.Designer.cs">
+      <DependentUpon>201511172002000_StatisticsFilterArchitecture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510251305597_AddedServicePhrases.resx">
       <DependentUpon>201510251305597_AddedServicePhrases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511172002000_StatisticsFilterArchitecture.resx">
+      <DependentUpon>201511172002000_StatisticsFilterArchitecture.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
