@@ -22,6 +22,7 @@ namespace DAL.UnitOfWork
         private GenericRepository<Page> pageRepository;
         private GenericRepository<File> fileRepository;
         private GenericRepository<RegistratedService> registretedServiceRepository;
+        private GenericRepository<StatisticsInformation> statisticsInformationRepository; 
 
         public GenericRepository<RegistratedService> RegistratedServiceRepository
         {
@@ -131,6 +132,19 @@ namespace DAL.UnitOfWork
                 return pageRepository;
             }
         }
+
+        public GenericRepository<StatisticsInformation> StatisticInformationRepository
+        {
+            get
+            {
+                if (this.statisticsInformationRepository == null)
+                {
+                    this.statisticsInformationRepository = new GenericRepository<StatisticsInformation>(context);
+                }
+                return statisticsInformationRepository;
+            }
+        }
+
         public void Save()
         {
             context.SaveChanges();

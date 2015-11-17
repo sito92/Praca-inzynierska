@@ -116,6 +116,7 @@
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\SiteMapLink.cs" />
     <Compile Include="Models\SiteUsageReport.cs" />
+    <Compile Include="Models\StatisticsInformation.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\GenericRepository.cs" />

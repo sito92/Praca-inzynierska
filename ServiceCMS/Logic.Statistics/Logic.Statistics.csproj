@@ -1,17 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{96DF7B56-1B0C-47D9-A96C-C47FA96C948D}</ProjectGuid>
+    <ProjectGuid>{4CA61FA0-141F-479F-8C0E-0FB4AB07FDEB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Logic.Common</RootNamespace>
-    <AssemblyName>Logic.Common</AssemblyName>
+    <RootNamespace>Logic.Statistics</RootNamespace>
+    <AssemblyName>Logic.Statistics</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,37 +36,28 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\FileModel.cs" />
-    <Compile Include="Models\InsetArgumentModel.cs" />
-    <Compile Include="Models\InsetModel.cs" />
-    <Compile Include="Models\NewsCategoryModel.cs" />
-    <Compile Include="Models\NewsletterReceiverModel.cs" />
-    <Compile Include="Models\NewsModel.cs" />
-    <Compile Include="Models\PageModel.cs" />
-    <Compile Include="Models\RegistratedServiceModel.cs" />
-    <Compile Include="Models\ServiceProviderModel.cs" />
-    <Compile Include="Models\ServiceTypeModel.cs" />
-    <Compile Include="Models\SettingsModel.cs" />
-    <Compile Include="Models\StatisticsInformationModel.cs" />
-    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Interfaces\IStatisticsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{537e20b2-92a9-4d7b-9e28-5673a5726839}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
+    <Folder Include="Filters\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{45667f6f-9598-48ae-96bd-01aaa89e90ed}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modules.Resources\Modules.Resources.csproj">
-      <Project>{dc937e5f-1d71-488e-b00c-525fdfdd3b0d}</Project>
-      <Name>Modules.Resources</Name>
+    <ProjectReference Include="..\Logic.Common\Logic.Common.csproj">
+      <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>
+      <Name>Logic.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules.Statistics\Modules.Statistics.csproj">
+      <Project>{11520175-c8cf-4fd9-b6fd-2b595dda77d6}</Project>
+      <Name>Modules.Statistics</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
