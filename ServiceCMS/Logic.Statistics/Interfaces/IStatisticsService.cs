@@ -10,9 +10,17 @@ namespace Logic.Statistics.Interfaces
 {
     public interface IStatisticsService
     {
-        List<StatisticsInformationModel> GetUniqueUsers();
+        IList<StatisticsInformationModel> GetUniqueUsers();
 
-        Dictionary<DateTime, int> GetUsersPerMonth(DateTime from, DateTime to);
+        int GetUsersTotalAmount();
+
+        IList<StatisticsInformationModel> GetAllUsers();
+
+        Dictionary<DateTime, int> GetUsersBetweenDates(DateTime from, DateTime to);
+
+        Dictionary<int, int> GetUsersForSelectedMonth(int month);
+
+        Dictionary<int, int> GetUsersForEveryMonth(int month);
 
         void AddEntry(object userEntry);
 

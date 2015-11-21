@@ -13,19 +13,19 @@ namespace Logic.Common.Models
 
         public string IP { get; set; }
 
-        public int VisitsAmount { get; set; }
-
-        public string Country { get; set; }
-
         public DateTime Date { get; set; }
+
+        public string ControllerName { get; set; }
+
+        public string ActionName { get; set; }
 
         public StatisticsInformationModel(StatisticsInformation entity)
         {
             Id = entity.Id;
             IP = entity.IP;
-            VisitsAmount = entity.VisitsAmount;
-            Country = entity.Country;
             Date = entity.Date;
+            ControllerName = entity.ControllerName;
+            ActionName = entity.ActionName;
         }
 
         public StatisticsInformation ToEntity()
@@ -34,9 +34,9 @@ namespace Logic.Common.Models
             {
                 Id = this.Id,
                 IP = this.IP,
-                VisitsAmount = this.VisitsAmount,
-                Country = this.Country,
-                Date = this.Date
+                Date = this.Date,
+                ControllerName = this.ControllerName,
+                ActionName = this.ActionName
             };
         }
     }

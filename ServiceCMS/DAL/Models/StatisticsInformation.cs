@@ -12,10 +12,10 @@ namespace DAL.Models
 
         public string IP { get; set; }
 
-        public int VisitsAmount { get; set; }
-
-        public string Country { get; set; }
-
         public DateTime Date { get; set; }
+
+        public string ControllerName { get; set; }
+
+        public string ActionName { get; set; }
     }
 }

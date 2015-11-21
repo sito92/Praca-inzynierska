@@ -96,6 +96,14 @@
     <Compile Include="Migrations\201511172002000_StatisticsFilterArchitecture.Designer.cs">
       <DependentUpon>201511172002000_StatisticsFilterArchitecture.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511210851431_dunno.cs" />
+    <Compile Include="Migrations\201511210851431_dunno.Designer.cs">
+      <DependentUpon>201511210851431_dunno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511211027329_StatisticsInformationMinorChange.cs" />
+    <Compile Include="Migrations\201511211027329_StatisticsInformationMinorChange.Designer.cs">
+      <DependentUpon>201511211027329_StatisticsInformationMinorChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -159,6 +167,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511172002000_StatisticsFilterArchitecture.resx">
       <DependentUpon>201511172002000_StatisticsFilterArchitecture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511210851431_dunno.resx">
+      <DependentUpon>201511210851431_dunno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511211027329_StatisticsInformationMinorChange.resx">
+      <DependentUpon>201511211027329_StatisticsInformationMinorChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

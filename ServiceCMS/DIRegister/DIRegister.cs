@@ -29,10 +29,13 @@ using Logic.Page.Interfaces;
 using Logic.Page.Services;
 using Logic.Service.Interfaces;
 using Logic.Service.Services;
+using Logic.Statistics.Filters;
 using Logic.User.Interfaces;
 using Logic.User.Services;
 using Modules.Cryptography;
 using Modules.Cryptography.Interfaces;
+using Modules.Statistics.Interfaces;
+using Modules.Statistics.Services;
 
 namespace DIRegister
 {
@@ -43,6 +46,7 @@ namespace DIRegister
             RegisterCore(builder);
             RegisterLogic(builder);
             RegisterModules(builder);
+            RegisterFilters(builder);
             RegisterJobs(builder);
         }
 
@@ -79,6 +83,12 @@ namespace DIRegister
         {
             builder.RegisterType<PasswordManager>().As<IPasswordManager>();
             builder.RegisterType<HashComputer>().As<IHashComputer>();
+            builder.RegisterType<Statistics>().As<IStatistics>();
+        }
+
+        private static void RegisterFilters(ContainerBuilder builder)
+        {
+            //builder.BindFilter<StatisticsFilter>(System.Web.Mvc.FilterScope.Controller, 0).WhenControllerHas<MyAuthorizeAttribute>();
         }
         private static void RegisterJobs(ContainerBuilder builder)
         {
