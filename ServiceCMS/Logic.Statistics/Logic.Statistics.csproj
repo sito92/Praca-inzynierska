@@ -68,7 +68,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Filters\StatisticsFilter.cs" />
     <Compile Include="Helpers\DistinctBy.cs" />
     <Compile Include="Helpers\EntryStatisticsHelper.cs" />
     <Compile Include="Interfaces\IStatisticsService.cs" />
@@ -91,9 +90,9 @@
       <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>
       <Name>Logic.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modules.Statistics\Modules.Statistics.csproj">
-      <Project>{11520175-c8cf-4fd9-b6fd-2b595dda77d6}</Project>
-      <Name>Modules.Statistics</Name>
+    <ProjectReference Include="..\Modules.RestSharp\Modules.RestSharp.csproj">
+      <Project>{a2f6a95b-ea03-4e43-a7a3-c90e7cb24b8b}</Project>
+      <Name>Modules.RestSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

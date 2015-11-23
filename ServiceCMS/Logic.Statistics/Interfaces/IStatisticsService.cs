@@ -18,11 +18,11 @@ namespace Logic.Statistics.Interfaces
 
         Dictionary<DateTime, int> GetUsersBetweenDates(DateTime from, DateTime to);
 
-        Dictionary<int, int> GetUsersForSelectedMonth(int month);
+        int GetUsersForSelectedMonth(int month, int year);
 
-        Dictionary<int, int> GetUsersForEveryMonth(int month);
+        Dictionary<int, int> GetUsersForEveryMonth(int year);
 
-        void AddEntry(object userEntry);
+        void AddEntry(StatisticsInformationModel userEntry);
 
         Dictionary<string, int> GetUsersPerCountry();
     }

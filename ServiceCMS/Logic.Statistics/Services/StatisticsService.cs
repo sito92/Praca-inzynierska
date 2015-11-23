@@ -24,15 +24,14 @@ namespace Logic.Statistics.Services
             _logger = logger;
         }
 
-        public void AddEntry(object userEntry)
+        public void AddEntry(StatisticsInformationModel userEntry)
         {
-            var unboxedUserEntry = (StatisticsInformationModel) userEntry;
-
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
-                    unitOfWork.StatisticInformationRepository.Insert(unboxedUserEntry.ToEntity());
+                    unitOfWork.StatisticInformationRepository.Insert(userEntry.ToEntity());
+                    unitOfWork.Save();
                 }
                 catch (Exception e)
                 {
@@ -83,7 +82,24 @@ namespace Logic.Statistics.Services
 
         public IList<StatisticsInformationModel> GetAllUsers()
         {
-            throw new NotImplementedException();
+            IList<StatisticsInformationModel> statisticsInformationUniqueModels = new List<StatisticsInformationModel>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.StatisticInformationRepository.Get();
+                    foreach (var entity in entities)
+                    {
+                        statisticsInformationUniqueModels.Add(new StatisticsInformationModel(entity));
+                    }
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return statisticsInformationUniqueModels;
         }
         #endregion
       
@@ -115,8 +131,8 @@ namespace Logic.Statistics.Services
             {
                 try
                 {
-                    var entities = unitOfWork.StatisticInformationRepository.Get();
-                    statisticsInformationBetweenDates = EntryStatisticsHelper.GetUsersBetweenDates(entities,from,to);
+                    var entities = unitOfWork.StatisticInformationRepository.Get(x=>x.Date >= from && x.Date <= to);
+                    statisticsInformationBetweenDates = EntryStatisticsHelper.GetUsersBetweenDates(entities);
                 }
                 catch (Exception e)
                 {
@@ -126,15 +142,16 @@ namespace Logic.Statistics.Services
             return statisticsInformationBetweenDates;
         }
 
-        public Dictionary<int, int> GetUsersForSelectedMonth(int month)
+        public int GetUsersForSelectedMonth(int month, int year)
         {
-            var statisticsInformationForSelectedMonth = new Dictionary<int, int>();
+            var statisticsInformationForSelectedMonth = 0;
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
-                    var entities = unitOfWork.StatisticInformationRepository.Get();
-                    statisticsInformationForSelectedMonth = EntryStatisticsHelper.GetUsersForSelectedMonth(entities,month);
+                    var entities = unitOfWork.StatisticInformationRepository.Get(x => x.Date.Month == month &&
+                                                                                      x.Date.Year == year);
+                    statisticsInformationForSelectedMonth = EntryStatisticsHelper.GetUsersForSelectedMonth(entities);
                 }
                 catch (Exception e)
                 {
@@ -145,10 +162,24 @@ namespace Logic.Statistics.Services
         }
 
 
-        public Dictionary<int, int> GetUsersForEveryMonth(int month)
+        public Dictionary<int, int> GetUsersForEveryMonth(int year)
         {
-            throw new NotImplementedException();
+            var statisticsInformationForEveryMonth = new Dictionary<int, int>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.StatisticInformationRepository.Get(x => x.Date.Year == year);
+                    statisticsInformationForEveryMonth = EntryStatisticsHelper.GetUsersAmountForEveryMonth(entities);
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return statisticsInformationForEveryMonth;
         }
+
         #endregion
     }
 }

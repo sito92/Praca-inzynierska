@@ -105,10 +105,6 @@
       <Project>{dcca9978-f924-4bb6-bc8f-a40a6192ec79}</Project>
       <Name>Modules.Cryptography</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modules.Statistics\Modules.Statistics.csproj">
-      <Project>{11520175-c8cf-4fd9-b6fd-2b595dda77d6}</Project>
-      <Name>Modules.Statistics</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

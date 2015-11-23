@@ -182,11 +182,13 @@ namespace DAL.Migrations
 
         public void SeedStatisticsInformation(ServiceCMSContext context)
         {
-            context.StatisticsInformations.AddOrUpdate(x=> x.Id,
-                new StatisticsInformation(){ActionName = "Index", ControllerName = "News", IP = "192.145.123.100", Date = new DateTime(2015,10,1)},
+            context.StatisticsInformations.AddOrUpdate(x=> x.IP,
+                new StatisticsInformation(){ActionName = "Index", ControllerName = "News", IP = "168.145.123.100", Date = new DateTime(2015,10,1)},
                 new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "24.232.0.0", Date = new DateTime(2015, 10, 11) },
                 new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "23.91.160.0", Date = new DateTime(2015, 12, 1) },
-                new StatisticsInformation(){ActionName = "Index", ControllerName = "News", IP = "192.145.113.100", Date = new DateTime(2015,11,1)});
+                new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "24.232.0.0", Date = new DateTime(2015, 10, 11) },
+                new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "23.91.160.0", Date = new DateTime(2013, 12, 1) },
+                new StatisticsInformation(){ActionName = "Index", ControllerName = "News", IP = "168.145.113.100", Date = new DateTime(2015,11,1)});
             context.SaveChanges();
         }
     }

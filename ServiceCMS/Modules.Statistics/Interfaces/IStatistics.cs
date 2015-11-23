@@ -8,8 +8,6 @@ namespace Modules.Statistics.Interfaces
 {
     public interface IStatistics
     {
-        bool IsEntryUnique(object userEntry);
-
         string GetCountryPerIpAddress(string ip);
     }
 }

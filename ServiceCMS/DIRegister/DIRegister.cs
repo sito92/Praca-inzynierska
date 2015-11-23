@@ -29,13 +29,12 @@ using Logic.Page.Interfaces;
 using Logic.Page.Services;
 using Logic.Service.Interfaces;
 using Logic.Service.Services;
-using Logic.Statistics.Filters;
+using Logic.Statistics.Interfaces;
+using Logic.Statistics.Services;
 using Logic.User.Interfaces;
 using Logic.User.Services;
 using Modules.Cryptography;
 using Modules.Cryptography.Interfaces;
-using Modules.Statistics.Interfaces;
-using Modules.Statistics.Services;
 
 namespace DIRegister
 {
@@ -77,13 +76,13 @@ namespace DIRegister
             builder.RegisterType<PageService>().As<IPageService>();
             builder.RegisterType<FileService>().As<IFileService>();
             builder.RegisterType<ServicesService>().As<IServicesService>();
+            builder.RegisterType<StatisticsService>().As<IStatisticsService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)
         {
             builder.RegisterType<PasswordManager>().As<IPasswordManager>();
             builder.RegisterType<HashComputer>().As<IHashComputer>();
-            builder.RegisterType<Statistics>().As<IStatistics>();
         }
 
         private static void RegisterFilters(ContainerBuilder builder)

@@ -92,17 +92,9 @@
     <Compile Include="Migrations\201510251305597_AddedServicePhrases.Designer.cs">
       <DependentUpon>201510251305597_AddedServicePhrases.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511172002000_StatisticsFilterArchitecture.cs" />
-    <Compile Include="Migrations\201511172002000_StatisticsFilterArchitecture.Designer.cs">
-      <DependentUpon>201511172002000_StatisticsFilterArchitecture.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511210851431_dunno.cs" />
-    <Compile Include="Migrations\201511210851431_dunno.Designer.cs">
-      <DependentUpon>201511210851431_dunno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511211027329_StatisticsInformationMinorChange.cs" />
-    <Compile Include="Migrations\201511211027329_StatisticsInformationMinorChange.Designer.cs">
-      <DependentUpon>201511211027329_StatisticsInformationMinorChange.cs</DependentUpon>
+    <Compile Include="Migrations\201511231337032_Statistics.cs" />
+    <Compile Include="Migrations\201511231337032_Statistics.Designer.cs">
+      <DependentUpon>201511231337032_Statistics.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
@@ -165,14 +157,8 @@
     <EmbeddedResource Include="Migrations\201510251305597_AddedServicePhrases.resx">
       <DependentUpon>201510251305597_AddedServicePhrases.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511172002000_StatisticsFilterArchitecture.resx">
-      <DependentUpon>201511172002000_StatisticsFilterArchitecture.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511210851431_dunno.resx">
-      <DependentUpon>201511210851431_dunno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511211027329_StatisticsInformationMinorChange.resx">
-      <DependentUpon>201511211027329_StatisticsInformationMinorChange.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511231337032_Statistics.resx">
+      <DependentUpon>201511231337032_Statistics.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

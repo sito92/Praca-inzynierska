@@ -7,13 +7,13 @@ namespace DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class StatisticsFilterArchitecture : IMigrationMetadata
+    public sealed partial class Statistics : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(StatisticsFilterArchitecture));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Statistics));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511172002000_StatisticsFilterArchitecture"; }
+            get { return "201511231337032_Statistics"; }
         }
         
         string IMigrationMetadata.Source

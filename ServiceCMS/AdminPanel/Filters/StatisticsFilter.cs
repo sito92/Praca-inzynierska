@@ -4,20 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using System.Web;
 using DAL.Factory;
+using DAL.UnitOfWork;
 using Logging;
+using Logic.Common.Models;
 using Logic.Statistics.Interfaces;
 using Logic.Statistics.Services; //DO WYJEBANIA
 
 namespace Logic.Statistics.Filters
 {
-   // public class MyAuthorizeAttribute : FilterAttribute { }
+    //public class MyAuthorizeAttribute : FilterAttribute { }
 
     public class StatisticsFilter : ActionFilterAttribute
     {
         //private readonly IStatisticsService _service;
-  
+
         //public StatisticsFilter(IStatisticsService service)
         //{
         //    _service = service;
@@ -25,7 +26,7 @@ namespace Logic.Statistics.Filters
 
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            var service = new StatisticsService(new UnitOfWorkFactory(), new Logger());
+           var _service = new StatisticsService(new UnitOfWorkFactory(), new Logger());
             base.OnActionExecuted(filterContext);
             if (filterContext.IsChildAction) //if action call was from view like @Html.Action do nothing
                 return;
@@ -36,14 +37,14 @@ namespace Logic.Statistics.Filters
             //string actionName = filterContext.ActionDescriptor.ActionName;
             //var timeStamp = filterContext.HttpContext.Timestamp;
             
-            var siteEntry = new 
+            var siteEntry = new StatisticsInformationModel()
             {
                 IP = filterContext.HttpContext.Request.UserHostAddress,
                 ControllerName = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName,
                 ActionName = filterContext.ActionDescriptor.ActionName,
                 Date = filterContext.HttpContext.Timestamp
             };
-            service.AddEntry(siteEntry);
+            _service.AddEntry(siteEntry);
         }
 
     }

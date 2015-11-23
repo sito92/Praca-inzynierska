@@ -28,6 +28,11 @@ namespace Logic.Common.Models
             ActionName = entity.ActionName;
         }
 
+        public StatisticsInformationModel()
+        {
+            
+        }
+
         public StatisticsInformation ToEntity()
         {
             return new StatisticsInformation()

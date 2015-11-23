@@ -71,6 +71,10 @@
       <HintPath>..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -97,9 +101,6 @@
     <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
@@ -221,6 +222,7 @@
     <Compile Include="Controllers\PickerController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Filters\StatisticsFilter.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1176,6 +1178,7 @@
     <Content Include="Views\Picker\Images.cshtml" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
     <Content Include="Views\Services\Test.cshtml" />
+    <Content Include="Views\Test\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1188,9 +1191,17 @@
       <Project>{537e20b2-92a9-4d7b-9e28-5673a5726839}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{45667f6f-9598-48ae-96bd-01aaa89e90ed}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DIRegister\DIRegister.csproj">
       <Project>{d20c9247-5cbc-40ee-90da-47ec36951ae1}</Project>
       <Name>DIRegister</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{2c569c22-8774-444a-be3a-ba804a524dea}</Project>
+      <Name>Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.Common\Logic.Common.csproj">
       <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DAL.Models;
 using Logic.Common.Models;
+using Modules.RestSharp.JsonReaders;
 
 namespace Logic.Statistics.Helpers
 {
@@ -11,11 +12,11 @@ namespace Logic.Statistics.Helpers
         public static Dictionary<string, int> GetUsersPerCountry(IEnumerable<StatisticsInformation> entities)
         {
             var result = new Dictionary<string, int>();
-            var statisticsEngine = new Modules.Statistics.Services.Statistics();
+ 
 
             foreach (var entity in entities)
             {
-                var country = statisticsEngine.GetCountryPerIpAddress(entity.IP);
+                var country = IpInfoReader.GetIpInfo(entity.IP).country_name;
 
                 if (result.ContainsKey(country))
                     result[country] += 1;
@@ -25,38 +26,35 @@ namespace Logic.Statistics.Helpers
             return result;
         }
 
-        public static Dictionary<DateTime, int> GetUsersBetweenDates(IEnumerable<StatisticsInformation> entities, DateTime from, DateTime to)
+        public static Dictionary<DateTime, int> GetUsersBetweenDates(IEnumerable<StatisticsInformation> entities)
         {
             var result = new Dictionary<DateTime, int>();
 
             foreach (var entity in entities)
             {
-                if (entity.Date >= from && entity.Date <= to)
-                {
-                    if (result.ContainsKey(entity.Date))
-                        result[entity.Date] += 1;
-                    else
-                        result.Add(entity.Date,1);
-                }
+                if (result.ContainsKey(entity.Date))
+                    result[entity.Date] += 1;
+                else
+                    result.Add(entity.Date, 1);
+
             }
             return result;
         }
 
-        public static Dictionary<int, int> GetUsersForSelectedMonth(IEnumerable<StatisticsInformation> entities,int month)
+        public static int GetUsersForSelectedMonth(IEnumerable<StatisticsInformation> entities)
         {
-            var result = new Dictionary<int, int>();
+            var result = 0;
 
             foreach (var entity in entities)
             {
-                if (entity.Date.Month == month)
-                {
-                    if (result.ContainsKey(entity.Date.Month))
-                        result[entity.Date.Month] += 1;
-                    else
-                        result.Add(entity.Date.Month, 1);
-                }
+                
             }
             return result;
+        }
+
+        public static Dictionary<int, int> GetUsersAmountForEveryMonth(IEnumerable<StatisticsInformation> entities)
+        {
+            throw new NotImplementedException();
         }
     }
 }
