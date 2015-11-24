@@ -1,0 +1,69 @@
+﻿@using Modules.Resources
+@using Logic.Common.Models
+<div class="modal-header">
+    <div class="row text-center">
+        <h2 class="text-modal-heading">@Presentation.Add</h2>
+    </div>
+</div>
+<div class="modal-body">
+    <div class="form-group form-field row">
+        <div class="col-md-3">
+            <label class="control-label">@Presentation.Name</label>
+        </div>
+        <div class="col-md-9">
+            <input class="form-control" ng-model="serviceType.Name" />
+        </div>
+    </div>
+    <div class="form-group form-field row">
+        <div class="col-md-3">
+            <label class="control-label">@Presentation.Phases</label>
+        </div>
+        <div class="col-md-9">
+            <div ng-repeat="phase in serviceType.Phases track by $index">
+                <div class="row phase-container">
+                    <input ng-model="phase.Order" type="hidden" value="{{$index}}">
+                    <div class="col-md-3">
+                        <label class="control-label">@Presentation.Phase 1</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row input-container">
+                            <div class="col-md-3">
+                                <label class="control-label">@Presentation.Name</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input class="form-control" ng-model="phase.Name" />
+                            </div>
+                        </div>
+                        <div class="row input-container">
+                            <div class="col-md-3">
+                                <label class="control-label">@Presentation.DurationInMinutes</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input class="form-control" ng-model="phase.DurationInSeconds"/>
+                            </div>
+                        </div>
+                        <div class="row input-container">
+                            <div class="col-md-3">
+                                <label class="control-label">@Presentation.DelayInMinutes</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input class="form-control" ng-model="phase.DelayInSeconds" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="phase-buttons pull-right">
+                    <button class="btn btn-sm btn-default"><span class="glyphicon glyphicon-arrow-up"></span></button>
+                    <button class="btn btn-sm btn-default"><span class="glyphicon glyphicon-arrow-down"></span></button>
+                    <button class="btn btn-sm btn-default" ng-click="remove($index)"><span class="glyphicon glyphicon-remove text-danger"></span></button>
+                    <button class="btn btn-sm btn-default" ng-click="add($index)"><span class="glyphicon glyphicon-plus text-success"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="send()">@Presentation.Add</button>
+    <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
+</div>

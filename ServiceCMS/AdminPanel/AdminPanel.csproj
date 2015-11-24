@@ -210,7 +210,9 @@
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PickerController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\ServiceTypeController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Filters\TestFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -327,6 +329,7 @@
     <Content Include="Scripts\calendar\fullcalendar.js" />
     <Content Include="Scripts\calendar\gcal.js" />
     <Content Include="Scripts\calendar\lang-all.js" />
+    <Content Include="Scripts\Controllers\ServiceTypeController.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\Controllers\InsetController.js" />
     <Content Include="Scripts\Controllers\InsetPartsControllers\ExternalLinkController.js" />
@@ -1165,6 +1168,9 @@
     <Content Include="Views\Picker\Images.cshtml" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
     <Content Include="Views\Services\Test.cshtml" />
+    <Content Include="Views\ServiceType\Index.cshtml" />
+    <Content Include="Views\ServiceType\Menu.cshtml" />
+    <Content Include="Views\ServiceType\Modals\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

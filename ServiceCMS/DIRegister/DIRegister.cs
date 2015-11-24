@@ -44,6 +44,8 @@ namespace DIRegister
             RegisterLogic(builder);
             RegisterModules(builder);
             RegisterJobs(builder);
+
+            
         }
 
         private static void RegisterCore(ContainerBuilder builder)
@@ -73,6 +75,7 @@ namespace DIRegister
             builder.RegisterType<PageService>().As<IPageService>();
             builder.RegisterType<FileService>().As<IFileService>();
             builder.RegisterType<ServicesService>().As<IServicesService>();
+            builder.RegisterType<ServiceTypeService>().As<IServiceTypeService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)

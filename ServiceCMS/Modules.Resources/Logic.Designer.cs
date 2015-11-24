@@ -396,6 +396,60 @@ namespace Modules.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string ServiceTypeModifyFailed {
+            get {
+                return ResourceManager.GetString("ServiceTypeModifyFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ServiceTypeModifySuccess {
+            get {
+                return ResourceManager.GetString("ServiceTypeModifySuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ServiceTypeRemoveFailed {
+            get {
+                return ResourceManager.GetString("ServiceTypeRemoveFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ServiceTypeRemoveSuccess {
+            get {
+                return ResourceManager.GetString("ServiceTypeRemoveSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ServiceTypeSaveFailed {
+            get {
+                return ResourceManager.GetString("ServiceTypeSaveFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ServiceTypeSaveSuccess {
+            get {
+                return ResourceManager.GetString("ServiceTypeSaveSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string UpdateSettingsFailed {
             get {
                 return ResourceManager.GetString("UpdateSettingsFailed", resourceCulture);

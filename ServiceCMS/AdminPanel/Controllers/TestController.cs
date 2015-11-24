@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AdminPanel.Filters;
 using Logic.Inset.Interfaces;
 
 namespace AdminPanel.Controllers
@@ -17,7 +18,7 @@ namespace AdminPanel.Controllers
         }
         //
         // GET: /Test/
-
+        [TestFilter]
         public ActionResult Test()
         {
             string content = @"[externalLink;url=""asfa=sdf""]";

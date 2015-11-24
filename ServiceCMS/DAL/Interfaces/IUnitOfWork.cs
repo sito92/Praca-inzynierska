@@ -19,7 +19,8 @@ namespace DAL.Interfaces
         GenericRepository<Inset> InsetRepository { get; }
         GenericRepository<Page> PageRepository { get; }
         GenericRepository<File> FileRepository { get; }
-        GenericRepository<RegistratedService> RegistratedServiceRepository { get; } 
+        GenericRepository<RegistratedService> RegistratedServiceRepository { get; }
+        GenericRepository<ServiceType> ServiceTypeRepository { get; }
         void Save();
     }
 }

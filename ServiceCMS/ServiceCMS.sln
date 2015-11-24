@@ -54,6 +54,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.File", "Logic.File\Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Service", "Logic.Service\Logic.Service.csproj", "{E7026B9B-377F-48E8-9938-BC6E2660F6C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{66349B5A-B61B-4D3C-8DE9-B6F8CF346A29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,6 +142,10 @@ Global
 		{E7026B9B-377F-48E8-9938-BC6E2660F6C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7026B9B-377F-48E8-9938-BC6E2660F6C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7026B9B-377F-48E8-9938-BC6E2660F6C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66349B5A-B61B-4D3C-8DE9-B6F8CF346A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66349B5A-B61B-4D3C-8DE9-B6F8CF346A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66349B5A-B61B-4D3C-8DE9-B6F8CF346A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66349B5A-B61B-4D3C-8DE9-B6F8CF346A29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,5 +171,6 @@ Global
 		{12A69C8E-3F8A-41D4-BD4C-8B776C46E769} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
 		{6E7DA60F-7779-421A-9AF1-08E456396B62} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
 		{E7026B9B-377F-48E8-9938-BC6E2660F6C9} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
+		{66349B5A-B61B-4D3C-8DE9-B6F8CF346A29} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
 	EndGlobalSection
 EndGlobal

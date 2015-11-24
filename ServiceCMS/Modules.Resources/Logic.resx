@@ -228,6 +228,24 @@
   <data name="SendNewsletterEmailSuccess" xml:space="preserve">
     <value />
   </data>
+  <data name="ServiceTypeModifyFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ServiceTypeModifySuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ServiceTypeRemoveFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ServiceTypeRemoveSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ServiceTypeSaveFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ServiceTypeSaveSuccess" xml:space="preserve">
+    <value />
+  </data>
   <data name="UpdateSettingsFailed" xml:space="preserve">
     <value />
   </data>

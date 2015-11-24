@@ -26,6 +26,7 @@ namespace AdminPanel
             AuthConfig.RegisterAuth();
             var autofac = new AutofacConfig();
             autofac.Configure();
+            
         }
     }
 }

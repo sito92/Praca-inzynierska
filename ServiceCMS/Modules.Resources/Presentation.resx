@@ -129,6 +129,12 @@
   <data name="ChoosePage" xml:space="preserve">
     <value>Choose page</value>
   </data>
+  <data name="DelayInMinutes" xml:space="preserve">
+    <value>Delay in minutes</value>
+  </data>
+  <data name="DurationInMinutes" xml:space="preserve">
+    <value>Duration in minutes</value>
+  </data>
   <data name="InsetType" xml:space="preserve">
     <value>Inset type</value>
   </data>
@@ -165,11 +171,20 @@
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="Phase" xml:space="preserve">
+    <value>Phase</value>
+  </data>
+  <data name="Phases" xml:space="preserve">
+    <value>Phases</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Register</value>
   </data>
   <data name="RememberMe" xml:space="preserve">
     <value>Remember me</value>
+  </data>
+  <data name="ServiceType" xml:space="preserve">
+    <value>Service type</value>
   </data>
   <data name="SignIn" xml:space="preserve">
     <value>Sign in</value>

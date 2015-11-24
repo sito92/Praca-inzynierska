@@ -97,6 +97,24 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delay in minutes.
+        /// </summary>
+        public static string DelayInMinutes {
+            get {
+                return ResourceManager.GetString("DelayInMinutes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duration in minutes.
+        /// </summary>
+        public static string DurationInMinutes {
+            get {
+                return ResourceManager.GetString("DurationInMinutes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inset type.
         /// </summary>
         public static string InsetType {
@@ -205,6 +223,24 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Phase.
+        /// </summary>
+        public static string Phase {
+            get {
+                return ResourceManager.GetString("Phase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phases.
+        /// </summary>
+        public static string Phases {
+            get {
+                return ResourceManager.GetString("Phases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {
@@ -219,6 +255,15 @@ namespace Modules.Resources {
         public static string RememberMe {
             get {
                 return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service type.
+        /// </summary>
+        public static string ServiceType {
+            get {
+                return ResourceManager.GetString("ServiceType", resourceCulture);
             }
         }
         

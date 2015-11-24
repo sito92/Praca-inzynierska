@@ -3,10 +3,11 @@
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-    $scope.timeClick = function( date, jsEvent, view) {
+    $scope.timeClick = function (date, jsEvent, view, resourceObj) {
         console.log(date);
         console.log(jsEvent);
         console.log(view);
+        console.log(resourceObj);
     }
     $scope.changeTo = 'Hungarian';
     /* event source that pulls from google.com */
@@ -102,7 +103,6 @@
     $scope.uiConfig = {
         calendar: {
             allDaySlot:false,
-            defaultView: "agendaDay",
             slotDuration: '00:10:00',
             minTime: '08:00:00',
             maxTime: '18:00:00',           

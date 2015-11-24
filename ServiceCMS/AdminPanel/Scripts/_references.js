@@ -46,3 +46,4 @@
 /// <reference path="calendar/gcal.js" />
 /// <reference path="angular-ui/ui-bootstrap-tpls.min.js" />
 /// <reference path="angular-ui/ui-bootstrap.min.js" />
+/// <reference path="controllers/servicetypecontroller.js" />
