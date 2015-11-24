@@ -86,7 +86,8 @@ namespace AdminPanel
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/serviceType").Include(
-                     "~/Scripts/Controllers/ServiceTypeController.js"
+                     "~/Scripts/Controllers/ServiceTypeController.js",
+                     "~/Scripts/Services/ServiceTypeService.js"
                      ));
             bundles.Add(new ScriptBundle("~/bundles/services").Include(
                    "~/Scripts/Controllers/ServicesController.js"                 

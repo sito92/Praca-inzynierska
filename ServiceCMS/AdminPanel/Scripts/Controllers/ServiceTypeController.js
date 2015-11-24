@@ -35,10 +35,25 @@ app.controller('ServiceTypeAddModalCtrl', function ($scope, $modalInstance) {
 
     };
     $scope.add = function(index) {
-        $scope.serviceType.Phases.push({});
+        $scope.serviceType.Phases.splice(index+1, 0, {});
     }
     $scope.remove = function(index) {
         $scope.serviceType.Phases.splice(index, 1);
+    }
+    $scope.up =function(index) {
+        var element = $scope.serviceType.Phases[index];
+        $scope.serviceType.Phases.splice(index, 1);
+        $scope.serviceType.Phases.splice(index-1, 0, element);
+    }
+    $scope.up = function (index) {
+        var element = $scope.serviceType.Phases[index];
+        $scope.serviceType.Phases.splice(index, 1);
+        $scope.serviceType.Phases.splice(index - 1, 0, element);
+    }
+    $scope.down = function (index) {
+        var element = $scope.serviceType.Phases[index];
+        $scope.serviceType.Phases.splice(index, 1);
+        $scope.serviceType.Phases.splice(index + 1, 0, element);
     }
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');

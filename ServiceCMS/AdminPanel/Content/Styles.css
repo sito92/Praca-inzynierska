@@ -59,16 +59,15 @@
     text-decoration: none; 
 }
 .phase-container {
-    background-color: #32cd32;
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-    margin-bottom: 10px;
-    display: inline-flex;
+    margin-bottom: 30px;
+
 }
 .input-container {
     margin-bottom: 10px;
 }
 .phase-buttons {
-    margin-top: -10px;
+    margin-top: -40px;
 }
