@@ -46,7 +46,7 @@ namespace DAL.Migrations
             SeedPage(context);
             SeedImages(context);
 
-           
+            SeedStatisticsInformation(context);
             SeedServiceTypes(context);
             SeedServicePhrases(context);
             SeedServiceProviders(context);
@@ -177,6 +177,18 @@ namespace DAL.Migrations
                 new ServicePhrase() { Name = "Strzy¿enie", DelayInSeconds = 0, DurationInSeconds = 1200, Order = 2, ServiceTypeId = 1 },
                 new ServicePhrase() { Name = "Modelowanie", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 1 }
                 );
+            context.SaveChanges();
+        }
+
+        public void SeedStatisticsInformation(ServiceCMSContext context)
+        {
+            context.StatisticsInformations.AddOrUpdate(x=> x.IP,
+                new StatisticsInformation(){ActionName = "Index", ControllerName = "News", IP = "168.145.123.100", Date = new DateTime(2015,10,1)},
+                new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "24.232.0.0", Date = new DateTime(2015, 10, 11) },
+                new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "23.91.160.0", Date = new DateTime(2015, 12, 1) },
+                new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "24.232.0.0", Date = new DateTime(2015, 10, 11) },
+                new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "23.91.160.0", Date = new DateTime(2013, 12, 1) },
+                new StatisticsInformation(){ActionName = "Index", ControllerName = "News", IP = "168.145.113.100", Date = new DateTime(2015,11,1)});
             context.SaveChanges();
         }
     }

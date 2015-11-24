@@ -93,6 +93,10 @@
       <Project>{e7026b9b-377f-48e8-9938-bc6e2660f6c9}</Project>
       <Name>Logic.Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logic.Statistics\Logic.Statistics.csproj">
+      <Project>{4ca61fa0-141f-479f-8c0e-0fb4ab07fdeb}</Project>
+      <Name>Logic.Statistics</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic.Users\Logic.Users.csproj">
       <Project>{9f83685c-a7ae-495a-8303-4b3d70290ab1}</Project>
       <Name>Logic.Users</Name>

@@ -52,6 +52,7 @@
     <Compile Include="Models\ServiceProviderModel.cs" />
     <Compile Include="Models\ServiceTypeModel.cs" />
     <Compile Include="Models\SettingsModel.cs" />
+    <Compile Include="Models\StatisticsInformationModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
