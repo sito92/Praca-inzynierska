@@ -53,9 +53,8 @@ namespace DAL.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<ServiceProvider>()
-                .HasMany(x=>x.AvailableServvices)
-                .WithOptional()
-                .WillCascadeOnDelete(false);
+                            .HasMany(x => x.AvailableServices)
+                            .WithMany();
 
             modelBuilder.Entity<RegistratedService>()
                 .HasRequired(x=>x.ServiceProvider)

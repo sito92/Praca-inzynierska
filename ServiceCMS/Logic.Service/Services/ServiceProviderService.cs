@@ -7,6 +7,7 @@ using Common.Responses;
 using DAL.Interfaces;
 using Logging.Interfaces;
 using Logic.Common.Models;
+using Logic.Service.Helpers;
 using Logic.Service.Interfaces;
 
 namespace Logic.Service.Services
@@ -15,11 +16,13 @@ namespace Logic.Service.Services
     {
         private IUnitOfWorkFactory _unitOfWorkFactory;
         private ILogger _logger;
+        private IServiceTypeService _typeService;
 
-        public ServiceProviderService(IUnitOfWorkFactory unitOfWorkFactory, ILogger logger)
+        public ServiceProviderService(IUnitOfWorkFactory unitOfWorkFactory, ILogger logger, IServiceTypeService typeService)
         {
             _unitOfWorkFactory = unitOfWorkFactory;
             _logger = logger;
+            _typeService = typeService;
         }
 
 
@@ -79,12 +82,20 @@ namespace Logic.Service.Services
                         unitOfWork.ServiceProviderRepository.Insert(serviceProvider.ToEntity());
                     }
                     unitOfWork.Save();
-                    response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ServiceProviderSaveSuccess };
+                    response = new ResponseBase()
+                    {
+                        IsSucceed = true,
+                        Message = Modules.Resources.Logic.ServiceProviderSaveSuccess
+                    };
                 }
                 catch (Exception e)
                 {
                     _logger.LogToFile(_logger.CreateErrorMessage(e));
-                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.ServiceProviderSaveFailed };
+                    response = new ResponseBase()
+                    {
+                        IsSucceed = false,
+                        Message = Modules.Resources.Logic.ServiceProviderSaveFailed
+                    };
                 }
                 return response;
             }
@@ -102,12 +113,20 @@ namespace Logic.Service.Services
                         unitOfWork.ServiceProviderRepository.Update(serviceProvider.ToEntity());
                     }
                     unitOfWork.Save();
-                    response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ServiceProviderModifySuccess };
+                    response = new ResponseBase()
+                    {
+                        IsSucceed = true,
+                        Message = Modules.Resources.Logic.ServiceProviderModifySuccess
+                    };
                 }
                 catch (Exception e)
                 {
                     _logger.LogToFile(_logger.CreateErrorMessage(e));
-                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.ServiceProviderModifyFailed };
+                    response = new ResponseBase()
+                    {
+                        IsSucceed = false,
+                        Message = Modules.Resources.Logic.ServiceProviderModifyFailed
+                    };
                 }
             }
             return response;
@@ -122,15 +141,42 @@ namespace Logic.Service.Services
                 {
                     unitOfWork.ServiceProviderRepository.Delete(id);
                     unitOfWork.Save();
-                    response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ServiceProviderRemoveSuccess };
+                    response = new ResponseBase()
+                    {
+                        IsSucceed = true,
+                        Message = Modules.Resources.Logic.ServiceProviderRemoveSuccess
+                    };
                 }
                 catch (Exception e)
                 {
                     _logger.LogToFile(_logger.CreateErrorMessage(e));
-                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.ServiceProviderRemoveFailed };
+                    response = new ResponseBase()
+                    {
+                        IsSucceed = false,
+                        Message = Modules.Resources.Logic.ServiceProviderRemoveFailed
+                    };
                 }
             }
             return response;
+        }
+
+        public IList<ServiceProviderModel> GetAllWithAvailableServices(ServiceTypeModel serviceType)
+        {
+            IList<ServiceProviderModel> serviceProviderModels = new List<ServiceProviderModel>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var collectionOfTypes = unitOfWork.ServiceTypeRepository.Get(x => x.Name == serviceType.Name);
+                   
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return serviceProviderModels;
         }
     }
 }

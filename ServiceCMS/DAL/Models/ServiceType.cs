@@ -11,7 +11,8 @@ namespace DAL.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<ServicePhrase> Phrases { get; set; } 
+        public virtual ICollection<ServiceProvider> ServiceProviders { get; set; }
+        public virtual ICollection<ServicePhrase> Phrases { get; set; } 
 
     }
 }

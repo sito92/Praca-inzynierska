@@ -220,6 +220,7 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PickerController.cs" />
+    <Compile Include="Controllers\ServiceProviderController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\ServiceTypeController.cs" />
     <Compile Include="Controllers\TestController.cs" />

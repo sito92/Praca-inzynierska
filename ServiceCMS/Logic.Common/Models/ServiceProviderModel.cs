@@ -12,7 +12,7 @@ namespace Logic.Common.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public List<ServiceTypeModel> AvailableServvices { get; set; }
+        public List<ServiceTypeModel> AvailableServices { get; set; }
 
         public ServiceProviderModel()
         {
@@ -23,7 +23,7 @@ namespace Logic.Common.Models
         {
             Id = entity.Id;
             Name = entity.Name;
-            AvailableServvices = entity.AvailableServvices == null ? null :entity.AvailableServvices.Select(x => new ServiceTypeModel(x)).ToList();
+            AvailableServices = entity.AvailableServices == null ? null :entity.AvailableServices.Select(x => new ServiceTypeModel(x)).ToList();
         }
 
         public ServiceProvider ToEntity()
@@ -32,8 +32,8 @@ namespace Logic.Common.Models
             {
                 Id = this.Id,
                 Name = this.Name,
-                AvailableServvices =
-                    this.AvailableServvices == null ? null : this.AvailableServvices.Select(x => x.ToEntity()).ToList()
+                AvailableServices =
+                    this.AvailableServices == null ? null : this.AvailableServices.Select(x => x.ToEntity()).ToList()
             };
         }
     }
