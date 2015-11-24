@@ -16,13 +16,15 @@ namespace Logic.Statistics.Interfaces
 
         IList<StatisticsInformationModel> GetAllUsers();
 
-        Dictionary<DateTime, int> GetUsersBetweenDates(DateTime from, DateTime to);
+        Dictionary<DateTime, int> GetUsersBetweenDates(DateTime? from = null, DateTime? to = null);
 
-        int GetUsersForSelectedMonth(int month, int year);
+        Dictionary<DateTime, int> GetUsersForSelectedMonth(int month, int year);
 
-        Dictionary<int, int> GetUsersForEveryMonth(int year);
+        Dictionary<DateTime, int> GetUsersForEveryMonth(int year);
 
         void AddEntry(StatisticsInformationModel userEntry);
+
+        Dictionary<string, int> GetActionsBetweenDates(DateTime? from, DateTime? to);
 
         Dictionary<string, int> GetUsersPerCountry();
     }

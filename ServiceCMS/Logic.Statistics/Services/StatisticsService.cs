@@ -124,15 +124,15 @@ namespace Logic.Statistics.Services
         #endregion
 
         #region BasedOnTime
-        public Dictionary<DateTime, int> GetUsersBetweenDates(DateTime from, DateTime to)
+        public Dictionary<DateTime, int> GetUsersBetweenDates(DateTime? from, DateTime? to)
         {
             var statisticsInformationBetweenDates = new Dictionary<DateTime, int>();
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
-                    var entities = unitOfWork.StatisticInformationRepository.Get(x=>x.Date >= from && x.Date <= to);
-                    statisticsInformationBetweenDates = EntryStatisticsHelper.GetUsersBetweenDates(entities);
+                    var entities = unitOfWork.StatisticInformationRepository.Get(BetweenDatesValidationHelper.BetweenDatesValidation(from,to));
+                    statisticsInformationBetweenDates = EntryStatisticsHelper.GetUsersForStatistics(entities);
                 }
                 catch (Exception e)
                 {
@@ -142,16 +142,17 @@ namespace Logic.Statistics.Services
             return statisticsInformationBetweenDates;
         }
 
-        public int GetUsersForSelectedMonth(int month, int year)
+        public Dictionary<DateTime, int> GetUsersForSelectedMonth(int month, int year)
         {
-            var statisticsInformationForSelectedMonth = 0;
+            var statisticsInformationForSelectedMonth = new Dictionary<DateTime, int>();
+
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
                     var entities = unitOfWork.StatisticInformationRepository.Get(x => x.Date.Month == month &&
                                                                                       x.Date.Year == year);
-                    statisticsInformationForSelectedMonth = EntryStatisticsHelper.GetUsersForSelectedMonth(entities);
+                    statisticsInformationForSelectedMonth = EntryStatisticsHelper.GetUsersForStatistics(entities);
                 }
                 catch (Exception e)
                 {
@@ -162,15 +163,16 @@ namespace Logic.Statistics.Services
         }
 
 
-        public Dictionary<int, int> GetUsersForEveryMonth(int year)
+        public Dictionary<DateTime, int> GetUsersForEveryMonth(int year)
         {
-            var statisticsInformationForEveryMonth = new Dictionary<int, int>();
+            var statisticsInformationForEveryMonth = new Dictionary<DateTime, int>();
+
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
                     var entities = unitOfWork.StatisticInformationRepository.Get(x => x.Date.Year == year);
-                    statisticsInformationForEveryMonth = EntryStatisticsHelper.GetUsersAmountForEveryMonth(entities);
+                    statisticsInformationForEveryMonth = EntryStatisticsHelper.GetUsersForStatistics(entities);
                 }
                 catch (Exception e)
                 {
@@ -180,6 +182,26 @@ namespace Logic.Statistics.Services
             return statisticsInformationForEveryMonth;
         }
 
+        #endregion
+
+        #region BasedOnActions
+        public Dictionary<string, int> GetActionsBetweenDates(DateTime? from, DateTime? to)
+        {
+            var statisticsInformationBetweenDates = new Dictionary<string, int>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.StatisticInformationRepository.Get(BetweenDatesValidationHelper.BetweenDatesValidation(from, to));
+                    statisticsInformationBetweenDates = EntryStatisticsHelper.GetUsersActionsForStatistics(entities);
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return statisticsInformationBetweenDates;
+        }
         #endregion
     }
 }

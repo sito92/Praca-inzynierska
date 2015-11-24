@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\BetweenDatesValidationHelper.cs" />
     <Compile Include="Helpers\DistinctBy.cs" />
     <Compile Include="Helpers\EntryStatisticsHelper.cs" />
     <Compile Include="Interfaces\IStatisticsService.cs" />

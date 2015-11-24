@@ -13,10 +13,11 @@ namespace Logic.Statistics.Helpers
         {
             var result = new Dictionary<string, int>();
  
-
             foreach (var entity in entities)
             {
-                var country = IpInfoReader.GetIpInfo(entity.IP).country_name;
+                string country = "";
+                if(entity.IP != null)
+                    country = IpInfoReader.GetIpInfo(entity.IP).country_name;
 
                 if (result.ContainsKey(country))
                     result[country] += 1;
@@ -26,35 +27,74 @@ namespace Logic.Statistics.Helpers
             return result;
         }
 
-        public static Dictionary<DateTime, int> GetUsersBetweenDates(IEnumerable<StatisticsInformation> entities)
+        //public static Dictionary<DateTime, int> GetUsersBetweenDates(IEnumerable<StatisticsInformation> entities)
+        //{
+        //    var result = new Dictionary<DateTime, int>();
+
+        //    foreach (var entity in entities)
+        //    {
+        //        if (result.ContainsKey(entity.Date.Date))
+        //            result[entity.Date.Date] += 1;
+        //        else
+        //            result.Add(entity.Date.Date, 1);
+        //    }
+        //    return result;
+        //}
+
+        //public static Dictionary<DateTime, int> GetUsersForSelectedMonth(IEnumerable<StatisticsInformation> entities)
+        //{
+        //    var result = new Dictionary<DateTime, int>();
+
+        //    foreach (var entity in entities)
+        //    {
+        //        if (result.ContainsKey(entity.Date.Date))
+        //            result[entity.Date.Date] += 1;
+        //        else
+        //            result.Add(entity.Date.Date, 1);
+        //    }
+        //    return result;
+        //}
+
+        //public static Dictionary<DateTime, int> GetUsersForEveryMonth(IEnumerable<StatisticsInformation> entities)
+        //{
+        //    var result = new Dictionary<DateTime, int>();
+
+        //    foreach (var entity in entities)
+        //    {
+        //        if (result.ContainsKey(entity.Date.Date))
+        //            result[entity.Date.Date] += 1;
+        //        else
+        //            result.Add(entity.Date.Date, 1);
+        //    }
+        //    return result;
+        //}
+
+        public static Dictionary<DateTime, int> GetUsersForStatistics(IEnumerable<StatisticsInformation> entities)
         {
             var result = new Dictionary<DateTime, int>();
 
             foreach (var entity in entities)
             {
-                if (result.ContainsKey(entity.Date))
-                    result[entity.Date] += 1;
+                if (result.ContainsKey(entity.Date.Date))
+                    result[entity.Date.Date] += 1;
                 else
-                    result.Add(entity.Date, 1);
-
+                    result.Add(entity.Date.Date, 1);
             }
             return result;
         }
 
-        public static int GetUsersForSelectedMonth(IEnumerable<StatisticsInformation> entities)
+        public static Dictionary<string, int> GetUsersActionsForStatistics(IEnumerable<StatisticsInformation> entities)
         {
-            var result = 0;
+            var result = new Dictionary<string, int>();
 
             foreach (var entity in entities)
             {
-                
+                if (result.ContainsKey(entity.ControllerName + "/" + entity.ActionName))
+                    result[entity.ControllerName + "/" + entity.ActionName] += 1;
+                else
+                    result.Add(entity.ControllerName + "/" + entity.ActionName, 1);
             }
             return result;
-        }
-
-        public static Dictionary<int, int> GetUsersAmountForEveryMonth(IEnumerable<StatisticsInformation> entities)
-        {
-            throw new NotImplementedException();
         }
     }
 }

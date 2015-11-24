@@ -14,12 +14,17 @@ namespace Modules.RestSharp.JsonReaders
         public static IpInfo GetIpInfo(string ip)
         {
             var restClient = new RestClient(IpInfo.API_ADDRES_FOR_COUNTRY_FROM_IP);
-            
             var request = new RestRequest(ip,Method.GET);
-            
-            var response = JsonConvert.DeserializeObject<IpInfo>(restClient.Execute(request).Content);
 
-            return response;
+            try
+            {
+                var response = JsonConvert.DeserializeObject<IpInfo>(restClient.Execute(request).Content);
+                return response;
+            }
+            catch (Exception)
+            {
+               throw new JsonSerializationException();
+            }
         }
     }
 }
