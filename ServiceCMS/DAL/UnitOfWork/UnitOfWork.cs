@@ -23,6 +23,7 @@ namespace DAL.UnitOfWork
         private GenericRepository<File> fileRepository;
         private GenericRepository<RegistratedService> registretedServiceRepository;
         private GenericRepository<ServiceType> serviceTypeRepository;
+        private GenericRepository<ServiceProvider> serviceProviderRepository;
         private GenericRepository<StatisticsInformation> statisticsInformationRepository; 
 
         public GenericRepository<ServiceType> ServiceTypeRepository
@@ -35,6 +36,18 @@ namespace DAL.UnitOfWork
                     this.serviceTypeRepository = new GenericRepository<ServiceType>(context);
                 }
                 return serviceTypeRepository;
+            }
+        }
+        public GenericRepository<ServiceProvider> ServiceProviderRepository
+        {
+            get
+            {
+
+                if (this.serviceProviderRepository == null)
+                {
+                    this.serviceProviderRepository = new GenericRepository<ServiceProvider>(context);
+                }
+                return serviceProviderRepository;
             }
         }
         public GenericRepository<RegistratedService> RegistratedServiceRepository

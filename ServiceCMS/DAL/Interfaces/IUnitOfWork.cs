@@ -21,7 +21,8 @@ namespace DAL.Interfaces
         GenericRepository<File> FileRepository { get; }
         GenericRepository<RegistratedService> RegistratedServiceRepository { get; }
         GenericRepository<ServiceType> ServiceTypeRepository { get; }
-        GenericRepository<StatisticsInformation> StatisticInformationRepository { get; } 
+        GenericRepository<StatisticsInformation> StatisticInformationRepository { get; }
+        GenericRepository<ServiceProvider> ServiceProviderRepository { get; }
         void Save();
     }
 }
