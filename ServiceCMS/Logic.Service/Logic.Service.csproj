@@ -39,9 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\ServiceProviderHelper.cs" />
+    <Compile Include="Interfaces\IServiceProviderService.cs" />
     <Compile Include="Interfaces\IServicesService.cs" />
     <Compile Include="Interfaces\IServiceTypeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServiceProviderService.cs" />
     <Compile Include="Services\ServicesService.cs" />
     <Compile Include="Services\ServiceTypeService.cs" />
   </ItemGroup>

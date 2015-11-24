@@ -80,6 +80,7 @@ namespace DIRegister
             builder.RegisterType<ServicesService>().As<IServicesService>();
             builder.RegisterType<ServiceTypeService>().As<IServiceTypeService>();
             builder.RegisterType<StatisticsService>().As<IStatisticsService>();
+            builder.RegisterType<ServiceProviderService>().As<IServiceProviderService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)

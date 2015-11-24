@@ -1,4 +1,5 @@
 using System.CodeDom;
+using System.Collections.Generic;
 using System.Net;
 using System.Security;
 using DAL.Models;
@@ -131,8 +132,6 @@ namespace DAL.Migrations
 
         private void SeedServiceTypes(ServiceCMSContext context)
         {
-
-
             context.ServiceTypes.AddOrUpdate(x => x.Name,
                 new ServiceType() { Name = "Strzy¿enie mêskie" },
                 new ServiceType() { Name = "Strzy¿enie damskie" }
@@ -144,10 +143,23 @@ namespace DAL.Migrations
         {
             var sampleServiceTypes = context.ServiceTypes.Where(x => x.Id == 1 || x.Id == 2);
             context.ServiceProviders.AddOrUpdate(x => x.Name,
-                new ServiceProvider() { Name = "Pani Krysia", AvailableServvices = context.ServiceTypes.ToList() },
-                new ServiceProvider() { Name = "Pan Marek", AvailableServvices = sampleServiceTypes.ToList() },
-                new ServiceProvider() { Name = "st. spec. Zenos³aw", AvailableServvices = context.ServiceTypes.ToList() }
+                new ServiceProvider() { Name = "Pani Krysia", AvailableServices = new List<ServiceType>() },
+                new ServiceProvider() { Name = "Pan Marek", AvailableServices = new List<ServiceType>() },
+                new ServiceProvider() { Name = "st. spec. Zenos³aw", AvailableServices = new List<ServiceType>()}
                 );
+
+            //var a = new ServiceProvider() { Name = "Pani Krysia", AvailableServices = new List<ServiceType>() };
+            //var b = new ServiceProvider() { Name = "Pan Marek", AvailableServices = new List<ServiceType>() };
+            //var c = new ServiceProvider() { Name = "st. spec. Zenos³aw", AvailableServices = new List<ServiceType>() };
+
+            //var firstType = new ServiceType() { Name = "Strzy¿enie mêskie" };
+            //var secondType = new ServiceType() { Name = "Strzy¿enie damskie" };
+            //a.AvailableServices.Add(firstType);
+            //a.AvailableServices.Add(secondType);
+            //b.AvailableServices.Add(firstType);
+            //c.AvailableServices.Add(secondType);
+
+            //context.ServiceProviders.AddOrUpdate(x => x.Name, a, b, c);
             context.SaveChanges();
         }
 
