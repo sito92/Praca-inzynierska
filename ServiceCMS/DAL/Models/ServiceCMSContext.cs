@@ -54,7 +54,7 @@ namespace DAL.Models
 
             modelBuilder.Entity<ServiceProvider>()
                             .HasMany(x => x.AvailableServices)
-                            .WithMany();
+                            .WithMany(x=>x.ServiceProviders);
 
             modelBuilder.Entity<RegistratedService>()
                 .HasRequired(x=>x.ServiceProvider)
