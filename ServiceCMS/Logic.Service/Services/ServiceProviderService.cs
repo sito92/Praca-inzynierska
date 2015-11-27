@@ -167,9 +167,20 @@ namespace Logic.Service.Services
             {
                 try
                 {
-                    var collectionOfTypes = unitOfWork.ServiceTypeRepository.Get(x => x.Name == serviceType.Name);
-                   
-                    unitOfWork.Save();
+                    var serviceProviders = unitOfWork.ServiceProviderRepository.Get();
+
+                    foreach (var serviceProvider in serviceProviders)
+                    {
+                        foreach (var availableService  in serviceProvider.AvailableServices)
+                        {
+                            if(availableService.Name == serviceType.Name)
+                                serviceProviderModels.Add(new ServiceProviderModel(serviceProvider));
+                        }
+                    }
+                    //var result =
+                    //    unitOfWork.ServiceProviderRepository.Get()
+                    //        .Where(ServiceProviderHelper.CheckAvailability(serviceType.ToEntity()));
+
                 }
                 catch (Exception e)
                 {

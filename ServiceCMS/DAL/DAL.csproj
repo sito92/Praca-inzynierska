@@ -96,9 +96,9 @@
     <Compile Include="Migrations\201511231337032_Statistics.Designer.cs">
       <DependentUpon>201511231337032_Statistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511241948325_ServiceRelations.cs" />
-    <Compile Include="Migrations\201511241948325_ServiceRelations.Designer.cs">
-      <DependentUpon>201511241948325_ServiceRelations.cs</DependentUpon>
+    <Compile Include="Migrations\201511252011229_ServiceRelations.cs" />
+    <Compile Include="Migrations\201511252011229_ServiceRelations.Designer.cs">
+      <DependentUpon>201511252011229_ServiceRelations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
@@ -164,8 +164,8 @@
     <EmbeddedResource Include="Migrations\201511231337032_Statistics.resx">
       <DependentUpon>201511231337032_Statistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511241948325_ServiceRelations.resx">
-      <DependentUpon>201511241948325_ServiceRelations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511252011229_ServiceRelations.resx">
+      <DependentUpon>201511252011229_ServiceRelations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
