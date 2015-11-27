@@ -117,97 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add" xml:space="preserve">
-    <value>Add</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="ChooseImages" xml:space="preserve">
-    <value>Choose images</value>
-  </data>
-  <data name="ChoosePage" xml:space="preserve">
-    <value>Choose page</value>
-  </data>
-  <data name="DelayInMinutes" xml:space="preserve">
-    <value>Delay in minutes</value>
-  </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="DurationInMinutes" xml:space="preserve">
-    <value>Duration in minutes</value>
-  </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="InsetType" xml:space="preserve">
-    <value>Inset type</value>
-  </data>
-  <data name="Language" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="Login" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="News" xml:space="preserve">
-    <value>News</value>
-  </data>
-  <data name="NewsCategoryDeleteFailed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsCategoryDeleteSuccess" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsCategoryInsertFailed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsCategoryInsertSuccess" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsCategoryUpdateFailed" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NewsCategoryUpdateSuccess" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="Phase" xml:space="preserve">
-    <value>Phase</value>
-  </data>
-  <data name="Phases" xml:space="preserve">
-    <value>Phases</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Register</value>
-  </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Remember me</value>
-  </data>
-  <data name="ServiceType" xml:space="preserve">
-    <value>Service type</value>
-  </data>
-  <data name="SignIn" xml:space="preserve">
-    <value>Sign in</value>
-  </data>
-  <data name="Text" xml:space="preserve">
-    <value>Text</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="Type" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="Url" xml:space="preserve">
-    <value>Url</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>Welcome</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

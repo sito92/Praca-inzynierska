@@ -49,6 +49,7 @@
     <Compile Include="Models\NewsModel.cs" />
     <Compile Include="Models\PageModel.cs" />
     <Compile Include="Models\RegistratedServiceModel.cs" />
+    <Compile Include="Models\ServicePhaseModel.cs" />
     <Compile Include="Models\ServiceProviderModel.cs" />
     <Compile Include="Models\ServiceTypeModel.cs" />
     <Compile Include="Models\SettingsModel.cs" />
