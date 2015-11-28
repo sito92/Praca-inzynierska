@@ -28,7 +28,7 @@ namespace AdminPanel.Controllers
             if (ModelState.IsValid)
             {
                 var response = _popUpService.Insert(model);
-                return Json(new {success = true, data = response});
+                return Json(new {success = true, data = response}, JsonRequestBehavior.AllowGet);
             }
             else
             {
@@ -46,7 +46,7 @@ namespace AdminPanel.Controllers
             if (ModelState.IsValid)
             {
                 var response = _popUpService.Update(model);
-                return Json(new { success = true, data = response });
+                return Json(new { success = true, data = response },JsonRequestBehavior.AllowGet);
             }
             else
             {
