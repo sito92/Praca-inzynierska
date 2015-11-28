@@ -18,7 +18,7 @@ namespace Logic.Service.Interfaces
 
         ResponseBase Update(ServiceProviderModel serviceProvider);
 
-        IList<ServiceProviderModel> GetAllWithAvailableServices(ServiceTypeModel serviceType);
+        IList<ServiceProviderModel> GetAllProvidersWithAvailableServices(ServiceTypeModel serviceType);
 
         ResponseBase Delete(long id);
     }

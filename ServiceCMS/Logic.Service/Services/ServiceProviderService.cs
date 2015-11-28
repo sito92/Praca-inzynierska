@@ -160,7 +160,7 @@ namespace Logic.Service.Services
             return response;
         }
 
-        public IList<ServiceProviderModel> GetAllWithAvailableServices(ServiceTypeModel serviceType)
+        public IList<ServiceProviderModel> GetAllProvidersWithAvailableServices(ServiceTypeModel serviceType)
         {
             IList<ServiceProviderModel> serviceProviderModels = new List<ServiceProviderModel>();
             using (var unitOfWork = _unitOfWorkFactory.Create())
@@ -177,10 +177,6 @@ namespace Logic.Service.Services
                                 serviceProviderModels.Add(new ServiceProviderModel(serviceProvider));
                         }
                     }
-                    //var result =
-                    //    unitOfWork.ServiceProviderRepository.Get()
-                    //        .Where(ServiceProviderHelper.CheckAvailability(serviceType.ToEntity()));
-
                 }
                 catch (Exception e)
                 {

@@ -39,7 +39,7 @@ namespace AdminPanel.Controllers
             //var g3 = _service.GetUsersBetweenDates(null,null);
             //var h = _service.GetActionsBetweenDates(null, null);
             var a = _types.GetById(1);
-            var i = _provider.GetAllWithAvailableServices(a);
+            var i = _provider.GetAllProvidersWithAvailableServices(a);
             return View();
         }
 
