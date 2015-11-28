@@ -15,7 +15,7 @@ namespace AdminPanel.Controllers
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
             string cultureName = null;
-          
+
             HttpCookie cultureCookie = Request.Cookies["_culture"];
             if (cultureCookie != null)
                 cultureName = cultureCookie.Value;
@@ -23,14 +23,20 @@ namespace AdminPanel.Controllers
                 cultureName = Request.UserLanguages != null && Request.UserLanguages.Length > 0 ?
                         Request.UserLanguages[0] :  // obtain it from HTTP header AcceptLanguages
                         null;
-          
-            cultureName = CultureHelper.GetImplementedCulture(cultureName); 
 
-                    
+            cultureName = CultureHelper.GetImplementedCulture(cultureName);
+
+
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
             return base.BeginExecuteCore(callback, state);
+        }
+
+        protected List<ModelError> GetModelErrors()
+        {
+            var allErrors = ModelState.Values.SelectMany(v => v.Errors).ToList();
+            return allErrors;
         }
 
     }

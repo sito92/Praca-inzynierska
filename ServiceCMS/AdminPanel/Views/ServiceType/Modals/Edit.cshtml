@@ -2,7 +2,7 @@
 @using Logic.Common.Models
 <div class="modal-header">
     <div class="row text-center">
-        <h2 class="text-modal-heading">@Presentation.Add</h2>
+        <h2 class="text-modal-heading">@Presentation.Edit</h2>
     </div>
 </div>
 <div class="modal-body">
@@ -47,7 +47,7 @@
                                     <label class="control-label">@Presentation.Name</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input dnd-nodrag class="form-control" ng-model="phase.Name"/>
+                                    <input dnd-nodrag class="form-control" ng-model="phase.Name" />
                                 </div>
                             </div>
                             <div class="row input-container">
@@ -55,7 +55,7 @@
                                     <label class="control-label">@Presentation.DurationInMinutes</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input dnd-nodrag class="form-control" ng-model="phase.DurationInSeconds"/>
+                                    <input dnd-nodrag class="form-control" ng-model="phase.DurationInSeconds" />
                                 </div>
                             </div>
                             <div class="row input-container">
@@ -63,7 +63,7 @@
                                     <label class="control-label">@Presentation.DelayInMinutes</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input dnd-nodrag class="form-control" ng-model="phase.DelayInSeconds"/>
+                                    <input dnd-nodrag class="form-control" ng-model="phase.DelayInSeconds" />
                                 </div>
                             </div>
                         </div>
@@ -79,6 +79,6 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="send()">@Presentation.Add</button>
+    <button class="btn btn-primary" ng-click="save()">@Presentation.Edit</button>
     <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
 </div>

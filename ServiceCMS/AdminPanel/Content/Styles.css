@@ -58,16 +58,42 @@
     background: transparent;
     text-decoration: none; 
 }
-.phase-container {
+.phases-container {
+       margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 40px;
+}
+.phases-container .phase-container {
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    background-color: #CAE0FC;
+    padding: 10px 15px;
+ 
 
+}
+.phase-container .handle {
+    float: left;
+    cursor: move;
+    margin-left: -20px;
+    margin-right: 10px;
+}
+[dnd-list] .dndPlaceholder {
+    display: block;
+    background-color: #000000;
+    min-height: 3px;
+    margin-bottom: 20px;
 }
 .input-container {
     margin-bottom: 10px;
 }
 .phase-buttons {
-    margin-top: -40px;
+}
+
+.table-hover tbody tr {
+    cursor: pointer;
+}
+.table-hover tbody tr.selectable.selected {
+    background-color: #3cb371;
 }

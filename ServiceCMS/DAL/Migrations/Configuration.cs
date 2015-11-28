@@ -178,17 +178,17 @@ namespace DAL.Migrations
 
         private void SeedServicePhrases(ServiceCMSContext context)
         {
-            context.Phrases.AddOrUpdate(x => x.Name,
+            context.Phases.AddOrUpdate(x => x.Name,
                 // Strzy¿enie damskie
-                new ServicePhrase() { Name = "Diagnoza", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 2},
-                new ServicePhrase() { Name = "Strzy¿enie", DelayInSeconds = 0, DurationInSeconds = 1800, Order = 3, ServiceTypeId = 2 },
-                new ServicePhrase() { Name = "Modelowanie", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 2 },
-                new ServicePhrase() { Name = "Farbowanie", DelayInSeconds = 1800, DurationInSeconds = 900, Order = 2, ServiceTypeId = 2 },
+                new ServicePhase() { Name = "Diagnoza", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 2},
+                new ServicePhase() { Name = "Strzy¿enie", DelayInSeconds = 0, DurationInSeconds = 1800, Order = 3, ServiceTypeId = 2 },
+                new ServicePhase() { Name = "Modelowanie", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 2 },
+                new ServicePhase() { Name = "Farbowanie", DelayInSeconds = 1800, DurationInSeconds = 900, Order = 2, ServiceTypeId = 2 },
 
                  // Strzy¿enie mêskie
-                new ServicePhrase() { Name = "Diagnoza", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 1},
-                new ServicePhrase() { Name = "Strzy¿enie", DelayInSeconds = 0, DurationInSeconds = 1200, Order = 2, ServiceTypeId = 1 },
-                new ServicePhrase() { Name = "Modelowanie", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 1 }
+                new ServicePhase() { Name = "Diagnoza", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 1},
+                new ServicePhase() { Name = "Strzy¿enie", DelayInSeconds = 0, DurationInSeconds = 1200, Order = 2, ServiceTypeId = 1 },
+                new ServicePhase() { Name = "Modelowanie", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 1 }
                 );
             context.SaveChanges();
         }

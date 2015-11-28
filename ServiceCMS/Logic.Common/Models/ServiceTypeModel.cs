@@ -12,7 +12,7 @@ namespace Logic.Common.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<ServicePhrase> Phrases { get; set; } 
+        public ICollection<ServicePhaseModel> Phases { get; set; } 
 
         public ServiceTypeModel()
         {
@@ -23,7 +23,7 @@ namespace Logic.Common.Models
         {
             Id = entity.Id;
             Name = entity.Name;
-            Phrases = entity.Phrases;
+            Phases = entity.Phases.Select(x=>new ServicePhaseModel(x)).OrderBy(x=>x.Order).ToList();
         }
 
         public ServiceType ToEntity()
@@ -32,7 +32,7 @@ namespace Logic.Common.Models
             {
                 Id = this.Id,
                 Name = this.Name,
-                Phrases = this.Phrases
+                Phases = this.Phases.Select(x => x.ToEntity()).OrderBy(x => x.Order).ToList()
             };
         }
     }
