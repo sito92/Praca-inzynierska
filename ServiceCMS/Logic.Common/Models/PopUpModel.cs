@@ -15,11 +15,14 @@ namespace Logic.Common.Models
 
         public string Title { get; set; }
 
+        public bool Active { get; set; }
+
         public PopUpModel(PopUp popUp)
         {
             Id = popUp.Id;
             Content = popUp.Content;
             Title = popUp.Title;
+            Active = popUp.Active;
         }
 
         public PopUp ToEntity()
@@ -28,7 +31,8 @@ namespace Logic.Common.Models
             {
                 Id = this.Id,
                 Content=this.Content,
-                Title = this.Title
+                Title = this.Title,
+                Active = this.Active
             };
         }
     }

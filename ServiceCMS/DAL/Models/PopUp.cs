@@ -14,6 +14,8 @@ namespace DAL.Models
 
         public string Content { get; set; }
 
+        public bool Active { get; set; }
+
         //public File Image { get; set; }
     }
 }

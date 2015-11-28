@@ -27,6 +27,8 @@ using Logic.Newsletter.Interfaces;
 using Logic.Newsletter.Services;
 using Logic.Page.Interfaces;
 using Logic.Page.Services;
+using Logic.PopUp.Interfaces;
+using Logic.PopUp.Services;
 using Logic.Service.Interfaces;
 using Logic.Service.Services;
 using Logic.Statistics.Interfaces;
@@ -81,6 +83,7 @@ namespace DIRegister
             builder.RegisterType<ServiceTypeService>().As<IServiceTypeService>();
             builder.RegisterType<StatisticsService>().As<IStatisticsService>();
             builder.RegisterType<ServiceProviderService>().As<IServiceProviderService>();
+            builder.RegisterType<PopUpService>().As<IPopUpService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)

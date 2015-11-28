@@ -219,6 +219,7 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PickerController.cs" />
+    <Compile Include="Controllers\PopUpController.cs" />
     <Compile Include="Controllers\ServiceProviderController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\ServiceTypeController.cs" />
@@ -1228,6 +1229,10 @@
     <ProjectReference Include="..\Logic.Page\Logic.Page.csproj">
       <Project>{12a69c8e-3f8a-41d4-bd4c-8b776c46e769}</Project>
       <Name>Logic.Page</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.PopUp\Logic.PopUp.csproj">
+      <Project>{fb25d56e-5432-49dc-b5bf-1eced729625f}</Project>
+      <Name>Logic.PopUp</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.Service\Logic.Service.csproj">
       <Project>{e7026b9b-377f-48e8-9938-bc6e2660f6c9}</Project>
