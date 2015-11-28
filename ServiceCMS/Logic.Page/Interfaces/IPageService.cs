@@ -19,5 +19,7 @@ namespace Logic.Page.Interfaces
         ResponseBase Update(PageModel page);
 
         ResponseBase Delete(long id);
+
+        //ResponseBase Restore(PageModel page);
     }
 }

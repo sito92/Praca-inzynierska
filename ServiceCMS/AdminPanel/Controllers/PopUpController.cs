@@ -36,6 +36,7 @@ namespace AdminPanel.Controllers
             }
         }
 
+        [HttpPost]
         public ActionResult Update(PopUpModel model)
         {
             if (ModelState.IsValid)
