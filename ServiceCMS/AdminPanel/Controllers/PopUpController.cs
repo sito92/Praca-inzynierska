@@ -17,7 +17,7 @@ namespace AdminPanel.Controllers
             _popUpService = popUpService;
         }
 
-        public ViewResult Add()
+        public ViewResult Index()
         {
             return View();
         }
@@ -34,11 +34,6 @@ namespace AdminPanel.Controllers
             {
                 return Json(new {success = false});
             }
-        }
-
-        public ViewResult Update()
-        {
-            return View();
         }
 
         public ActionResult Update(PopUpModel model)
