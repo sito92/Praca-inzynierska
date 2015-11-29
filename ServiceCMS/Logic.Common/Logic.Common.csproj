@@ -44,6 +44,7 @@
     <Compile Include="Models\FileModel.cs" />
     <Compile Include="Models\InsetArgumentModel.cs" />
     <Compile Include="Models\InsetModel.cs" />
+    <Compile Include="Models\MenuButtonModel.cs" />
     <Compile Include="Models\NewsCategoryModel.cs" />
     <Compile Include="Models\NewsletterReceiverModel.cs" />
     <Compile Include="Models\NewsModel.cs" />

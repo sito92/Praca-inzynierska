@@ -109,6 +109,7 @@
     <Compile Include="Models\ForumThread.cs" />
     <Compile Include="Models\Inset.cs" />
     <Compile Include="Models\InsetArgument.cs" />
+    <Compile Include="Models\MenuButton.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\NewsCategory.cs" />
     <Compile Include="Models\NewsletterReceiver.cs" />
