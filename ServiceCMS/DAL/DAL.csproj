@@ -104,6 +104,14 @@
     <Compile Include="Migrations\201511271530434_ServicePhaseNameFix.Designer.cs">
       <DependentUpon>201511271530434_ServicePhaseNameFix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511301151517_MenuButton.cs" />
+    <Compile Include="Migrations\201511301151517_MenuButton.Designer.cs">
+      <DependentUpon>201511301151517_MenuButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511301435049_RelationsServiceTypesAndMenuButtons.cs" />
+    <Compile Include="Migrations\201511301435049_RelationsServiceTypesAndMenuButtons.Designer.cs">
+      <DependentUpon>201511301435049_RelationsServiceTypesAndMenuButtons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -174,6 +182,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511271530434_ServicePhaseNameFix.resx">
       <DependentUpon>201511271530434_ServicePhaseNameFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511301151517_MenuButton.resx">
+      <DependentUpon>201511301151517_MenuButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511301435049_RelationsServiceTypesAndMenuButtons.resx">
+      <DependentUpon>201511301435049_RelationsServiceTypesAndMenuButtons.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

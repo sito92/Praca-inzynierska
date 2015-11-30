@@ -67,6 +67,17 @@ namespace DAL.Models
                 .WithMany()
                 .WillCascadeOnDelete(true);
 
+            modelBuilder.Entity<ServiceType>()
+                .HasMany(x => x.Phases)
+                .WithRequired(x => x.ServiceType)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<MenuButton>()
+                .HasMany(x => x.Children)
+                .WithOptional(x => x.Parent)
+                .HasForeignKey(x=>x.ParentId)
+                .WillCascadeOnDelete(false);
+
             base.OnModelCreating(modelBuilder);
         }
     }

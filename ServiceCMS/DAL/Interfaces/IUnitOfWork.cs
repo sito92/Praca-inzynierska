@@ -24,7 +24,8 @@ namespace DAL.Interfaces
         GenericRepository<StatisticsInformation> StatisticInformationRepository { get; }
         GenericRepository<ServiceProvider> ServiceProviderRepository { get; }
         GenericRepository<PopUp> PopUpRepository { get;}
-        GenericRepository<MenuButton> MenuButtonRepository { get; } 
+        GenericRepository<MenuButton> MenuButtonRepository { get; }
+        GenericRepository<ServicePhase> ServicePhaseRepository { get; } 
         void Save();
     }
 }
