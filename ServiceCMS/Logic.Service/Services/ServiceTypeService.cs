@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common.Responses;
 using DAL.Interfaces;
+using DAL.Migrations;
 using DAL.Models;
 using Logging.Interfaces;
 using Logic.Common.Models;
@@ -99,7 +100,9 @@ namespace Logic.Service.Services
                     if (serviceType != null)
                     {
                         unitOfWork.ServiceTypeRepository.Update(serviceType.ToEntity());
-                        UpdateServicePhases(serviceType.Phases,unitOfWork);
+                        UpdateServicePhases(serviceType.Phases.Where(x => x.ServiceTypeId != 0).ToList(), unitOfWork);
+                        AddServicePhases(serviceType.Phases.Where(x=>x.ServiceTypeId==0).ToList(),unitOfWork,serviceType.Id);
+                        DeleteServicePhases(serviceType,unitOfWork);
                     }
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ServiceTypeModifySuccess };
@@ -120,7 +123,28 @@ namespace Logic.Service.Services
                   unitOfWork.ServicePhaseRepository.Update(phase.ToEntity());                 
             }
         }
+        private void AddServicePhases(ICollection<ServicePhaseModel> collection, IUnitOfWork unitOfWork,int serviceTypeId)
+        {
+            foreach (var phase in collection)
+            {
+                phase.ServiceTypeId = serviceTypeId;
+                unitOfWork.ServicePhaseRepository.Insert(phase.ToEntity());
+            }
+        }
 
+        private void DeleteServicePhases(ServiceTypeModel serviceType, IUnitOfWork unitOfWork)
+        {
+            var oldIds = serviceType.Phases.Select(y => y.Id);
+            var actualIds = unitOfWork.ServicePhaseRepository.Get(x => x.ServiceTypeId == serviceType.Id).Select(x=>x.Id);
+            var idsToDelete = actualIds.Where(x => !oldIds.Contains(x));
+            var phasesToDelete =
+                unitOfWork.ServicePhaseRepository.Get(x => idsToDelete.Contains(x.Id));
+
+            foreach (var phase in phasesToDelete)
+            {
+                unitOfWork.ServicePhaseRepository.Delete(phase);
+            }
+        }
         public ResponseBase Delete(long id)
         {
             ResponseBase response;

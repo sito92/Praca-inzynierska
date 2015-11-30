@@ -3,6 +3,7 @@
         ServiceTypeService.getAll().then(function (jsonResult) {
             if (jsonResult.success) {
                 $scope.serviceTypes = jsonResult.data;
+
             } else {
                 alert(jsonResult.message);
             }
@@ -23,7 +24,8 @@
             refresh();
         });
     };
-    $scope.edit = function (type) {
+    $scope.edit = function (index) {
+        var type = $scope.serviceTypes[index];
         var modalInstance = $modal.open({
             animation: true,
             templateUrl: '/ServiceType/GetModal?name=Edit',

@@ -13,7 +13,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="type in serviceTypes" ng-click="select(type)" ng-class="{'selected':selectedType.Id==type.Id}" class="selectable">
+                    <tr ng-repeat="type in serviceTypes track by type.Id" ng-click="select($index)" ng-class="{'selected':selectedType.Id==type.Id}" class="selectable">
                         <td ng-bind="type.Name"></td>
                     </tr>
                 </tbody>
