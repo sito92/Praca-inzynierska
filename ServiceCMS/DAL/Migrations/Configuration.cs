@@ -25,6 +25,7 @@ namespace DAL.Migrations
 
         protected override void Seed(DAL.Models.ServiceCMSContext context)
         {
+            SeedMenuButtons(context);
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
@@ -49,7 +50,8 @@ namespace DAL.Migrations
 
             SeedStatisticsInformation(context);
             SeedServiceTypes(context);
-            
+
+
             SeedServiceProviders(context);
             SeedServicePhrases(context);
             SeedRegistratedServices(context);
@@ -70,6 +72,17 @@ namespace DAL.Migrations
             //context.Settings.AddOrUpdate(x => x.EmailAddress,
             //    new Settings(){EmailAddress = "servicecmsthesis@gmail.com", EmailPassword = new NetworkCredential("cos", "arturikamil").SecurePassword});
             //context.SaveChanges();
+        }
+
+        private void SeedMenuButtons(ServiceCMSContext context)
+        {
+            context.MenuButtons.AddOrUpdate(x => x.Content,new Models.MenuButton(){Content = "rodzic"});
+            context.SaveChanges();
+
+            context.MenuButtons.AddOrUpdate(x => x.Content,
+                new Models.MenuButton(){Content = "dziecko1", ParentId = 1},
+                new Models.MenuButton(){Content = "dziecko2", ParentId = 1});
+            context.SaveChanges();
         }
 
         private void SeedNewsCategories(ServiceCMSContext context)
