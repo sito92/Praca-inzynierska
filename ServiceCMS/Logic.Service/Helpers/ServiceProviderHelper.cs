@@ -12,7 +12,7 @@ namespace Logic.Service.Helpers
 {
     public static class ServiceProviderHelper
     {
-        public static Expression<Func<ServiceProvider, bool>> CheckAvailability(ServiceType model)
+        public static Func<ServiceProvider, bool> CheckAvailability(ServiceType model)
         {
             return x => x.AvailableServices.Contains(model);
         }

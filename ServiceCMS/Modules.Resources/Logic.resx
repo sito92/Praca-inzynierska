@@ -180,6 +180,18 @@
   <data name="NewsletterReceiverInsertSuccess" xml:space="preserve">
     <value />
   </data>
+  <data name="PopUpInsertFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PopUpInsertSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PopUpModifyFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PopUpModifySuccess" xml:space="preserve">
+    <value />
+  </data>
   <data name="RemoveNewsFailed" xml:space="preserve">
     <value>Remove news failed.</value>
   </data>

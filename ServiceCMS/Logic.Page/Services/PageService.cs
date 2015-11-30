@@ -75,6 +75,7 @@ namespace Logic.Page.Services
                     
                     if (page != null)
                     {
+                        //page.CreationTimeStamp = DateTime.Now;
                         unitOfWork.PageRepository.Insert(page.ToEntitiy());
                     }
                     unitOfWork.Save();
@@ -96,9 +97,10 @@ namespace Logic.Page.Services
             {
                 try
                 {
-
                     if (page != null)
                     {
+                        //page.LastModifiedTimeStamp = DateTime.Now;
+                        //page.ParentPage = page.ToEntitiy();
                         unitOfWork.PageRepository.Update(page.ToEntitiy());
                     }
                     unitOfWork.Save();

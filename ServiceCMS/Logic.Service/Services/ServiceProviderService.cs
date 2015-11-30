@@ -160,16 +160,23 @@ namespace Logic.Service.Services
             return response;
         }
 
-        public IList<ServiceProviderModel> GetAllWithAvailableServices(ServiceTypeModel serviceType)
+        public IList<ServiceProviderModel> GetAllProvidersWithAvailableServices(ServiceTypeModel serviceType)
         {
             IList<ServiceProviderModel> serviceProviderModels = new List<ServiceProviderModel>();
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
-                    var collectionOfTypes = unitOfWork.ServiceTypeRepository.Get(x => x.Name == serviceType.Name);
-                   
-                    unitOfWork.Save();
+                    var serviceProviders = unitOfWork.ServiceProviderRepository.Get();
+
+                    foreach (var serviceProvider in serviceProviders)
+                    {
+                        foreach (var availableService  in serviceProvider.AvailableServices)
+                        {
+                            if(availableService.Name == serviceType.Name)
+                                serviceProviderModels.Add(new ServiceProviderModel(serviceProvider));
+                        }
+                    }
                 }
                 catch (Exception e)
                 {

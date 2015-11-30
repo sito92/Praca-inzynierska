@@ -250,6 +250,42 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string PopUpInsertFailed {
+            get {
+                return ResourceManager.GetString("PopUpInsertFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string PopUpInsertSuccess {
+            get {
+                return ResourceManager.GetString("PopUpInsertSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string PopUpModifyFailed {
+            get {
+                return ResourceManager.GetString("PopUpModifyFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string PopUpModifySuccess {
+            get {
+                return ResourceManager.GetString("PopUpModifySuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove news failed..
         /// </summary>
         public static string RemoveNewsFailed {

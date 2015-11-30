@@ -96,9 +96,9 @@
     <Compile Include="Migrations\201511231337032_Statistics.Designer.cs">
       <DependentUpon>201511231337032_Statistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511242031239_ServiceRelations.cs" />
-    <Compile Include="Migrations\201511242031239_ServiceRelations.Designer.cs">
-      <DependentUpon>201511242031239_ServiceRelations.cs</DependentUpon>
+    <Compile Include="Migrations\201511252011229_ServiceRelations.cs" />
+    <Compile Include="Migrations\201511252011229_ServiceRelations.Designer.cs">
+      <DependentUpon>201511252011229_ServiceRelations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201511271530434_ServicePhaseNameFix.cs" />
     <Compile Include="Migrations\201511271530434_ServicePhaseNameFix.Designer.cs">
@@ -113,6 +113,7 @@
     <Compile Include="Models\ForumThread.cs" />
     <Compile Include="Models\Inset.cs" />
     <Compile Include="Models\InsetArgument.cs" />
+    <Compile Include="Models\MenuButton.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\NewsCategory.cs" />
     <Compile Include="Models\NewsletterReceiver.cs" />
@@ -168,8 +169,8 @@
     <EmbeddedResource Include="Migrations\201511231337032_Statistics.resx">
       <DependentUpon>201511231337032_Statistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511242031239_ServiceRelations.resx">
-      <DependentUpon>201511242031239_ServiceRelations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511252011229_ServiceRelations.resx">
+      <DependentUpon>201511252011229_ServiceRelations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511271530434_ServicePhaseNameFix.resx">
       <DependentUpon>201511271530434_ServicePhaseNameFix.cs</DependentUpon>

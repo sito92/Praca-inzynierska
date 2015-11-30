@@ -24,7 +24,9 @@ namespace DAL.UnitOfWork
         private GenericRepository<RegistratedService> registretedServiceRepository;
         private GenericRepository<ServiceType> serviceTypeRepository;
         private GenericRepository<ServiceProvider> serviceProviderRepository;
-        private GenericRepository<StatisticsInformation> statisticsInformationRepository; 
+        private GenericRepository<StatisticsInformation> statisticsInformationRepository;
+        private GenericRepository<PopUp> popUpRepository;
+        private GenericRepository<MenuButton> menuButtonRepository; 
 
         public GenericRepository<ServiceType> ServiceTypeRepository
         {
@@ -50,6 +52,32 @@ namespace DAL.UnitOfWork
                 return serviceProviderRepository;
             }
         }
+
+        public GenericRepository<PopUp> PopUpRepository
+        {
+            get
+            {
+
+                if (this.popUpRepository == null)
+                {
+                    this.popUpRepository = new GenericRepository<PopUp>(context);
+                }
+                return popUpRepository;
+            }
+        }
+
+        public GenericRepository<MenuButton> MenuButtonRepository
+        {
+            get
+            {
+                if (this.menuButtonRepository == null)
+                {
+                    this.menuButtonRepository = new GenericRepository<MenuButton>(context);
+                }
+                return menuButtonRepository;
+            }
+        }
+
         public GenericRepository<RegistratedService> RegistratedServiceRepository
         {
             get

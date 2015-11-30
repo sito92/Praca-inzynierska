@@ -79,7 +79,7 @@ namespace AdminPanel.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = _serviceProviderService.GetAllWithAvailableServices(serviceType);
+                var result = _serviceProviderService.GetAllProvidersWithAvailableServices(serviceType);
                 return Json(new { success = true, data = result}, JsonRequestBehavior.AllowGet);
             }
             else

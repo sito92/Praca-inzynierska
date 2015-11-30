@@ -10,7 +10,10 @@ namespace DAL.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
-        //TODO do uzupełnienia 
+        public string Content { get; set; }
+        public IEnumerable<File> Media { get; set; }
+        public DateTime CreationTimeStamp { get; set; }
+        public DateTime LastModifiedTimeStamp { get; set; }
+        public virtual Page ParentPage { get; set; }
     }
 }
