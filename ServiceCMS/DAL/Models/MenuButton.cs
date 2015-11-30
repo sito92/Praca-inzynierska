@@ -11,7 +11,7 @@ namespace DAL.Models
         public int Id { get; set; }
 
         public string Content { get; set; }
-
+        public int? ParentId { get; set; }
         public virtual MenuButton Parent { get; set; }
 
         public virtual ICollection<MenuButton> Children { get; set; }
