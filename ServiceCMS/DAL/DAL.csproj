@@ -100,6 +100,10 @@
     <Compile Include="Migrations\201511252011229_ServiceRelations.Designer.cs">
       <DependentUpon>201511252011229_ServiceRelations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511271530434_ServicePhaseNameFix.cs" />
+    <Compile Include="Migrations\201511271530434_ServicePhaseNameFix.Designer.cs">
+      <DependentUpon>201511271530434_ServicePhaseNameFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -167,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511252011229_ServiceRelations.resx">
       <DependentUpon>201511252011229_ServiceRelations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511271530434_ServicePhaseNameFix.resx">
+      <DependentUpon>201511271530434_ServicePhaseNameFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

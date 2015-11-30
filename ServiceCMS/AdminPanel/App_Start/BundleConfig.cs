@@ -44,13 +44,13 @@ namespace AdminPanel
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(               
-                 "~/Content/Styles.css",
+            bundles.Add(new StyleBundle("~/Content/css").Include(                         
                 "~/Content/bootstrap.css",
                  "~/Content/bootstrap-theme.css",
                  "~/Content/simple-sidebar.css",
                  "~/Content/fullcalendar.css",
-                 "~/Content/calendarDemo.css"
+                 "~/Content/calendarDemo.css",
+                  "~/Content/Styles.css"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -92,6 +92,9 @@ namespace AdminPanel
             bundles.Add(new ScriptBundle("~/bundles/services").Include(
                    "~/Scripts/Controllers/ServicesController.js"                 
                    ));
+            bundles.Add(new ScriptBundle("~/bundles/angular-drag-and-drop").Include(
+                    "~/Scripts/angular-drag-and-drop-lists.js"
+                    ));
 
 
         }

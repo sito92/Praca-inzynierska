@@ -7,13 +7,13 @@ namespace DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ServiceRelations : IMigrationMetadata
+    public sealed partial class ServicePhaseNameFix : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ServiceRelations));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ServicePhaseNameFix));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511242031239_ServiceRelations"; }
+            get { return "201511271530434_ServicePhaseNameFix"; }
         }
         
         string IMigrationMetadata.Source

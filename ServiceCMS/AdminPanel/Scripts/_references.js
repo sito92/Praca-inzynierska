@@ -47,3 +47,5 @@
 /// <reference path="angular-ui/ui-bootstrap-tpls.min.js" />
 /// <reference path="angular-ui/ui-bootstrap.min.js" />
 /// <reference path="controllers/servicetypecontroller.js" />
+/// <reference path="services/servicetypeservice.js" />
+/// <reference path="angular-drag-and-drop-lists.js" />
