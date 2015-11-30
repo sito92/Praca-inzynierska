@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common.Responses;
 using DAL.Interfaces;
+using DAL.Models;
 using Logging.Interfaces;
 using Logic.Common.Models;
 using Logic.Service.Interfaces;
@@ -98,6 +99,7 @@ namespace Logic.Service.Services
                     if (serviceType != null)
                     {
                         unitOfWork.ServiceTypeRepository.Update(serviceType.ToEntity());
+                        UpdateServicePhases(serviceType.Phases);
                     }
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ServiceTypeModifySuccess };
@@ -109,6 +111,21 @@ namespace Logic.Service.Services
                 }
             }
             return response;
+        }
+
+        private void UpdateServicePhases(ICollection<ServicePhaseModel> collection)
+        {
+            foreach (var phase in collection)
+            {
+                using (var unitOfWork = _unitOfWorkFactory.Create())
+                {
+                    var currentPhase = unitOfWork.ServicePhaseRepository.Get(x => x.Id == phase.Id).FirstOrDefault();
+                    if(currentPhase != null)
+                        currentPhase.Order = phase.Order;
+
+                    unitOfWork.Save();
+                }
+            }
         }
 
         public ResponseBase Delete(long id)
