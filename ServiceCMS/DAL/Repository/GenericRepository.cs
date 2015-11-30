@@ -75,8 +75,26 @@ namespace DAL.Repository
 
         public virtual void Update(TEntity entityToUpdate)
         {
-            dbSet.Attach(entityToUpdate);           
-            context.Entry(entityToUpdate).State = EntityState.Modified;
+            //dbSet.Attach(entityToUpdate);           
+            //context.Entry(entityToUpdate).State = EntityState.Modified;
+
+            var entry = context.Entry<TEntity>(entityToUpdate);
+            var pkey = dbSet.Create().GetType().GetProperty("Id").GetValue(entityToUpdate);
+
+            if (entry.State == EntityState.Detached)
+            {
+                var set = context.Set<TEntity>();
+                TEntity attachedEntity = set.Find(pkey);
+                if (attachedEntity != null)
+                {
+                    var attachedEntry = context.Entry(attachedEntity);
+                    attachedEntry.CurrentValues.SetValues(entityToUpdate);
+                }
+                else
+                {
+                    entry.State = EntityState.Modified; // attach the entity
+                }
+            }
         }
     }
 }
