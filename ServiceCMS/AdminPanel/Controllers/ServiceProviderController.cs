@@ -34,7 +34,7 @@ namespace AdminPanel.Controllers
                 return Json(new { success = false}, JsonRequestBehavior.AllowGet);
         }
 
-        public ViewResult Add()
+        public ViewResult Index()
         {
             return View();
         }
@@ -52,11 +52,6 @@ namespace AdminPanel.Controllers
 
         }
 
-        public ViewResult Edit()
-        {
-            return View();
-        }
-
         [HttpPost]
         public ActionResult Edit(ServiceProviderModel model)
         {
@@ -67,11 +62,6 @@ namespace AdminPanel.Controllers
             }
             else
                 return Json(new { success = false}, JsonRequestBehavior.AllowGet);
-        }
-
-        public ViewResult GetAllServiceProvidersWithAvailableServices()
-        {
-            return View();
         }
 
         [HttpPost]
