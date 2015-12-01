@@ -11,9 +11,9 @@ using Logic.Page.Interfaces;
 
 namespace Logic.Page.Services
 {
-    public class PageService:IPageService
+    public class PageService : IPageService
     {
-         private IUnitOfWorkFactory _unitOfWorkFactory;
+        private IUnitOfWorkFactory _unitOfWorkFactory;
         private ILogger _logger;
 
         public PageService(IUnitOfWorkFactory unitOfWorkFactory, ILogger logger)
@@ -72,10 +72,10 @@ namespace Logic.Page.Services
             {
                 try
                 {
-                    
+
                     if (page != null)
                     {
-                        //page.CreationTimeStamp = DateTime.Now;
+                        page.CreationTimeStamp = DateTime.Now;
                         unitOfWork.PageRepository.Insert(page.ToEntitiy());
                     }
                     unitOfWork.Save();
@@ -99,10 +99,10 @@ namespace Logic.Page.Services
                 {
                     if (page != null)
                     {
-                        //page.LastModifiedTimeStamp = DateTime.Now;
-                        //page.ParentPage = page.ToEntitiy();
+                        page.LastModifiedTimeStamp = DateTime.Now;
                         unitOfWork.PageRepository.Update(page.ToEntitiy());
                     }
+                    
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ModifyPageSuccess };
                 }
@@ -114,6 +114,27 @@ namespace Logic.Page.Services
                 return response;
             }
         }
+
+        //private int InsertRestorePage(PageModel pageModel)
+        //{
+        //    int a;
+        //    var page = pageModel.ToEntitiy();
+        //    using (var unitOfWork = _unitOfWorkFactory.Create())
+        //    {
+        //        try
+        //        {
+        //            unitOfWork.PageRepository.Insert(page);
+        //            unitOfWork.Save();
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            _logger.LogToFile(_logger.CreateErrorMessage(e));
+        //        }
+        //        a = unitOfWork.PageRepository.Get(x => x.Id == page.Id).FirstOrDefault().Id;
+        //    }
+
+        //    return a;
+        //}
 
         public ResponseBase Delete(long id)
         {
