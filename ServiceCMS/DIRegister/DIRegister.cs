@@ -19,6 +19,8 @@ using Logic.File.Interfaces;
 using Logic.File.Services;
 using Logic.Inset.Interfaces;
 using Logic.Inset.Services;
+using Logic.MenuButton.Interfaces;
+using Logic.MenuButton.Services;
 using Logic.News.Interfaces;
 using Logic.News.Services;
 using Logic.NewsCategory.Interfaces;
@@ -84,6 +86,7 @@ namespace DIRegister
             builder.RegisterType<StatisticsService>().As<IStatisticsService>();
             builder.RegisterType<ServiceProviderService>().As<IServiceProviderService>();
             builder.RegisterType<PopUpService>().As<IPopUpService>();
+            builder.RegisterType<MenuButtonService>().As<IMenuButtonService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)
