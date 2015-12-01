@@ -51,7 +51,7 @@ namespace DAL.Migrations
             SeedStatisticsInformation(context);
             SeedServiceTypes(context);
 
-
+            SeedServiceTypes(context);
             SeedServiceProviders(context);
             SeedServicePhrases(context);
             SeedRegistratedServices(context);
@@ -148,11 +148,11 @@ namespace DAL.Migrations
 
         private void SeedServiceTypes(ServiceCMSContext context)
         {
-            //context.ServiceTypes.AddOrUpdate(x => x.Name,
-            //    new ServiceType() { Name = "Strzy¿enie mêskie" },
-            //    new ServiceType() { Name = "Strzy¿enie damskie" }
-            //    );
-            //context.SaveChanges();
+            context.ServiceTypes.AddOrUpdate(x => x.Name,
+                new ServiceType() { Name = "Strzy¿enie mêskie" },
+                new ServiceType() { Name = "Strzy¿enie damskie" }
+                );
+            context.SaveChanges();
         }
 
         private void SeedServiceProviders(ServiceCMSContext context)
@@ -195,28 +195,28 @@ namespace DAL.Migrations
         {
             context.Phases.AddOrUpdate(x => x.Name,
                 // Strzy¿enie damskie
-                new ServicePhase() { Name = "Diagnoza", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 2},
-                new ServicePhase() { Name = "Strzy¿enie", DelayInSeconds = 0, DurationInSeconds = 1800, Order = 3, ServiceTypeId = 2 },
-                new ServicePhase() { Name = "Modelowanie", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 2 },
-                new ServicePhase() { Name = "Farbowanie", DelayInSeconds = 1800, DurationInSeconds = 900, Order = 2, ServiceTypeId = 2 },
+                new ServicePhase() { Name = "Diagnoza F", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 2},
+                new ServicePhase() { Name = "Strzy¿enie F", DelayInSeconds = 0, DurationInSeconds = 1800, Order = 3, ServiceTypeId = 2 },
+                new ServicePhase() { Name = "Modelowanie F", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 2 },
+                new ServicePhase() { Name = "Farbowanie F", DelayInSeconds = 1800, DurationInSeconds = 900, Order = 2, ServiceTypeId = 2 },
 
                  // Strzy¿enie mêskie
-                new ServicePhase() { Name = "Diagnoza", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 1},
-                new ServicePhase() { Name = "Strzy¿enie", DelayInSeconds = 0, DurationInSeconds = 1200, Order = 2, ServiceTypeId = 1 },
-                new ServicePhase() { Name = "Modelowanie", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 1 }
+                new ServicePhase() { Name = "Diagnoza M", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 1},
+                new ServicePhase() { Name = "Strzy¿enie M", DelayInSeconds = 0, DurationInSeconds = 1200, Order = 2, ServiceTypeId = 1 },
+                new ServicePhase() { Name = "Modelowanie M", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 1 }
                 );
             context.SaveChanges();
         }
 
         public void SeedStatisticsInformation(ServiceCMSContext context)
         {
-            context.StatisticsInformations.AddOrUpdate(x=> x.IP,
+            context.StatisticsInformations.AddRange(new List<StatisticsInformation>(){
                 new StatisticsInformation(){ActionName = "Index", ControllerName = "News", IP = "168.145.123.100", Date = new DateTime(2015,10,1)},
                 new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "24.232.0.0", Date = new DateTime(2015, 10, 11) },
                 new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "23.91.160.0", Date = new DateTime(2015, 12, 1) },
                 new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "24.232.0.0", Date = new DateTime(2015, 10, 11) },
                 new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "23.91.160.0", Date = new DateTime(2013, 12, 1) },
-                new StatisticsInformation(){ActionName = "Index", ControllerName = "News", IP = "168.145.113.100", Date = new DateTime(2015,11,1)});
+                new StatisticsInformation(){ActionName = "Index", ControllerName = "News", IP = "168.145.113.100", Date = new DateTime(2015,11,1)}});
             context.SaveChanges();
         }
     }
