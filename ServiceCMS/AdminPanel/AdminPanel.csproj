@@ -345,6 +345,7 @@
     <Content Include="Scripts\calendar\fullcalendar.js" />
     <Content Include="Scripts\calendar\gcal.js" />
     <Content Include="Scripts\calendar\lang-all.js" />
+    <Content Include="Scripts\Controllers\ServiceProviderController.js" />
     <Content Include="Scripts\Controllers\ServiceTypeController.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\Controllers\InsetController.js" />
@@ -1138,6 +1139,7 @@
     <Content Include="Scripts\Modules\AppModule.js" />
     <Content Include="Scripts\Services\FileService.js" />
     <Content Include="Scripts\Services\InsetService.js" />
+    <Content Include="Scripts\Services\ServiceProviderService.js" />
     <Content Include="Scripts\Services\NewsService.js" />
     <Content Include="Scripts\Services\PageService.js" />
     <Content Include="Scripts\Services\ServiceTypeService.js" />
@@ -1191,9 +1193,12 @@
     <Content Include="Views\Test\Test.cshtml" />
     <Content Include="Views\ServiceType\Modals\Edit.cshtml" />
     <Content Include="Views\ServiceType\Modals\ConfirmDelete.cshtml" />
+    <Content Include="Views\ServiceProvider\Index.cshtml" />
+    <Content Include="Views\ServiceProvider\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ServiceProvider\Modals\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -331,6 +331,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Service providers.
+        /// </summary>
+        public static string ServiceProviders {
+            get {
+                return ResourceManager.GetString("ServiceProviders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Service type.
         /// </summary>
         public static string ServiceType {

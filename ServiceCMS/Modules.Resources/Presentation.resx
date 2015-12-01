@@ -207,6 +207,9 @@
   <data name="RequiredErrorMessage" xml:space="preserve">
     <value>This field is required.</value>
   </data>
+  <data name="ServiceProviders" xml:space="preserve">
+    <value>Service providers</value>
+  </data>
   <data name="ServiceType" xml:space="preserve">
     <value>Service type</value>
   </data>

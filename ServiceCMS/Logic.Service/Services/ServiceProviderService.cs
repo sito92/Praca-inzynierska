@@ -110,7 +110,9 @@ namespace Logic.Service.Services
                 {
                     if (serviceProvider != null)
                     {
+                        
                         unitOfWork.ServiceProviderRepository.Update(serviceProvider.ToEntity());
+
                     }
                     unitOfWork.Save();
                     response = new ResponseBase()

@@ -84,7 +84,11 @@ namespace AdminPanel
                       "~/Scripts/Directives/Pickers/LocalLinkPicker.js",
                       "~/Scripts/Directives/Pickers/ImagesPicker.js"
                       ));
-
+            bundles.Add(new ScriptBundle("~/bundles/serviceProvider").Include(
+                    "~/Scripts/Controllers/ServiceProviderController.js",
+                    "~/Scripts/Services/ServiceProviderService.js",
+                    "~/Scripts/Services/ServiceTypeService.js"
+                    ));
             bundles.Add(new ScriptBundle("~/bundles/serviceType").Include(
                      "~/Scripts/Controllers/ServiceTypeController.js",
                      "~/Scripts/Services/ServiceTypeService.js"
