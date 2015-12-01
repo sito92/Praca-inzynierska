@@ -1,5 +1,6 @@
 ﻿app.controller('ServiceTypeController', function ($scope, $modal, ServiceTypeService) {
     var refresh = function () {
+        $scope.selectedType = null;
         ServiceTypeService.getAll().then(function (jsonResult) {
             if (jsonResult.success) {
                 $scope.serviceTypes = jsonResult.data;
@@ -24,8 +25,7 @@
             refresh();
         });
     };
-    $scope.edit = function (index) {
-        var type = $scope.serviceTypes[index];
+    $scope.edit = function (type) {
         var modalInstance = $modal.open({
             animation: true,
             templateUrl: '/ServiceType/GetModal?name=Edit',
@@ -42,6 +42,23 @@
             refresh();
         });
     };
+    $scope.delete = function(type) {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/ServiceType/GetModal?name=ConfirmDelete',
+            controller: 'ServiceTypeDeleteModalCtrl',
+            size: "sm",
+            resolve:
+            {
+                type: function () {
+                    return angular.copy(type);
+                }
+            }
+        });
+        modalInstance.result.then(function () {
+            refresh();
+        });
+    }
     $scope.selectedType = null;
 
     $scope.select = function (type) {
@@ -113,3 +130,24 @@ app.controller('ServiceTypeEditModalCtrl', function ($scope, $modalInstance, Ser
         $modalInstance.dismiss();
     };
 });
+app.controller('ServiceTypeDeleteModalCtrl', function ($scope, $modalInstance, ServiceTypeService, type) {
+    $scope.serviceType = type;
+    $scope.confirm = function () {     
+        ServiceTypeService.delete($scope.serviceType.Id).then(function (jsonResult) {
+            if (jsonResult.success) {
+                $modalInstance.close();
+            } else {
+                alert(jsonResult.message);
+            }
+        }, function () {
+            alert("Error");
+            $modalInstance.dismiss();
+        });
+
+    };
+    $scope.decline = function (index) {
+        $modalInstance.close();
+    }
+
+});
+

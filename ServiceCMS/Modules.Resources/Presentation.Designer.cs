@@ -97,6 +97,33 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string Confirm {
+            get {
+                return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure, you want to delete this?.
+        /// </summary>
+        public static string ConfirmDeleteMessage {
+            get {
+                return ResourceManager.GetString("ConfirmDeleteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decline.
+        /// </summary>
+        public static string Decline {
+            get {
+                return ResourceManager.GetString("Decline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delay in minutes.
         /// </summary>
         public static string DelayInMinutes {
@@ -129,6 +156,15 @@ namespace Modules.Resources {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This field must be greater than zero..
+        /// </summary>
+        public static string GreaterThanZeroMessage {
+            get {
+                return ResourceManager.GetString("GreaterThanZeroMessage", resourceCulture);
             }
         }
         
@@ -232,6 +268,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This filed must be number..
+        /// </summary>
+        public static string NumberErrorMessage {
+            get {
+                return ResourceManager.GetString("NumberErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
@@ -273,6 +318,15 @@ namespace Modules.Resources {
         public static string RememberMe {
             get {
                 return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This field is required..
+        /// </summary>
+        public static string RequiredErrorMessage {
+            get {
+                return ResourceManager.GetString("RequiredErrorMessage", resourceCulture);
             }
         }
         

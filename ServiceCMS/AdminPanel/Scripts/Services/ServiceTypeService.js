@@ -10,7 +10,6 @@
         },
         add: function (serviceType) {
             var deferred = $q.defer();
-            console.log(serviceType);
             $http({
                 method: 'POST',
                 url: '/ServiceType/Add',
@@ -22,7 +21,6 @@
         },
         edit: function (serviceType) {
             var deferred = $q.defer();
-            console.log(serviceType);
             $http({
                 method: 'POST',
                 url: '/ServiceType/Edit',
@@ -34,7 +32,6 @@
         },
         delete: function (id) {
             var deferred = $q.defer();
-            console.log(serviceType);
             $http({
                 method: 'POST',
                 url: '/ServiceType/Delete',

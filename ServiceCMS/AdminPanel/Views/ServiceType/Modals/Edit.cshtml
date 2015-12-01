@@ -6,79 +6,89 @@
     </div>
 </div>
 <div class="modal-body">
-    <ul dnd-list="list">
-        <!-- The dnd-draggable directive makes an element draggable and will
-             transfer the object that was assigned to it. If an element was
-             dragged away, you have to remove it from the original list
-             yourself using the dnd-moved attribute -->
-        <li ng-repeat="item in models.list"
-            dnd-draggable="item"
-            dnd-moved="list.splice($index, 1)"
-            dnd-effect-allowed="move"
-            dnd-selected="models.selected = item"
-            ng-class="{'selected': models.selected === item}">
-            {{item.label}}
-        </li>
-    </ul>
-    <div class="form-group form-field row">
-        <div class="col-md-3">
-            <label class="control-label">@Presentation.Name</label>
+    <form novalidate name="editForm">
+        <div class="form-group form-field row">
+            <div class="col-md-3">
+                <label class="control-label">@Presentation.Name</label>
+            </div>
+            <div class="col-md-9">
+                <input class="form-control" ng-model="serviceType.Name" name="name" required/>
+                <span ng-show="editForm.name.$error.required && editForm.name.$dirty" class="text-danger">
+                    @Presentation.RequiredErrorMessage
+                </span>
+            </div>
         </div>
-        <div class="col-md-9">
-            <input class="form-control" ng-model="serviceType.Name" />
-        </div>
-    </div>
-    <div class="form-group form-field row">
-        <div class="col-md-12">
-            <div class="dnd-list" dnd-list="serviceType.Phases">
-                <div ng-repeat="phase in serviceType.Phases"
-                     dnd-draggable="phase"
-                     dnd-moved="serviceType.Phases.splice($index, 1)"
-                     dnd-effect-allowed="move"
-                     class="phases-container">
-                    <div class="row phase-container">
-                        <div class="col-md-3">
-                            <div class="handle">:::</div>
-                            <label class="control-label">@Presentation.Phase {{$index + 1 }}</label>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="row input-container">
-                                <div class="col-md-3">
-                                    <label class="control-label">@Presentation.Name</label>
+        <div class="form-group form-field row">
+            <div class="col-md-12">
+                <div class="dnd-list" dnd-list="serviceType.Phases">
+                    <div ng-repeat="phase in serviceType.Phases"
+                         dnd-draggable="phase"
+                         dnd-moved="serviceType.Phases.splice($index, 1)"
+                         dnd-effect-allowed="move"
+                         class="phases-container" ng-form name="phaseForm">
+                        <div class="row phase-container">
+                            <div class="col-md-3">
+                                <div class="handle">:::</div>
+                                <label class="control-label">@Presentation.Phase {{$index + 1 }}</label>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="row input-container">
+                                    <div class="col-md-3">
+                                        <label class="control-label">@Presentation.Name</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input dnd-nodrag class="form-control" ng-model="phase.Name" name="phaseName" required/>
+                                        <span ng-show="phaseForm.phaseName.$error.required  && phaseForm.phaseName.$dirty" class="text-danger">
+                                            @Presentation.RequiredErrorMessage
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="col-md-9">
-                                    <input dnd-nodrag class="form-control" ng-model="phase.Name" />
+                                <div class="row input-container">
+                                    <div class="col-md-3">
+                                        <label class="control-label">@Presentation.DurationInMinutes</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input dnd-nodrag class="form-control" ng-model="phase.DurationInSeconds" name="durationInSeconds" type="number" min="0" required/>
+                                        <span ng-show="phaseForm.durationInSeconds.$error.number && phaseForm.durationInSeconds.$dirty" class="text-danger">
+                                            @Presentation.NumberErrorMessage
+                                        </span>
+                                        <span ng-show="phaseForm.durationInSeconds.$error.min  && phaseForm.durationInSeconds.$dirty" class="text-danger">
+                                            @Presentation.GreaterThanZeroMessage
+                                        </span>
+                                        <span ng-show="phaseForm.durationInSeconds.$error.required  && phaseForm.durationInSeconds.$dirty" class="text-danger">
+                                            @Presentation.RequiredErrorMessage
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row input-container">
+                                    <div class="col-md-3">
+                                        <label class="control-label">@Presentation.DelayInMinutes</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input dnd-nodrag class="form-control" ng-model="phase.DelayInSeconds" name="delayInSeconds" type="number" min="0"/>
+                                        <span ng-show="phaseForm.delayInSeconds.$error.number" class="text-danger">
+                                            @Presentation.NumberErrorMessage
+                                        </span>
+                                        <span ng-show="phaseForm.delayInSeconds.$error.min" class="text-danger">
+                                            @Presentation.GreaterThanZeroMessage
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row input-container">
-                                <div class="col-md-3">
-                                    <label class="control-label">@Presentation.DurationInMinutes</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <input dnd-nodrag class="form-control" ng-model="phase.DurationInSeconds" />
-                                </div>
-                            </div>
-                            <div class="row input-container">
-                                <div class="col-md-3">
-                                    <label class="control-label">@Presentation.DelayInMinutes</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <input dnd-nodrag class="form-control" ng-model="phase.DelayInSeconds" />
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                    <div class="phase-buttons pull-right">
-                        <button class="btn btn-sm btn-default" ng-show="serviceType.Phases.length>1" ng-click="remove($index)"><span class="glyphicon glyphicon-remove text-danger"></span></button>
-                        <button class="btn btn-sm btn-default" ng-click="add($index)"><span class="glyphicon glyphicon-plus text-success"></span></button>
+                        </div>
+                        <div class="phase-buttons pull-right">
+                            <button class="btn btn-sm btn-default" ng-show="serviceType.Phases.length>1" ng-click="remove($index)"><span class="glyphicon glyphicon-remove text-danger"></span></button>
+                            <button class="btn btn-sm btn-default" ng-click="add($index)"><span class="glyphicon glyphicon-plus text-success"></span></button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+    </form>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-disabled="editForm.$invalid" ng-click="save()">@Presentation.Edit</button>
+        <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
     </div>
-</div>
-<div class="modal-footer">
-    <button class="btn btn-primary" ng-click="save()">@Presentation.Edit</button>
-    <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
 </div>
