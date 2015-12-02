@@ -132,6 +132,24 @@
   <data name="LocalLink" xml:space="preserve">
     <value>Local link</value>
   </data>
+  <data name="MenuButtonDeleteFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MenuButtonDeleteSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MenuButtonInsertFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MenuButtonInsertSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MenuButtonUpdateFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MenuButtonUpdateSuccess" xml:space="preserve">
+    <value />
+  </data>
   <data name="ModifyNewsFailed" xml:space="preserve">
     <value>Modify news failed.</value>
   </data>

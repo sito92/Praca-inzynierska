@@ -63,7 +63,18 @@ namespace AdminPanel.Controllers
             else
                 return Json(new { success = false}, JsonRequestBehavior.AllowGet);
         }
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            if (id > 0)
+            {
+                var response = _serviceProviderService.Delete(id);
 
+                return Json(new { success = response.IsSucceed, message = response.Message }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { success = false}, JsonRequestBehavior.AllowGet);
+        }
         [HttpPost]
         public ActionResult GetAllServiceProvidersWithAvailableServices(ServiceTypeModel serviceType)
         {
@@ -74,6 +85,11 @@ namespace AdminPanel.Controllers
             }
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
+        public PartialViewResult GetModal(string name)
+        {
+            return PartialView("Modals/" + name);
+
         }
     }
 }

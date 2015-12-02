@@ -13,9 +13,11 @@ namespace Logic.Common.Models
         public string Name { get; set; }
         public string Content { get; set; }
         public IEnumerable<File> Media { get; set; }
-        public DateTime CreationTimeStamp { get; set; }
-        public DateTime LastModifiedTimeStamp { get; set; }
-        public virtual Page ParentPage { get; set; }
+        public DateTime? CreationTimeStamp { get; set; }
+        public DateTime? LastModifiedTimeStamp { get; set; }
+
+        public int? RestorePageId { get; set; }
+        public Page RestorePage { get; set; }
 
         public PageModel()
         {
@@ -29,7 +31,8 @@ namespace Logic.Common.Models
             Media = page.Media;
             CreationTimeStamp = page.CreationTimeStamp;
             LastModifiedTimeStamp = page.LastModifiedTimeStamp;
-            ParentPage = page.ParentPage;
+            RestorePage = page.RestorePage;
+            RestorePageId = page.RestorePageId;
         }
 
         public Page  ToEntitiy()
@@ -41,7 +44,8 @@ namespace Logic.Common.Models
                 Content=this.Content,
                 CreationTimeStamp = this.CreationTimeStamp,
                 LastModifiedTimeStamp = this.LastModifiedTimeStamp,
-                ParentPage = this.ParentPage,
+                RestorePage = this.RestorePage,
+                RestorePageId = this.RestorePageId,
                 Media = this.Media
             };
         }

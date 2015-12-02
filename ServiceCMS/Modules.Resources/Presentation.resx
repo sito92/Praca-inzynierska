@@ -186,6 +186,9 @@
   <data name="NewsCategoryUpdateSuccess" xml:space="preserve">
     <value />
   </data>
+  <data name="NoTypes" xml:space="preserve">
+    <value>There are no types defined.</value>
+  </data>
   <data name="NumberErrorMessage" xml:space="preserve">
     <value>This filed must be number.</value>
   </data>

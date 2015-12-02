@@ -14,9 +14,9 @@ namespace Logic.MenuButton.Interfaces
 
         IList<MenuButtonModel> GetAll();
 
-        ResponseBase Insert(MenuButtonModel news);
+        ResponseBase Insert(MenuButtonModel menuButton);
 
-        ResponseBase Update(MenuButtonModel news);
+        ResponseBase Update(MenuButtonModel menuButton);
 
         ResponseBase Delete(long id);
     }

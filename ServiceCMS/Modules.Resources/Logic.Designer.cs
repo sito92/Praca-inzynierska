@@ -106,6 +106,60 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string MenuButtonDeleteFailed {
+            get {
+                return ResourceManager.GetString("MenuButtonDeleteFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string MenuButtonDeleteSuccess {
+            get {
+                return ResourceManager.GetString("MenuButtonDeleteSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string MenuButtonInsertFailed {
+            get {
+                return ResourceManager.GetString("MenuButtonInsertFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string MenuButtonInsertSuccess {
+            get {
+                return ResourceManager.GetString("MenuButtonInsertSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string MenuButtonUpdateFailed {
+            get {
+                return ResourceManager.GetString("MenuButtonUpdateFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string MenuButtonUpdateSuccess {
+            get {
+                return ResourceManager.GetString("MenuButtonUpdateSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modify news failed..
         /// </summary>
         public static string ModifyNewsFailed {

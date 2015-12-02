@@ -13,8 +13,8 @@ namespace Logic.Common.Models
 
         public string Content { get; set; }
 
-        public virtual MenuButton Parent { get; set; }
-
+        public MenuButton Parent { get; set; }
+        public int? ParentId { get; set; }
         public virtual ICollection<MenuButton> Children { get; set; }
 
         public MenuButtonModel()
@@ -25,6 +25,7 @@ namespace Logic.Common.Models
         {
             Id = menuButton.Id;
             Content = menuButton.Content;
+            ParentId = menuButton.ParentId;
             Parent = menuButton.Parent;
             Children = menuButton.Children;
         }
@@ -36,7 +37,8 @@ namespace Logic.Common.Models
                 Id = this.Id,
                 Content = this.Content,
                 Parent = this.Parent,
-                Children = this.Children
+                Children = this.Children,
+                ParentId = this.ParentId
             };
         }
     }

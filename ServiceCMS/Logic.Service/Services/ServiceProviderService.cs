@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common.Responses;
 using DAL.Interfaces;
+using DAL.Models;
 using Logging.Interfaces;
 using Logic.Common.Models;
 using Logic.Service.Helpers;
@@ -79,7 +80,9 @@ namespace Logic.Service.Services
                 {
                     if (serviceProvider != null)
                     {
-                        unitOfWork.ServiceProviderRepository.Insert(serviceProvider.ToEntity());
+                        var entity = serviceProvider.ToEntity();
+                        UpdateAvailableTypes(entity, unitOfWork);
+                        unitOfWork.ServiceProviderRepository.Insert(entity);
                     }
                     unitOfWork.Save();
                     response = new ResponseBase()
@@ -110,8 +113,9 @@ namespace Logic.Service.Services
                 {
                     if (serviceProvider != null)
                     {
-                        
-                        unitOfWork.ServiceProviderRepository.Update(serviceProvider.ToEntity());
+                        var entity = serviceProvider.ToEntity();
+                        UpdateAvailableTypes(entity, unitOfWork);
+                        unitOfWork.ServiceProviderRepository.Update(entity);
 
                     }
                     unitOfWork.Save();
@@ -173,9 +177,9 @@ namespace Logic.Service.Services
 
                     foreach (var serviceProvider in serviceProviders)
                     {
-                        foreach (var availableService  in serviceProvider.AvailableServices)
+                        foreach (var availableService in serviceProvider.AvailableServices)
                         {
-                            if(availableService.Name == serviceType.Name)
+                            if (availableService.Name == serviceType.Name)
                                 serviceProviderModels.Add(new ServiceProviderModel(serviceProvider));
                         }
                     }
@@ -186,6 +190,27 @@ namespace Logic.Service.Services
                 }
             }
             return serviceProviderModels;
+        }
+
+        public void UpdateAvailableTypes(ServiceProvider entity, IUnitOfWork unitOfWork)
+        {
+            var ids = entity.AvailableServices.Select(x => x.Id);
+            var types = unitOfWork.ServiceTypeRepository.Get(x => ids.Contains(x.Id));
+            var entityFromBase = unitOfWork.ServiceProviderRepository.Get(x => x.Id == entity.Id).SingleOrDefault();
+
+            if (entityFromBase != null)
+            {
+                entityFromBase.AvailableServices.Clear();
+                entity = entityFromBase;
+            }
+
+
+            entity.AvailableServices.Clear();
+
+            foreach (var type in types)
+            {
+                entity.AvailableServices.Add(type);
+            }
         }
     }
 }

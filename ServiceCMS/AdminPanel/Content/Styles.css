@@ -97,3 +97,7 @@
 .table-hover tbody tr.selectable.selected {
     background-color: #3cb371;
 }
+
+.add-button-container {
+    margin-bottom: 10px;
+}

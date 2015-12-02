@@ -1,0 +1,28 @@
+﻿@using Modules.Resources
+@using Logic.Common.Models
+<div class="modal-header">
+    <div class="row text-center">
+        <h2 class="text-modal-heading">@Presentation.Add</h2>
+    </div>
+</div>
+<div class="modal-body">
+    <table class="table table-bordered table-striped table-hover" ng-show="types.length>0">
+        <thead>
+        <tr>
+            <th>
+                @Presentation.Name
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="type in types" ng-click="select(type)" ng-class="{'selected':selectedType.Id==type.Id}" class="selectable">
+            <td ng-bind="type.Name"></td>
+        </tr>
+        </tbody>
+    </table>
+    <span ng-show="types.length <=0">@Presentation.NoTypes</span>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-disabled="selectedType==null" ng-click="confirm()">@Presentation.Confirm</button>
+        <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
+    </div>
+</div>

@@ -1195,10 +1195,13 @@
     <Content Include="Views\ServiceType\Modals\ConfirmDelete.cshtml" />
     <Content Include="Views\ServiceProvider\Index.cshtml" />
     <Content Include="Views\ServiceProvider\Menu.cshtml" />
+    <Content Include="Views\ServiceProvider\Modals\Add.cshtml" />
+    <Content Include="Views\ServiceProvider\Modals\ChooseType.cshtml" />
+    <Content Include="Views\ServiceProvider\Modals\Edit.cshtml" />
+    <Content Include="Views\ServiceProvider\Modals\ConfirmDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ServiceProvider\Modals\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1231,6 +1234,10 @@
     <ProjectReference Include="..\Logic.Inset\Logic.Inset.csproj">
       <Project>{b9a9e81e-de7c-4c2f-996a-dfb24ad44444}</Project>
       <Name>Logic.Inset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.MenuButton\Logic.MenuButton.csproj">
+      <Project>{258a87f6-b6fa-48f0-84d2-847cc600fe11}</Project>
+      <Name>Logic.MenuButton</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.News\Logic.News.csproj">
       <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>

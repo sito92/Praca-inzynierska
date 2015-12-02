@@ -268,6 +268,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There are no types defined..
+        /// </summary>
+        public static string NoTypes {
+            get {
+                return ResourceManager.GetString("NoTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This filed must be number..
         /// </summary>
         public static string NumberErrorMessage {

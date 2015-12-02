@@ -12,8 +12,10 @@ namespace DAL.Models
         public string Name { get; set; }
         public string Content { get; set; }
         public IEnumerable<File> Media { get; set; }
-        public DateTime CreationTimeStamp { get; set; }
-        public DateTime LastModifiedTimeStamp { get; set; }
-        public virtual Page ParentPage { get; set; }
+        public DateTime? CreationTimeStamp { get; set; }
+        public DateTime? LastModifiedTimeStamp { get; set; }
+
+        public virtual Page RestorePage { get; set; }
+        public int? RestorePageId { get; set; }
     }
 }
