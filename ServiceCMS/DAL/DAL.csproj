@@ -116,6 +116,10 @@
     <Compile Include="Migrations\201512011605381_PageModification.Designer.cs">
       <DependentUpon>201512011605381_PageModification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512031608298_SettingsMigration.cs" />
+    <Compile Include="Migrations\201512031608298_SettingsMigration.Designer.cs">
+      <DependentUpon>201512031608298_SettingsMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -195,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512011605381_PageModification.resx">
       <DependentUpon>201512011605381_PageModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512031608298_SettingsMigration.resx">
+      <DependentUpon>201512031608298_SettingsMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

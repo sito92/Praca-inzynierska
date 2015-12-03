@@ -61,10 +61,6 @@
       <Project>{2c569c22-8774-444a-be3a-ba804a524dea}</Project>
       <Name>Logging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Logic.ContactForm\Logic.ContactForm.csproj">
-      <Project>{e3255de6-c3f3-4fe5-8449-897ff42d8ebb}</Project>
-      <Name>Logic.ContactForm</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Logic.File\Logic.File.csproj">
       <Project>{6e7da60f-7779-421a-9af1-08e456396b62}</Project>
       <Name>Logic.File</Name>
@@ -80,10 +76,6 @@
     <ProjectReference Include="..\Logic.NewsCategory\Logic.NewsCategory.csproj">
       <Project>{b9fb03b5-8809-40df-8bff-5d9e8c052b49}</Project>
       <Name>Logic.NewsCategory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.Newsletter\Logic.Newsletter.csproj">
-      <Project>{181771e1-4abe-4fc1-8e45-4c38a75b75c7}</Project>
-      <Name>Logic.Newsletter</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.News\Logic.News.csproj">
       <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>

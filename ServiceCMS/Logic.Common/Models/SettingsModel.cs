@@ -12,21 +12,16 @@ namespace Logic.Common.Models
     {
         public int Id { get; set; }
 
-        public string EmailAddress { get; set; }
+        public string Name { get; set; }
 
-        public string EmailDomain { get; set; }
+        public string Value { get; set; }
 
-        public SecureString EmailPassword { get; set; }
-
-        public ICollection<DomainAndPorts> DomainAndPorts { get; set; } 
 
         public SettingsModel(Settings entity)
         {
             this.Id = entity.Id;
-            this.EmailAddress = entity.EmailAddress;
-            this.DomainAndPorts = entity.DomainAndPorts;
-            this.EmailDomain = EmailDomain;
-            this.EmailPassword = EmailPassword;
+            this.Name = entity.Name;
+            this.Value = entity.Value;
         }
 
         public Settings ToEntity()
@@ -34,10 +29,8 @@ namespace Logic.Common.Models
             return new Settings()
             {
                 Id = this.Id,
-                EmailAddress = this.EmailAddress,
-                EmailDomain = this.EmailDomain,
-               // EmailPassword = this.EmailPassword,
-                DomainAndPorts = this.DomainAndPorts
+                Name = this.Name,
+                Value = this.Value
             };
         }
 

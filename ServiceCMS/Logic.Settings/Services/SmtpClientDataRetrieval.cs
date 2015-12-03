@@ -18,21 +18,21 @@ namespace Logic.Settings.Services
             _settings = settings;
         }
 
-        public SmtpClient ConfigureClient()
-        {
-            var set = _settings.Get();
+        //public SmtpClient ConfigureClient()
+        //{
+        //    var set = _settings.Get();
 
-            var selectedEmailSettings =
-                set.DomainAndPorts.FirstOrDefault(x => x.DomainName.Contains(set.EmailDomain));
+        //    var selectedEmailSettings =
+        //        set.DomainAndPorts.FirstOrDefault(x => x.DomainName.Contains(set.EmailDomain));
 
-            var client = new SmtpClient()
-            {
-                Host = selectedEmailSettings.DomainName,
-                Port = selectedEmailSettings.DomainPort,
-                Credentials = new NetworkCredential(set.EmailAddress, set.EmailPassword)
-            };
+        //    var client = new SmtpClient()
+        //    {
+        //        Host = selectedEmailSettings.DomainName,
+        //        Port = selectedEmailSettings.DomainPort,
+        //        Credentials = new NetworkCredential(set.EmailAddress, set.EmailPassword)
+        //    };
 
-            return client;
-        }
+        //    return client;
+        //}
     }
 }
