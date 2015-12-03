@@ -26,20 +26,6 @@ namespace DAL.Migrations
         protected override void Seed(DAL.Models.ServiceCMSContext context)
         {
             SeedMenuButtons(context);
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            ////
-            //if (System.Diagnostics.Debugger.IsAttached == false)
-            //    System.Diagnostics.Debugger.Launch();
             SeedUsers(context);
             SeedNewsCategories(context);
             SeedSettings(context);
@@ -157,13 +143,6 @@ namespace DAL.Migrations
 
         private void SeedServiceProviders(ServiceCMSContext context)
         {
-            //var sampleServiceTypes = context.ServiceTypes.Where(x => x.Id == 1 || x.Id == 2);
-            //context.ServiceProviders.AddOrUpdate(x => x.Name,
-            //    new ServiceProvider() { Name = "Pani Krysia", AvailableServices = new List<ServiceType>() },
-            //    new ServiceProvider() { Name = "Pan Marek", AvailableServices = new List<ServiceType>() },
-            //    new ServiceProvider() { Name = "st. spec. Zenos³aw", AvailableServices = new List<ServiceType>()}
-            //    );
-
             var a = new ServiceProvider() { Name = "Pani Krysia", AvailableServices = new List<ServiceType>() };
             var b = new ServiceProvider() { Name = "Pan Marek", AvailableServices = new List<ServiceType>() };
             var c = new ServiceProvider() { Name = "st. spec. Zenos³aw", AvailableServices = new List<ServiceType>() };

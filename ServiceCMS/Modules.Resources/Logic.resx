@@ -126,6 +126,24 @@
   <data name="ExternalLink" xml:space="preserve">
     <value>External link</value>
   </data>
+  <data name="FileDeleteFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FileDeleteSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FileInsertFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FileInsertSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FileUpdateFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FileUpdateSuccess" xml:space="preserve">
+    <value />
+  </data>
   <data name="Images" xml:space="preserve">
     <value>Images</value>
   </data>
