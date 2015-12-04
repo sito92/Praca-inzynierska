@@ -29,6 +29,8 @@ using Logic.PopUp.Interfaces;
 using Logic.PopUp.Services;
 using Logic.Service.Interfaces;
 using Logic.Service.Services;
+using Logic.Settings.Interfaces;
+using Logic.Settings.Services;
 using Logic.Statistics.Interfaces;
 using Logic.Statistics.Services;
 using Logic.User.Interfaces;
@@ -83,6 +85,7 @@ namespace DIRegister
             builder.RegisterType<ServiceProviderService>().As<IServiceProviderService>();
             builder.RegisterType<PopUpService>().As<IPopUpService>();
             builder.RegisterType<MenuButtonService>().As<IMenuButtonService>();
+            builder.RegisterType<SettingsService>().As<ISettingsService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)
