@@ -648,18 +648,54 @@ namespace Modules.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        public static string UpdateSettingsFailed {
+        public static string SettingsDeleteFailed {
             get {
-                return ResourceManager.GetString("UpdateSettingsFailed", resourceCulture);
+                return ResourceManager.GetString("SettingsDeleteFailed", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        public static string UpdateSettingsSuccess {
+        public static string SettingsDeleteSuccess {
             get {
-                return ResourceManager.GetString("UpdateSettingsSuccess", resourceCulture);
+                return ResourceManager.GetString("SettingsDeleteSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string SettingsInsertFailed {
+            get {
+                return ResourceManager.GetString("SettingsInsertFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string SettingsInsertSuccess {
+            get {
+                return ResourceManager.GetString("SettingsInsertSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string SettingsUpdateFailed {
+            get {
+                return ResourceManager.GetString("SettingsUpdateFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string SettingsUpdateSuccess {
+            get {
+                return ResourceManager.GetString("SettingsUpdateSuccess", resourceCulture);
             }
         }
     }

@@ -120,6 +120,10 @@
     <Compile Include="Migrations\201512031608298_SettingsMigration.Designer.cs">
       <DependentUpon>201512031608298_SettingsMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512040532249_SettingsWithoutId.cs" />
+    <Compile Include="Migrations\201512040532249_SettingsWithoutId.Designer.cs">
+      <DependentUpon>201512040532249_SettingsWithoutId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -202,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512031608298_SettingsMigration.resx">
       <DependentUpon>201512031608298_SettingsMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512040532249_SettingsWithoutId.resx">
+      <DependentUpon>201512040532249_SettingsWithoutId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

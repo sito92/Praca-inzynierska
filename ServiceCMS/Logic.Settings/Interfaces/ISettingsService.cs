@@ -10,8 +10,12 @@ namespace Logic.Settings.Interfaces
 {
     public interface ISettingsService
     {
-    //    SettingsModel Get();
+        string GetPropertyByName(string name);
 
-    //    ResponseBase Update(SettingsModel news);
+        ResponseBase Insert(SettingsModel model);
+
+        ResponseBase Update(SettingsModel model);
+        
+        ResponseBase Delete(SettingsModel model);
     }
 }

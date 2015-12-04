@@ -223,6 +223,7 @@
     <Compile Include="Controllers\ServiceProviderController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\ServiceTypeController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Filters\TestFilter.cs" />
     <Compile Include="Filters\StatisticsFilter.cs" />

@@ -312,10 +312,22 @@
   <data name="ServiceTypeSaveSuccess" xml:space="preserve">
     <value />
   </data>
-  <data name="UpdateSettingsFailed" xml:space="preserve">
+  <data name="SettingsDeleteFailed" xml:space="preserve">
     <value />
   </data>
-  <data name="UpdateSettingsSuccess" xml:space="preserve">
+  <data name="SettingsDeleteSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SettingsInsertFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SettingsInsertSuccess" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SettingsUpdateFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SettingsUpdateSuccess" xml:space="preserve">
     <value />
   </data>
 </root>
