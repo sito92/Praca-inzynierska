@@ -10,8 +10,6 @@ namespace Logic.Common.Models
 {
     public class SettingsModel
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         public string Value { get; set; }
@@ -19,7 +17,6 @@ namespace Logic.Common.Models
 
         public SettingsModel(Settings entity)
         {
-            this.Id = entity.Id;
             this.Name = entity.Name;
             this.Value = entity.Value;
         }
@@ -28,7 +25,6 @@ namespace Logic.Common.Models
         {
             return new Settings()
             {
-                Id = this.Id,
                 Name = this.Name,
                 Value = this.Value
             };
