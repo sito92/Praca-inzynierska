@@ -124,6 +124,10 @@
     <Compile Include="Migrations\201512040532249_SettingsWithoutId.Designer.cs">
       <DependentUpon>201512040532249_SettingsWithoutId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512110859478_NewsWithRestoreProperties.cs" />
+    <Compile Include="Migrations\201512110859478_NewsWithRestoreProperties.Designer.cs">
+      <DependentUpon>201512110859478_NewsWithRestoreProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -209,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512040532249_SettingsWithoutId.resx">
       <DependentUpon>201512040532249_SettingsWithoutId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512110859478_NewsWithRestoreProperties.resx">
+      <DependentUpon>201512110859478_NewsWithRestoreProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

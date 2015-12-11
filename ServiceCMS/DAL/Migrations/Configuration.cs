@@ -25,6 +25,9 @@ namespace DAL.Migrations
 
         protected override void Seed(DAL.Models.ServiceCMSContext context)
         {
+            if (System.Diagnostics.Debugger.IsAttached == false)
+                System.Diagnostics.Debugger.Launch();
+
             SeedMenuButtons(context);
             SeedUsers(context);
             SeedNewsCategories(context);
@@ -35,9 +38,10 @@ namespace DAL.Migrations
             SeedImages(context);
 
             SeedStatisticsInformation(context);
-            SeedServiceTypes(context);
+           // SeedServiceTypes(context);
 
-            SeedServiceTypes(context);
+           // SeedServiceTypes(context);
+            SeedNewses(context);
             SeedServiceProviders(context);
             SeedServicePhrases(context);
             SeedRegistratedServices(context);
@@ -54,10 +58,22 @@ namespace DAL.Migrations
         }
 
         private void SeedSettings(ServiceCMSContext context)
-        {
+        {  
             //context.Settings.AddOrUpdate(x => x.EmailAddress,
             //    new Settings(){EmailAddress = "servicecmsthesis@gmail.com", EmailPassword = new NetworkCredential("cos", "arturikamil").SecurePassword});
             //context.SaveChanges();
+        }
+
+        private void SeedNewses(ServiceCMSContext context)
+        {
+            context.Newses.AddOrUpdate(x => x.Title,
+                new News() { Content = "TestNews1", Title = "TestNews1Title", CreationTimeStamp = DateTime.Now,AuthorId=1 },
+                new News() { Content = "TestNews2", Title = "TestNews2Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 1, AuthorId = 1 },
+                new News() { Content = "TestNews3", Title = "TestNews3Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 2, AuthorId = 1 },
+                new News() { Content = "TestNews4", Title = "TestNews4Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 1, AuthorId = 1 },
+                new News() { Content = "TestNews5", Title = "TestNews5Title", CreationTimeStamp = DateTime.Now, AuthorId = 1 }
+                );
+           context.SaveChanges();
         }
 
         private void SeedMenuButtons(ServiceCMSContext context)
