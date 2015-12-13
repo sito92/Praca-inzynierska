@@ -124,7 +124,7 @@ namespace Logic.Page.Services
             }
         }
 
-        public IEnumerable<PageModel> GetRestorePagesCollection(PageModel page)
+        public IEnumerable<PageModel> GetRestorePagesCollection(PageModel page, bool rootPageExcluded = false)
         {
             var resultCollection = new List<PageModel>();
             Stack<PageModel> branchPages = new Stack<PageModel>();
@@ -150,6 +150,9 @@ namespace Logic.Page.Services
                         }
                     }
                 }
+                if (rootPageExcluded)
+                    resultCollection.RemoveAt(0);
+
                 return resultCollection;
             }
             return null;

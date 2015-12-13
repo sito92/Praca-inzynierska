@@ -143,7 +143,7 @@ namespace Logic.News.Services
             return response;
         }
 
-        public IEnumerable<NewsModel> GetRestoreNewsesCollection(NewsModel news)
+        public IEnumerable<NewsModel> GetRestoreNewsesCollection(NewsModel news, bool rootPageExcluded = false)
         {
             var resultCollection = new List<NewsModel>();
             Stack<NewsModel> branchNewses = new Stack<NewsModel>();
@@ -169,6 +169,9 @@ namespace Logic.News.Services
                         }
                     }
                 }
+                if (rootPageExcluded)
+                    resultCollection.RemoveAt(0);
+
                 return resultCollection;
             }
             return null;

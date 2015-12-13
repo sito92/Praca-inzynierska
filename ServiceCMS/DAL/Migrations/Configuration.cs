@@ -128,10 +128,10 @@ namespace DAL.Migrations
         private void SeedPage(ServiceCMSContext context)
         {
             context.Page.AddOrUpdate(x => x.Name,
-                new Page() { Name = "Strona g³owna" },
-                new Page() { Name = "Strona1" },
-                new Page() { Name = "Strona2" },
-                new Page() { Name = "Strona3" }
+                new Page() { Name = "Strona g³owna",Content="DUPA" },
+                new Page() { Name = "Strona1", Content = "DUPA", RestorePageId=1 },
+                new Page() { Name = "Strona2", Content = "DUPA", RestorePageId=2 },
+                new Page() { Name = "Strona3", Content = "DUPA", RestorePageId=3 }
 
                 );
             context.SaveChanges();

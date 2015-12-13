@@ -11,7 +11,7 @@ namespace Logic.Page.Interfaces
 {
     public interface IPageService
     {
-        IEnumerable<PageModel> GetRestorePagesCollection(PageModel page);
+        IEnumerable<PageModel> GetRestorePagesCollection(PageModel page, bool rootPageExcluded = false);
         //IEnumerable<object> GetRestorePagesCollectionGeneric<T>(object entity, GenericRepository<T> repository) where T:class;
         
         PageModel GetById(int id);
