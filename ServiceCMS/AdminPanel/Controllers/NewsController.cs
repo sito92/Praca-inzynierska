@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Logic.News.Interfaces;
 using Logic.Statistics.Filters;
+using Logic.Common.Models;
 
 namespace AdminPanel.Controllers
 {
@@ -26,6 +27,19 @@ namespace AdminPanel.Controllers
         public PartialViewResult GetModal(string name)
         {
             return PartialView("Modals/" + name);
+        }
+
+        public ActionResult GetRestoreNewsesCollection(NewsModel news, bool rootPageExcluded)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = _newsService.GetRestoreNewsesCollection(news, rootPageExcluded);
+                return Json(new { success = true, data = result }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new { success = false });
+            }
         }
 
     }
