@@ -45,6 +45,28 @@ namespace Logic.Service.Services
             return serviceModels;
         }
 
+        public List<RegistratedServiceModel> GetAll()
+        {
+             List<RegistratedServiceModel> serviceModels = new List<RegistratedServiceModel>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.RegistratedServiceRepository.Get();
+                    foreach (var entity in entities)
+                    {
+                        serviceModels.Add(new RegistratedServiceModel(entity));
+                    }
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return serviceModels;
+        }
+
         public List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(DateTime date, ServiceProviderModel serviceProvider)
         {
             List<RegistratedServiceModel> serviceModels = new List<RegistratedServiceModel>();

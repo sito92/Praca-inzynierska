@@ -101,3 +101,11 @@
 .add-button-container {
     margin-bottom: 10px;
 }
+.calendar td .fc-widget-content {
+
+}
+.calendar td .fc-widget-content:not(.fc-time):hover {
+    cursor: pointer;
+    background-color: #00bfff;
+    
+}

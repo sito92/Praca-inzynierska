@@ -16,7 +16,6 @@ namespace Logic.Service.Helpers
 
             foreach(var part in serviceTypes)
             {
-                
                 //if()
                 //{
                 //    availableServiceTypes.Add(part,true);

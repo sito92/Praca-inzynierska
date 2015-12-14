@@ -225,12 +225,15 @@
     <Compile Include="Controllers\ServiceTypeController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Extensions\JsonNetResult.cs" />
     <Compile Include="Filters\TestFilter.cs" />
     <Compile Include="Filters\StatisticsFilter.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Calendar\JsonEventsListViewModel.cs" />
+    <Compile Include="Models\Calendar\JsonEventViewModel.cs" />
     <Compile Include="Models\User\AuthenticatedViewModel.cs" />
     <Compile Include="Models\User\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1143,6 +1146,7 @@
     <Content Include="Scripts\Services\ServiceProviderService.js" />
     <Content Include="Scripts\Services\NewsService.js" />
     <Content Include="Scripts\Services\PageService.js" />
+    <Content Include="Scripts\Services\ServicesService.js" />
     <Content Include="Scripts\Services\ServiceTypeService.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

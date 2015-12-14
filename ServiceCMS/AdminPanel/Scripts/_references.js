@@ -51,3 +51,4 @@
 /// <reference path="angular-drag-and-drop-lists.js" />
 /// <reference path="services/serviceproviderservice.js" />
 /// <reference path="controllers/serviceprovidercontroller.js" />
+/// <reference path="services/servicesservice.js" />
