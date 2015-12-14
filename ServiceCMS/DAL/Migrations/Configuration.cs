@@ -25,8 +25,8 @@ namespace DAL.Migrations
 
         protected override void Seed(DAL.Models.ServiceCMSContext context)
         {
-            if (System.Diagnostics.Debugger.IsAttached == false)
-                System.Diagnostics.Debugger.Launch();
+            //if (System.Diagnostics.Debugger.IsAttached == false)
+            //    System.Diagnostics.Debugger.Launch();
 
             SeedMenuButtons(context);
             SeedUsers(context);
@@ -176,12 +176,21 @@ namespace DAL.Migrations
 
         private void SeedRegistratedServices(ServiceCMSContext context)
         {
+            #region Dates
+            var dateOne = new DateTime(2015, 12, 1, 10, 0, 0);
+            var dateSecond = new DateTime(2015, 12, 1, 13, 0, 0);
+            var dateThird = new DateTime(2015, 12, 1, 12, 0, 0);
+            var dateFourth = new DateTime(2015, 12, 1, 13, 0, 0);
+            var dateFifth = new DateTime(2015, 12, 2, 14, 0, 0);
+            var dateSixt = new DateTime(2015, 12, 2, 10, 0, 0);
+            var dateSeventh = new DateTime(2015, 12, 2, 11, 0, 0);
+            #endregion
             context.RegistratedServices.AddOrUpdate(x => x.Id,
-                new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 1, StartDate = DateTime.Now.AddDays(1) },
-                new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 1, StartDate = DateTime.Now.AddDays(2) },
-                new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 2, StartDate = DateTime.Now.AddDays(3) },
-                new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 1, StartDate = DateTime.Now.AddDays(1) },
-                new RegistratedService() { ServiceProviderId = 3, ServiceTypeId = 2, StartDate = DateTime.Now.AddDays(1) }
+                new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 1, StartDate = dateOne },
+                new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 1, StartDate = dateSecond},
+                new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 2, StartDate = dateThird},
+                new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 1, StartDate = dateFourth},
+                new RegistratedService() { ServiceProviderId = 3, ServiceTypeId = 2, StartDate = dateFifth }
                 );
             context.SaveChanges();
         }
@@ -190,15 +199,15 @@ namespace DAL.Migrations
         {
             context.Phases.AddOrUpdate(x => x.Name,
                 // Strzy¿enie damskie
-                new ServicePhase() { Name = "Diagnoza F", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 2},
-                new ServicePhase() { Name = "Strzy¿enie F", DelayInSeconds = 0, DurationInSeconds = 1800, Order = 3, ServiceTypeId = 2 },
-                new ServicePhase() { Name = "Modelowanie F", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 2 },
-                new ServicePhase() { Name = "Farbowanie F", DelayInSeconds = 1800, DurationInSeconds = 900, Order = 2, ServiceTypeId = 2 },
+                new ServicePhase() { Name = "Diagnoza F", DelayInSeconds = 0, DurationInSeconds = 10, Order = 1,ServiceTypeId = 2},
+                new ServicePhase() { Name = "Strzy¿enie F", DelayInSeconds = 0, DurationInSeconds = 60, Order = 3, ServiceTypeId = 2 },
+                new ServicePhase() { Name = "Modelowanie F", DelayInSeconds = 0, DurationInSeconds = 30, Order = 4, ServiceTypeId = 2 },
+                new ServicePhase() { Name = "Farbowanie F", DelayInSeconds = 40, DurationInSeconds = 40, Order = 2, ServiceTypeId = 2 },
 
                  // Strzy¿enie mêskie
-                new ServicePhase() { Name = "Diagnoza M", DelayInSeconds = 0, DurationInSeconds = 600, Order = 1,ServiceTypeId = 1},
-                new ServicePhase() { Name = "Strzy¿enie M", DelayInSeconds = 0, DurationInSeconds = 1200, Order = 2, ServiceTypeId = 1 },
-                new ServicePhase() { Name = "Modelowanie M", DelayInSeconds = 0, DurationInSeconds = 300, Order = 4, ServiceTypeId = 1 }
+                new ServicePhase() { Name = "Diagnoza M", DelayInSeconds = 0, DurationInSeconds = 10, Order = 1,ServiceTypeId = 1},
+                new ServicePhase() { Name = "Strzy¿enie M", DelayInSeconds = 0, DurationInSeconds = 35, Order = 2, ServiceTypeId = 1 },
+                new ServicePhase() { Name = "Modelowanie M", DelayInSeconds = 0, DurationInSeconds = 15, Order = 4, ServiceTypeId = 1 }
                 );
             context.SaveChanges();
         }

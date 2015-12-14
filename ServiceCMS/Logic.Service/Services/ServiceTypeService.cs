@@ -7,6 +7,7 @@ using Common.Responses;
 using DAL.Interfaces;
 using DAL.Migrations;
 using DAL.Models;
+using Logic.Service.Helpers;
 using Logging.Interfaces;
 using Logic.Common.Models;
 using Logic.Service.Interfaces;
@@ -114,6 +115,29 @@ namespace Logic.Service.Services
                 }
             }
             return response;
+        }
+
+        public Dictionary<ServiceTypeModel,bool> GetServiceTypesMatchingTimeCriteria(DateTime time, ServiceProviderModel provider)
+        {
+            var resultCollection = new Dictionary<ServiceTypeModel, bool>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var registratedServiceTypes = unitOfWork.RegistratedServiceRepository.Get(x => x.ServiceProviderId == provider.Id
+                                                                                     && x.StartDate.Day == time.Date.Day
+                                                                                     && x.StartDate.Month == time.Date.Month
+                                                                                     && x.StartDate.Year == time.Date.Year);
+                    var serviceTypes = unitOfWork.ServiceTypeRepository.Get();
+
+                    resultCollection = AvailableServiceTypesHelper.CheckAvailability(registratedServiceTypes, serviceTypes);
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return resultCollection;
         }
 
         private void UpdateServicePhases(ICollection<ServicePhaseModel> collection,IUnitOfWork unitOfWork)

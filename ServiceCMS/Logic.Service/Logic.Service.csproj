@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\AvailableServiceTypesHelper.cs" />
     <Compile Include="Helpers\ServiceProviderHelper.cs" />
     <Compile Include="Interfaces\IServiceProviderService.cs" />
     <Compile Include="Interfaces\IServicesService.cs" />
