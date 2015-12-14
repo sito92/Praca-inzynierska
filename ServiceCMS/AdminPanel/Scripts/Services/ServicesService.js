@@ -1,0 +1,25 @@
+﻿app.factory("ServicesService", function ($http, $q) {
+    return {
+        getAll: function () {
+            var deferred = $q.defer();
+            $http({
+                method: 'GET',
+                url: '/Services/GetAll'
+            }).success(deferred.resolve).error(deferred.reject);
+            return deferred.promise;
+        },
+        getProviderServicesAtDate: function (provider,date) {
+            var deferred = $q.defer();
+            $http({
+                method: 'GET',
+                url: '/Services/GetProviderServicesAtDate',
+                params:
+                {                   
+                    date:date
+                }
+                    
+            }).success(deferred.resolve).error(deferred.reject);
+            return deferred.promise;
+        }
+    }
+});

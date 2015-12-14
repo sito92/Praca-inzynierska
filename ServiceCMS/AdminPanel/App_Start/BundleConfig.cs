@@ -94,7 +94,8 @@ namespace AdminPanel
                      "~/Scripts/Services/ServiceTypeService.js"
                      ));
             bundles.Add(new ScriptBundle("~/bundles/services").Include(
-                   "~/Scripts/Controllers/ServicesController.js"                 
+                   "~/Scripts/Controllers/ServicesController.js",
+                    "~/Scripts/Services/ServicesService.js"
                    ));
             bundles.Add(new ScriptBundle("~/bundles/angular-drag-and-drop").Include(
                     "~/Scripts/angular-drag-and-drop-lists.js"

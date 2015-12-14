@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AdminPanel.Models.Calendar;
 using Logic.Inset.Interfaces;
 using Logic.Service.Interfaces;
 using Logic.Statistics.Filters;
 using Logic.Statistics.Interfaces;
+using Newtonsoft.Json;
 
 namespace AdminPanel.Controllers
 {
@@ -15,9 +17,10 @@ namespace AdminPanel.Controllers
         private readonly IStatisticsService _service;
         private readonly IServiceProviderService _provider;
         private readonly IServiceTypeService _types;
-
-        public TestController(IStatisticsService service, IServiceProviderService provider,IServiceTypeService types)
+        private readonly IServicesService _services;
+        public TestController(IStatisticsService service, IServiceProviderService provider,IServiceTypeService types,IServicesService services)
         {
+            _services = services;
             _service = service;
             _types = types;
             _provider = provider;
@@ -38,8 +41,15 @@ namespace AdminPanel.Controllers
             //var g2 = _service.GetUsersBetweenDates(new DateTime(2014, 1, 1), null);
             //var g3 = _service.GetUsersBetweenDates(null,null);
             //var h = _service.GetActionsBetweenDates(null, null);
-            var a = _types.GetById(1);
-            var i = _provider.GetAllProvidersWithAvailableServices(a);
+            //var a = _types.GetById(1);
+            //var i = _provider.GetAllProvidersWithAvailableServices(a);
+            var allServices = _services.GetAll();
+
+            JsonEventsListViewModel events= new JsonEventsListViewModel(allServices);
+            JsonEventViewModel model = new JsonEventViewModel();
+            model.Title = "Asdfasdfasd";
+
+            var jsonObject = JsonConvert.SerializeObject(model);
             return View();
         }
 

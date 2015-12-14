@@ -87,6 +87,8 @@ namespace DIRegister
             builder.RegisterType<ServiceProviderService>().As<IServiceProviderService>();
             builder.RegisterType<PopUpService>().As<IPopUpService>();
             builder.RegisterType<MenuButtonService>().As<IMenuButtonService>();
+
+            builder.RegisterType<ServicesService>().As<IServicesService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)

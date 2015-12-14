@@ -340,6 +340,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reserved.
+        /// </summary>
+        public static string Reserved {
+            get {
+                return ResourceManager.GetString("Reserved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Service providers.
         /// </summary>
         public static string ServiceProviders {

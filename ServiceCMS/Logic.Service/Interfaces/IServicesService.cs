@@ -10,5 +10,6 @@ namespace Logic.Service.Interfaces
     public interface IServicesService
     {
         List<RegistratedServiceModel> GetAllFromDate(DateTime date);
+        List<RegistratedServiceModel> GetAll();
     }
 }
