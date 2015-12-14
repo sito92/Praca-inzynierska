@@ -1,4 +1,5 @@
-﻿using Logic.Common.Models;
+﻿using DAL.Models;
+using Logic.Common.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Logic.Service.Helpers
 {
     public static class AvailableServiceTypesHelper
     {
-        public static Dictionary<ServiceTypeModel, bool> CheckAvailability(IEnumerable<RegistratedServiceModel> registratedServices, IEnumerable<ServiceTypeModel> serviceTypes)
+        public static Dictionary<ServiceTypeModel, bool> CheckAvailability(IEnumerable<RegistratedService> registratedServices, IEnumerable<ServiceType> serviceTypes)
         {
             var availableServiceTypes = new Dictionary<ServiceTypeModel, bool>();
 
