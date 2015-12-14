@@ -9,6 +9,8 @@ namespace Logic.Service.Interfaces
 {
     public interface IServicesService
     {
-        List<RegistratedServiceModel> GetAllFromDate(DateTime date);
+        List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(DateTime date);
+
+        List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(DateTime date, ServiceProviderModel serviceProvider);
     }
 }

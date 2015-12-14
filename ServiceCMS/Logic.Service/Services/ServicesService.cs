@@ -20,14 +20,17 @@ namespace Logic.Service.Services
             _unitOfWorkFactory = unitOfWorkFactory;
             _logger = logger;
         }
-        public List<RegistratedServiceModel> GetAllFromDate(DateTime date)
+
+        public List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(DateTime date)
         {
             List<RegistratedServiceModel> serviceModels = new List<RegistratedServiceModel>();
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
-                    var entities = unitOfWork.RegistratedServiceRepository.Get(x=>x.StartDate.Date == date.Date);
+                    var entities = unitOfWork.RegistratedServiceRepository.Get(x=>x.StartDate.Day == date.Date.Day 
+                                                                               && x.StartDate.Month == date.Date.Month 
+                                                                               && x.StartDate.Year == date.Date.Year);
                     foreach (var entity in entities)
                     {
                         serviceModels.Add(new RegistratedServiceModel(entity));
@@ -40,7 +43,31 @@ namespace Logic.Service.Services
                 }
             }
             return serviceModels;
+        }
 
+        public List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(DateTime date, ServiceProviderModel serviceProvider)
+        {
+            List<RegistratedServiceModel> serviceModels = new List<RegistratedServiceModel>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.RegistratedServiceRepository.Get(x => x.StartDate.Day == date.Date.Day
+                                                                               && x.StartDate.Month == date.Date.Month
+                                                                               && x.StartDate.Year == date.Date.Year
+                                                                               && x.ServiceProviderId == serviceProvider.Id);
+                    foreach (var entity in entities)
+                    {
+                        serviceModels.Add(new RegistratedServiceModel(entity));
+                    }
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return serviceModels;
         }
     }
 }

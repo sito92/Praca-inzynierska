@@ -17,7 +17,6 @@ namespace AdminPanel.Controllers
 
         public ActionResult Test()
         {
-            var services = _servicesService.GetAllFromDate(DateTime.Now);
             return View();
         }
 

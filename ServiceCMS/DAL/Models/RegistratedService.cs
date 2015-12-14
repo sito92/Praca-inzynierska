@@ -13,8 +13,8 @@ namespace DAL.Models
         public int ServiceTypeId { get; set; }
         public int ServiceProviderId { get; set; }
 
-        public ServiceProvider ServiceProvider { get; set; }
-        public ServiceType ServiceType { get; set; }
+        public virtual ServiceProvider ServiceProvider { get; set; }
+        public virtual ServiceType ServiceType { get; set; }
 
     }
 }
