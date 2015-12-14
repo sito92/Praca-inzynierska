@@ -99,7 +99,17 @@ namespace Logic.News.Services
                 {
                     if (news != null)
                     {
-                        unitOfWork.NewsRepository.Update(news.ToEntity());
+                        var updatedNews = new NewsModel()
+                        {
+                            Content = news.Content,
+                            CreationTimeStamp = news.CreationTimeStamp,
+                            LastModifiedTimeStamp = DateTime.Now,
+                            Title = news.Title,
+                            RestoreNewsId = news.Id,
+                            AuthorId = news.AuthorId
+                        };
+                        var entity=updatedNews.ToEntity();
+                        unitOfWork.NewsRepository.Insert(entity);
                     }
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ModifyNewsSuccess };
@@ -131,6 +141,40 @@ namespace Logic.News.Services
                 }
             }
             return response;
+        }
+
+        public IEnumerable<NewsModel> GetRestoreNewsesCollection(NewsModel news, bool rootPageExcluded = false)
+        {
+            var resultCollection = new List<NewsModel>();
+            Stack<NewsModel> branchNewses = new Stack<NewsModel>();
+            if (news != null)
+            {
+                var rootNews = news;
+                branchNewses.Push(rootNews);
+
+                while (branchNewses.Count > 0)
+                {
+                    using (var unitOfWork = _unitOfWorkFactory.Create())
+                    {
+                        var tempNews = branchNewses.Pop();
+                        resultCollection.Add(tempNews);
+                        if (tempNews.RestoreNewsId != null)
+                        {
+                            var restoreNews =
+                                unitOfWork.NewsRepository.Get(x => x.Id == tempNews.RestoreNewsId).Single();
+                            if (restoreNews != null)
+                            {
+                                branchNewses.Push(new NewsModel(restoreNews));
+                            }
+                        }
+                    }
+                }
+                if (rootPageExcluded)
+                    resultCollection.RemoveAt(0);
+
+                return resultCollection;
+            }
+            return null;
         }
     }
 }

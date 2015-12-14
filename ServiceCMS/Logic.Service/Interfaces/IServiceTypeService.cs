@@ -10,6 +10,8 @@ namespace Logic.Service.Interfaces
 {
     public interface IServiceTypeService
     {
+        Dictionary<ServiceTypeModel, bool> GetServiceTypesMatchingTimeCriteria(DateTime time, ServiceProviderModel provider);
+
         ServiceTypeModel GetById(int id);
 
         IList<ServiceTypeModel> GetAll();

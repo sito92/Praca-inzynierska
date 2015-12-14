@@ -9,6 +9,6 @@ namespace Logic.ContactForm.Interfaces
 {
     public interface IContactFormService
     {
-        ResponseBase Send(string authorEmailAddress, string topic, string content);
+       // ResponseBase Send(string authorEmailAddress, string topic, string content);
     }
 }

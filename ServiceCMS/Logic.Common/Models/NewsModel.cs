@@ -16,16 +16,30 @@ namespace Logic.Common.Models
         public string Title { get; set; }
         
         public UserModel Author { get; set; }
+        public int AuthorId { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime? CreationTimeStamp { get; set; }
+        public DateTime? LastModifiedTimeStamp { get; set; }
 
+        public int? RestoreNewsId { get; set; }
+        public News RestoreNews { get; set; }
 
         public NewsModel(News entity)
         {
             Id = entity.Id;
             Content = entity.Content;
             Title = entity.Title;
+            CreationTimeStamp = entity.CreationTimeStamp;
+            LastModifiedTimeStamp = entity.LastModifiedTimeStamp;
+            RestoreNews = entity.RestoreNews;
+            RestoreNewsId = entity.RestoreNewsId;
+            AuthorId = entity.AuthorId;
             Author = entity.Author == null ? null : new UserModel(entity.Author);
+        }
+
+        public NewsModel()
+        {
+
         }
 
         public News ToEntity()
@@ -33,11 +47,13 @@ namespace Logic.Common.Models
             return new News()
             {
                 Id = this.Id,
-                Author = this.Author.ToEntity(),
-                AuthorId = this.Author.Id,
+                AuthorId = this.AuthorId,
                 Content = this.Content,
                 Title = this.Title,
-                Date = this.Date
+                CreationTimeStamp = this.CreationTimeStamp,
+                LastModifiedTimeStamp = this.LastModifiedTimeStamp,
+                RestoreNews = this.RestoreNews,
+                RestoreNewsId = this.RestoreNewsId,
             };
         }
     }

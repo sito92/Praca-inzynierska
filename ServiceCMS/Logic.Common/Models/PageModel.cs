@@ -35,7 +35,7 @@ namespace Logic.Common.Models
             RestorePageId = page.RestorePageId;
         }
 
-        public Page  ToEntitiy()
+        public Page  ToEntity()
         {
             return new Page()
             {

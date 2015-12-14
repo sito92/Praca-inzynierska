@@ -18,6 +18,11 @@ namespace AdminPanel.Controllers
             _serviceProviderService = serviceProviderService;
         }
 
+        public ViewResult Index()
+        {
+            return View();
+        }
+
         public ActionResult GetAll()
         {
             var serviceProviders = _serviceProviderService.GetAll();
@@ -32,11 +37,6 @@ namespace AdminPanel.Controllers
                 return Json(new { success = true, data = serviceProviders }, JsonRequestBehavior.AllowGet);
             else
                 return Json(new { success = false}, JsonRequestBehavior.AllowGet);
-        }
-
-        public ViewResult Index()
-        {
-            return View();
         }
 
         [HttpPost]

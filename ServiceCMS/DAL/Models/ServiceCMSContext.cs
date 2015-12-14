@@ -48,11 +48,6 @@ namespace DAL.Models
                 .HasMany(x => x.Arguments)
                 .WithMany();
 
-            modelBuilder.Entity<Settings>()
-                .HasRequired(x => x.DomainAndPorts)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<ServiceProvider>()
                             .HasMany(x => x.AvailableServices)
                             .WithMany(x=>x.ServiceProviders);

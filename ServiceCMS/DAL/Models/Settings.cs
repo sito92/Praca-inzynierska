@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security;
 using System.Text;
@@ -9,14 +10,9 @@ namespace DAL.Models
 {
     public class Settings
     {
-        public int Id { get; set; }
+        [Key]
+        public string Name { get; set; }
 
-        public string EmailAddress { get; set; }
-
-        public string EmailDomain { get; set; }
-
-       // public SecureString EmailPassword { get; set; }
-
-        public ICollection<DomainAndPorts> DomainAndPorts { get; set; } 
+        public string Value { get; set; }
     }
 }

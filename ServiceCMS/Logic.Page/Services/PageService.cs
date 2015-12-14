@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common.Responses;
 using DAL.Interfaces;
+using DAL.Repository;
 using Logging.Interfaces;
 using Logic.Common.Models;
 using Logic.Page.Interfaces;
@@ -76,7 +77,7 @@ namespace Logic.Page.Services
                     if (page != null)
                     {
                         page.CreationTimeStamp = DateTime.Now;
-                        unitOfWork.PageRepository.Insert(page.ToEntitiy());
+                        unitOfWork.PageRepository.Insert(page.ToEntity());
                     }
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.SavePageSuccess };
@@ -99,10 +100,18 @@ namespace Logic.Page.Services
                 {
                     if (page != null)
                     {
-                        page.LastModifiedTimeStamp = DateTime.Now;
-                        unitOfWork.PageRepository.Update(page.ToEntitiy());
+                        var updatedPage = new PageModel()
+                        {
+                            Content = page.Content,
+                            CreationTimeStamp = DateTime.Now,
+                            LastModifiedTimeStamp = page.LastModifiedTimeStamp,
+                            Media = page.Media,
+                            Name = page.Name,
+                            RestorePageId = page.Id
+                        };
+                        unitOfWork.PageRepository.Insert(updatedPage.ToEntity());
                     }
-                    
+
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ModifyPageSuccess };
                 }
@@ -115,26 +124,76 @@ namespace Logic.Page.Services
             }
         }
 
-        //private int InsertRestorePage(PageModel pageModel)
-        //{
-        //    int a;
-        //    var page = pageModel.ToEntitiy();
-        //    using (var unitOfWork = _unitOfWorkFactory.Create())
-        //    {
-        //        try
-        //        {
-        //            unitOfWork.PageRepository.Insert(page);
-        //            unitOfWork.Save();
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            _logger.LogToFile(_logger.CreateErrorMessage(e));
-        //        }
-        //        a = unitOfWork.PageRepository.Get(x => x.Id == page.Id).FirstOrDefault().Id;
-        //    }
+        public IEnumerable<PageModel> GetRestorePagesCollection(PageModel page, bool rootPageExcluded = false)
+        {
+            var resultCollection = new List<PageModel>();
+            Stack<PageModel> branchPages = new Stack<PageModel>();
+            if (page != null)
+            {
+                var rootPage = page;
+                branchPages.Push(rootPage);
 
-        //    return a;
+                while (branchPages.Count > 0)
+                {
+                    using (var unitOfWork = _unitOfWorkFactory.Create())
+                    {
+                        var tempPage = branchPages.Pop();
+                        resultCollection.Add(tempPage);
+                        if (tempPage.RestorePageId != null)
+                        {
+                            var restorePage =
+                                unitOfWork.PageRepository.Get(x => x.Id == tempPage.RestorePageId).Single();
+                            if (restorePage != null)
+                            {
+                                branchPages.Push(new PageModel(restorePage));
+                            }
+                        }
+                    }
+                }
+                if (rootPageExcluded)
+                    resultCollection.RemoveAt(0);
+
+                return resultCollection;
+            }
+            return null;
+        }
+
+        #region TODO
+        //public IEnumerable<object> GetRestorePagesCollectionGeneric<T>(object entity, GenericRepository<T> repository)
+        //    where T : class
+        //{
+        //    var resultCollection = new List<object>();
+        //    Stack<object> branchPages = new Stack<object>();
+        //    T restoreObj = null;
+
+        //    if (entity != null)
+        //    {
+        //        var rootEntity = entity;
+        //        branchPages.Push(rootEntity);
+
+        //        while (branchPages.Count > 0)
+        //        {
+        //            var tempObj = branchPages.Pop();
+        //            resultCollection.Add(tempObj);
+        //            if (tempObj.GetType().GetProperty("RestorePageId").GetValue(tempObj, null) != null)
+        //            {
+        //                restoreObj =
+        //                    repository.Get(
+        //                        x =>
+        //                            x.GetType().GetProperty("Id").GetValue(x, null) ==
+        //                            tempObj.GetType().GetProperty("RestorePageId").GetValue(tempObj, null)).Single();
+        //                if (restoreObj != null)
+        //                {
+        //                    resultCollection.Add(restoreObj);
+        //                }
+        //            }
+        //        }
+
+        //        return resultCollection;
+        //    }
+        //    return null;
         //}
+        #endregion
 
         public ResponseBase Delete(long id)
         {

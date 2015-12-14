@@ -223,6 +223,7 @@
     <Compile Include="Controllers\ServiceProviderController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\ServiceTypeController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Extensions\JsonNetResult.cs" />
     <Compile Include="Filters\TestFilter.cs" />
@@ -1258,6 +1259,10 @@
     <ProjectReference Include="..\Logic.Service\Logic.Service.csproj">
       <Project>{e7026b9b-377f-48e8-9938-bc6e2660f6c9}</Project>
       <Name>Logic.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Settings\Logic.Settings.csproj">
+      <Project>{1c7ca7da-a639-49b5-adcf-5a7c343e89ce}</Project>
+      <Name>Logic.Settings</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.Statistics\Logic.Statistics.csproj">
       <Project>{4ca61fa0-141f-479f-8c0e-0fb4ab07fdeb}</Project>

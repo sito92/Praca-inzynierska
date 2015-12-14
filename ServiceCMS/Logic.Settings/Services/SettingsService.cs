@@ -22,47 +22,79 @@ namespace Logic.Settings.Services
             _logger = logger;
         }
 
-        public SettingsModel Get()
+        public string GetPropertyByName(string name)
         {
-            SettingsModel settingsModel = null;
+            string valueOfProperty = "";
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
-                    var entity = unitOfWork.SettingsRepository.Get();
-                    if (entity != null)
-                    {
-                        settingsModel = new SettingsModel(entity.FirstOrDefault());
-                    }
-                    unitOfWork.Save();
+                    var entity = unitOfWork.SettingsRepository.Get(x => x.Name == name).Single();
+                    valueOfProperty = entity.Value;
                 }
                 catch (Exception e)
                 {
                     _logger.LogToFile(_logger.CreateErrorMessage(e));
                 }
-
-                return settingsModel;
             }
+            return valueOfProperty;
         }
 
-        public ResponseBase Update(SettingsModel settings)
+        public ResponseBase Insert(SettingsModel model)
         {
             ResponseBase response;
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
-                    if (settings != null)
-                    {
-                        unitOfWork.SettingsRepository.Update(settings.ToEntity());
-                    }
+                    unitOfWork.SettingsRepository.Insert(model.ToEntity());
                     unitOfWork.Save();
-                    return new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.UpdateSettingsSuccess};
+                    response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.SettingsInsertSuccess };
                 }
                 catch (Exception e)
                 {
                     _logger.LogToFile(_logger.CreateErrorMessage(e));
-                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.UpdateSettingsFailed };
+                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.SettingsInsertFailed };
+                }
+            }
+            return response;
+        }
+
+        public ResponseBase Update(SettingsModel model)
+        {
+            ResponseBase response;
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    unitOfWork.SettingsRepository.Update(model.ToEntity());
+                    unitOfWork.Save();
+                    response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.SettingsUpdateSuccess };
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.SettingsUpdateFailed };
+                }
+            }
+            return response;
+        }
+
+        public ResponseBase Delete(SettingsModel model)
+        {
+            ResponseBase response;
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    unitOfWork.SettingsRepository.Delete(model.ToEntity());
+                    unitOfWork.Save();
+                    response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.SettingsDeleteSuccess };
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.SettingsDeleteFailed };
                 }
             }
             return response;

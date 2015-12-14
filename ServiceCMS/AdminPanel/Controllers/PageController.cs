@@ -77,5 +77,18 @@ namespace AdminPanel.Controllers
                 return Json(new { success = false });
             }
         }
+
+        public ActionResult GetRestorePagesCollection(PageModel page, bool rootPageExcluded)
+        {
+            if(ModelState.IsValid)
+            {
+                var result = _pageService.GetRestorePagesCollection(page, rootPageExcluded);
+                return Json(new { success = true, data = result }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new { success = false });
+            }
+        }
     }
 }

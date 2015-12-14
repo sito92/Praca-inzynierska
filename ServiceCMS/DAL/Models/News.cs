@@ -14,12 +14,16 @@ namespace DAL.Models
 
         public string Title { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime? CreationTimeStamp { get; set; }
+        public DateTime? LastModifiedTimeStamp { get; set; }
+
+        public int? RestoreNewsId { get; set; }
 
         public int AuthorId { get; set; }
 
         #region Navigation Properties
         public User Author { get; set; }
+        public News RestoreNews { get; set; }
         public ICollection<NewsCategory> NewsCategories { get; set; }
         #endregion
     }
