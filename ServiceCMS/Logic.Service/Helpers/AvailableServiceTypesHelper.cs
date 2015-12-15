@@ -17,8 +17,8 @@ namespace Logic.Service.Helpers
             {
                 foreach (var phaseTimeBlock in GetServiceTypesTimeBlocks(time, serviceTypes))
                 {
-                    if (   serviceTimeBlock.Item1 < phaseTimeBlock.Value.Item1 && serviceTimeBlock.Item2 < phaseTimeBlock.Value.Item2
-                        || serviceTimeBlock.Item1 > phaseTimeBlock.Value.Item1 && serviceTimeBlock.Item2 > phaseTimeBlock.Value.Item2)
+                    if (   serviceTimeBlock.Item1 <= phaseTimeBlock.Value.Item1 && serviceTimeBlock.Item2 <= phaseTimeBlock.Value.Item2
+                        || serviceTimeBlock.Item1 >= phaseTimeBlock.Value.Item1 && serviceTimeBlock.Item2 >= phaseTimeBlock.Value.Item2)
                     {
                         if(!availableServiceTypes.Select(x => x.Key.Id).Contains(phaseTimeBlock.Key.Id))
                             availableServiceTypes.Add(phaseTimeBlock.Key, true);
@@ -46,7 +46,7 @@ namespace Logic.Service.Helpers
                 {
                     var previousPhases = service.ServiceType.Phases.Where(x => x.Order < phase.Order);
                     var timeOffset = previousPhases.Sum(x => x.DelayInMinutes) + previousPhases.Sum(x => x.DurationInMinutes);
-                    result.Add(new Tuple<DateTime, DateTime>(service.StartDate.AddSeconds(timeOffset), service.StartDate.AddMinutes(phase.DurationInMinutes + timeOffset)));
+                    result.Add(new Tuple<DateTime, DateTime>(service.StartDate.AddMinutes(timeOffset), service.StartDate.AddMinutes(phase.DurationInMinutes + timeOffset)));
                 }
             }
             return result;
