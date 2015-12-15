@@ -132,6 +132,10 @@
     <Compile Include="Migrations\201512141329140_ColumnRename.Designer.cs">
       <DependentUpon>201512141329140_ColumnRename.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512151058566_AddedClientData.cs" />
+    <Compile Include="Migrations\201512151058566_AddedClientData.Designer.cs">
+      <DependentUpon>201512151058566_AddedClientData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -223,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512141329140_ColumnRename.resx">
       <DependentUpon>201512141329140_ColumnRename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512151058566_AddedClientData.resx">
+      <DependentUpon>201512151058566_AddedClientData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
