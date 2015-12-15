@@ -186,7 +186,7 @@ namespace DAL.Migrations
             var dateSeventh = new DateTime(2015, 12, 2, 11, 0, 0);
             #endregion
             context.RegistratedServices.AddOrUpdate(x => x.Id,
-                new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 1, StartDate = dateOne },
+                new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 2, StartDate = dateOne },
                 new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 1, StartDate = dateSecond},
                 new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 2, StartDate = dateThird},
                 new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 1, StartDate = dateFourth},
@@ -201,8 +201,8 @@ namespace DAL.Migrations
                 // Strzy¿enie damskie
                 new ServicePhase() { Name = "Diagnoza F", DelayInSeconds = 0, DurationInSeconds = 10, Order = 1,ServiceTypeId = 2},
                 new ServicePhase() { Name = "Strzy¿enie F", DelayInSeconds = 0, DurationInSeconds = 60, Order = 3, ServiceTypeId = 2 },
-                new ServicePhase() { Name = "Modelowanie F", DelayInSeconds = 0, DurationInSeconds = 30, Order = 4, ServiceTypeId = 2 },
-                new ServicePhase() { Name = "Farbowanie F", DelayInSeconds = 40, DurationInSeconds = 40, Order = 2, ServiceTypeId = 2 },
+                new ServicePhase() { Name = "Modelowanie F", DelayInSeconds = 60, DurationInSeconds = 30, Order = 4, ServiceTypeId = 2 },
+                new ServicePhase() { Name = "Farbowanie F", DelayInSeconds = 0, DurationInSeconds = 40, Order = 2, ServiceTypeId = 2 },
 
                  // Strzy¿enie mêskie
                 new ServicePhase() { Name = "Diagnoza M", DelayInSeconds = 0, DurationInSeconds = 10, Order = 1,ServiceTypeId = 1},

@@ -130,7 +130,7 @@ namespace Logic.Service.Services
                                                                                      && x.StartDate.Year == time.Date.Year);
                     var serviceTypes = unitOfWork.ServiceTypeRepository.Get();
 
-                    resultCollection = AvailableServiceTypesHelper.CheckAvailability(registratedServiceTypes, serviceTypes);
+                    resultCollection = AvailableServiceTypesHelper.CheckAvailability(time,registratedServiceTypes, serviceTypes.Select(x => new ServiceTypeModel(x)));
                 }
                 catch (Exception e)
                 {
