@@ -19,12 +19,12 @@ namespace AdminPanel.Models.Calendar
                 foreach (var phase in service.ServiceType.Phases.OrderBy(x=>x.Order))
                 {
                     var previousPhases = service.ServiceType.Phases.Where(x => x.Order < phase.Order);
-                    var timeOffset = previousPhases.Sum(x => x.DelayInSeconds)+previousPhases.Sum(x=>x.DurationInSeconds);
+                    var timeOffset = previousPhases.Sum(x => x.DelayInMinutes)+previousPhases.Sum(x=>x.DurationInMinutes);
                     Events.Add(new JsonEventViewModel()
                     {
                         Title = Presentation.Reserved,
-                        Start = service.StartDate.AddSeconds(timeOffset).ToString("o"),
-                        End = service.StartDate.AddSeconds(phase.DurationInSeconds).ToString("o")
+                        Start = service.StartDate.AddMinutes(timeOffset).ToString("o"),
+                        End = service.StartDate.AddMinutes(phase.DurationInMinutes+timeOffset).ToString("o")
                     });
                 }
             }            

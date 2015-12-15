@@ -11,8 +11,8 @@ namespace Logic.Common.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int DelayInSeconds { get; set; }
-        public int DurationInSeconds { get; set; }
+        public int DelayInMinutes { get; set; }
+        public int DurationInMinutes { get; set; }
         public int Order { get; set; }
         public int ServiceTypeId { get; set; }
 
@@ -26,8 +26,8 @@ namespace Logic.Common.Models
         {
             Id = entity.Id;
             Name = entity.Name;
-            DelayInSeconds = entity.DelayInSeconds;
-            DurationInSeconds = entity.DurationInSeconds;
+            DelayInMinutes = entity.DelayInMinutes;
+            DurationInMinutes = entity.DurationInMinutes;
             Order = entity.Order;
             ServiceTypeId = entity.ServiceTypeId;
         }
@@ -38,8 +38,8 @@ namespace Logic.Common.Models
             {
                 Id = this.Id,
                 Name = this.Name,
-                DelayInSeconds = this.DelayInSeconds,
-                DurationInSeconds = this.DurationInSeconds,
+                DelayInMinutes = this.DelayInMinutes,
+                DurationInMinutes = this.DurationInMinutes,
                 Order = this.Order,
                 ServiceTypeId = this.ServiceTypeId
             };

@@ -34,13 +34,18 @@ namespace AdminPanel.Controllers
             return new JsonNetResult(new { success = true, data = events }, JsonRequestBehavior.AllowGet);
 
         }
-
+       [HttpPost]
         public ActionResult GetProviderServicesAtDate(DateTime date)
         {
-            var services = _servicesService.GetAll();
+            var services = _servicesService.GetAllServicesWithMatchingCriteria(date,null);
             JsonEventsListViewModel events = new JsonEventsListViewModel(services.Where(x => x.ServiceProvider.Id == 3).ToList());
 
             return new JsonNetResult(new { success = true, data = events }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetModal(string name)
+        {
+            return PartialView("Modals/" + name);
         }
 
     }

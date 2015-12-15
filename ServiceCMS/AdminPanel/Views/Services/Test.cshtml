@@ -4,5 +4,8 @@
 @*@Scripts.Render("~/bundles/calendar")*@
 @Scripts.Render("~/bundles/services")
 <div ng-controller="ServicesController" style="max-width: 500px">
-    <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources" calendar="serviceCalendar"></div> 
+    <div>
+        <select ng-model="provider" ng-options="prov.Name for prov in providers"></select>
+    </div>
+    <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources" calendar="serviceCalendar"></div>
 </div>

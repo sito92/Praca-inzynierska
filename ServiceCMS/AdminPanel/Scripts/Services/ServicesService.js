@@ -11,11 +11,12 @@
         getProviderServicesAtDate: function (provider,date) {
             var deferred = $q.defer();
             $http({
-                method: 'GET',
+                method: 'POST',
                 url: '/Services/GetProviderServicesAtDate',
-                params:
-                {                   
-                    date:date
+                data:
+                {
+                    //provider:provider,
+                    date: date                   
                 }
                     
             }).success(deferred.resolve).error(deferred.reject);

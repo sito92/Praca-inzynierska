@@ -1,25 +1,24 @@
-﻿app.controller('ServicesController', function ($scope, uiCalendarConfig, $compile, ServicesService) {
-    $scope.events = [];  
+﻿app.controller('ServicesController', function ($scope, uiCalendarConfig, $compile, ServicesService, ServiceProviderService, $modal) {
+    $scope.provider = null;
+    $scope.events = [];
+    ServiceProviderService.getAll().then(function (jsonResult) {
+        if (jsonResult.success) {
+            $scope.providers = jsonResult.data;
+            $scope.provider = jsonResult.data[0];
+        } else {
+            alert(jsonResult.message);
+        }
+    }, function () {
+        alert("Error");
+    });
+
     $scope.refreshEvents = function(provider,date) {
         ServicesService.getProviderServicesAtDate(provider,date).then(function (jsonResult) {
-            if (jsonResult.success) {
-                //$scope.events = jsonResult.data.Events;
-                var date = new Date();
-                var d = date.getDate();
-                var m = date.getMonth();
-                var y = date.getFullYear();
-                $scope.events2 = [
-                  { title: 'Birthday Party', start: new Date(y, m, d, 12, 0), end: new Date(y, m, d, 13, 30), allDay: false, editable: false },
-                  { title: 'Click for Google', start: new Date(y, m, 28), end: new Date(y, m, 29), url: 'http://google.com/' }
-                ];
+            if (jsonResult.success) {                
                 $scope.events.slice(0, $scope.events.length);
-
                 angular.forEach(jsonResult.data.Events, function (val, key) {
                     $scope.events.push(val);
-                });
-
-                //uiCalendarConfig.calendars.serviceCalendar.fullCalendar('render');
-
+                });                
             } else {
                 alert(jsonResult.message);
             }
@@ -27,36 +26,28 @@
             alert("Error");
         });
     }
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-    $scope.timeClick = function (date, jsEvent, view, resourceObj) {
-        console.log(date);
-        console.log(jsEvent);
-        console.log(view);
-        console.log(resourceObj);
-    }
 
-    //$scope.events = [    
-    //  { title: 'Birthday Party', start: new Date(y, m, d, 12, 0), end: new Date(y, m, d, 13, 30), allDay: false,editable:false },
-    //  { title: 'Click for Google', start: new Date(y, m, 28), end: new Date(y, m, 29), url: 'http://google.com/' }
-    //];
-
-
-    $scope.eventRender = function (event, element, view) {
-        element.attr({
-            'tooltip': event.title,
-            'tooltip-append-to-body': true
-        });
-        $compile(element)($scope);
-    };
-    $scope.eventClick = function (event, jsEvent, view) {
-        console.log(event);
-    }
     $scope.dayChange = function (view, element) {
-        $scope.refreshEvents(null, view.start.format("MM/DD/YYYY HH:MM:ss"));
+        $scope.refreshEvents($scope.provider, view.start.format("MM/DD/YYYY HH:mm:ss"));
     }
+    $scope.slotClick = function (date, jsEvent, view) {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/Services/GetModal?name=Register',
+            controller: 'ServiceRegisterModalCtrl',
+            size: "md",
+            resolve:
+            {
+                date:function() {
+                    return date;
+                },
+                provider:function() {
+                    return $scope.provider;
+                }
+            }
+        });
+    }
+
     $scope.uiConfig = {
         calendar: {
             defaultView: 'agendaDay',
@@ -66,7 +57,7 @@
             maxTime: '18:00:00',
             axisFormat: 'HH:mm',
             timeFormat: {
-                agenda: 'H:mm'
+                agenda: 'HH:mm'
             },
             height: 450,
             editable: true,
@@ -76,13 +67,19 @@
                 right: 'today prev,next'
             },
             eventClick:$scope.eventClick,
-            viewRender: $scope.dayChange
+            viewRender: $scope.dayChange,
+            dayClick:$scope.slotClick
         }
 
     };
    
-    
-    /* event sources array*/
     $scope.eventSources = [$scope.events];
-    $scope.eventSources2 = [$scope.calEventsExt, $scope.eventsF, $scope.events];
+});
+app.controller('ServiceRegisterModalCtrl', function ($scope, $modalInstance, date,provider) {
+    $scope.date = date;
+    $scope.provider = provider;
+    $scope.decline = function () {
+        $modalInstance.close();
+    }
+
 });
