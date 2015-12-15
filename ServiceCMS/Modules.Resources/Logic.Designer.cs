@@ -63,6 +63,24 @@ namespace Modules.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string ConfigureSmtpClientSettingsFailed {
+            get {
+                return ResourceManager.GetString("ConfigureSmtpClientSettingsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ConfigureSmtpClientSettingsSuccess {
+            get {
+                return ResourceManager.GetString("ConfigureSmtpClientSettingsSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string ContactFormEmailSendFailed {
             get {
                 return ResourceManager.GetString("ContactFormEmailSendFailed", resourceCulture);

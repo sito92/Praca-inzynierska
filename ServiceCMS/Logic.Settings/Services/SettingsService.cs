@@ -40,61 +40,26 @@ namespace Logic.Settings.Services
             return valueOfProperty;
         }
 
-        public ResponseBase Insert(SettingsModel model)
+        public ResponseBase Update(Dictionary<string, string> settingsDictionary)
         {
             ResponseBase response;
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
-                    unitOfWork.SettingsRepository.Insert(model.ToEntity());
-                    unitOfWork.Save();
-                    response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.SettingsInsertSuccess };
-                }
-                catch (Exception e)
-                {
-                    _logger.LogToFile(_logger.CreateErrorMessage(e));
-                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.SettingsInsertFailed };
-                }
-            }
-            return response;
-        }
+                    foreach (var settingsProperty in settingsDictionary.Keys)
+                    {
+                        var previousPropertyValue = unitOfWork.SettingsRepository.Get(x => x.Name == settingsProperty).FirstOrDefault();
+                        previousPropertyValue.Value = settingsDictionary[settingsProperty];
+                        unitOfWork.Save();
+                    }
 
-        public ResponseBase Update(SettingsModel model)
-        {
-            ResponseBase response;
-            using (var unitOfWork = _unitOfWorkFactory.Create())
-            {
-                try
-                {
-                    unitOfWork.SettingsRepository.Update(model.ToEntity());
-                    unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.SettingsUpdateSuccess };
                 }
                 catch (Exception e)
                 {
                     _logger.LogToFile(_logger.CreateErrorMessage(e));
                     response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.SettingsUpdateFailed };
-                }
-            }
-            return response;
-        }
-
-        public ResponseBase Delete(SettingsModel model)
-        {
-            ResponseBase response;
-            using (var unitOfWork = _unitOfWorkFactory.Create())
-            {
-                try
-                {
-                    unitOfWork.SettingsRepository.Delete(model.ToEntity());
-                    unitOfWork.Save();
-                    response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.SettingsDeleteSuccess };
-                }
-                catch (Exception e)
-                {
-                    _logger.LogToFile(_logger.CreateErrorMessage(e));
-                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.SettingsDeleteFailed };
                 }
             }
             return response;

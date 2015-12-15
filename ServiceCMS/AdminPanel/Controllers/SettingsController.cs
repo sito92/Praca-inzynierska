@@ -31,41 +31,41 @@ namespace AdminPanel.Controllers
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
 
+        //[HttpPost]
+        //public ActionResult Insert(SettingsModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var response = _settingsService.Insert(model);
+        //        return Json(new { success = true, data = response }, JsonRequestBehavior.AllowGet);
+        //    }
+        //    else
+        //        return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        //}
+
         [HttpPost]
-        public ActionResult Insert(SettingsModel model)
+        public ActionResult Update(Dictionary<string, string> settingsDictionary)
         {
-            if (ModelState.IsValid)
+            if (settingsDictionary != null)
             {
-                var response = _settingsService.Insert(model);
+                var response = _settingsService.Update(settingsDictionary);
                 return Json(new { success = true, data = response }, JsonRequestBehavior.AllowGet);
             }
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
-        public ActionResult Update(SettingsModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var response = _settingsService.Update(model);
-                return Json(new { success = true, data = response }, JsonRequestBehavior.AllowGet);
-            }
-            else
-                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost]
-        public ActionResult Delete(SettingsModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var response = _settingsService.Delete(model);
-                return Json(new { success = true, data = response }, JsonRequestBehavior.AllowGet);
-            }
-            else
-                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
-        }
+        //[HttpPost]
+        //public ActionResult Delete(SettingsModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var response = _settingsService.Delete(model);
+        //        return Json(new { success = true, data = response }, JsonRequestBehavior.AllowGet);
+        //    }
+        //    else
+        //        return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        //}
 
     }
 }
