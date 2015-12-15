@@ -1204,6 +1204,7 @@
     <Content Include="Views\ServiceProvider\Modals\ChooseType.cshtml" />
     <Content Include="Views\ServiceProvider\Modals\Edit.cshtml" />
     <Content Include="Views\ServiceProvider\Modals\ConfirmDelete.cshtml" />
+    <Content Include="Views\Services\Modals\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

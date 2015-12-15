@@ -23,15 +23,33 @@ namespace AdminPanel.Controllers
         {
             return View();
         }
-
-       // public ActionResult GetProviderServicesFromDate()
-
-        public ActionResult GetProviderServicesAtDate(DateTime date)
+        [HttpPost]
+        public ActionResult Test1(DateTime date)
         {
-            var services = _servicesService.GetAllServicesWithMatchingCriteria(date);
-            JsonEventsListViewModel events = new JsonEventsListViewModel(services.Where(x => x.ServiceProvider.Id == 3).ToList());
+            return View();
+        }
+
+        public ActionResult GetAll()
+        {
+            var services = _servicesService.GetAll();
+            JsonEventsListViewModel events = new JsonEventsListViewModel(services.Where(x=>x.ServiceProvider.Id==3).ToList());
 
             return new JsonNetResult(new { success = true, data = events }, JsonRequestBehavior.AllowGet);
+
+        }
+
+        [HttpPost]
+        public ActionResult GetProviderServicesAtDate(ServiceProviderModel provider,DateTime date)
+        {
+            var services = _servicesService.GetAllServicesWithMatchingCriteria(date,provider);
+            JsonEventsListViewModel events = new JsonEventsListViewModel(services);
+
+            return new JsonNetResult(new { success = true, data = events }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetModal(string name)
+        {
+            return PartialView("Modals/" + name);
         }
 
     }

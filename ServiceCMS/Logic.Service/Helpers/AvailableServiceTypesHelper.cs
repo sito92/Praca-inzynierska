@@ -45,8 +45,8 @@ namespace Logic.Service.Helpers
                 foreach (var phase in service.ServiceType.Phases.OrderBy(x => x.Order))
                 {
                     var previousPhases = service.ServiceType.Phases.Where(x => x.Order < phase.Order);
-                    var timeOffset = previousPhases.Sum(x => x.DelayInSeconds) + previousPhases.Sum(x => x.DurationInSeconds);
-                    result.Add(new Tuple<DateTime, DateTime>(service.StartDate.AddSeconds(timeOffset), service.StartDate.AddSeconds(phase.DurationInSeconds + timeOffset)));
+                    var timeOffset = previousPhases.Sum(x => x.DelayInMinutes) + previousPhases.Sum(x => x.DurationInMinutes);
+                    result.Add(new Tuple<DateTime, DateTime>(service.StartDate.AddSeconds(timeOffset), service.StartDate.AddMinutes(phase.DurationInMinutes + timeOffset)));
                 }
             }
             return result;
@@ -60,8 +60,8 @@ namespace Logic.Service.Helpers
                 foreach (var typePhase in type.Phases.OrderBy(x => x.Order))
                 {
                     var previousPhase = type.Phases.Where(x => x.Order < typePhase.Order);
-                    var timeOffset = previousPhase.Sum(x => x.DelayInSeconds) + previousPhase.Sum(x => x.DurationInSeconds);
-                    result.Add(new KeyValuePair<ServiceTypeModel, Tuple<DateTime, DateTime>>(type,new Tuple<DateTime, DateTime>(time.AddMinutes(timeOffset), time.AddMinutes(timeOffset + typePhase.DurationInSeconds))));
+                    var timeOffset = previousPhase.Sum(x => x.DelayInMinutes) + previousPhase.Sum(x => x.DurationInMinutes);
+                    result.Add(new KeyValuePair<ServiceTypeModel, Tuple<DateTime, DateTime>>(type, new Tuple<DateTime, DateTime>(time.AddMinutes(timeOffset), time.AddMinutes(timeOffset + typePhase.DurationInMinutes))));
                 }
             }
             return result;
