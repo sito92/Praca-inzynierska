@@ -1,34 +1,41 @@
 ﻿app.controller('ServicesController', function ($scope, uiCalendarConfig, $compile, ServicesService, ServiceProviderService, $modal) {
     $scope.provider = null;
     $scope.events = [];
+    $scope.date = null;
     ServiceProviderService.getAll().then(function (jsonResult) {
         if (jsonResult.success) {
             $scope.providers = jsonResult.data;
             $scope.provider = jsonResult.data[0];
+            $scope.refreshEvents($scope.provider, $scope.date.format("DD/MM/YYYY"));
         } else {
             alert(jsonResult.message);
         }
     }, function () {
         alert("Error");
     });
-
-    $scope.refreshEvents = function(provider,date) {
-        ServicesService.getProviderServicesAtDate(provider,date).then(function (jsonResult) {
-            if (jsonResult.success) {                
-                $scope.events.slice(0, $scope.events.length);
-                angular.forEach(jsonResult.data.Events, function (val, key) {
-                    $scope.events.push(val);
-                });                
-            } else {
-                alert(jsonResult.message);
-            }
-        }, function () {
-            alert("Error");
-        });
+    $scope.providerChange= function() {
+        $scope.refreshEvents($scope.provider, $scope.date.format("DD/MM/YYYY"));
+    }
+    $scope.refreshEvents = function (provider, date) {
+        if (provider != null) {
+            ServicesService.getProviderServicesAtDate(provider, date).then(function(jsonResult) {
+                if (jsonResult.success) {
+                    $scope.events.splice(0, $scope.events.length);
+                    angular.forEach(jsonResult.data.Events, function(val, key) {
+                        $scope.events.push(val);
+                    });
+                } else {
+                    alert(jsonResult.message);
+                }
+            }, function() {
+                alert("Error");
+            });
+        }
     }
 
     $scope.dayChange = function (view, element) {
-        $scope.refreshEvents($scope.provider, view.start.format("MM/DD/YYYY HH:mm:ss"));
+        $scope.date = view.start;
+        $scope.refreshEvents($scope.provider, view.start.format("DD/MM/YYYY"));
     }
     $scope.slotClick = function (date, jsEvent, view) {
         var modalInstance = $modal.open({

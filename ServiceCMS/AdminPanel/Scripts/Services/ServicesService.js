@@ -8,15 +8,16 @@
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
         },
-        getProviderServicesAtDate: function (provider,date) {
+        getProviderServicesAtDate: function (provider, date) {
+            debugger;
             var deferred = $q.defer();
             $http({
                 method: 'POST',
                 url: '/Services/GetProviderServicesAtDate',
                 data:
                 {
-                    //provider:provider,
-                    date: date                   
+                    provider:provider,
+                    date: date
                 }
                     
             }).success(deferred.resolve).error(deferred.reject);

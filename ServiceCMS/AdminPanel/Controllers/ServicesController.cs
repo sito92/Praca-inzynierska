@@ -23,7 +23,11 @@ namespace AdminPanel.Controllers
         {
             return View();
         }
-
+        [HttpPost]
+        public ActionResult Test1(DateTime date)
+        {
+            return View();
+        }
        // public ActionResult GetProviderServicesFromDate()
 
         public ActionResult GetAll()
@@ -34,11 +38,11 @@ namespace AdminPanel.Controllers
             return new JsonNetResult(new { success = true, data = events }, JsonRequestBehavior.AllowGet);
 
         }
-       [HttpPost]
-        public ActionResult GetProviderServicesAtDate(DateTime date)
+        [HttpPost]
+        public ActionResult GetProviderServicesAtDate(ServiceProviderModel provider,DateTime date)
         {
-            var services = _servicesService.GetAllServicesWithMatchingCriteria(date,null);
-            JsonEventsListViewModel events = new JsonEventsListViewModel(services.Where(x => x.ServiceProvider.Id == 3).ToList());
+            var services = _servicesService.GetAllServicesWithMatchingCriteria(date,provider);
+            JsonEventsListViewModel events = new JsonEventsListViewModel(services);
 
             return new JsonNetResult(new { success = true, data = events }, JsonRequestBehavior.AllowGet);
         }
