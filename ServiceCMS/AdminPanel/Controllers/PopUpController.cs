@@ -17,18 +17,13 @@ namespace AdminPanel.Controllers
             _popUpService = popUpService;
         }
 
-        public ViewResult Index()
-        {
-            return View();
-        }
-
         [HttpPost]
         public ActionResult Add(PopUpModel model)
         {
             if (ModelState.IsValid)
             {
                 var response = _popUpService.Insert(model);
-                return Json(new {success = true, data = response}, JsonRequestBehavior.AllowGet);
+                return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else
             {
@@ -42,7 +37,7 @@ namespace AdminPanel.Controllers
             if (ModelState.IsValid)
             {
                 var response = _popUpService.Update(model);
-                return Json(new { success = true, data = response },JsonRequestBehavior.AllowGet);
+                return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else
             {

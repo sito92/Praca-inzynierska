@@ -39,7 +39,7 @@ namespace AdminPanel.Controllers
             if (ModelState.IsValid)
             {
                 var response = _fileService.Insert(model);
-                return Json(new {success = true, data = response},JsonRequestBehavior.AllowGet);
+                return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else
                 return Json(new {success = false}, JsonRequestBehavior.AllowGet);
@@ -51,7 +51,7 @@ namespace AdminPanel.Controllers
             if (ModelState.IsValid)
             {
                 var response = _fileService.Update(model);
-                return Json(new { success = true, data = response }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
@@ -63,7 +63,7 @@ namespace AdminPanel.Controllers
             if (ModelState.IsValid)
             {
                 var response = _fileService.Delete(model.Id);
-                return Json(new { success = true, data = response }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);

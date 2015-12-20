@@ -12,7 +12,7 @@ namespace AdminPanel.Controllers
 {
     public class NewsController : BaseController
     {
-        private INewsService _newsService;
+        private readonly INewsService _newsService;
         public NewsController(INewsService newsService)
         {
             _newsService = newsService;

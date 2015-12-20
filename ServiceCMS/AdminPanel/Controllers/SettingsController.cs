@@ -49,7 +49,7 @@ namespace AdminPanel.Controllers
             if (settingsDictionary != null)
             {
                 var response = _settingsService.Update(settingsDictionary);
-                return Json(new { success = true, data = response }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
