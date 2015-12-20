@@ -67,19 +67,20 @@ namespace Logic.Service.Services
             return serviceModels;
         }
 
-        public List<RegistratedServiceModel> GetAll()
+        public List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(ServiceProviderModel serviceProvider)
         {
-             List<RegistratedServiceModel> serviceModels = new List<RegistratedServiceModel>();
+            List<RegistratedServiceModel> serviceModels = new List<RegistratedServiceModel>();
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
-                    var entities = unitOfWork.RegistratedServiceRepository.Get();
+                    var entities =
+                        unitOfWork.RegistratedServiceRepository.Get(x => x.ServiceProviderId == serviceProvider.Id);
+
                     foreach (var entity in entities)
                     {
                         serviceModels.Add(new RegistratedServiceModel(entity));
                     }
-                    unitOfWork.Save();
                 }
                 catch (Exception e)
                 {
@@ -100,6 +101,28 @@ namespace Logic.Service.Services
                                                                                && x.StartDate.Month == date.Date.Month
                                                                                && x.StartDate.Year == date.Date.Year
                                                                                && x.ServiceProviderId == serviceProvider.Id);
+                    foreach (var entity in entities)
+                    {
+                        serviceModels.Add(new RegistratedServiceModel(entity));
+                    }
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return serviceModels;
+        }
+
+        public List<RegistratedServiceModel> GetAll()
+        {
+            List<RegistratedServiceModel> serviceModels = new List<RegistratedServiceModel>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.RegistratedServiceRepository.Get();
                     foreach (var entity in entities)
                     {
                         serviceModels.Add(new RegistratedServiceModel(entity));

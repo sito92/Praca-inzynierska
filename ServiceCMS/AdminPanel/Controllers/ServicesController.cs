@@ -13,20 +13,23 @@ namespace AdminPanel.Controllers
 {
     public class ServicesController : Controller
     {
-        private IServicesService _servicesService;
+        private readonly IServicesService _servicesService;
         public ServicesController(IServicesService servicesService)
         {
             _servicesService = servicesService;
         }
 
-        public ActionResult Test()
-        {
-            return View();
-        }
         [HttpPost]
-        public ActionResult Test1(DateTime date)
+        public ActionResult RegisterService(RegistratedServiceModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var response = _servicesService.Insert(model);
+                return Json(new { success = true, message = response }, JsonRequestBehavior.AllowGet);
+            }
+            else
+                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+
         }
 
         public ActionResult GetAll()
@@ -47,17 +50,25 @@ namespace AdminPanel.Controllers
             return new JsonNetResult(new { success = true, data = events }, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
-        public ActionResult RegisterService(RegistratedServiceModel model)
+        public ActionResult GetAllRegisteredServices()
         {
-            if (ModelState.IsValid)
-            {
-                var response = _servicesService.Insert(model);
-                return Json(new { success = true, message = response }, JsonRequestBehavior.AllowGet);
+            var registeredServices = _servicesService.GetAll();
+            
+            if(registeredServices.Count > 0)
+                return Json(new { success = true, data = registeredServices }, JsonRequestBehavior.AllowGet);
+            else
+                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetRegisteredServicesWithMatchingProvider(ServiceProviderModel serviceProvider)
+        {
+            if(ModelState.IsValid)
+            { 
+                var registeredServices = _servicesService.GetAllServicesWithMatchingCriteria(serviceProvider);
+                return Json(new { success = true, data = registeredServices }, JsonRequestBehavior.AllowGet);
             }
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
-
         }
 
         public ActionResult GetModal(string name)

@@ -12,6 +12,7 @@ namespace Logic.Service.Interfaces
     {
         ResponseBase Insert(RegistratedServiceModel model);
         List<RegistratedServiceModel> GetAll();
+        List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(ServiceProviderModel serviceProvider);
         List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(DateTime date);
         List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(DateTime date, ServiceProviderModel serviceProvider);
     }
