@@ -1258,6 +1258,10 @@
       <Project>{b9a9e81e-de7c-4c2f-996a-dfb24ad44444}</Project>
       <Name>Logic.Inset</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logic.MailManagement\Logic.MailManagement.csproj">
+      <Project>{d1d0d546-bbdc-49e8-b3af-0b96f62e6095}</Project>
+      <Name>Logic.MailManagement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic.MenuButton\Logic.MenuButton.csproj">
       <Project>{258a87f6-b6fa-48f0-84d2-847cc600fe11}</Project>
       <Name>Logic.MenuButton</Name>

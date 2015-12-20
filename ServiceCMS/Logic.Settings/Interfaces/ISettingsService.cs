@@ -12,10 +12,6 @@ namespace Logic.Settings.Interfaces
     {
         string GetPropertyByName(string name);
 
-        ResponseBase Insert(SettingsModel model);
-
-        ResponseBase Update(SettingsModel model);
-        
-        ResponseBase Delete(SettingsModel model);
+        ResponseBase Update(Dictionary<string, string> mailSettings);
     }
 }

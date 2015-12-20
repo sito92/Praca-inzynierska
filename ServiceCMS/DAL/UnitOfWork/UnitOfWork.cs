@@ -170,7 +170,7 @@ namespace DAL.UnitOfWork
             {
                 if (this.settingsRepository == null)
                 {
-                    this.newsCategoryRepository = new GenericRepository<NewsCategory>(context);
+                    this.settingsRepository = new GenericRepository<Settings>(context);
                 }
                 return settingsRepository;
             }

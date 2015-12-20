@@ -37,6 +37,10 @@ using Logic.User.Interfaces;
 using Logic.User.Services;
 using Modules.Cryptography;
 using Modules.Cryptography.Interfaces;
+using Modules.FileManager.Services;
+using Modules.FileManager.Interfaces;
+using Logic.MailManagement.Interfaces;
+using Logic.MailManagement.Services;
 
 namespace DIRegister
 {
@@ -86,12 +90,14 @@ namespace DIRegister
             builder.RegisterType<PopUpService>().As<IPopUpService>();
             builder.RegisterType<MenuButtonService>().As<IMenuButtonService>();
             builder.RegisterType<SettingsService>().As<ISettingsService>();
+            builder.RegisterType<MailManagementService>().As<IMailManagementService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)
         {
             builder.RegisterType<PasswordManager>().As<IPasswordManager>();
             builder.RegisterType<HashComputer>().As<IHashComputer>();
+            builder.RegisterType<FileManager>().As<IFileManager>();
         }
 
         private static void RegisterFilters(ContainerBuilder builder)
