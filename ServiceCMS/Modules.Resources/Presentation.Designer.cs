@@ -133,6 +133,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Creation date.
+        /// </summary>
+        public static string CreationDate {
+            get {
+                return ResourceManager.GetString("CreationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Decline.
         /// </summary>
         public static string Decline {
@@ -219,6 +228,15 @@ namespace Modules.Resources {
         public static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last modify date.
+        /// </summary>
+        public static string LastModifyDate {
+            get {
+                return ResourceManager.GetString("LastModifyDate", resourceCulture);
             }
         }
         

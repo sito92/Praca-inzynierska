@@ -1222,6 +1222,8 @@
     <Content Include="Views\ServiceProvider\Modals\ConfirmDelete.cshtml" />
     <Content Include="Views\Services\Modals\Register.cshtml" />
     <Content Include="Views\News\Modals\ChooseCategory.cshtml" />
+    <Content Include="Views\News\Modals\Edit.cshtml" />
+    <Content Include="Views\News\Modals\ConfirmDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -59,18 +59,15 @@ namespace DAL.Migrations
 
         private void SeedSettings(ServiceCMSContext context)
         {
-<<<<<<< HEAD
             //context.Settings.AddOrUpdate(x => x.EmailAddress,
             //    new Settings(){EmailAddress = "servicecmsthesis@gmail.com", EmailPassword = new NetworkCredential("cos", "arturikamil").SecurePassword});
             //context.SaveChanges();
-=======
             context.Settings.AddOrUpdate(x => x.Name,
                 new Settings() { Name = "EmailHost", Value = "smtp.gmail.com" },
                 new Settings() { Name = "EmailUsername", Value = "servicecmsthesis@gmail.com" },
                 new Settings() { Name = "EmailPassword", Value = "arturikamil" }
                 );
             context.SaveChanges();
->>>>>>> d3c64d87bc745c0248e603d78a2e40ddbf5d4678
         }
 
         private void SeedNewses(ServiceCMSContext context)

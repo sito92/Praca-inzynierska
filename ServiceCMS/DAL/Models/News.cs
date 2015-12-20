@@ -21,8 +21,8 @@ namespace DAL.Models
 
 
         #region Navigation Properties
-        public News RestoreNews { get; set; }
-        public ICollection<NewsCategory> NewsCategories { get; set; }
+        public virtual News RestoreNews { get; set; }
+        public virtual ICollection<NewsCategory> NewsCategories { get; set; }
         #endregion
     }
 }

@@ -24,6 +24,8 @@ namespace Logic.Common.Models
         public int? RestoreNewsId { get; set; }
         public News RestoreNews { get; set; }
 
+        public ICollection<NewsCategoryModel> Categories { get; set; } 
+
         public NewsModel(News entity)
         {
             Id = entity.Id;
@@ -33,6 +35,9 @@ namespace Logic.Common.Models
             LastModifiedTimeStamp = entity.LastModifiedTimeStamp;
             RestoreNews = entity.RestoreNews;
             RestoreNewsId = entity.RestoreNewsId;
+            Categories = entity.NewsCategories == null
+                ? null
+                : entity.NewsCategories.Select(x => new NewsCategoryModel(x)).ToList();
         }
 
         public NewsModel()
@@ -51,6 +56,7 @@ namespace Logic.Common.Models
                 LastModifiedTimeStamp = this.LastModifiedTimeStamp,
                 RestoreNews = this.RestoreNews,
                 RestoreNewsId = this.RestoreNewsId,
+                NewsCategories = this.Categories == null ? null : this.Categories.Select(x=>x.ToEntity()).ToList() 
             };
         }
     }

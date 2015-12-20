@@ -13,6 +13,10 @@ namespace Logic.Common.Models
 
         public string Category { get; set; }
 
+        public NewsCategoryModel()
+        {
+            
+        }
         public NewsCategoryModel(NewsCategory entity)
         {
             this.Id = entity.Id;
