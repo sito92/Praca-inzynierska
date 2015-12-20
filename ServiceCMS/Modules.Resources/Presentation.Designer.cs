@@ -79,6 +79,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Categories.
+        /// </summary>
+        public static string Categories {
+            get {
+                return ResourceManager.GetString("Categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose images.
         /// </summary>
         public static string ChooseImages {
@@ -111,6 +120,24 @@ namespace Modules.Resources {
         public static string ConfirmDeleteMessage {
             get {
                 return ResourceManager.GetString("ConfirmDeleteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Content.
+        /// </summary>
+        public static string Content {
+            get {
+                return ResourceManager.GetString("Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creation date.
+        /// </summary>
+        public static string CreationDate {
+            get {
+                return ResourceManager.GetString("CreationDate", resourceCulture);
             }
         }
         
@@ -160,6 +187,24 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email isinvalid..
+        /// </summary>
+        public static string EmailErrorMessage {
+            get {
+                return ResourceManager.GetString("EmailErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This field must be greater than zero..
         /// </summary>
         public static string GreaterThanZeroMessage {
@@ -183,6 +228,15 @@ namespace Modules.Resources {
         public static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last modify date.
+        /// </summary>
+        public static string LastModifyDate {
+            get {
+                return ResourceManager.GetString("LastModifyDate", resourceCulture);
             }
         }
         
@@ -268,6 +322,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No categories.
+        /// </summary>
+        public static string NoCategories {
+            get {
+                return ResourceManager.GetString("NoCategories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There are no types defined..
         /// </summary>
         public static string NoTypes {
@@ -309,6 +372,15 @@ namespace Modules.Resources {
         public static string Phases {
             get {
                 return ResourceManager.GetString("Phases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number.
+        /// </summary>
+        public static string PhoneNumber {
+            get {
+                return ResourceManager.GetString("PhoneNumber", resourceCulture);
             }
         }
         
@@ -372,6 +444,15 @@ namespace Modules.Resources {
         public static string SignIn {
             get {
                 return ResourceManager.GetString("SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Surname.
+        /// </summary>
+        public static string Surname {
+            get {
+                return ResourceManager.GetString("Surname", resourceCulture);
             }
         }
         

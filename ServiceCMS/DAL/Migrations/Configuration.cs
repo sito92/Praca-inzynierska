@@ -38,9 +38,9 @@ namespace DAL.Migrations
             SeedImages(context);
             SeedSettings(context);
             SeedStatisticsInformation(context);
-           // SeedServiceTypes(context);
+            // SeedServiceTypes(context);
 
-           // SeedServiceTypes(context);
+            // SeedServiceTypes(context);
             SeedNewses(context);
             SeedServiceProviders(context);
             SeedServicePhrases(context);
@@ -59,6 +59,9 @@ namespace DAL.Migrations
 
         private void SeedSettings(ServiceCMSContext context)
         {
+            //context.Settings.AddOrUpdate(x => x.EmailAddress,
+            //    new Settings(){EmailAddress = "servicecmsthesis@gmail.com", EmailPassword = new NetworkCredential("cos", "arturikamil").SecurePassword});
+            //context.SaveChanges();
             context.Settings.AddOrUpdate(x => x.Name,
                 new Settings() { Name = "EmailHost", Value = "smtp.gmail.com" },
                 new Settings() { Name = "EmailUsername", Value = "servicecmsthesis@gmail.com" },
@@ -70,32 +73,39 @@ namespace DAL.Migrations
         private void SeedNewses(ServiceCMSContext context)
         {
             context.Newses.AddOrUpdate(x => x.Title,
-                new News() { Content = "TestNews1", Title = "TestNews1Title", CreationTimeStamp = DateTime.Now,AuthorId=1 },
-                new News() { Content = "TestNews2", Title = "TestNews2Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 1, AuthorId = 1 },
-                new News() { Content = "TestNews3", Title = "TestNews3Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 2, AuthorId = 1 },
-                new News() { Content = "TestNews4", Title = "TestNews4Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 1, AuthorId = 1 },
-                new News() { Content = "TestNews5", Title = "TestNews5Title", CreationTimeStamp = DateTime.Now, AuthorId = 1 }
+                new News() { Content = "TestNews1", Title = "TestNews1Title", CreationTimeStamp = DateTime.Now },
+                new News() { Content = "TestNews2", Title = "TestNews2Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 1 },
+                new News() { Content = "TestNews3", Title = "TestNews3Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 2 },
+                new News() { Content = "TestNews4", Title = "TestNews4Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 1 },
+                new News() { Content = "TestNews5", Title = "TestNews5Title", CreationTimeStamp = DateTime.Now }
                 );
-           context.SaveChanges();
+            context.SaveChanges();
         }
 
         private void SeedMenuButtons(ServiceCMSContext context)
         {
-            context.MenuButtons.AddOrUpdate(x => x.Content,new Models.MenuButton(){Content = "rodzic"});
+            context.MenuButtons.AddOrUpdate(x => x.Content, new Models.MenuButton() { Content = "rodzic" });
             context.SaveChanges();
 
             context.MenuButtons.AddOrUpdate(x => x.Content,
-                new Models.MenuButton(){Content = "dziecko1", ParentId = 1},
-                new Models.MenuButton(){Content = "dziecko2", ParentId = 1},
-                new Models.MenuButton(){Content = "dziecko11",ParentId = 2},
-                new Models.MenuButton(){Content = "dziecko111",ParentId = 4});
+                new Models.MenuButton() { Content = "dziecko1", ParentId = 1 },
+                new Models.MenuButton() { Content = "dziecko2", ParentId = 1 },
+                new Models.MenuButton() { Content = "dziecko11", ParentId = 2 },
+                new Models.MenuButton() { Content = "dziecko111", ParentId = 4 });
             context.SaveChanges();
         }
 
         private void SeedNewsCategories(ServiceCMSContext context)
         {
             context.NewsCategories.AddOrUpdate(x => x.Category,
-                new NewsCategory() { Category = "Handlowy" });
+                new NewsCategory() {Category = "Handlowy"},
+                new NewsCategory() {Category = "Aktualnoœci"},
+                new NewsCategory() {Category = "Us³ugi"},
+                new NewsCategory() {Category = "Promocja"},
+                new NewsCategory() {Category = "Godziny"},
+                new NewsCategory() {Category = "AVA"},
+                new NewsCategory() {Category = "Wystrój"}
+                );
             context.SaveChanges();
         }
 
@@ -131,10 +141,10 @@ namespace DAL.Migrations
         private void SeedPage(ServiceCMSContext context)
         {
             context.Page.AddOrUpdate(x => x.Name,
-                new Page() { Name = "Strona g³owna",Content="DUPA" },
-                new Page() { Name = "Strona1", Content = "DUPA", RestorePageId=1 },
-                new Page() { Name = "Strona2", Content = "DUPA", RestorePageId=2 },
-                new Page() { Name = "Strona3", Content = "DUPA", RestorePageId=3 }
+                new Page() { Name = "Strona g³owna", Content = "DUPA" },
+                new Page() { Name = "Strona1", Content = "DUPA", RestorePageId = 1 },
+                new Page() { Name = "Strona2", Content = "DUPA", RestorePageId = 2 },
+                new Page() { Name = "Strona3", Content = "DUPA", RestorePageId = 3 }
 
                 );
             context.SaveChanges();
@@ -173,7 +183,7 @@ namespace DAL.Migrations
             b.AvailableServices.Add(firstType);
             c.AvailableServices.Add(secondType);
 
-           context.ServiceProviders.AddOrUpdate(x => x.Name, a, b, c);
+            context.ServiceProviders.AddOrUpdate(x => x.Name, a, b, c);
             context.SaveChanges();
         }
 
@@ -191,9 +201,9 @@ namespace DAL.Migrations
             #endregion
             context.RegistratedServices.AddOrUpdate(x => x.Id,
                 new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 2, StartDate = dateOne },
-                new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 1, StartDate = dateSecond},
-                new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 2, StartDate = dateThird},
-                new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 1, StartDate = dateFourth},
+                new RegistratedService() { ServiceProviderId = 1, ServiceTypeId = 1, StartDate = dateSecond },
+                new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 2, StartDate = dateThird },
+                new RegistratedService() { ServiceProviderId = 2, ServiceTypeId = 1, StartDate = dateFourth },
                 new RegistratedService() { ServiceProviderId = 3, ServiceTypeId = 2, StartDate = dateFifth }
                 );
             context.SaveChanges();
@@ -203,15 +213,15 @@ namespace DAL.Migrations
         {
             context.Phases.AddOrUpdate(x => x.Name,
                 // Strzy¿enie damskie
-                new ServicePhase() { Name = "Diagnoza F", DelayInMinutes = 0, DurationInMinutes = 10, Order = 1,ServiceTypeId = 2},
+                new ServicePhase() { Name = "Diagnoza F", DelayInMinutes = 0, DurationInMinutes = 10, Order = 1, ServiceTypeId = 2 },
                 new ServicePhase() { Name = "Strzy¿enie F", DelayInMinutes = 0, DurationInMinutes = 60, Order = 2, ServiceTypeId = 2 },
                 new ServicePhase() { Name = "Modelowanie F", DelayInMinutes = 60, DurationInMinutes = 30, Order = 3, ServiceTypeId = 2 },
                 new ServicePhase() { Name = "Farbowanie F", DelayInMinutes = 0, DurationInMinutes = 40, Order = 4, ServiceTypeId = 2 },
-                 // Strzy¿enie mêskie
+                // Strzy¿enie mêskie
                 new ServicePhase() { Name = "Diagnoza M", DelayInMinutes = 0, DurationInMinutes = 10, Order = 1, ServiceTypeId = 1 },
                 new ServicePhase() { Name = "Strzy¿enie M", DelayInMinutes = 0, DurationInMinutes = 35, Order = 2, ServiceTypeId = 1 },
                 new ServicePhase() { Name = "Modelowanie M", DelayInMinutes = 80, DurationInMinutes = 15, Order = 4, ServiceTypeId = 1 },
-                new ServicePhase() { Name = "TEST PHASE", DelayInMinutes = 0, DurationInMinutes= 10, Order=5,ServiceTypeId=1}
+                new ServicePhase() { Name = "TEST PHASE", DelayInMinutes = 0, DurationInMinutes = 10, Order = 5, ServiceTypeId = 1 }
                 );
             context.SaveChanges();
         }

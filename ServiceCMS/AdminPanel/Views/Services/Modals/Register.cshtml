@@ -2,13 +2,69 @@
 @using Logic.Common.Models
 <div class="modal-header">
     <div class="row text-center">
-        <h2 class="text-modal-heading">@Presentation.Confirm</h2>
+        <h2 class="text-modal-heading">@Presentation.Register</h2>
     </div>
 </div>
 <div class="modal-body">
-    {{date.format("MM/DD/YYYY HH:mm:ss")}}
+    <form novalidate name="form">
+        <div class="form-group form-field row">
+            <div class="col-md-3">
+                <label class="control-label">@Presentation.Name</label>
+            </div>
+            <div class="col-md-9">
+                <input class="form-control" ng-model="registratedService.ClientName" name="clientName" required />
+                <span ng-show="form.clientName.$error.required && form.clientName.$dirty" class="text-danger">
+                    @Presentation.RequiredErrorMessage
+                </span>
+            </div>
+        </div>
+        <div class="form-group form-field row">
+            <div class="col-md-3">
+                <label class="control-label">@Presentation.Surname</label>
+            </div>
+            <div class="col-md-9">
+                <input class="form-control" ng-model="registratedService.ClientSurname" name="clientSurname" required/>
+                <span ng-show="form.clientSurname.$error.required && form.clientSurname.$dirty" class="text-danger">
+                    @Presentation.RequiredErrorMessage
+                </span>
+            </div>
+        </div>
+        <div class="form-group form-field row">
+            <div class="col-md-3">
+                <label class="control-label">@Presentation.Email</label>
+            </div>
+            <div class="col-md-9">
+                <input class="form-control" ng-model="registratedService.ClientEmail" name="clientEmail" type="email" required/>
+                <span ng-show="form.clientEmail.$error.required && form.clientEmail.$dirty" class="text-danger">
+                    @Presentation.RequiredErrorMessage
+                </span>
+                <span ng-show="form.clientEmail.$error.email" class="text-danger">
+                    @Presentation.EmailErrorMessage
+                </span>
+            </div>
+        </div>
+        <div class="form-group form-field row">
+            <div class="col-md-3">
+                <label class="control-label">@Presentation.PhoneNumber</label>
+            </div>
+            <div class="col-md-9">
+                <input class="form-control" ng-model="registratedService.ClientPhoneNumber" name="clientPhoneNumber"/>
+            </div>
+        </div>
+        <div class="form-group form-field row">
+            <div class="col-md-3">
+                <label class="control-label">@Presentation.ServiceType</label>
+            </div>
+            <div class="col-md-9">
+                <select class="form-control" ng-model="registratedService.ServiceType" name="serviceType" ng-options="type.Key as type.Key.Name disable when !type.Value for type in types" required/>
+                <span ng-show="form.serviceType.$error.required && form.serviceType.$dirty" class="text-danger">
+                    @Presentation.RequiredErrorMessage
+                </span>
+            </div>
+        </div>
+    </form>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="confirm()">@Presentation.Confirm</button>
+    <button class="btn btn-primary" ng-click="send()" ng-disabled="form.$invalid">@Presentation.Confirm</button>
     <button class="btn btn-danger" ng-click="decline()">@Presentation.Decline</button>
 </div>

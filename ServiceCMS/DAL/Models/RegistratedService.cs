@@ -10,6 +10,12 @@ namespace DAL.Models
     {
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
+
+        public string ClientName { get; set; }
+        public string ClientSurname{ get; set; }
+        public string ClientPhoneNumber { get; set; }
+        public string ClientEmail { get; set; }
+
         public int ServiceTypeId { get; set; }
         public int ServiceProviderId { get; set; }
 

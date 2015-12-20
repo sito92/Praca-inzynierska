@@ -82,9 +82,35 @@
    
     $scope.eventSources = [$scope.events];
 });
-app.controller('ServiceRegisterModalCtrl', function ($scope, $modalInstance, date,provider) {
+app.controller('ServiceRegisterModalCtrl', function ($scope, $modalInstance, ServiceTypeService, ServicesService, date, provider) {
     $scope.date = date;
+    $scope.registratedService = {};
+    $scope.registratedService.StartDate = date.format("DD/MM/YYYY HH:mm:ss");
+    $scope.registratedService.ServiceProvider = provider;
     $scope.provider = provider;
+
+    ServiceTypeService.getServiceTypesMatchingTimeCriteria($scope.date.format("DD/MM/YYYY HH:mm:ss"), $scope.provider).then(function (jsonResult) {
+        if (jsonResult.success) {
+            $scope.types = jsonResult.data;
+        } else {
+            alert(jsonResult.message);
+        }
+    }, function () {
+        alert("Error");
+    });
+    $scope.send = function () {
+        ServicesService.registerService($scope.registratedService).then(function (jsonResult) {
+            if (jsonResult.success) {
+                $modalInstance.close();
+            } else {
+                alert(jsonResult.message);
+            }
+        }, function () {
+            alert("Error");
+            $modalInstance.dismiss();
+        });
+
+    };
     $scope.decline = function () {
         $modalInstance.close();
     }

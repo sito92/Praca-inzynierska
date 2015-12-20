@@ -66,6 +66,27 @@ namespace Logic.News.Services
             }
             return newsModels;
         }
+        public IList<NewsCategoryModel> GetAllCategories()
+        {
+            IList<NewsCategoryModel> newsCategoryModels = new List<NewsCategoryModel>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.NewsCategoryRepository.Get();
+                    foreach (var entity in entities)
+                    {
+                        newsCategoryModels.Add(new NewsCategoryModel(entity));
+                    }
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return newsCategoryModels;
+        }
 
         public ResponseBase Insert(NewsModel news)
         {
@@ -76,7 +97,11 @@ namespace Logic.News.Services
                 {
                     if (news != null)
                     {
-                        unitOfWork.NewsRepository.Insert(news.ToEntity());
+                        news.CreationTimeStamp = DateTime.Now;
+                        news.LastModifiedTimeStamp = DateTime.Now;
+                        var entity = news.ToEntity();
+                        UpdateCategories(entity,unitOfWork);
+                        unitOfWork.NewsRepository.Insert(entity);
                     }
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.SaveNewsSuccess };
@@ -106,7 +131,9 @@ namespace Logic.News.Services
                             LastModifiedTimeStamp = DateTime.Now,
                             Title = news.Title,
                             RestoreNewsId = news.Id,
-                            AuthorId = news.AuthorId
+                            AuthorId = news.AuthorId,
+                            Categories = news.Categories
+                        
                         };
                         var entity=updatedNews.ToEntity();
                         unitOfWork.NewsRepository.Insert(entity);
@@ -175,6 +202,26 @@ namespace Logic.News.Services
                 return resultCollection;
             }
             return null;
+        }
+        public void UpdateCategories(DAL.Models.News entity, IUnitOfWork unitOfWork)
+        {
+            var ids = entity.NewsCategories.Select(x => x.Id);
+            var categories = unitOfWork.NewsCategoryRepository.Get(x => ids.Contains(x.Id));
+            var entityFromBase = unitOfWork.NewsRepository.Get(x => x.Id == entity.Id).SingleOrDefault();
+
+            if (entityFromBase != null)
+            {
+                entityFromBase.NewsCategories.Clear();
+                entity = entityFromBase;
+            }
+
+
+            entity.NewsCategories.Clear();
+
+            foreach (var category in categories)
+            {
+                entity.NewsCategories.Add(category);
+            }
         }
     }
 }

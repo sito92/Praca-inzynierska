@@ -13,26 +13,39 @@ namespace Logic.Service.Helpers
         public static Dictionary<ServiceTypeModel, bool> CheckAvailability(DateTime time,IEnumerable<RegistratedService> registratedServices, IEnumerable<ServiceTypeModel> serviceTypes)
         {
             var availableServiceTypes = new Dictionary<ServiceTypeModel, bool>();
-            foreach (var serviceTimeBlock in GetRegistratedServicesTimeBlocks(registratedServices))
+            var serviceBlocks = GetRegistratedServicesTimeBlocks(registratedServices);
+            if (serviceBlocks.Count > 0)
             {
-                foreach (var phaseTimeBlock in GetServiceTypesTimeBlocks(time, serviceTypes))
+                foreach (var serviceTimeBlock in serviceBlocks)
                 {
-                    if (   serviceTimeBlock.Item1 <= phaseTimeBlock.Value.Item1 && serviceTimeBlock.Item2 <= phaseTimeBlock.Value.Item2
-                        || serviceTimeBlock.Item1 >= phaseTimeBlock.Value.Item1 && serviceTimeBlock.Item2 >= phaseTimeBlock.Value.Item2)
+                    foreach (var phaseTimeBlock in GetServiceTypesTimeBlocks(time, serviceTypes))
                     {
-                        if(!availableServiceTypes.Select(x => x.Key.Id).Contains(phaseTimeBlock.Key.Id))
-                            availableServiceTypes.Add(phaseTimeBlock.Key, true);
-                    }
-                    else
-                    {
-                        if (availableServiceTypes.Select(x => x.Key.Id).Contains(phaseTimeBlock.Key.Id))
+                        if (serviceTimeBlock.Item2 <= phaseTimeBlock.Value.Item1 ||
+                            phaseTimeBlock.Value.Item2 <= serviceTimeBlock.Item1)
                         {
-                            var index = availableServiceTypes.Keys.Where(x=>x.Id==phaseTimeBlock.Key.Id).SingleOrDefault();
-                            availableServiceTypes[index]=false;
-                        }                           
+                            if (!availableServiceTypes.Select(x => x.Key.Id).Contains(phaseTimeBlock.Key.Id))
+                                availableServiceTypes.Add(phaseTimeBlock.Key, true);
+                        }
                         else
-                            availableServiceTypes.Add(phaseTimeBlock.Key,false);
+                        {
+                            if (availableServiceTypes.Select(x => x.Key.Id).Contains(phaseTimeBlock.Key.Id))
+                            {
+                                var index =
+                                    availableServiceTypes.Keys.Where(x => x.Id == phaseTimeBlock.Key.Id)
+                                        .SingleOrDefault();
+                                availableServiceTypes[index] = false;
+                            }
+                            else
+                                availableServiceTypes.Add(phaseTimeBlock.Key, false);
+                        }
                     }
+                }
+            }
+            else
+            {
+                foreach (var type in serviceTypes)
+                {
+                    availableServiceTypes.Add(type, true);
                 }
             }
             return availableServiceTypes;

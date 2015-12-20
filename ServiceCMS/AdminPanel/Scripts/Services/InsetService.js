@@ -1,4 +1,4 @@
-﻿app.factory("InsetService", function ($http, $q) {
+﻿app.factory("InsetService", function ($http, $q,$modal) {
     return {
         getAll: function () {
             var deferred = $q.defer();
@@ -14,7 +14,7 @@
                 method: 'GET',
                 url: '/Inset/GetInsetPart',
                 params: {
-                    name:name
+                    name: name
                 }
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
@@ -30,6 +30,24 @@
                 }
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
+        },
+        getInset: function () {
+            var deferred = $q.defer();
+            var modalInstance = $modal.open({
+                animation: true,
+                templateUrl: '/Inset/GetModal?name=Add',
+                controller: 'InsetAddModalCtrl',
+            });
+
+            modalInstance.result.then(function (inset) {
+                if (inset) {
+                    deferred.resolve(inset);
+                } else {
+                    deferred.reject();
+                }
+            }, deferred.reject);
+            return deferred.promise;
+
         }
     }
 });

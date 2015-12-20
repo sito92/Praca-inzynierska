@@ -14,6 +14,8 @@ namespace Logic.News.Interfaces
 
         IList<NewsModel> GetAll();
 
+        IList<NewsCategoryModel> GetAllCategories();
+
         IEnumerable<NewsModel> GetRestoreNewsesCollection(NewsModel news, bool rootPageExcluded = false);
 
         ResponseBase Insert(NewsModel news);

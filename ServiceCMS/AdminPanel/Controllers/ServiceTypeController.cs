@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AdminPanel.Extensions;
 using Logic.Common.Models;
 using Logic.Service.Interfaces;
 
@@ -66,6 +67,13 @@ namespace AdminPanel.Controllers
             var serviceTypes = _serviceTypeService.GetAll();
 
             return Json(new { success = true, data = serviceTypes }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public ActionResult GetServiceTypesMatchingTimeCriteria(DateTime time, ServiceProviderModel provider)
+        {
+            var services = _serviceTypeService.GetServiceTypesMatchingTimeCriteria(time, provider);
+
+            return new JsonNetResult(new { success = true, data = services.ToArray() }, JsonRequestBehavior.AllowGet);
         }
     }
 }

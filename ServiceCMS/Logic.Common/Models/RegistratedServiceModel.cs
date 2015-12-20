@@ -11,19 +11,27 @@ namespace Logic.Common.Models
     {
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
-      
+        public string ClientName { get; set; }
+        public string ClientSurname { get; set; }
+        public string ClientPhoneNumber { get; set; }
+        public string ClientEmail { get; set; }
+
         public ServiceProviderModel ServiceProvider { get; set; }
         public ServiceTypeModel ServiceType { get; set; }
 
         public RegistratedServiceModel()
         {
-            
+
         }
 
         public RegistratedServiceModel(RegistratedService entity)
         {
             Id = entity.Id;
             StartDate = entity.StartDate;
+            ClientName = entity.ClientName;
+            ClientSurname = entity.ClientSurname;
+            ClientEmail = entity.ClientEmail;
+            ClientPhoneNumber = entity.ClientPhoneNumber;
             ServiceProvider = entity.ServiceProvider == null ? null : new ServiceProviderModel(entity.ServiceProvider);
             ServiceType = entity.ServiceType == null ? null : new ServiceTypeModel(entity.ServiceType);
         }
@@ -34,8 +42,12 @@ namespace Logic.Common.Models
             {
                 Id = this.Id,
                 StartDate = this.StartDate,
-                ServiceProvider = this.ServiceProvider == null ? null : this.ServiceProvider.ToEntity(),
-                ServiceType = this.ServiceType == null ? null : this.ServiceType.ToEntity()
+                ClientName = this.ClientName,
+                ClientSurname = this.ClientSurname,
+                ClientEmail = this.ClientEmail,
+                ClientPhoneNumber = this.ClientPhoneNumber,
+                ServiceProviderId = this.ServiceProvider == null ? 0 : this.ServiceProvider.Id,
+                ServiceTypeId = this.ServiceType == null ? 0 : this.ServiceType.Id
             };
         }
 
