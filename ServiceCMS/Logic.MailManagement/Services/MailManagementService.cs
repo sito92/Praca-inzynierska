@@ -19,14 +19,15 @@ namespace Logic.MailManagement.Services
             _unitOfWorkFactory = unitOfWorkFactory;
         }
 
-        public ResponseBase SendMailToMany(List<string> emailAdressess,string content, string subject, string emailFrom)
+        public ResponseBase SendMail(List<string> emailAdressess,string content, string subject)
         {
             var settingsDictionary = new Dictionary<string, string>();
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 var settings = unitOfWork.SettingsRepository.Get(  x => x.Name == "EmailHost" 
                                                                 || x.Name == "EmailUsername" 
-                                                                || x.Name == "EmailPassword");
+                                                                || x.Name == "EmailPassword"
+                                                                || x.Name == "EmailAddress");
                 if(settings != null)
                 { 
                     foreach (var setting in settings)
@@ -36,14 +37,32 @@ namespace Logic.MailManagement.Services
                 }
             }
 
-            var response = MailManagerService.SendMailToGroup(settingsDictionary, emailAdressess, content, subject, emailFrom);
+            var response = MailManagerService.SendMail(settingsDictionary, emailAdressess, content, subject);
 
             return response;
         }
 
-        public ResponseBase SendMailToOne(string emailAddress, string content, string subject, string emailFrom)
+        public ResponseBase SendMail(string emailAddress, string content, string subject)
         {
-            return new ResponseBase();
+            var settingsDictionary = new Dictionary<string, string>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                var settings = unitOfWork.SettingsRepository.Get(x => x.Name == "EmailHost"
+                                                                || x.Name == "EmailUsername"
+                                                                || x.Name == "EmailPassword"
+                                                                || x.Name == "EmailAddress");
+                if (settings != null)
+                {
+                    foreach (var setting in settings)
+                    {
+                        settingsDictionary.Add(setting.Name, setting.Value);
+                    }
+                }
+            }
+
+            var response = MailManagerService.SendMail(settingsDictionary, emailAddress, content, subject);
+
+            return response;
         }
     }
 }

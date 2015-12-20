@@ -10,22 +10,44 @@ namespace Modules.MailManager.Services
 {
     public static class MailManagerService
     {
-        public static ResponseBase SendMailToGroup(Dictionary<string, string> settingsProperties, List<string> mailAddresses, string content, string subject, string emailFrom)
+        public static ResponseBase SendMail(Dictionary<string, string> settingsProperties, List<string> mailAddresses, string content, string subject)
         {
+            ResponseBase response;
             var client = ConfigureSmtpClient(settingsProperties);
-            var message = BuildMailMessage(mailAddresses, content,subject,emailFrom);
-            
-            if(mailAddresses.Count > 0)
+            var message = BuildMailMessage(mailAddresses, content,subject,settingsProperties["EmailUsername"]);
+
+            try
             {
-		        client.Send(message);
+                client.Send(message);
+                response = new ResponseBase() { IsSucceed = true };
+            }
+            catch (Exception e)
+            {
+                response = new ResponseBase() { IsSucceed = false };
+                throw new SmtpException();
             }
 
-            return new ResponseBase() { IsSucceed = true};
+            return response;
         }
 
-        public static ResponseBase SendMailToOne(Dictionary<string, string> settingsProperties, string mailAddress, string content, string subject, string emailFrom)
+        public static ResponseBase SendMail(Dictionary<string, string> settingsProperties, string mailAddress, string content, string subject)
         {
-            return new ResponseBase();
+            ResponseBase response;
+            var client = ConfigureSmtpClient(settingsProperties);
+            var message = BuildMailMessage(mailAddress, content, subject, settingsProperties["EmailUsername"]);
+
+            try
+            {
+                client.Send(message);
+                response = new ResponseBase() { IsSucceed = true };
+            }
+            catch (Exception e)
+            {
+                response = new ResponseBase() { IsSucceed = false };
+                throw new SmtpException();
+            }
+
+            return response;
         }
 
         private static SmtpClient ConfigureSmtpClient(Dictionary<string, string> settingsProperties)
@@ -57,6 +79,22 @@ namespace Modules.MailManager.Services
             {
                 message.To.Add(address);   
             }
+
+            return message;
+        }
+
+        private static MailMessage BuildMailMessage(string mailAddresses, string content, string subject, string emailFrom)
+        {
+
+            var message = new MailMessage()
+            {
+                From = new MailAddress(emailFrom),
+                Subject = subject,
+                Body = content,
+                IsBodyHtml = true,
+            };
+
+            message.To.Add(mailAddresses);
 
             return message;
         }

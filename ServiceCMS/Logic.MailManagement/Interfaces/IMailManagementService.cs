@@ -9,8 +9,8 @@ namespace Logic.MailManagement.Interfaces
 {
     public interface IMailManagementService
     {
-        ResponseBase SendMailToMany(List<string> emailAdressess, string content, string subject, string emailFrom);
+        ResponseBase SendMail(List<string> emailAdressess, string content, string subject);
 
-        ResponseBase SendMailToOne(string emailAddress, string content, string subject, string emailFrom);
+        ResponseBase SendMail(string emailAddress, string content, string subject);
     }
 }
