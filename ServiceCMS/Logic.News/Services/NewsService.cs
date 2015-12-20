@@ -88,6 +88,32 @@ namespace Logic.News.Services
             return newsCategoryModels;
         }
 
+        public IEnumerable<NewsModel> GetNewestNewsesCollection()
+        {
+            var resultCollection = new List<NewsModel>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.NewsRepository.Get().ToList();
+
+                    foreach (var entity in entities)
+                    {
+                        var collectionOfNewerNewses = entities.Where(x => x.RestoreNewsId == entity.Id);
+
+                        if (collectionOfNewerNewses.Count() == 0)
+                            resultCollection.Add(new NewsModel(entity));
+                    }
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return resultCollection;
+        }
+
         public ResponseBase Insert(NewsModel news)
         {
             ResponseBase response;

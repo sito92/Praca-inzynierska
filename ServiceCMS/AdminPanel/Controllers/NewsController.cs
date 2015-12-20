@@ -28,7 +28,7 @@ namespace AdminPanel.Controllers
         {
             var categories = _newsService.GetAllCategories();
 
-            return new JsonNetResult(new { success = true, categories = categories },JsonRequestBehavior.AllowGet);
+            return new JsonNetResult(new { success = true, categories = categories }, JsonRequestBehavior.AllowGet);
         }
         public PartialViewResult GetModal(string name)
         {
@@ -46,6 +46,16 @@ namespace AdminPanel.Controllers
             {
                 return Json(new { success = false });
             }
+        }
+
+        public ActionResult GetNewestNewsesCollection()
+        {
+            var resultCollection = _newsService.GetNewestNewsesCollection();
+
+            if(resultCollection.Any())
+                return Json(new { success = true, data = resultCollection }, JsonRequestBehavior.AllowGet);
+            else
+                return Json(new { success = false });
         }
         [HttpPost]
         public ActionResult Add(NewsModel model)

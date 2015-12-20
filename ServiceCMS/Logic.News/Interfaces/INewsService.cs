@@ -18,6 +18,8 @@ namespace Logic.News.Interfaces
 
         IEnumerable<NewsModel> GetRestoreNewsesCollection(NewsModel news, bool rootPageExcluded = false);
 
+        IEnumerable<NewsModel> GetNewestNewsesCollection(); 
+
         ResponseBase Insert(NewsModel news);
 
         ResponseBase Update(NewsModel news);
