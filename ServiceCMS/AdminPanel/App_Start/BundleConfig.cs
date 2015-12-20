@@ -46,26 +46,27 @@ namespace AdminPanel
 
             bundles.Add(new StyleBundle("~/Content/css").Include(                         
                 "~/Content/bootstrap.css",
-                 "~/Content/bootstrap-theme.css",
                  "~/Content/simple-sidebar.css",
                  "~/Content/fullcalendar.css",
                  "~/Content/calendarDemo.css",
-                  "~/Content/Styles.css"
+                 "~/Content/textAngular.css",
+                  "~/Content/Styles.css",
+                   "~/Content/font-awesome/css/font-awesome.css"
                 ));
 
-            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
-                        "~/Content/themes/base/jquery.ui.core.css",
-                        "~/Content/themes/base/jquery.ui.resizable.css",
-                        "~/Content/themes/base/jquery.ui.selectable.css",
-                        "~/Content/themes/base/jquery.ui.accordion.css",
-                        "~/Content/themes/base/jquery.ui.autocomplete.css",
-                        "~/Content/themes/base/jquery.ui.button.css",
-                        "~/Content/themes/base/jquery.ui.dialog.css",
-                        "~/Content/themes/base/jquery.ui.slider.css",
-                        "~/Content/themes/base/jquery.ui.tabs.css",
-                        "~/Content/themes/base/jquery.ui.datepicker.css",
-                        "~/Content/themes/base/jquery.ui.progressbar.css",
-                        "~/Content/themes/base/jquery.ui.theme.css"));
+            //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
+            //            "~/Content/themes/base/jquery.ui.core.css",
+            //            "~/Content/themes/base/jquery.ui.resizable.css",
+            //            "~/Content/themes/base/jquery.ui.selectable.css",
+            //            "~/Content/themes/base/jquery.ui.accordion.css",
+            //            "~/Content/themes/base/jquery.ui.autocomplete.css",
+            //            "~/Content/themes/base/jquery.ui.button.css",
+            //            "~/Content/themes/base/jquery.ui.dialog.css",
+            //            "~/Content/themes/base/jquery.ui.slider.css",
+            //            "~/Content/themes/base/jquery.ui.tabs.css",
+            //            "~/Content/themes/base/jquery.ui.datepicker.css",
+            //            "~/Content/themes/base/jquery.ui.progressbar.css",
+            //            "~/Content/themes/base/jquery.ui.theme.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/leftMenu").Include(
                       "~/Scripts/Controllers/LeftMenuController.js"));
@@ -77,12 +78,16 @@ namespace AdminPanel
                       "~/Scripts/Services/InsetService.js",
                       "~/Scripts/Services/PageService.js",
                       "~/Scripts/Services/FileService.js",
+                      "~/Scripts/Services/NewsService.js",
+                      "~/Scripts/Services/NewsCategoriesService.js",
                       "~/Scripts/Controllers/InsetPartsControllers/ExternalLinkController.js",
                       "~/Scripts/Controllers/InsetPartsControllers/LocalLinkController.js",
                       "~/Scripts/Controllers/InsetPartsControllers/ImagesController.js",
                       "~/Scripts/Directives/InsetArgument.js",
                       "~/Scripts/Directives/Pickers/LocalLinkPicker.js",
-                      "~/Scripts/Directives/Pickers/ImagesPicker.js"
+                      "~/Scripts/Directives/Pickers/ImagesPicker.js",
+                      "~/Scripts/TextAngularTools/InsetTool.js",
+                      "~/Scripts/Modules/NewsModule.js"
                       ));
             bundles.Add(new ScriptBundle("~/bundles/serviceProvider").Include(
                     "~/Scripts/Controllers/ServiceProviderController.js",
@@ -96,11 +101,20 @@ namespace AdminPanel
             bundles.Add(new ScriptBundle("~/bundles/services").Include(
                    "~/Scripts/Controllers/ServicesController.js",
                     "~/Scripts/Services/ServicesService.js",
-                    "~/Scripts/Services/ServiceProviderService.js"
+                    "~/Scripts/Services/ServiceProviderService.js",
+                    "~/Scripts/Services/ServiceTypeService.js"
                    ));
             bundles.Add(new ScriptBundle("~/bundles/angular-drag-and-drop").Include(
                     "~/Scripts/angular-drag-and-drop-lists.js"
                     ));
+            bundles.Add(new ScriptBundle("~/bundles/text-angular").Include(
+                   "~/Scripts/text-angular/textAngular-rangy.js",
+                   "~/Scripts/text-angular/textAngular-sanitize.js",
+                   "~/Scripts/text-angular/textAngularSetup.js",
+                   "~/Scripts/text-angular/textAngular.js"
+
+                   ));
+
 
 
         }

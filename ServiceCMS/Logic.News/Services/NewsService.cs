@@ -66,6 +66,27 @@ namespace Logic.News.Services
             }
             return newsModels;
         }
+        public IList<NewsCategoryModel> GetAllCategories()
+        {
+            IList<NewsCategoryModel> newsCategoryModels = new List<NewsCategoryModel>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.NewsCategoryRepository.Get();
+                    foreach (var entity in entities)
+                    {
+                        newsCategoryModels.Add(new NewsCategoryModel(entity));
+                    }
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return newsCategoryModels;
+        }
 
         public ResponseBase Insert(NewsModel news)
         {
@@ -76,6 +97,8 @@ namespace Logic.News.Services
                 {
                     if (news != null)
                     {
+                        news.CreationTimeStamp = DateTime.Now;
+                        news.LastModifiedTimeStamp = DateTime.Now;
                         unitOfWork.NewsRepository.Insert(news.ToEntity());
                     }
                     unitOfWork.Save();

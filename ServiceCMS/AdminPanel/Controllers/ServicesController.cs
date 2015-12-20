@@ -47,6 +47,19 @@ namespace AdminPanel.Controllers
             return new JsonNetResult(new { success = true, data = events }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public ActionResult RegisterService(RegistratedServiceModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = _servicesService.Insert(model);
+                return Json(new { success = true, message = response }, JsonRequestBehavior.AllowGet);
+            }
+            else
+                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+
+        }
+
         public ActionResult GetModal(string name)
         {
             return PartialView("Modals/" + name);

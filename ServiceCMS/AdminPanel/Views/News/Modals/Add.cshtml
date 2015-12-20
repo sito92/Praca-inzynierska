@@ -7,15 +7,48 @@
     </div>
 </div>
 <div class="modal-body">
-    <div class="form-group form-field row">
-        <div class="col-md-3"><label class="control-label">@Presentation.Title</label>
+    <form novalidate name="form">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="form-group form-field row">
+                    <div>
+                        <label class="control-label">@Presentation.Title</label>
+                    </div>
+                    <div>
+                        <input class="form-control" ng-model="news.Title" name="title" required="" />
+                        <span ng-show="form.title.$error.required && form.title.$dirty" class="text-danger">
+                            @Presentation.RequiredErrorMessage
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group form-field row">
+                    <div>
+                        <label class="control-label">@Presentation.Content</label>
+                    </div>
+                    <div>
+                        <div text-angular ng-model="news.Content" name="content" required></div>
+                        <span ng-show="form.content.$error.required && form.content.$dirty" class="text-danger">
+                            @Presentation.RequiredErrorMessage
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group form-field row">
+                    <div>
+                        <label class="control-label">@Presentation.Categories</label>
+                        <button class="btn btn-sm btn-primary" ng-click="add()"><span class="glyphicon glyphicon-plus"></span></button>
+                    </div>
+                    <div ng-repeat="category in news.Categories" class="categories-container">
+                        <div class="category-box" role="alert">
+                            <button type="button" class="close" ng-click="remove($index)"><span aria-hidden="true">&times;</span></button>
+                            <span ng-bind="category.Category"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-9"><input class="form-control" ng-model="news.Title" ng-inset-model="news.Title" ng-inset />
-        </div>
-    </div>
-    @*inset-model="news.Title"*@ 
+    </form>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="send()">@Presentation.Add</button>
+    <button class="btn btn-primary" ng-disabled="form.$invalid" ng-click="send()">@Presentation.Add</button>
     <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
 </div>

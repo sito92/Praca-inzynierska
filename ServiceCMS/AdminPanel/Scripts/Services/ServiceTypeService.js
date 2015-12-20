@@ -30,6 +30,18 @@
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
         },
+        getServiceTypesMatchingTimeCriteria: function (time,provider) {
+            var deferred = $q.defer();
+            $http({
+                method: 'POST',
+                url: '/ServiceType/GetServiceTypesMatchingTimeCriteria',
+                data: {
+                    time: time,
+                    provider:provider
+                }
+            }).success(deferred.resolve).error(deferred.reject);
+            return deferred.promise;
+        },
         delete: function (id) {
             var deferred = $q.defer();
             $http({

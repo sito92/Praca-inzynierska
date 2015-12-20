@@ -136,6 +136,10 @@
     <Compile Include="Migrations\201512151058566_AddedClientData.Designer.cs">
       <DependentUpon>201512151058566_AddedClientData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512201015549_DeletedAuthorFromNews.cs" />
+    <Compile Include="Migrations\201512201015549_DeletedAuthorFromNews.Designer.cs">
+      <DependentUpon>201512201015549_DeletedAuthorFromNews.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -230,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512151058566_AddedClientData.resx">
       <DependentUpon>201512151058566_AddedClientData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512201015549_DeletedAuthorFromNews.resx">
+      <DependentUpon>201512201015549_DeletedAuthorFromNews.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

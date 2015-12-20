@@ -11,7 +11,7 @@
         add: function (news) {
             var deferred = $q.defer();
             $http({
-                method: 'GET',
+                method: 'POST',
                 url: '/News/Add',
                 data: {
                     model: news

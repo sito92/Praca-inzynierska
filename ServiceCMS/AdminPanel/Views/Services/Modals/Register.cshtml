@@ -56,12 +56,15 @@
                 <label class="control-label">@Presentation.ServiceType</label>
             </div>
             <div class="col-md-9">
-                <select class="form-control" ng-model="registratedService.ServiceType" name="ServiceType" />
+                <select class="form-control" ng-model="registratedService.ServiceType" name="serviceType" ng-options="type.Key as type.Key.Name disable when !type.Value for type in types" required/>
+                <span ng-show="form.serviceType.$error.required && form.serviceType.$dirty" class="text-danger">
+                    @Presentation.RequiredErrorMessage
+                </span>
             </div>
         </div>
     </form>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid">@Presentation.Confirm</button>
+    <button class="btn btn-primary" ng-click="send()" ng-disabled="form.$invalid">@Presentation.Confirm</button>
     <button class="btn btn-danger" ng-click="decline()">@Presentation.Decline</button>
 </div>

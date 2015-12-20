@@ -46,8 +46,8 @@ namespace Logic.Common.Models
                 ClientSurname = this.ClientSurname,
                 ClientEmail = this.ClientEmail,
                 ClientPhoneNumber = this.ClientPhoneNumber,
-                ServiceProvider = this.ServiceProvider == null ? null : this.ServiceProvider.ToEntity(),
-                ServiceType = this.ServiceType == null ? null : this.ServiceType.ToEntity()
+                ServiceProviderId = this.ServiceProvider == null ? 0 : this.ServiceProvider.Id,
+                ServiceTypeId = this.ServiceType == null ? 0 : this.ServiceType.Id
             };
         }
 

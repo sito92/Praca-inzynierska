@@ -33,8 +33,6 @@ namespace Logic.Common.Models
             LastModifiedTimeStamp = entity.LastModifiedTimeStamp;
             RestoreNews = entity.RestoreNews;
             RestoreNewsId = entity.RestoreNewsId;
-            AuthorId = entity.AuthorId;
-            Author = entity.Author == null ? null : new UserModel(entity.Author);
         }
 
         public NewsModel()
@@ -47,7 +45,6 @@ namespace Logic.Common.Models
             return new News()
             {
                 Id = this.Id,
-                AuthorId = this.AuthorId,
                 Content = this.Content,
                 Title = this.Title,
                 CreationTimeStamp = this.CreationTimeStamp,

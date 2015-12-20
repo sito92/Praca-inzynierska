@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common.Responses;
 using DAL.Interfaces;
 using Logging.Interfaces;
 using Logic.Common.Models;
@@ -20,7 +21,28 @@ namespace Logic.Service.Services
             _unitOfWorkFactory = unitOfWorkFactory;
             _logger = logger;
         }
-
+        public ResponseBase Insert(RegistratedServiceModel model)
+        {
+            ResponseBase response;
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    if (model != null)
+                    {
+                        unitOfWork.RegistratedServiceRepository.Insert(model.ToEntity());
+                    }
+                    unitOfWork.Save();
+                    response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ServiceTypeSaveSuccess };
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.ServiceTypeSaveFailed };
+                }
+                return response;
+            }
+        }
         public List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(DateTime date)
         {
             List<RegistratedServiceModel> serviceModels = new List<RegistratedServiceModel>();

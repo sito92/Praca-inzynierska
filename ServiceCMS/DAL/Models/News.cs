@@ -19,10 +19,8 @@ namespace DAL.Models
 
         public int? RestoreNewsId { get; set; }
 
-        public int AuthorId { get; set; }
 
         #region Navigation Properties
-        public User Author { get; set; }
         public News RestoreNews { get; set; }
         public ICollection<NewsCategory> NewsCategories { get; set; }
         #endregion

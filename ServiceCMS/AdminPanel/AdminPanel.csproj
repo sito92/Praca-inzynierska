@@ -245,11 +245,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\calendarDemo.css" />
+    <Content Include="Content\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fullcalendar.css" />
     <Content Include="Content\fullcalendar.min.css" />
     <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Content\Images\ajax_loader.gif" />
     <Content Include="Content\Styles.css" />
+    <Content Include="Content\textAngular.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -351,6 +355,7 @@
     <Content Include="Scripts\calendar\lang-all.js" />
     <Content Include="Scripts\Controllers\ServiceProviderController.js" />
     <Content Include="Scripts\Controllers\ServiceTypeController.js" />
+    <Content Include="Scripts\Modules\NewsModule.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\Controllers\InsetController.js" />
     <Content Include="Scripts\Controllers\InsetPartsControllers\ExternalLinkController.js" />
@@ -376,6 +381,11 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1143,11 +1153,17 @@
     <Content Include="Scripts\Modules\AppModule.js" />
     <Content Include="Scripts\Services\FileService.js" />
     <Content Include="Scripts\Services\InsetService.js" />
+    <Content Include="Scripts\Services\NewsCategoriesService.js" />
     <Content Include="Scripts\Services\ServiceProviderService.js" />
     <Content Include="Scripts\Services\NewsService.js" />
     <Content Include="Scripts\Services\PageService.js" />
     <Content Include="Scripts\Services\ServicesService.js" />
     <Content Include="Scripts\Services\ServiceTypeService.js" />
+    <Content Include="Scripts\text-angular\textAngular-rangy.js" />
+    <Content Include="Scripts\text-angular\textAngular-sanitize.js" />
+    <Content Include="Scripts\text-angular\textAngular.js" />
+    <Content Include="Scripts\text-angular\textAngularSetup.js" />
+    <Content Include="Scripts\TextAngularTools\InsetTool.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1205,6 +1221,7 @@
     <Content Include="Views\ServiceProvider\Modals\Edit.cshtml" />
     <Content Include="Views\ServiceProvider\Modals\ConfirmDelete.cshtml" />
     <Content Include="Views\Services\Modals\Register.cshtml" />
+    <Content Include="Views\News\Modals\ChooseCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

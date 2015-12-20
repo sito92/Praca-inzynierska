@@ -79,6 +79,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Categories.
+        /// </summary>
+        public static string Categories {
+            get {
+                return ResourceManager.GetString("Categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose images.
         /// </summary>
         public static string ChooseImages {
@@ -111,6 +120,15 @@ namespace Modules.Resources {
         public static string ConfirmDeleteMessage {
             get {
                 return ResourceManager.GetString("ConfirmDeleteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Content.
+        /// </summary>
+        public static string Content {
+            get {
+                return ResourceManager.GetString("Content", resourceCulture);
             }
         }
         
@@ -282,6 +300,15 @@ namespace Modules.Resources {
         public static string NewsCategoryUpdateSuccess {
             get {
                 return ResourceManager.GetString("NewsCategoryUpdateSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No categories.
+        /// </summary>
+        public static string NoCategories {
+            get {
+                return ResourceManager.GetString("NoCategories", resourceCulture);
             }
         }
         
