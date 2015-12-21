@@ -31,6 +31,34 @@
             refresh();
         });
     };
+    $scope.add = function () {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/MenuButton/GetModal?name=AddNode',
+            controller: 'AddButtonModalCtrl',
+            size: "md"
+        });
+        modalInstance.result.then(function (node) {
+            refresh();
+        });
+    }
+    $scope.delete = function (button) {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/MenuButton/GetModal?name=ConfirmDelete',
+            controller: 'ConfirmDeleteModalCtrl',
+            size: "sm",
+            resolve:
+           {
+               rootButton: function () {
+                   return angular.copy(button);
+               }
+           }
+        });
+        modalInstance.result.then(function (node) {
+            refresh();
+        });
+    }
     $scope.select = function (button) {
         $scope.selectedButton = button;
     }
@@ -70,24 +98,6 @@ app.controller('MenuButtonEditModalCtrl', function ($scope, $modalInstance, root
         });
 
     };
-    //$scope.add = function () {
-    //    var modalInstance = $modal.open({
-    //        animation: true,
-    //        templateUrl: '/News/GetModal?name=ChooseCategory',
-    //        controller: 'NewsChooseCategoryModalCtrl',
-    //        size: "md"
-    //    });
-    //    modalInstance.result.then(function (category) {
-    //        if (category != undefined) {
-    //            var found = $filter('filter')($scope.news.Categories, { Id: category.Id });
-    //            if (found.length <= 0)
-    //                $scope.news.Categories.push(category);
-    //        }
-    //    });
-    //}
-    //$scope.remove = function (index) {
-    //    $scope.news.Categories.splice(index, 1);
-    //}
     $scope.cancel = function () {
         $modalInstance.dismiss();
     };
@@ -189,4 +199,61 @@ app.controller('ChoosePageModalCtrl', function ($scope, $modalInstance,PageServi
     $scope.confirm = function () {
         $modalInstance.close($scope.selectedPage);
     }
+});
+app.controller('AddButtonModalCtrl', function ($scope, $modalInstance, $modal, MenuButtonService) {
+
+    $scope.button = {
+        Content: '',
+        Page: null,
+        Children: []
+    }
+    $scope.choosePage = function () {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/MenuButton/GetModal?name=ChoosePage',
+            controller: 'ChoosePageModalCtrl',
+            size: "md"
+        });
+        modalInstance.result.then(function (page) {
+            $scope.button.Page = page;
+        });
+    }
+    $scope.deletePage = function () {
+        $scope.button.Page = null;
+    }
+    $scope.add = function () {
+        MenuButtonService.add($scope.button).then(function (jsonResult) {
+            if (jsonResult.success) {
+                $modalInstance.close();
+            } else {
+                alert(jsonResult.message);
+            }
+        }, function () {
+            alert("Error");
+            $modalInstance.dismiss();
+        });
+    }
+    $scope.cancel = function () {
+        $modalInstance.dismiss();
+    }
+});
+app.controller('ConfirmDeleteModalCtrl', function ($scope, $modalInstance, MenuButtonService, rootButton) {
+    $scope.rootButton = rootButton;
+    $scope.confirm = function () {
+        MenuButtonService.delete($scope.rootButton.Id).then(function (jsonResult) {
+            if (jsonResult.success) {
+                $modalInstance.close();
+            } else {
+                alert(jsonResult.message);
+            }
+        }, function () {
+            alert("Error");
+            $modalInstance.dismiss();
+        });
+
+    };
+    $scope.decline = function (index) {
+        $modalInstance.close();
+    }
+
 });

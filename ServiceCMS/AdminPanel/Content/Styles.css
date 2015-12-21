@@ -174,8 +174,7 @@
 .categories-container {
     margin-top: 20px;
 }
-
-[data-ui-tree] .button-box {
+ .button-box {
     margin: 10px;
     color: #438eb9;
     background: #f4f6f7;

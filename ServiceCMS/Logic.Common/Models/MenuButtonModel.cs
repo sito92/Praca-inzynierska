@@ -41,7 +41,7 @@ namespace Logic.Common.Models
                 Id = this.Id,
                 Content = this.Content,
                 //Parent = this.Parent == null ? null : this.Parent.ToEntity(),
-                Children = this.Children == null ? null :this.Children.Select(x=>x.ToEntity()).ToList(),
+                //Children = this.Children == null ? null :this.Children.Select(x=>x.ToEntity()).ToList(),
                 PageId = this.Page == null ? null : (int?)this.Page.Id,
                 ParentId = this.ParentId
             };

@@ -1235,6 +1235,7 @@
     <Content Include="Views\MenuButton\Modals\EditNode.cshtml" />
     <Content Include="Views\MenuButton\Modals\ChoosePage.cshtml" />
     <Content Include="Views\MenuButton\Modals\AddNode.cshtml" />
+    <Content Include="Views\MenuButton\Modals\ConfirmDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

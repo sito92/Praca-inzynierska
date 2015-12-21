@@ -44,5 +44,27 @@ namespace AdminPanel.Controllers
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
+        [HttpPost]
+        public ActionResult Add(MenuButtonModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = _menuButtonService.Insert(model);
+                return Json(new { success = true, message = response }, JsonRequestBehavior.AllowGet);
+            }
+            else
+                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = _menuButtonService.Delete(id);
+                return Json(new { success = true, message = response }, JsonRequestBehavior.AllowGet);
+            }
+            else
+                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

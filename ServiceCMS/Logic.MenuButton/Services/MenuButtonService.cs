@@ -222,6 +222,7 @@ namespace Logic.MenuButton.Services
         private void UpdateButtons(MenuButtonModel parentButton, IUnitOfWork _unitOfWork)
         {
             var oldButton = _unitOfWork.MenuButtonRepository.Get(x => x.Id == parentButton.Id).FirstOrDefault();
+            
             if (oldButton != null)
             {
 
@@ -245,7 +246,7 @@ namespace Logic.MenuButton.Services
                 }
 
                 var buttonsToUpdateIds = oldChildButtonsIds.Union(newButtonsIds);
-                var buttonsToUpdate = newButtons.Where(x => buttonsToUpdateIds.Contains(x.Id));
+                var buttonsToUpdate = newButtons.Where(x => buttonsToUpdateIds.Contains(x.Id) && x.Id!=0);
                 foreach (var btn in buttonsToUpdate)
                 {
                     _unitOfWork.MenuButtonRepository.Update(btn.ToEntity());
