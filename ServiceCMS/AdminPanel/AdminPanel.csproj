@@ -216,6 +216,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsetController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\MenuButtonController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PickerController.cs" />
@@ -240,6 +241,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\angular-drag-and-drop.css" />
+    <Content Include="Content\angular-ui-tree.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -343,6 +345,7 @@
     <Content Include="Scripts\angular-scenario.js" />
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular-ui-tree.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
@@ -353,6 +356,7 @@
     <Content Include="Scripts\calendar\fullcalendar.js" />
     <Content Include="Scripts\calendar\gcal.js" />
     <Content Include="Scripts\calendar\lang-all.js" />
+    <Content Include="Scripts\Controllers\MenuButtonController.js" />
     <Content Include="Scripts\Controllers\ServiceProviderController.js" />
     <Content Include="Scripts\Controllers\ServiceTypeController.js" />
     <Content Include="Scripts\Modules\NewsModule.js" />
@@ -1153,6 +1157,7 @@
     <Content Include="Scripts\Modules\AppModule.js" />
     <Content Include="Scripts\Services\FileService.js" />
     <Content Include="Scripts\Services\InsetService.js" />
+    <Content Include="Scripts\Services\MenuButtonService.js" />
     <Content Include="Scripts\Services\NewsCategoriesService.js" />
     <Content Include="Scripts\Services\ServiceProviderService.js" />
     <Content Include="Scripts\Services\NewsService.js" />
@@ -1224,6 +1229,9 @@
     <Content Include="Views\News\Modals\ChooseCategory.cshtml" />
     <Content Include="Views\News\Modals\Edit.cshtml" />
     <Content Include="Views\News\Modals\ConfirmDelete.cshtml" />
+    <Content Include="Views\MenuButton\Index.cshtml" />
+    <Content Include="Views\MenuButton\Menu.cshtml" />
+    <Content Include="Views\MenuButton\Modals\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -13,9 +13,10 @@ namespace Logic.Common.Models
 
         public string Content { get; set; }
 
-        public MenuButton Parent { get; set; }
+        public MenuButtonModel Parent { get; set; }
         public int? ParentId { get; set; }
-        public virtual ICollection<MenuButton> Children { get; set; }
+        public int Order { get; set; }
+        public ICollection<MenuButtonModel> Children { get; set; }
 
         public MenuButtonModel()
         {
@@ -26,8 +27,8 @@ namespace Logic.Common.Models
             Id = menuButton.Id;
             Content = menuButton.Content;
             ParentId = menuButton.ParentId;
-            Parent = menuButton.Parent;
-            Children = menuButton.Children;
+            //Parent = menuButton.Parent == null ? null : new MenuButtonModel(menuButton.Parent);
+            Children = menuButton.Children == null ? null : menuButton.Children.Select(x=>new MenuButtonModel(x)).ToList();
         }
 
         public MenuButton ToEntity()
@@ -36,8 +37,8 @@ namespace Logic.Common.Models
             {
                 Id = this.Id,
                 Content = this.Content,
-                Parent = this.Parent,
-                Children = this.Children,
+                //Parent = this.Parent == null ? null : this.Parent.ToEntity(),
+                Children = this.Children == null ? null :this.Children.Select(x=>x.ToEntity()).ToList(),
                 ParentId = this.ParentId
             };
         }

@@ -59,3 +59,6 @@
 /// <reference path="textangulartools/insettool.js" />
 /// <reference path="modules/newsmodule.js" />
 /// <reference path="services/newscategoriesservice.js" />
+/// <reference path="services/menubuttonservice.js" />
+/// <reference path="controllers/menubuttoncontroller.js" />
+/// <reference path="angular-ui-tree.js" />

@@ -84,14 +84,23 @@ namespace DAL.Migrations
 
         private void SeedMenuButtons(ServiceCMSContext context)
         {
-            context.MenuButtons.AddOrUpdate(x => x.Content, new Models.MenuButton() { Content = "rodzic" });
+            context.MenuButtons.AddOrUpdate(x => x.Content, new Models.MenuButton() { Content = "rodzic",Order = 0});
             context.SaveChanges();
 
             context.MenuButtons.AddOrUpdate(x => x.Content,
-                new Models.MenuButton() { Content = "dziecko1", ParentId = 1 },
-                new Models.MenuButton() { Content = "dziecko2", ParentId = 1 },
-                new Models.MenuButton() { Content = "dziecko11", ParentId = 2 },
-                new Models.MenuButton() { Content = "dziecko111", ParentId = 4 });
+                new Models.MenuButton() { Content = "dziecko1", ParentId = 1 ,Order = 0},
+                new Models.MenuButton() { Content = "dziecko2", ParentId = 1 ,Order = 0},
+                new Models.MenuButton() { Content = "dziecko11", ParentId = 2 ,Order = 0},
+                new Models.MenuButton() { Content = "dziecko111", ParentId = 4 ,Order = 0});
+            context.SaveChanges();
+
+            context.MenuButtons.AddOrUpdate(x => x.Content, new Models.MenuButton() { Content = "rodzic2", Order = 0 });
+            context.SaveChanges();
+            context.MenuButtons.AddOrUpdate(x => x.Content,
+               new Models.MenuButton() { Content = "dziecko21", ParentId = 6, Order = 0 },
+               new Models.MenuButton() { Content = "dziecko22", ParentId = 6, Order = 0 },
+               new Models.MenuButton() { Content = "dziecko211", ParentId = 7, Order = 0 },
+               new Models.MenuButton() { Content = "dziecko2111", ParentId = 9, Order = 0 });
             context.SaveChanges();
         }
 

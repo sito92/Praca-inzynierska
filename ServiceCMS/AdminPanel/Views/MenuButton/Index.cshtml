@@ -1,0 +1,26 @@
+﻿@using Modules.Resources
+@{
+    ViewBag.Title = "Index";
+}
+@Scripts.Render("~/bundles/menuButton")
+<div ng-controller="MenuButtonController">
+    @Html.Partial("Menu")
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Presentation.Name
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="button in rootButtons" ng-click="select(button)" ng-class="{'selected':selectedButton.Id==button.Id}" class="selectable">
+                        <td ng-bind="button.Content"></td>                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

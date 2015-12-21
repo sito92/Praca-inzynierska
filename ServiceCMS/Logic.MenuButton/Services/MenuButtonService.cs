@@ -24,6 +24,28 @@ namespace Logic.MenuButton.Services
             _logger = logger;
         }
 
+        public IList<MenuButtonModel> GetAllRootButtons()
+        {
+            IList<MenuButtonModel> menuButtonModels = new List<MenuButtonModel>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.MenuButtonRepository.Get(x => x.ParentId == null);
+                    foreach (var entity in entities)
+                    {
+                        menuButtonModels.Add(new MenuButtonModel(entity));
+                    }
+
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return menuButtonModels;
+        }
         public MenuButtonModel GetById(int id)
         {
             MenuButtonModel menuButtonModel = null;
@@ -101,7 +123,7 @@ namespace Logic.MenuButton.Services
                 {
                     if (menuButton != null)
                     {
-                        unitOfWork.MenuButtonRepository.Update(menuButton.ToEntity());
+                        UpdateButtons(menuButton,unitOfWork);
                     }
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.MenuButtonUpdateSuccess };
@@ -169,6 +191,67 @@ namespace Logic.MenuButton.Services
                 }
             }
             return Buttons;
+
+        }
+        private List<MenuButtonModel> GetLocalChildButtons(MenuButtonModel parentButton)
+        {
+            List<MenuButtonModel> Buttons = new List<MenuButtonModel>();
+            Stack<MenuButtonModel> BranchButtons = new Stack<MenuButtonModel>();
+            var rootButton = parentButton;
+            BranchButtons.Push(rootButton);
+
+            while (BranchButtons.Count > 0)
+            {
+
+                var button = BranchButtons.Pop();
+                Buttons.Add(button);
+                var childrenNodes = button.Children;
+                // unitOfWork.MenuButtonRepository.Get(x => x.ParentId == button.Id);
+                if (childrenNodes != null && childrenNodes.Any())
+                {
+                    foreach (var node in childrenNodes)
+                    {
+                        node.ParentId = button.Id;
+                        BranchButtons.Push(node);
+                    }
+                }
+            }
+            return Buttons;
+        }
+
+        private void UpdateButtons(MenuButtonModel parentButton, IUnitOfWork _unitOfWork)
+        {
+            var oldButton = _unitOfWork.MenuButtonRepository.Get(x => x.Id == parentButton.Id).FirstOrDefault();
+            if (oldButton != null)
+            {
+
+                var oldChildButtons = GetChildButtons(new MenuButtonModel(oldButton));
+                var oldChildButtonsIds = oldChildButtons.Select(x => x.Id);
+
+                var newButtons = GetLocalChildButtons(parentButton);
+                var newButtonsIds = newButtons.Select(x => x.Id);
+
+                var buttonsToInsert = newButtons.Where(x => x.Id == 0);
+                foreach (var btn in buttonsToInsert)
+                {
+                    _unitOfWork.MenuButtonRepository.Insert(btn.ToEntity());
+                }
+
+                var buttonsToDeleteIds = oldChildButtonsIds.Except(newButtonsIds);
+                var buttonsToDelete = oldChildButtons.Where(x => buttonsToDeleteIds.Contains(x.Id));
+                foreach (var btn in buttonsToDelete)
+                {
+                    _unitOfWork.MenuButtonRepository.Delete(btn.Id);
+                }
+
+                var buttonsToUpdateIds = oldChildButtonsIds.Union(newButtonsIds);
+                var buttonsToUpdate = newButtons.Where(x => buttonsToUpdateIds.Contains(x.Id));
+                foreach (var btn in buttonsToUpdate)
+                {
+                    _unitOfWork.MenuButtonRepository.Update(btn.ToEntity());
+                }
+            }
+
 
         }
     }

@@ -137,7 +137,7 @@ app.controller('NewsChooseCategoryModalCtrl', function ($scope, $modalInstance, 
 });
 app.controller('NewsEditModalCtrl', function ($scope, $modalInstance, NewsService, news,$modal,$filter) {
     $scope.news = news;
-
+   
     $scope.save = function () {    
 
         NewsService.edit($scope.news).then(function (jsonResult) {
