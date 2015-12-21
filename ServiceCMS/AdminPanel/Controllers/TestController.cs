@@ -71,7 +71,7 @@ namespace AdminPanel.Controllers
                 "kamil.slusarczyk@hotmail.com"
             };
 
-            var a = _mail.SendMailToMany(addresses, "DUPA", "DUPA nie temat", "servicecmsthesis@gmail.com");
+            //var a = _mail.SendMailToMany(addresses, "DUPA", "DUPA nie temat", "servicecmsthesis@gmail.com");
 
             return View();
         }

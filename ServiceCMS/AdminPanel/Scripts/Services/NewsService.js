@@ -1,10 +1,10 @@
 ﻿app.factory("NewsService", function ($http, $q) {
     return {
-        getAll: function () {
+        getNewestNewses: function () {
             var deferred = $q.defer();
             $http({
                 method: 'GET',
-                url: '/News/GetAll'
+                url: '/News/GetNewestNewsesCollection'
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
         },

@@ -1,7 +1,7 @@
 ﻿app.controller('NewsController', function ($scope, $modal,NewsService) {
     var refresh = function () {
         $scope.selectedNews = null;
-        NewsService.getAll().then(function (jsonResult) {
+        NewsService.getNewestNewses().then(function (jsonResult) {
             if (jsonResult.success) {
                 $scope.newses = jsonResult.data;
 

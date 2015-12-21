@@ -52,10 +52,7 @@ namespace AdminPanel.Controllers
         {
             var resultCollection = _newsService.GetNewestNewsesCollection();
 
-            if(resultCollection.Any())
-                return Json(new { success = true, data = resultCollection }, JsonRequestBehavior.AllowGet);
-            else
-                return Json(new { success = false });
+                return new JsonNetResult(new { success = true, data = resultCollection }, JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
         public ActionResult Add(NewsModel model)
