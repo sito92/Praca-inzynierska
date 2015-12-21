@@ -14,18 +14,6 @@
     }
 
     refresh();
-
-    //$scope.add = function ($event) {
-    //    var modalInstance = $modal.open({
-    //        animation: true,
-    //        templateUrl: '/News/GetModal?name=Add',
-    //        controller: 'NewsAddModalCtrl',
-    //        size: "lg"
-    //    });
-    //    modalInstance.result.then(function () {
-    //        refresh();
-    //    });
-    //};
     $scope.edit = function (button) {
         var modalInstance = $modal.open({
             animation: true,
@@ -43,40 +31,21 @@
             refresh();
         });
     };
-    //$scope.delete = function (news) {
-    //    var modalInstance = $modal.open({
-    //        animation: true,
-    //        templateUrl: '/News/GetModal?name=ConfirmDelete',
-    //        controller: 'NewsDeleteModalCtrl',
-    //        size: "sm",
-    //        resolve:
-    //        {
-    //            news: function () {
-    //                return angular.copy(news);
-    //            }
-    //        }
-    //    });
-    //    modalInstance.result.then(function () {
-    //        refresh();
-    //    });
-    //}
     $scope.select = function (button) {
         $scope.selectedButton = button;
     }
 });
 app.controller('MenuButtonEditModalCtrl', function ($scope, $modalInstance, rootButton,MenuButtonService, $modal, $filter) {
     $scope.rootButton = rootButton;
-    $scope.newSubItem = function (scope) {
-        var nodeData = scope.$modelValue;
-        nodeData.Children.push({
-            Content: 'NowyNode',
-            Children: []
-        });
-    };
     $scope.addMainButton = function() {
-        $scope.rootButton.Children.push({
-            Content: 'NowyNode',
-            Children: []
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/MenuButton/GetModal?name=AddNode',
+            controller: 'AddNodeModalCtrl',
+            size: "md"
+        });
+        modalInstance.result.then(function (node) {
+            $scope.rootButton.Children.push(node);
         });
     }
     $scope.toggle = function (scope) {
