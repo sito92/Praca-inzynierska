@@ -17,7 +17,7 @@ namespace Logic.Common.Models
         public DateTime? LastModifiedTimeStamp { get; set; }
 
         public int? RestorePageId { get; set; }
-        public Page RestorePage { get; set; }
+        public PageModel RestorePage { get; set; }
 
         public PageModel()
         {
@@ -31,7 +31,7 @@ namespace Logic.Common.Models
             Media = page.Media;
             CreationTimeStamp = page.CreationTimeStamp;
             LastModifiedTimeStamp = page.LastModifiedTimeStamp;
-            RestorePage = page.RestorePage;
+            RestorePage = page.RestorePage == null ? null : new PageModel(page.RestorePage);
             RestorePageId = page.RestorePageId;
         }
 
@@ -44,7 +44,7 @@ namespace Logic.Common.Models
                 Content=this.Content,
                 CreationTimeStamp = this.CreationTimeStamp,
                 LastModifiedTimeStamp = this.LastModifiedTimeStamp,
-                RestorePage = this.RestorePage,
+                RestorePage = this.RestorePage == null ? null : this.RestorePage.ToEntity(),
                 RestorePageId = this.RestorePageId,
                 Media = this.Media
             };

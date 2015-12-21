@@ -18,6 +18,8 @@ namespace Logic.Common.Models
         public int Order { get; set; }
         public ICollection<MenuButtonModel> Children { get; set; }
 
+        public PageModel Page { get; set; }
+
         public MenuButtonModel()
         {
         }
@@ -27,6 +29,7 @@ namespace Logic.Common.Models
             Id = menuButton.Id;
             Content = menuButton.Content;
             ParentId = menuButton.ParentId;
+            Page = menuButton.Page == null ? null : new PageModel(menuButton.Page);
             //Parent = menuButton.Parent == null ? null : new MenuButtonModel(menuButton.Parent);
             Children = menuButton.Children == null ? null : menuButton.Children.Select(x=>new MenuButtonModel(x)).ToList();
         }
@@ -39,6 +42,7 @@ namespace Logic.Common.Models
                 Content = this.Content,
                 //Parent = this.Parent == null ? null : this.Parent.ToEntity(),
                 Children = this.Children == null ? null :this.Children.Select(x=>x.ToEntity()).ToList(),
+                PageId = this.Page == null ? null : (int?)this.Page.Id,
                 ParentId = this.ParentId
             };
         }

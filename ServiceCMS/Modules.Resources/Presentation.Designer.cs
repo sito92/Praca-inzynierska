@@ -88,6 +88,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose.
+        /// </summary>
+        public static string Choose {
+            get {
+                return ResourceManager.GetString("Choose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose images.
         /// </summary>
         public static string ChooseImages {
@@ -102,6 +111,15 @@ namespace Modules.Resources {
         public static string ChoosePage {
             get {
                 return ResourceManager.GetString("ChoosePage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
             }
         }
         
@@ -331,6 +349,33 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No choosen page.
+        /// </summary>
+        public static string NoChoosenPage {
+            get {
+                return ResourceManager.GetString("NoChoosenPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No name.
+        /// </summary>
+        public static string NoName {
+            get {
+                return ResourceManager.GetString("NoName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No pages.
+        /// </summary>
+        public static string NoPages {
+            get {
+                return ResourceManager.GetString("NoPages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There are no types defined..
         /// </summary>
         public static string NoTypes {
@@ -345,6 +390,15 @@ namespace Modules.Resources {
         public static string NumberErrorMessage {
             get {
                 return ResourceManager.GetString("NumberErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page.
+        /// </summary>
+        public static string Page {
+            get {
+                return ResourceManager.GetString("Page", resourceCulture);
             }
         }
         

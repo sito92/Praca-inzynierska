@@ -1,0 +1,35 @@
+﻿@using Modules.Resources
+@using Logic.Common.Models
+
+
+@model NewsModel
+<div class="modal-header">
+    <div class="row text-center">
+        <h2 class="text-modal-heading">@Presentation.Add</h2>
+    </div>
+</div>
+<div class="modal-body">
+    <div>
+        <div class="form-group form-field row">
+            <div class="col-md-10 col-md-offset-1">
+                <label class="control-label">@Presentation.Content</label>
+                <input class="form-control" ng-model="button.Content" />
+            </div>
+        </div>
+        <div class="form-group form-field row">
+            <div class="col-md-10 col-md-offset-1">
+                <label class="control-label">@Presentation.Page</label>
+                <p>
+                    <span ng-if="button.Page!=null" ng-bind="button.Page.Name"></span>
+                    <span ng-show="button.Page == null">@Presentation.NoChoosenPage</span>
+                    <button class="btn btn-sm btn-primary" ng-click="choosePage()" style="margin-left: 10px">@Presentation.Choose</button>
+                    <button class="btn btn-sm btn-danger" ng-click="deletePage()" style="margin-left: 10px" ng-show="button.Page != null">@Presentation.Delete</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="add()">@Presentation.Add</button>
+    <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
+</div>

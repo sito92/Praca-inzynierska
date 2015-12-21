@@ -27,14 +27,14 @@ namespace DAL.Migrations
         {
             //if (System.Diagnostics.Debugger.IsAttached == false)
             //    System.Diagnostics.Debugger.Launch();
-
+            SeedPage(context);
             SeedMenuButtons(context);
             SeedUsers(context);
             SeedNewsCategories(context);
             SeedSettings(context);
             SeedInsetArguments(context);
             SeedInset(context);
-            SeedPage(context);
+            
             SeedImages(context);
             SeedSettings(context);
             SeedStatisticsInformation(context);
@@ -88,19 +88,19 @@ namespace DAL.Migrations
             context.SaveChanges();
 
             context.MenuButtons.AddOrUpdate(x => x.Content,
-                new Models.MenuButton() { Content = "dziecko1", ParentId = 1 ,Order = 0},
-                new Models.MenuButton() { Content = "dziecko2", ParentId = 1 ,Order = 0},
-                new Models.MenuButton() { Content = "dziecko11", ParentId = 2 ,Order = 0},
-                new Models.MenuButton() { Content = "dziecko111", ParentId = 4 ,Order = 0});
+                new Models.MenuButton() { Content = "dziecko1", ParentId = 1 ,Order = 0,PageId = 1},
+                new Models.MenuButton() { Content = "dziecko2", ParentId = 1, Order = 0, PageId = 2 },
+                new Models.MenuButton() { Content = "dziecko11", ParentId = 2, Order = 0, PageId = 1 },
+                new Models.MenuButton() { Content = "dziecko111", ParentId = 4, Order = 0, PageId = 3 });
             context.SaveChanges();
 
             context.MenuButtons.AddOrUpdate(x => x.Content, new Models.MenuButton() { Content = "rodzic2", Order = 0 });
             context.SaveChanges();
             context.MenuButtons.AddOrUpdate(x => x.Content,
-               new Models.MenuButton() { Content = "dziecko21", ParentId = 6, Order = 0 },
-               new Models.MenuButton() { Content = "dziecko22", ParentId = 6, Order = 0 },
-               new Models.MenuButton() { Content = "dziecko211", ParentId = 7, Order = 0 },
-               new Models.MenuButton() { Content = "dziecko2111", ParentId = 9, Order = 0 });
+               new Models.MenuButton() { Content = "dziecko21", ParentId = 6, Order = 0, PageId = 4 },
+               new Models.MenuButton() { Content = "dziecko22", ParentId = 6, Order = 0, PageId = 5 },
+               new Models.MenuButton() { Content = "dziecko211", ParentId = 7, Order = 0, PageId = 4 },
+               new Models.MenuButton() { Content = "dziecko2111", ParentId = 9, Order = 0, PageId = 5 });
             context.SaveChanges();
         }
 
@@ -153,7 +153,13 @@ namespace DAL.Migrations
                 new Page() { Name = "Strona g³owna", Content = "DUPA" },
                 new Page() { Name = "Strona1", Content = "DUPA", RestorePageId = 1 },
                 new Page() { Name = "Strona2", Content = "DUPA", RestorePageId = 2 },
-                new Page() { Name = "Strona3", Content = "DUPA", RestorePageId = 3 }
+                new Page() { Name = "StrAsdfsdona3", Content = "DUPA", RestorePageId = 3 },
+                new Page() { Name = "Fadas", Content = "DUPA"},
+                new Page() { Name = "CXCVx", Content = "DUPA"},
+                new Page() { Name = "SASD", Content = "DUPA"},
+                new Page() { Name = "ASADA", Content = "DUPA"},
+                new Page() { Name = "EZFsd", Content = "DUPA"},
+                new Page() { Name = "ASDF", Content = "DUPA"}
 
                 );
             context.SaveChanges();

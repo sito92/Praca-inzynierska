@@ -1232,9 +1232,13 @@
     <Content Include="Views\MenuButton\Index.cshtml" />
     <Content Include="Views\MenuButton\Menu.cshtml" />
     <Content Include="Views\MenuButton\Modals\Edit.cshtml" />
+    <Content Include="Views\MenuButton\Modals\EditNode.cshtml" />
+    <Content Include="Views\MenuButton\Modals\ChoosePage.cshtml" />
+    <Content Include="Views\MenuButton\Modals\AddNode.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Page\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

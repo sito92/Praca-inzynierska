@@ -107,7 +107,8 @@ namespace AdminPanel
                    ));
             bundles.Add(new ScriptBundle("~/bundles/menuButton").Include(
                     "~/Scripts/Controllers/MenuButtonController.js",
-                    "~/Scripts/Services/MenuButtonService.js"
+                    "~/Scripts/Services/MenuButtonService.js",
+                    "~/Scripts/Services/PageService.js"
                     ));
             bundles.Add(new ScriptBundle("~/bundles/angular-drag-and-drop").Include(
                     "~/Scripts/angular-drag-and-drop-lists.js"

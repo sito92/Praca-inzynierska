@@ -1,6 +1,6 @@
 ﻿app.controller('MenuButtonController', function ($scope, $modal, MenuButtonService) {
     var refresh = function () {
-        $scope.selectedNews = null;
+        $scope.selectedButton = null;
         MenuButtonService.getAllRootButtons().then(function (jsonResult) {
             if (jsonResult.success) {
                 $scope.rootButtons = jsonResult.data;
@@ -87,58 +87,6 @@ app.controller('MenuButtonEditModalCtrl', function ($scope, $modalInstance, root
             return true;
         }
     }
-    $scope.list = [
-  {
-      "id": 1,
-      "title": "node1",
-      "nodes": [
-        {
-            "id": 11,
-            "title": "node1.1",
-            "nodes": [
-              {
-                  "id": 111,
-                  "title": "node1.1.1",
-                  "nodes": []
-              }
-            ]
-        },
-        {
-            "id": 12,
-            "title": "node1.2",
-            "nodes": []
-        }
-      ]
-  },
-  {
-      "id": 2,
-      "title": "node2",
-      "nodrop": true,
-      "nodes": [
-        {
-            "id": 21,
-            "title": "node2.1",
-            "nodes": []
-        },
-        {
-            "id": 22,
-            "title": "node2.2",
-            "nodes": []
-        }
-      ]
-  },
-  {
-      "id": 3,
-      "title": "node3",
-      "nodes": [
-        {
-            "id": 31,
-            "title": "node3.1",
-            "nodes": []
-        }
-      ]
-  }
-    ];
     $scope.save = function () {
 
         MenuButtonService.edit($scope.rootButton).then(function (jsonResult) {
@@ -174,4 +122,102 @@ app.controller('MenuButtonEditModalCtrl', function ($scope, $modalInstance, root
     $scope.cancel = function () {
         $modalInstance.dismiss();
     };
+    $scope.editNode = function (node) {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/MenuButton/GetModal?name=EditNode',
+            controller: 'EditNodeModalCtrl',
+            size: "md",
+            resolve: {
+                button:function() {
+                    return node;
+                }
+            }
+        });
+    }
+    $scope.addNode = function (scope) {
+        var button = scope.$modelValue;
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/MenuButton/GetModal?name=AddNode',
+            controller: 'AddNodeModalCtrl',
+            size: "md"
+        });
+        modalInstance.result.then(function (node) {
+            button.Children.push(node);
+        });
+    }
+});
+app.controller('EditNodeModalCtrl', function ($scope, $modalInstance, button,$modal) {
+
+    $scope.choosePage = function () {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/MenuButton/GetModal?name=ChoosePage',
+            controller: 'ChoosePageModalCtrl',
+            size: "md"
+        });
+        modalInstance.result.then(function (page) {
+            $scope.button.Page = page;
+        });
+    }
+    $scope.deletePage = function () {
+        $scope.button.Page = null;
+    }
+    $scope.button = button;
+
+    $scope.cancel = function () {
+        $modalInstance.dismiss();
+    }
+});
+app.controller('AddNodeModalCtrl', function ($scope, $modalInstance,$modal) {
+
+    $scope.button = {
+        Content: '',
+        Page:null,
+        Children:[]
+    }
+    $scope.choosePage = function () {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/MenuButton/GetModal?name=ChoosePage',
+            controller: 'ChoosePageModalCtrl',
+            size: "md"
+        });
+        modalInstance.result.then(function (page) {
+            $scope.button.Page = page;
+        });
+    }
+    $scope.deletePage = function () {
+        $scope.button.Page = null;
+    }
+    $scope.add = function() {
+        $modalInstance.close($scope.button);
+    }
+    $scope.cancel = function () {
+        $modalInstance.dismiss();
+    }
+});
+app.controller('ChoosePageModalCtrl', function ($scope, $modalInstance,PageService) {
+    PageService.getAll().then(function (jsonResult) {
+        if (jsonResult.success) {
+            $scope.pages = jsonResult.data;
+
+        } else {
+            alert(jsonResult.message);
+        }
+    }, function () {
+        alert("Error");
+    });
+    $scope.selectedPage = null;
+
+    $scope.select = function (page) {
+        $scope.selectedPage = page;
+    }
+    $scope.cancel = function () {
+        $modalInstance.dismiss();
+    }
+    $scope.confirm = function () {
+        $modalInstance.close($scope.selectedPage);
+    }
 });
