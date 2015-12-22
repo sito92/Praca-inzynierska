@@ -294,6 +294,15 @@ span.logo {
         cursor: pointer;
     }
 
+.loginPanel {
+    background-color: #1175ae;
+}
+
+.loginPanelForm {
+    background-color: #F24F1E;
+    color: white;
+}
+
 .container-menu {
     overflow: hidden;
 }
@@ -311,7 +320,9 @@ span.logo {
     float: left;
 }
 
+
 #page-content-wrapper.page-content {
     padding-left: 80px;
     margin-right: 20px;
 }
+
