@@ -41,6 +41,16 @@ namespace AdminPanel.Controllers
             }
         }
 
+        public ActionResult GetNewestNewsesCollection()
+        {
+            var resultCollection = _pageService.GetNewestPagesCollection();
+
+            if(resultCollection.Any())
+                return new JsonNetResult(new { success = true, data = resultCollection }, JsonRequestBehavior.AllowGet);
+            else
+                return new JsonNetResult(new { success = false}, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpPost]
         public ActionResult Insert(PageModel model)
         {

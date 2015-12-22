@@ -158,6 +158,32 @@ namespace Logic.Page.Services
             return null;
         }
 
+        public IEnumerable<PageModel> GetNewestPagesCollection()
+        {
+            var resultCollection = new List<PageModel>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.PageRepository.Get().ToList();
+
+                    foreach (var entity in entities)
+                    {
+                        var collectionOfNewerPages = entities.Where(x => x.RestorePageId == entity.Id);
+
+                        if (collectionOfNewerPages.Count() == 0)
+                            resultCollection.Add(new PageModel(entity));
+                    }
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return resultCollection;
+        }
+
         #region TODO
         //public IEnumerable<object> GetRestorePagesCollectionGeneric<T>(object entity, GenericRepository<T> repository)
         //    where T : class
