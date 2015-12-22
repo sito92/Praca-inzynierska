@@ -24,7 +24,7 @@ namespace Logic.Common.Models
             return new NewsletterReceiver()
             {
                 Id = this.Id,
-                EmailAddress = this.EmailAddress
+                EmailAddress = this.EmailAddress,
             };
         }
     }

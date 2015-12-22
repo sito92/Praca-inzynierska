@@ -216,6 +216,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsetController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\MenuButtonController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\PageController.cs" />
@@ -238,6 +239,7 @@
     <Compile Include="Models\User\AuthenticatedViewModel.cs" />
     <Compile Include="Models\User\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MailContentViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\angular-drag-and-drop.css" />
@@ -1280,6 +1282,10 @@
     <ProjectReference Include="..\Logic.MenuButton\Logic.MenuButton.csproj">
       <Project>{258a87f6-b6fa-48f0-84d2-847cc600fe11}</Project>
       <Name>Logic.MenuButton</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.NewsletterReceiver\Logic.NewsletterReceiver.csproj">
+      <Project>{9e312efe-5655-45f2-ac0e-920ee1bbd8f4}</Project>
+      <Name>Logic.NewsletterReceiver</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.News\Logic.News.csproj">
       <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
