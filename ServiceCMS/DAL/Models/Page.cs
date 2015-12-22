@@ -11,7 +11,7 @@ namespace DAL.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Content { get; set; }
-        public IEnumerable<File> Media { get; set; }
+        public virtual ICollection<File> Media { get; set; }
         public DateTime? CreationTimeStamp { get; set; }
         public DateTime? LastModifiedTimeStamp { get; set; }
 

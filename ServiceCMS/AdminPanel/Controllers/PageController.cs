@@ -42,7 +42,7 @@ namespace AdminPanel.Controllers
             if (ModelState.IsValid)
             {
                 var response = _pageService.Insert(model);
-                return Json(new { success = true, data = response }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else
             {
@@ -56,7 +56,7 @@ namespace AdminPanel.Controllers
             if (ModelState.IsValid)
             {
                 var response = _pageService.Update(model);
-                return Json(new { success = true, data = response }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else
             {
@@ -70,7 +70,7 @@ namespace AdminPanel.Controllers
             if (ModelState.IsValid)
             {
                 var response = _pageService.Delete(model.Id);
-                return Json(new { success = true, data = response }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else
             {

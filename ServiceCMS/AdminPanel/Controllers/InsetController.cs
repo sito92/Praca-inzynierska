@@ -16,10 +16,7 @@ namespace AdminPanel.Controllers
             _insetService = insetService;
             _insetRecognizer = insetRecognizer;
         }
-        public ActionResult Index()
-        {
-            return View();
-        }
+
         public PartialViewResult GetModal(string name)
         {
             return PartialView("Modals/" + name);

@@ -148,6 +148,10 @@
     <Compile Include="Migrations\201512211520300_AddedPageToMenuButton.Designer.cs">
       <DependentUpon>201512211520300_AddedPageToMenuButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512220825077_pageFile.cs" />
+    <Compile Include="Migrations\201512220825077_pageFile.Designer.cs">
+      <DependentUpon>201512220825077_pageFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -251,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512211520300_AddedPageToMenuButton.resx">
       <DependentUpon>201512211520300_AddedPageToMenuButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512220825077_pageFile.resx">
+      <DependentUpon>201512220825077_pageFile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

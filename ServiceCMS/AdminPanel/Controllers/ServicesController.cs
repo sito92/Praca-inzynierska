@@ -25,7 +25,7 @@ namespace AdminPanel.Controllers
             if (ModelState.IsValid)
             {
                 var response = _servicesService.Insert(model);
-                return Json(new { success = true, message = response }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
