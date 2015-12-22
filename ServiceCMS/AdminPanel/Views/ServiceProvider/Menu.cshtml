@@ -2,9 +2,7 @@
     Layout = null;
 }
 @using Modules.Resources
-<div class="navbar navbar-inverse">
-    <div class="navbar-brand">@Presentation.ServiceProviders</div>
-    <div class="btn btn-default navbar-btn" ng-click="add()">@Presentation.Add</div>
-    <div class="btn btn-default navbar-btn" ng-disabled="selectedProvider == null" ng-click="edit(selectedProvider)">@Presentation.Edit</div>
-    <div class="btn btn-default navbar-btn" ng-disabled="selectedProvider == null" ng-click="delete(selectedProvider)">@Presentation.Delete</div>
+<div class="navbar">   
+    <div class="btn btn-default navbar-btn btn-lg kentico-color" ng-click="add()">@Presentation.Add</div>
+   
 </div>

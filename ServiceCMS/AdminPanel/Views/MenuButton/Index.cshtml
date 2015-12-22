@@ -7,17 +7,24 @@
     @Html.Partial("Menu")
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-bordered table-striped table-hover">
+            <table class="table table-bordered table-striped kentico-color">
                 <thead>
                     <tr>
                         <th>
                             @Presentation.Name
                         </th>
+                        <th class="text-center">
+                            @Presentation.Actions
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="button in rootButtons" ng-click="select(button)" ng-class="{'selected':selectedButton.Id==button.Id}" class="selectable">
-                        <td ng-bind="button.Content"></td>                        
+                    <tr ng-repeat="button in rootButtons">
+                        <td ng-bind="button.Content"></td>
+                        <td class="text-center">
+                            <a ng-click="edit(button)"><span class="glyphicon glyphicon-edit text-success"></span></a>
+                            <a ng-click="delete(button)"><span class="glyphicon glyphicon-remove text-danger"></span></a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

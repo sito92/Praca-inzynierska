@@ -1,20 +1,30 @@
 ﻿@using Modules.Resources
 @Scripts.Render("~/bundles/serviceProvider")
+@{
+    ViewBag.Title = Presentation.ServiceProviders;
+}
 <div ng-controller="ServiceProviderController">
     @Html.Partial("Menu")
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <table class="table table-bordered table-striped table-hover">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped kentico-color">
                 <thead>
                     <tr>
                         <th>
                             @Presentation.Name
                         </th>
+                        <th class="text-center">
+                            @Presentation.Actions
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="provider in providers" ng-click="select(provider)" ng-class="{'selected':selectedProvider.Id==provider.Id}" class="selectable">
+                    <tr ng-repeat="provider in providers">
                         <td ng-bind="provider.Name"></td>
+                        <td class="text-center">
+                            <a ng-click="edit(provider)"><span class="glyphicon glyphicon-edit text-success"></span></a>
+                            <a ng-click="delete(provider)"><span class="glyphicon glyphicon-remove text-danger"></span></a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

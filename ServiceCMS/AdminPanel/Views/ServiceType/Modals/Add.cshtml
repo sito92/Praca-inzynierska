@@ -48,14 +48,14 @@
                                         <label class="control-label">@Presentation.DurationInMinutes</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input dnd-nodrag class="form-control" ng-model="phase.DurationInSeconds" name="durationInSeconds" type="number" min="0" required />
-                                        <span ng-show="phaseForm.durationInSeconds.$error.number && phaseForm.durationInSeconds.$dirty" class="text-danger">
+                                        <input dnd-nodrag class="form-control" ng-model="phase.DurationInMinutes" name="durationInMinutes" type="number" min="0" required />
+                                        <span ng-show="phaseForm.durationInMinutes.$error.number && phaseForm.durationInMinutes.$dirty" class="text-danger">
                                             @Presentation.NumberErrorMessage
                                         </span>
-                                        <span ng-show="phaseForm.durationInSeconds.$error.min  && phaseForm.durationInSeconds.$dirty" class="text-danger">
+                                        <span ng-show="phaseForm.durationInMinutes.$error.min  && phaseForm.durationInMinutes.$dirty" class="text-danger">
                                             @Presentation.GreaterThanZeroMessage
                                         </span>
-                                        <span ng-show="phaseForm.durationInSeconds.$error.required  && phaseForm.durationInSeconds.$dirty" class="text-danger">
+                                        <span ng-show="phaseForm.durationInMinutes.$error.required  && phaseForm.durationInMinutes.$dirty" class="text-danger">
                                             @Presentation.RequiredErrorMessage
                                         </span>
                                     </div>
@@ -65,11 +65,11 @@
                                         <label class="control-label">@Presentation.DelayInMinutes</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input dnd-nodrag class="form-control" ng-model="phase.DelayInSeconds" name="delayInSeconds" type="number" min="0" />
-                                        <span ng-show="phaseForm.delayInSeconds.$error.number" class="text-danger">
+                                        <input dnd-nodrag class="form-control" ng-model="phase.DelayInMinutes" name="delayInMinutes" type="number" min="0" />
+                                        <span ng-show="phaseForm.delayInSdelayInMinuteseconds.$error.number" class="text-danger">
                                             @Presentation.NumberErrorMessage
                                         </span>
-                                        <span ng-show="phaseForm.delayInSeconds.$error.min" class="text-danger">
+                                        <span ng-show="phaseForm.delayInMinutes.$error.min" class="text-danger">
                                             @Presentation.GreaterThanZeroMessage
                                         </span>
                                     </div>

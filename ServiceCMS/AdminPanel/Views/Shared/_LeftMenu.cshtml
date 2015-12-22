@@ -3,50 +3,110 @@
 <div id="sidebar-wrapper" ng-controller="LeftMenuController" ng-mouseover="open()" ng-mouseout="close()" class="kentico-color">
     <ul class="sidebar-nav kentico-color">
         <li>
-            <a href="@Url.Action("Test", "Test")">Test</a>
+            <a href="@Url.Action("Test", "Test")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-question"></span></div>
+                    <div class="text-menu"><span>Test</span></div>
+                </div>
+            </a>
         </li>
         <li>
-            <a href="@Url.Action("Test", "Services")">Test Services</a>
+            <a href="@Url.Action("Test", "Services")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-question"></span></div>
+                    <div class="text-menu"><span>Test services</span></div>
+                </div>
+            </a>
         </li>
         <li>
             <a href="@Url.Action("Index", "News")">
                 <div class="container-menu">
-                    <div class="fa-menu"><span class="fa fa-newspaper-o fa-link"></span></div>
+                    <div class="fa-menu text-center"><span class="fa fa-newspaper-o"></span></div>
                     <div class="text-menu"><span>@Presentation.News</span></div>
                 </div>
             </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "Page")">@Presentation.Pages</a>
+            <a href="@Url.Action("Index", "Page")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-files-o"></span></div>
+                    <div class="text-menu"><span>@Presentation.Pages</span></div>
+                </div>
+            </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "ServiceProvider")">@Presentation.ServiceProviders</a>
+            <a href="@Url.Action("Index", "ServiceProvider")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-users"></span></div>
+                    <div class="text-menu"><span>@Presentation.ServiceProviders</span></div>
+                </div>
+            </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "ServiceType")">@Presentation.ServiceTypes</a>
+            <a href="@Url.Action("Index", "ServiceType")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-puzzle-piece"></span></div>
+                    <div class="text-menu"><span>@Presentation.ServiceTypes</span></div>
+                </div>
+            </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "MenuButton")">@Presentation.MenuButtons</a>
+            <a href="@Url.Action("Index", "MenuButton")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-sitemap"></span></div>
+                    <div class="text-menu"><span>@Presentation.MenuButtons</span></div>
+                </div>
+            </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "Mail")">@Presentation.MailManagement</a>
+            <a href="@Url.Action("Index", "Mail")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-envelope"></span></div>
+                    <div class="text-menu"><span>@Presentation.MailManagement</span></div>
+                </div>
+            </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "File")">@Presentation.Files</a>
+            <a href="@Url.Action("Index", "File")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-database"></span></div>
+                    <div class="text-menu"><span>@Presentation.Files</span></div>
+                </div>
+            </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "PopUp")">@Presentation.PopUp</a>
+            <a href="@Url.Action("Index", "PopUp")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-exclamation"></span></div>
+                    <div class="text-menu"><span>@Presentation.PopUp</span></div>
+                </div>
+            </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "Statistics")">@Presentation.Statistics</a>
+            <a href="@Url.Action("Index", "Statistics")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-line-chart"></span></div>
+                    <div class="text-menu"><span>@Presentation.Statistics</span></div>
+                </div>
+            </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "Settings")">@Presentation.Settings</a>
+            <a href="@Url.Action("Index", "Settings")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-cogs"></span></div>
+                    <div class="text-menu"><span>@Presentation.Settings</span></div>
+                </div>
+            </a>
         </li>
         <li>
-            <a href="@Url.Action("LogOff", "Account")">@Presentation.Logout</a>
-        </li>
-    </ul>
+            <a href="@Url.Action("LogOff", "Account")">
+                <div class="container-menu">
+                    <div class="fa-menu text-center"><span class="fa fa-power-off"></span></div>
+                    <div class="text-menu"><span>@Presentation.Logout</span></div>
+        </div>
+    </a>
+</li>
+</ul>
 </div>
 
 

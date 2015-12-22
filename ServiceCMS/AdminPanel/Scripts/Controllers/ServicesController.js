@@ -89,7 +89,7 @@ app.controller('ServiceRegisterModalCtrl', function ($scope, $modalInstance, Ser
     $scope.registratedService.ServiceProvider = provider;
     $scope.provider = provider;
 
-    ServiceTypeService.getServiceTypesMatchingTimeCriteria($scope.date.format("DD/MM/YYYY HH:mm:ss"), $scope.provider).then(function (jsonResult) {
+    ServiceTypeService.getServiceTypesMatchingTimeCriteria($scope.date.toISOString(), $scope.provider).then(function (jsonResult) {
         if (jsonResult.success) {
             $scope.types = jsonResult.data;
         } else {

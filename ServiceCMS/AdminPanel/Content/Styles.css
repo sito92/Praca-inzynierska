@@ -203,11 +203,12 @@
     border-color: #f05a22;
     color: white;
 }
-.kentico-color.btn:hover {
-    background-color:  #f37b4e;
-    border-color:  #f37b4e;
-    color: white;
-}
+
+    .kentico-color.btn:hover {
+        background-color: #f37b4e;
+        border-color: #f37b4e;
+        color: white;
+    }
 
     .kentico-color a {
         color: white;
@@ -216,7 +217,8 @@
     .kentico-color .nav > li > a:hover {
         background: #f37b4e;
     }
-        .kentico-color .nav > li > a:focus {
+
+    .kentico-color .nav > li > a:focus {
         background: #f37b4e;
     }
 
@@ -237,65 +239,79 @@
 .kentico-color ul a {
     color: white;
 }
+
 table.kentico-color thead tr {
     background-color: #f05a22;
 }
+
 table.kentico-color tbody tr a:hover {
     cursor: pointer;
 }
+
 table.kentico-color tbody tr:nth-of-type(odd) {
     color: black;
     background-color: white;
 }
+
 table.kentico-color tbody tr:nth-of-type(even) {
     color: black;
     background-color: #e5e5e5;
 }
+
 span.logo {
     margin-top: -5px;
     font-size: 35px;
 }
+
 .tile .tile-title {
     font-size: 50px;
 }
+
 .tile .fa-tile {
-     font-size: 150px;
+    font-size: 150px;
 }
+
 .tile {
     padding-top: 10px;
     background-color: #e5e5e5;
     height: 300px;
 }
-.tile > .tile-footer {
-    background-color: #f05a22;
-    transition: all 0.2s linear;
-    margin-top:60px;
-    
-    height: 0px;
-}
-.tile:hover > .tile-footer {
-    cursor: pointer;
 
-    margin-top:10px;
-    height:50px;
-}
-.tile:hover {
-    cursor: pointer;
-}
+    .tile > .tile-footer {
+        background-color: #f05a22;
+        transition: all 0.2s linear;
+        margin-top: 60px;
+        height: 0px;
+    }
+
+    .tile:hover > .tile-footer {
+        cursor: pointer;
+        margin-top: 10px;
+        height: 50px;
+    }
+
+    .tile:hover {
+        cursor: pointer;
+    }
 
 .container-menu {
-   
     overflow: hidden;
 }
-.text-menu {
 
+.text-menu {
     float: left;
 }
+
 .fa-menu {
+    width: 65px;
     margin-left: -25px;
     font-size: 25px;
-height: 40px;
-line-height: 40px;
-float: left;
+    height: 40px;
+    line-height: 40px;
+    float: left;
 }
 
+#page-content-wrapper.page-content {
+    padding-left: 80px;
+    margin-right: 20px;
+}
