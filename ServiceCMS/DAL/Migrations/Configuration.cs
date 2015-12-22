@@ -76,7 +76,7 @@ namespace DAL.Migrations
                 new News() { Content = "TestNews1", Title = "TestNews1Title", CreationTimeStamp = DateTime.Now },
                 new News() { Content = "TestNews2", Title = "TestNews2Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 1 },
                 new News() { Content = "TestNews3", Title = "TestNews3Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 2 },
-                new News() { Content = "TestNews4", Title = "TestNews4Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 1 },
+                new News() { Content = "TestNews4", Title = "TestNews4Title", CreationTimeStamp = DateTime.Now},
                 new News() { Content = "TestNews5", Title = "TestNews5Title", CreationTimeStamp = DateTime.Now }
                 );
             context.SaveChanges();

@@ -183,7 +183,14 @@ namespace Logic.News.Services
             {
                 try
                 {
-                    unitOfWork.NewsRepository.Delete(id);
+                    var news = unitOfWork.NewsRepository.GetByID(id);
+                    var restoreNewses = GetRestoreNewsesCollection(new NewsModel(news), false);
+
+                    foreach (var restoreNews in restoreNewses)
+                    {
+                        unitOfWork.NewsRepository.Delete(restoreNews.Id);
+                    }
+                    
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.RemoveNewsSuccess };
                 }
@@ -194,7 +201,7 @@ namespace Logic.News.Services
                 }
             }
             return response;
-        }
+        }  
 
         public IEnumerable<NewsModel> GetRestoreNewsesCollection(NewsModel news, bool rootPageExcluded = false)
         {
