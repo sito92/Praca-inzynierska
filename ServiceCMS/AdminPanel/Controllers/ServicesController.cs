@@ -19,6 +19,11 @@ namespace AdminPanel.Controllers
             _servicesService = servicesService;
         }
 
+        public ViewResult Test()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult RegisterService(RegistratedServiceModel model)
         {

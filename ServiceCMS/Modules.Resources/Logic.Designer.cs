@@ -378,6 +378,24 @@ namespace Modules.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string NewsletterReceiverUpdateFailed {
+            get {
+                return ResourceManager.GetString("NewsletterReceiverUpdateFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NewsletterReceiverUpdateSuccess {
+            get {
+                return ResourceManager.GetString("NewsletterReceiverUpdateSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string PopUpInsertFailed {
             get {
                 return ResourceManager.GetString("PopUpInsertFailed", resourceCulture);

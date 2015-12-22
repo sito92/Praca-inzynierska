@@ -81,6 +81,10 @@
       <Project>{b9fb03b5-8809-40df-8bff-5d9e8c052b49}</Project>
       <Name>Logic.NewsCategory</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logic.NewsletterReceiver\Logic.NewsletterReceiver.csproj">
+      <Project>{9e312efe-5655-45f2-ac0e-920ee1bbd8f4}</Project>
+      <Name>Logic.NewsletterReceiver</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic.News\Logic.News.csproj">
       <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
       <Name>Logic.News</Name>

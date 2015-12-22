@@ -1,19 +1,18 @@
 ﻿@using Modules.Resources
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = Presentation.HomePage;
 }
 <div class="container">
-    <div class="logo-container">Logo here</div>
     <div class="login-form-container">
         @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "loginForm", @class = "navbar-form navbar-right" }))
         {
             @Html.AntiForgeryToken()
             <div class="form-group valign-top">
-                <input name="LandingPageLogin" type="text" class="form-control" placeholder="@Presentation.Login" data-val-required="To pole jest wymagane." data-val="true" />
+                <input name="LandingPageLogin" type="text" class="form-control" placeholder="@Presentation.Login" />
                 @Html.ValidationMessage("LandingPageLogin")
             </div>
             <div class="form-group valign-top">
-                <input name="LandingPagePassword" type="password" class="form-control" placeholder="@Presentation.Password" data-val-required="To pole jest wymagane." data-val="true" />
+                <input name="LandingPagePassword" type="password" class="form-control" placeholder="@Presentation.Password" />
                 @Html.ValidationMessage("LandingPagePassword")
             </div>
             <div class="form-group valign-top">

@@ -1,6 +1,6 @@
 ﻿@using Modules.Resources
 @{
-    ViewBag.Title = "Pages";
+    ViewBag.Title = Presentation.Pages;
 }
 @Scripts.Render("~/bundles/pages")
 <div ng-controller="PageController">
@@ -20,7 +20,7 @@
                             @Presentation.LastModifyDate
                         </th>
                         <th class="text-center">
-                            Actions
+                            @Presentation.Actions
                         </th>
                     </tr>
                 </thead>

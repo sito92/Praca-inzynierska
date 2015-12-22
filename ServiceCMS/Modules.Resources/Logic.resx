@@ -222,6 +222,12 @@
   <data name="NewsletterReceiverInsertSuccess" xml:space="preserve">
     <value />
   </data>
+  <data name="NewsletterReceiverUpdateFailed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsletterReceiverUpdateSuccess" xml:space="preserve">
+    <value />
+  </data>
   <data name="PopUpInsertFailed" xml:space="preserve">
     <value />
   </data>

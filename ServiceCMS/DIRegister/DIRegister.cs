@@ -41,6 +41,8 @@ using Modules.FileManager.Services;
 using Modules.FileManager.Interfaces;
 using Logic.MailManagement.Interfaces;
 using Logic.MailManagement.Services;
+using Logic.NewsletterReceiver.Interfaces;
+using Logic.NewsletterReceiver.Services;
 
 namespace DIRegister
 {
@@ -91,6 +93,7 @@ namespace DIRegister
             builder.RegisterType<MenuButtonService>().As<IMenuButtonService>();
             builder.RegisterType<SettingsService>().As<ISettingsService>();
             builder.RegisterType<MailManagementService>().As<IMailManagementService>();
+            builder.RegisterType<NewsletterReceiverService>().As<INewsletterReceiverService>();
         }
 
         private static void RegisterModules(ContainerBuilder builder)
