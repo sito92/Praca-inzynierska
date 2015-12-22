@@ -29,7 +29,7 @@ namespace Logic.Common.Models
             Name = page.Name;
             Content = page.Content;
             Media = page.Media == null
-                ? null
+                ? new List<FileModel>()
                 : page.Media.Select(x => new FileModel(x)).ToList(); ;
             CreationTimeStamp = page.CreationTimeStamp;
             LastModifiedTimeStamp = page.LastModifiedTimeStamp;
@@ -48,7 +48,7 @@ namespace Logic.Common.Models
                 LastModifiedTimeStamp = this.LastModifiedTimeStamp,
                 RestorePage = this.RestorePage == null ? null : this.RestorePage.ToEntity(),
                 RestorePageId = this.RestorePageId,
-                Media = this.Media == null ? null : this.Media.Select(x => x.ToEntity()).ToList() 
+                Media = this.Media == null ? new List<File>() : this.Media.Select(x => x.ToEntity()).ToList() 
             };
         }
     }

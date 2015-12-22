@@ -41,7 +41,7 @@ namespace AdminPanel.Controllers
             }
         }
 
-        public ActionResult GetNewestNewsesCollection()
+        public ActionResult GetNewestPagesCollection()
         {
             var resultCollection = _pageService.GetNewestPagesCollection();
 

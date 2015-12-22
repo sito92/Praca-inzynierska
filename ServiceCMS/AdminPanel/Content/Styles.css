@@ -291,3 +291,19 @@ span.logo {
     background-color: #F24F1E;
     color: white;
 }
+
+.container-menu {
+   
+    overflow: hidden;
+}
+.text-menu {
+
+    float: left;
+}
+.fa-menu {
+    margin-left: -25px;
+    font-size: 25px;
+height: 40px;
+line-height: 40px;
+float: left;
+}

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common.Responses;
 using DAL.Interfaces;
+using DAL.Models;
 using Logging.Interfaces;
 using Logic.Common.Models;
 using Logic.News.Interfaces;
@@ -162,6 +163,7 @@ namespace Logic.News.Services
                         
                         };
                         var entity=updatedNews.ToEntity();
+                        UpdateCategories(entity,unitOfWork);
                         unitOfWork.NewsRepository.Insert(entity);
                     }
                     unitOfWork.Save();
@@ -238,7 +240,7 @@ namespace Logic.News.Services
         }
         public void UpdateCategories(DAL.Models.News entity, IUnitOfWork unitOfWork)
         {
-            var ids = entity.NewsCategories.Select(x => x.Id);
+            var ids = entity.NewsCategories == null ? new List<int>() : entity.NewsCategories.Select(x => x.Id);
             var categories = unitOfWork.NewsCategoryRepository.Get(x => ids.Contains(x.Id));
             var entityFromBase = unitOfWork.NewsRepository.Get(x => x.Id == entity.Id).SingleOrDefault();
 

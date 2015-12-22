@@ -15,7 +15,7 @@
                     </div>
                     <div>
                         <input class="form-control" ng-model="page.Name" name="name" required="" />
-                        <span ng-show="form.page.$error.required && form.page.$dirty" class="text-danger">
+                        <span ng-show="form.name.$error.required && form.name.$dirty" class="text-danger">
                             @Presentation.RequiredErrorMessage
                         </span>
                     </div>
@@ -26,7 +26,7 @@
                     </div>
                     <div>
                         <div text-angular ng-model="page.Content" name="content" required></div>
-                        <span ng-show="form.page.$error.required && form.page.$dirty" class="text-danger">
+                        <span ng-show="form.content.$error.required && form.content.$dirty" class="text-danger">
                             @Presentation.RequiredErrorMessage
                         </span>
                     </div>
