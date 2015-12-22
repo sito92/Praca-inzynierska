@@ -1,7 +1,7 @@
 ﻿app.controller('NewsController', function ($scope, $modal,NewsService) {
     var refresh = function () {
         $scope.selectedNews = null;
-        NewsService.getAll().then(function (jsonResult) {
+        NewsService.getNewestNewses().then(function (jsonResult) {
             if (jsonResult.success) {
                 $scope.newses = jsonResult.data;
 
@@ -137,7 +137,7 @@ app.controller('NewsChooseCategoryModalCtrl', function ($scope, $modalInstance, 
 });
 app.controller('NewsEditModalCtrl', function ($scope, $modalInstance, NewsService, news,$modal,$filter) {
     $scope.news = news;
-
+   
     $scope.save = function () {    
 
         NewsService.edit($scope.news).then(function (jsonResult) {

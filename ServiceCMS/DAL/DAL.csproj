@@ -140,6 +140,14 @@
     <Compile Include="Migrations\201512201015549_DeletedAuthorFromNews.Designer.cs">
       <DependentUpon>201512201015549_DeletedAuthorFromNews.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512210957318_AddedOrderToMenuButton.cs" />
+    <Compile Include="Migrations\201512210957318_AddedOrderToMenuButton.Designer.cs">
+      <DependentUpon>201512210957318_AddedOrderToMenuButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512211520300_AddedPageToMenuButton.cs" />
+    <Compile Include="Migrations\201512211520300_AddedPageToMenuButton.Designer.cs">
+      <DependentUpon>201512211520300_AddedPageToMenuButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -237,6 +245,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512201015549_DeletedAuthorFromNews.resx">
       <DependentUpon>201512201015549_DeletedAuthorFromNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512210957318_AddedOrderToMenuButton.resx">
+      <DependentUpon>201512210957318_AddedOrderToMenuButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512211520300_AddedPageToMenuButton.resx">
+      <DependentUpon>201512211520300_AddedPageToMenuButton.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -22,7 +22,7 @@ namespace Logic.Common.Models
         public DateTime? LastModifiedTimeStamp { get; set; }
 
         public int? RestoreNewsId { get; set; }
-        public News RestoreNews { get; set; }
+        public NewsModel RestoreNews { get; set; }
 
         public ICollection<NewsCategoryModel> Categories { get; set; } 
 
@@ -33,7 +33,7 @@ namespace Logic.Common.Models
             Title = entity.Title;
             CreationTimeStamp = entity.CreationTimeStamp;
             LastModifiedTimeStamp = entity.LastModifiedTimeStamp;
-            RestoreNews = entity.RestoreNews;
+            RestoreNews = entity.RestoreNews == null ? null : new NewsModel(entity.RestoreNews);
             RestoreNewsId = entity.RestoreNewsId;
             Categories = entity.NewsCategories == null
                 ? null
@@ -54,7 +54,7 @@ namespace Logic.Common.Models
                 Title = this.Title,
                 CreationTimeStamp = this.CreationTimeStamp,
                 LastModifiedTimeStamp = this.LastModifiedTimeStamp,
-                RestoreNews = this.RestoreNews,
+                RestoreNews = this.RestoreNews == null ? null : this.RestoreNews.ToEntity(),
                 RestoreNewsId = this.RestoreNewsId,
                 NewsCategories = this.Categories == null ? null : this.Categories.Select(x=>x.ToEntity()).ToList() 
             };

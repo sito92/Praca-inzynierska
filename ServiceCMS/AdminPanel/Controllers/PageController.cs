@@ -90,5 +90,9 @@ namespace AdminPanel.Controllers
                 return Json(new { success = false });
             }
         }
+        public PartialViewResult GetModal(string name)
+        {
+            return PartialView("Modals/" + name);
+        }
     }
 }

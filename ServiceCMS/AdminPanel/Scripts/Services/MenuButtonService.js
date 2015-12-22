@@ -1,31 +1,31 @@
-﻿app.factory("NewsService", function ($http, $q) {
+﻿app.factory("MenuButtonService", function ($http, $q) {
     return {
-        getNewestNewses: function () {
+        getAllRootButtons: function () {
             var deferred = $q.defer();
             $http({
                 method: 'GET',
-                url: '/News/GetNewestNewsesCollection'
+                url: '/MenuButton/GetAllRootButtons'
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
         },
-        add: function (news) {
+        edit: function (button) {
             var deferred = $q.defer();
             $http({
                 method: 'POST',
-                url: '/News/Add',
+                url: '/MenuButton/Edit',
                 data: {
-                    model: news
+                    model: button
                 }
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
         },
-        edit: function (serviceProvider) {
+        add: function (button) {
             var deferred = $q.defer();
             $http({
                 method: 'POST',
-                url: '/News/Edit',
+                url: '/MenuButton/Add',
                 data: {
-                    model: serviceProvider
+                    model: button
                 }
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
@@ -34,7 +34,7 @@
             var deferred = $q.defer();
             $http({
                 method: 'POST',
-                url: '/News/Delete',
+                url: '/MenuButton/Delete',
                 data: {
                     id: id
                 }

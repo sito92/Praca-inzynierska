@@ -12,7 +12,10 @@ namespace DAL.Models
 
         public string Content { get; set; }
         public int? ParentId { get; set; }
+        public int Order { get; set; }
         public virtual MenuButton Parent { get; set; }
+        public int? PageId { get; set; }
+        public virtual Page Page { get; set; }
 
         public virtual ICollection<MenuButton> Children { get; set; }
     }

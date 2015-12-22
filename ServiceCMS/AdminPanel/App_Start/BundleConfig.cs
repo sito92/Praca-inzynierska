@@ -50,8 +50,9 @@ namespace AdminPanel
                  "~/Content/fullcalendar.css",
                  "~/Content/calendarDemo.css",
                  "~/Content/textAngular.css",
-                  "~/Content/Styles.css",
-                   "~/Content/font-awesome/css/font-awesome.css"
+                 "~/Content/Styles.css",
+                 "~/Content/angular-ui-tree.css",
+                  "~/Content/font-awesome/css/font-awesome.css"
                 ));
 
             //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -104,6 +105,11 @@ namespace AdminPanel
                     "~/Scripts/Services/ServiceProviderService.js",
                     "~/Scripts/Services/ServiceTypeService.js"
                    ));
+            bundles.Add(new ScriptBundle("~/bundles/menuButton").Include(
+                    "~/Scripts/Controllers/MenuButtonController.js",
+                    "~/Scripts/Services/MenuButtonService.js",
+                    "~/Scripts/Services/PageService.js"
+                    ));
             bundles.Add(new ScriptBundle("~/bundles/angular-drag-and-drop").Include(
                     "~/Scripts/angular-drag-and-drop-lists.js"
                     ));
@@ -112,8 +118,10 @@ namespace AdminPanel
                    "~/Scripts/text-angular/textAngular-sanitize.js",
                    "~/Scripts/text-angular/textAngularSetup.js",
                    "~/Scripts/text-angular/textAngular.js"
-
                    ));
+            bundles.Add(new ScriptBundle("~/bundles/angular-ui-tree").Include(
+                    "~/Scripts/angular-ui-tree.js"
+                    ));
 
 
 

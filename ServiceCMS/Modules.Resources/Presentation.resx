@@ -126,11 +126,17 @@
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
   </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
   <data name="ChooseImages" xml:space="preserve">
     <value>Choose images</value>
   </data>
   <data name="ChoosePage" xml:space="preserve">
     <value>Choose page</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>Confirm</value>
@@ -207,11 +213,23 @@
   <data name="NoCategories" xml:space="preserve">
     <value>No categories</value>
   </data>
+  <data name="NoChoosenPage" xml:space="preserve">
+    <value>No choosen page</value>
+  </data>
+  <data name="NoName" xml:space="preserve">
+    <value>No name</value>
+  </data>
+  <data name="NoPages" xml:space="preserve">
+    <value>No pages</value>
+  </data>
   <data name="NoTypes" xml:space="preserve">
     <value>There are no types defined.</value>
   </data>
   <data name="NumberErrorMessage" xml:space="preserve">
     <value>This filed must be number.</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Page</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>

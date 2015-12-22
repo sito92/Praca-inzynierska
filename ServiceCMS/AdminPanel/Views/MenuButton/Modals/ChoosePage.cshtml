@@ -1,0 +1,28 @@
+﻿@using Modules.Resources
+@using Logic.Common.Models
+<div class="modal-header">
+    <div class="row text-center">
+        <h2 class="text-modal-heading">@Presentation.ChoosePage</h2>
+    </div>
+</div>
+<div class="modal-body">
+    <table class="table table-bordered table-striped table-hover" ng-show="pages.length>0">
+        <thead>
+            <tr>
+                <th>
+                    @Presentation.Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="page in pages" ng-click="select(page)" ng-class="{'selected':selectedPage.Id==page.Id}" class="selectable">
+                <td ng-bind="page.Name"></td>
+            </tr>
+        </tbody>
+    </table>
+    <span ng-show="pages.length <=0">@Presentation.NoPages</span>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-disabled="selectedPage==null" ng-click="confirm()">@Presentation.Confirm</button>
+        <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
+    </div>
+</div>
