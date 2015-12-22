@@ -24,11 +24,12 @@ namespace AdminPanel.Controllers
             return View();
         }
         
-        public ActionResult GetAllFiles()
+        public ActionResult GetAllFiles(FileTypeEnum fileType)
         {
-            var images = _fileService.GetAllFiles(FileTypeEnum.Image);
-            if (images != null)
-                return Json(new {success = true, data = images}, JsonRequestBehavior.AllowGet);
+            ICollection<FileModel> files = fileType != 0 ? _fileService.GetAllFiles(fileType) : _fileService.GetAllFiles();
+
+            if (files != null)
+                return Json(new { success = true, data = files }, JsonRequestBehavior.AllowGet);
             else
                 return Json(new {success = false}, JsonRequestBehavior.AllowGet);
         }

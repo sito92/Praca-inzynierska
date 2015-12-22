@@ -1,0 +1,28 @@
+﻿@using Modules.Resources
+@using Logic.Common.Models
+<div class="modal-header">
+    <div class="row text-center">
+        <h2 class="text-modal-heading">@Presentation.Add</h2>
+    </div>
+</div>
+<div class="modal-body">
+    <table class="table table-bordered table-striped table-hover" ng-show="files.length>0">
+        <thead>
+            <tr>
+                <th>
+                    @Presentation.Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="file in files" ng-click="select(file)" ng-class="{'selected':selectedFile.Id==file.Id}" class="selectable">
+                <td ng-bind="file.Name"></td>
+            </tr>
+        </tbody>
+    </table>
+    <span ng-show="files.length <=0">@Presentation.NoFiles</span>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-disabled="selectedFile==null" ng-click="confirm()">@Presentation.Confirm</button>
+        <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
+    </div>
+</div>

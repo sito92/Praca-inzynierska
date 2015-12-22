@@ -14,6 +14,8 @@ namespace Logic.File.Interfaces
     {
         IList<FileModel> GetAllFiles(FileTypeEnum enumValue);
 
+        IList<FileModel> GetAllFiles();
+
         ResponseBase Insert(FileModel file);
 
         ResponseBase Update(FileModel file);

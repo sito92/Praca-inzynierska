@@ -16,6 +16,11 @@ namespace Logic.Common.Models
         public string Extension { get; set; }
         public string Name { get; set; }
 
+        public FileModel()
+        {
+            
+        }
+
         public FileModel(File file)
         {
             Id = file.Id;

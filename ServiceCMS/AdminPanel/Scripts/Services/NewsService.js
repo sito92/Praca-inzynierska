@@ -19,13 +19,13 @@
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
         },
-        edit: function (serviceProvider) {
+        edit: function (news) {
             var deferred = $q.defer();
             $http({
                 method: 'POST',
                 url: '/News/Edit',
                 data: {
-                    model: serviceProvider
+                    model: news
                 }
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;

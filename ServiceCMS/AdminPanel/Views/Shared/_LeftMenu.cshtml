@@ -1,12 +1,7 @@
 ﻿@Scripts.Render("~/bundles/leftMenu")
 @using Modules.Resources
-<div id="sidebar-wrapper" ng-controller="LeftMenuController" ng-mouseover="open()" ng-mouseout="close()">
-    <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-            <a href="#">
-                Start Bootstrap
-            </a>
-        </li>
+<div id="sidebar-wrapper" ng-controller="LeftMenuController" ng-mouseover="open()" ng-mouseout="close()" class="kentico-color">
+    <ul class="sidebar-nav kentico-color">
         <li>
             <a href="@Url.Action("Test", "Test")">Test</a>
         </li>
@@ -27,6 +22,9 @@
         </li>
         <li>
             <a href="@Url.Action("Index", "MenuButton")">MenuButtons</a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Page")">Pages</a>
         </li>
     </ul>
 </div>

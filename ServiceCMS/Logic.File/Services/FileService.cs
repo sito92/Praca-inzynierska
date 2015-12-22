@@ -45,6 +45,28 @@ namespace Logic.File.Services
             }
             return fileModels;
         }
+        public IList<FileModel> GetAllFiles()
+        {
+
+            IList<FileModel> fileModels = new List<FileModel>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.FileRepository.Get();
+                    foreach (var entity in entities)
+                    {
+                        fileModels.Add(new FileModel(entity));
+                    }
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return fileModels;
+        }
 
         public ResponseBase Insert(FileModel file)
         {
