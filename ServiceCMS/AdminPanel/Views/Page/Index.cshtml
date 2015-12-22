@@ -1,0 +1,41 @@
+﻿@using Modules.Resources
+@{
+    ViewBag.Title = "Pages";
+}
+@Scripts.Render("~/bundles/pages")
+<div ng-controller="PageController">
+    @Html.Partial("Menu")
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped kentico-color">
+                <thead>
+                    <tr>
+                        <th class="text-center">
+                            @Presentation.Name
+                        </th>
+                        <th class="text-center">
+                            @Presentation.CreationDate
+                        </th>
+                        <th class="text-center">
+                            @Presentation.LastModifyDate
+                        </th>
+                        <th class="text-center">
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="page in pages">
+                        <td ng-bind="page.Name" class="text-center"></td>
+                        <td ng-bind="page.CreationTimeStamp | date:'dd-MM-yyyy HH:mm:ss'" class="text-center"></td>
+                        <td ng-bind="page.LastModifiedTimeStamp | date:'dd-MM-yyyy HH:mm:ss'" class="text-center"></td>
+                        <td class="text-center">
+                            <a ng-click="edit(page)"><span class="glyphicon glyphicon-edit text-success"></span></a>
+                            <a ng-click="delete(page)"><span class="glyphicon glyphicon-remove text-danger"></span></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AdminPanel.Extensions;
 using Logic.Common.Models;
 using Logic.Page.Interfaces;
 
@@ -16,11 +17,15 @@ namespace AdminPanel.Controllers
             _pageService = pageService;
         }
 
+        public ActionResult Index()
+        {
+            return View();
+        }
         public ActionResult GetAll()
         {
             var pages = _pageService.GetAll();
 
-            return Json(new {success= true,data = pages},JsonRequestBehavior.AllowGet);
+            return new JsonNetResult(new {success= true,data = pages},JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult GetById(int id)

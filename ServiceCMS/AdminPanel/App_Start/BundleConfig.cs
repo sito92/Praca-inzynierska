@@ -88,7 +88,8 @@ namespace AdminPanel
                       "~/Scripts/Directives/Pickers/LocalLinkPicker.js",
                       "~/Scripts/Directives/Pickers/ImagesPicker.js",
                       "~/Scripts/TextAngularTools/InsetTool.js",
-                      "~/Scripts/Modules/NewsModule.js"
+                      "~/Scripts/Modules/InsetModule.js"
+
                       ));
             bundles.Add(new ScriptBundle("~/bundles/serviceProvider").Include(
                     "~/Scripts/Controllers/ServiceProviderController.js",
@@ -99,6 +100,22 @@ namespace AdminPanel
                      "~/Scripts/Controllers/ServiceTypeController.js",
                      "~/Scripts/Services/ServiceTypeService.js"
                      ));
+            bundles.Add(new ScriptBundle("~/bundles/pages").Include(
+                    "~/Scripts/Controllers/PageController.js",
+                    "~/Scripts/Services/PageService.js",
+                    "~/Scripts/Controllers/InsetPartsControllers/ExternalLinkController.js",
+                    "~/Scripts/Controllers/InsetPartsControllers/LocalLinkController.js",
+                    "~/Scripts/Controllers/InsetPartsControllers/ImagesController.js",
+                    "~/Scripts/Directives/InsetArgument.js",
+                    "~/Scripts/Directives/Pickers/LocalLinkPicker.js",
+                    "~/Scripts/Directives/Pickers/ImagesPicker.js",
+                    "~/Scripts/TextAngularTools/InsetTool.js",
+                    "~/Scripts/Modules/InsetModule.js",
+                     "~/Scripts/Directives/InsetDirective.js",
+                      "~/Scripts/Directives/InsetController.js",
+                      "~/Scripts/Services/InsetService.js",
+                      "~/Scripts/Services/FileService.js"
+                    ));
             bundles.Add(new ScriptBundle("~/bundles/services").Include(
                    "~/Scripts/Controllers/ServicesController.js",
                     "~/Scripts/Services/ServicesService.js",

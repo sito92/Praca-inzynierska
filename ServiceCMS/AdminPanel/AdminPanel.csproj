@@ -357,9 +357,10 @@
     <Content Include="Scripts\calendar\gcal.js" />
     <Content Include="Scripts\calendar\lang-all.js" />
     <Content Include="Scripts\Controllers\MenuButtonController.js" />
+    <Content Include="Scripts\Controllers\PageController.js" />
     <Content Include="Scripts\Controllers\ServiceProviderController.js" />
     <Content Include="Scripts\Controllers\ServiceTypeController.js" />
-    <Content Include="Scripts\Modules\NewsModule.js" />
+    <Content Include="Scripts\Modules\InsetModule.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\Controllers\InsetController.js" />
     <Content Include="Scripts\Controllers\InsetPartsControllers\ExternalLinkController.js" />
@@ -1236,10 +1237,15 @@
     <Content Include="Views\MenuButton\Modals\ChoosePage.cshtml" />
     <Content Include="Views\MenuButton\Modals\AddNode.cshtml" />
     <Content Include="Views\MenuButton\Modals\ConfirmDelete.cshtml" />
+    <Content Include="Views\Page\Index.cshtml" />
+    <Content Include="Views\Page\Menu.cshtml" />
+    <Content Include="Views\Page\Modals\Edit.cshtml" />
+    <Content Include="Views\Page\Modals\ConfirmDelete.cshtml" />
+    <Content Include="Views\Page\Modals\Add.cshtml" />
+    <Content Include="Views\Page\Modals\ChooseFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Page\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
