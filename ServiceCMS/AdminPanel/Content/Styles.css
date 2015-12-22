@@ -283,3 +283,19 @@ span.logo {
     cursor: pointer;
 }
 
+.container-menu {
+   
+    overflow: hidden;
+}
+.text-menu {
+
+    float: left;
+}
+.fa-menu {
+    margin-left: -25px;
+    font-size: 25px;
+height: 40px;
+line-height: 40px;
+float: left;
+}
+
