@@ -150,18 +150,31 @@ namespace DAL.Migrations
         private void SeedPage(ServiceCMSContext context)
         {
             context.Page.AddOrUpdate(x => x.Name,
-                new Page() { Name = "Strona g³owna", Content = "DUPA" },
+                new Page() { Name = "Strona g³owna", Content = "DUPA"},
                 new Page() { Name = "Strona1", Content = "DUPA", RestorePageId = 1 },
                 new Page() { Name = "Strona2", Content = "DUPA", RestorePageId = 2 },
                 new Page() { Name = "StrAsdfsdona3", Content = "DUPA", RestorePageId = 3 },
                 new Page() { Name = "Fadas", Content = "DUPA"},
                 new Page() { Name = "CXCVx", Content = "DUPA"},
-                new Page() { Name = "SASD", Content = "DUPA"},
-                new Page() { Name = "ASADA", Content = "DUPA"},
-                new Page() { Name = "EZFsd", Content = "DUPA"},
                 new Page() { Name = "ASDF", Content = "DUPA"}
-
                 );
+
+            var firstPage = new Page() {Name = "SASD", Content = "DUPA", Media = new List<File>()};
+            var secondPage = new Page() {Name = "ASADA", Content = "DUPA", Media = new List<File>()};
+            var thirdPage = new Page() {Name = "EZFsd", Content = "DUPA", Media = new List<File>()};
+
+            var firstFile = new File() { Name = "Plik 1", Extension = ".jpg", FileType = 1, Path = "C:/obrazek.jpg" };
+            var secondFile = new File() { Name = "T³o", Extension = ".jpg", FileType = 1, Path = "C:/tlo.jpg" };
+            var thirdFile = new File() { Name = "Ulubiony obrazek", Extension = ".jpg", FileType = 1, Path = "C:/obraeksdfsd.jpg" };
+
+            firstPage.Media.Add(firstFile);
+            firstPage.Media.Add(secondFile);
+            secondPage.Media.Add(secondFile);
+            secondPage.Media.Add(thirdFile);
+            thirdPage.Media.Add(firstFile);
+
+            context.Page.AddOrUpdate(x => x.Name, firstPage,secondPage,thirdPage);
+
             context.SaveChanges();
         }
 

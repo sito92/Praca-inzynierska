@@ -68,6 +68,10 @@ namespace DAL.Models
                 .HasForeignKey(x=>x.ParentId)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Page>()
+                .HasMany(x => x.Media)
+                .WithMany();
+
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -12,7 +12,7 @@ namespace Logic.Common.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Content { get; set; }
-        public IEnumerable<File> Media { get; set; }
+        public ICollection<FileModel> Media { get; set; }
         public DateTime? CreationTimeStamp { get; set; }
         public DateTime? LastModifiedTimeStamp { get; set; }
 
@@ -28,7 +28,9 @@ namespace Logic.Common.Models
             Id = page.Id;
             Name = page.Name;
             Content = page.Content;
-            Media = page.Media;
+            Media = page.Media == null
+                ? null
+                : page.Media.Select(x => new FileModel(x)).ToList(); ;
             CreationTimeStamp = page.CreationTimeStamp;
             LastModifiedTimeStamp = page.LastModifiedTimeStamp;
             RestorePage = page.RestorePage == null ? null : new PageModel(page.RestorePage);
@@ -46,7 +48,7 @@ namespace Logic.Common.Models
                 LastModifiedTimeStamp = this.LastModifiedTimeStamp,
                 RestorePage = this.RestorePage == null ? null : this.RestorePage.ToEntity(),
                 RestorePageId = this.RestorePageId,
-                Media = this.Media
+                Media = this.Media == null ? null : this.Media.Select(x => x.ToEntity()).ToList() 
             };
         }
     }
