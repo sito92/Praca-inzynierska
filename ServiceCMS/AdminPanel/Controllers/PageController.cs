@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AdminPanel.Extensions;
 using Logic.Common.Models;
 using Logic.Page.Interfaces;
 
@@ -34,6 +35,16 @@ namespace AdminPanel.Controllers
             {
                 return Json(new {success = false});
             }
+        }
+
+        public ActionResult GetNewestNewsesCollection()
+        {
+            var resultCollection = _pageService.GetNewestPagesCollection();
+
+            if(resultCollection.Any())
+                return new JsonNetResult(new { success = true, data = resultCollection }, JsonRequestBehavior.AllowGet);
+            else
+                return new JsonNetResult(new { success = false}, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
