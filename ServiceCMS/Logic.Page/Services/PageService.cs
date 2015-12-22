@@ -234,7 +234,14 @@ namespace Logic.Page.Services
             {
                 try
                 {
-                    unitOfWork.PageRepository.Delete(id);
+                    var page = unitOfWork.PageRepository.GetByID(id);
+                    var restorePages = GetRestorePagesCollection(new PageModel(page), false);
+
+                    foreach (var restorePage in restorePages)
+                    {
+                        unitOfWork.NewsRepository.Delete(restorePage.Id);
+                    }
+
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.RemovePageSuccess };
                 }
