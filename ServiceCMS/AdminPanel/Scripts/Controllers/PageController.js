@@ -42,16 +42,16 @@
             refresh();
         });
     };
-    $scope.delete = function (news) {
+    $scope.delete = function (page) {
         var modalInstance = $modal.open({
             animation: true,
-            templateUrl: '/News/GetModal?name=ConfirmDelete',
-            controller: 'NewsDeleteModalCtrl',
+            templateUrl: '/Page/GetModal?name=ConfirmDelete',
+            controller: 'PageDeleteModalCtrl',
             size: "sm",
             resolve:
             {
-                news: function () {
-                    return angular.copy(news);
+                page: function () {
+                    return angular.copy(page);
                 }
             }
         });
@@ -67,7 +67,8 @@ app.controller('PageAddModalCtrl', function ($scope, $modalInstance, $filter, $m
     $scope.page =
 {
     Name: "",
-    Content: ""
+    Content: "",
+    Media:[]
 }
 
     $scope.send = function () {
@@ -83,8 +84,26 @@ app.controller('PageAddModalCtrl', function ($scope, $modalInstance, $filter, $m
         });
 
     };
+    $scope.add = function () {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/Page/GetModal?name=ChooseFile',
+            controller: 'PageChooseFileModalCtrl',
+            size: "md"
+        });
+        modalInstance.result.then(function (file) {
+            if (file != undefined) {
+                var found = $filter('filter')($scope.page.Media, { Id: file.Id });
+                if (found.length <= 0)
+                    $scope.page.Media.push(file);
+            }
+        });
+    }
+    $scope.remove = function (index) {
+        $scope.page.Media.splice(index, 1);
+    }
     $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
+        $modalInstance.dismiss();
     };
 });
 app.controller('PageEditModalCtrl', function ($scope, $modalInstance, PageService, page, $modal, $filter) {
@@ -126,10 +145,10 @@ app.controller('PageEditModalCtrl', function ($scope, $modalInstance, PageServic
         $modalInstance.dismiss();
     };
 });
-app.controller('NewsDeleteModalCtrl', function ($scope, $modalInstance, NewsService, news) {
-    $scope.news = news;
+app.controller('PageDeleteModalCtrl', function ($scope, $modalInstance, PageService, page) {
+    $scope.page = page;
     $scope.confirm = function () {
-        NewsService.delete($scope.news.Id).then(function (jsonResult) {
+        PageService.delete($scope.page.Id).then(function (jsonResult) {
             if (jsonResult.success) {
                 $modalInstance.close();
             } else {

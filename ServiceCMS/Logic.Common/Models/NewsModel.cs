@@ -36,7 +36,7 @@ namespace Logic.Common.Models
             RestoreNews = entity.RestoreNews == null ? null : new NewsModel(entity.RestoreNews);
             RestoreNewsId = entity.RestoreNewsId;
             Categories = entity.NewsCategories == null
-                ? null
+                ? new List<NewsCategoryModel>()
                 : entity.NewsCategories.Select(x => new NewsCategoryModel(x)).ToList();
         }
 
@@ -56,7 +56,7 @@ namespace Logic.Common.Models
                 LastModifiedTimeStamp = this.LastModifiedTimeStamp,
                 RestoreNews = this.RestoreNews == null ? null : this.RestoreNews.ToEntity(),
                 RestoreNewsId = this.RestoreNewsId,
-                NewsCategories = this.Categories == null ? null : this.Categories.Select(x=>x.ToEntity()).ToList() 
+                NewsCategories = this.Categories == null ? new List<NewsCategory>() : this.Categories.Select(x=>x.ToEntity()).ToList() 
             };
         }
     }

@@ -4,7 +4,7 @@
             var deferred = $q.defer();
             $http({
                 method: 'GET',
-                url: '/Page/GetAll',
+                url: '/Page/GetNewestPagesCollection'
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
         },
@@ -26,6 +26,17 @@
                 url: '/Page/Update',
                 data: {
                     model: page
+                }
+            }).success(deferred.resolve).error(deferred.reject);
+            return deferred.promise;
+        },
+        delete: function (id) {
+            var deferred = $q.defer();
+            $http({
+                method: 'POST',
+                url: '/Page/Delete',
+                data: {
+                    id: id
                 }
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;

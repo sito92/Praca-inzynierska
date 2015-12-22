@@ -77,8 +77,12 @@ namespace Logic.Page.Services
                     if (page != null)
                     {
                         page.CreationTimeStamp = DateTime.Now;
-                        unitOfWork.PageRepository.Insert(page.ToEntity());
+                        page.LastModifiedTimeStamp = DateTime.Now;
+                        var entity = page.ToEntity();
+                        UpdateFiles(entity, unitOfWork);
+                        unitOfWork.PageRepository.Insert(entity);
                     }
+
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.SavePageSuccess };
                 }
@@ -103,13 +107,15 @@ namespace Logic.Page.Services
                         var updatedPage = new PageModel()
                         {
                             Content = page.Content,
-                            CreationTimeStamp = DateTime.Now,
-                            LastModifiedTimeStamp = page.LastModifiedTimeStamp,
+                            CreationTimeStamp = page.CreationTimeStamp,
+                            LastModifiedTimeStamp = DateTime.Now,
                             Media = page.Media,
                             Name = page.Name,
                             RestorePageId = page.Id
                         };
-                        unitOfWork.PageRepository.Insert(updatedPage.ToEntity());
+                        var entity = updatedPage.ToEntity();
+                        UpdateFiles(entity,unitOfWork);
+                        unitOfWork.PageRepository.Insert(entity);
                     }
 
                     unitOfWork.Save();
@@ -239,6 +245,26 @@ namespace Logic.Page.Services
                 }
             }
             return response;
+        }
+        public void UpdateFiles(DAL.Models.Page entity, IUnitOfWork unitOfWork)
+        {
+            var ids = entity.Media.Select(x => x.Id);
+            var files = unitOfWork.FileRepository.Get(x => ids.Contains(x.Id));
+            var entityFromBase = unitOfWork.PageRepository.Get(x => x.Id == entity.Id).SingleOrDefault();
+
+            if (entityFromBase != null)
+            {
+                entityFromBase.Media.Clear();
+                entity = entityFromBase;
+            }
+
+
+            entity.Media.Clear();
+
+            foreach (var file in files)
+            {
+                entity.Media.Add(file);
+            }
         }
     }
 }
