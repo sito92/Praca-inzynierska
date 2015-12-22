@@ -1,31 +1,38 @@
 ﻿@using Modules.Resources
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "News";
 }
 @Scripts.Render("~/bundles/news")
 <div ng-controller="NewsController">
     @Html.Partial("Menu")
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <table class="table table-bordered table-striped table-hover">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped kentico-color">
                 <thead>
                     <tr>
-                        <th>
+                        <th class="text-center">
                             @Presentation.Name
                         </th>
-                        <th>
+                        <th class="text-center">
                             @Presentation.CreationDate
                         </th>
-                        <th>
+                        <th class="text-center">
                             @Presentation.LastModifyDate
+                        </th>
+                        <th class="text-center">
+                            Actions
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="news in newses" ng-click="select(news)" ng-class="{'selected':selectedNews.Id==news.Id}" class="selectable">
-                        <td ng-bind="news.Title"></td>
-                        <td ng-bind="news.CreationTimeStamp | date:'dd-MM-yyyy HH:mm:ss'"></td>
-                        <td ng-bind="news.LastModifiedTimeStamp | date:'dd-MM-yyyy HH:mm:ss'"></td>
+                    <tr ng-repeat="news in newses">
+                        <td ng-bind="news.Title" class="text-center"></td>
+                        <td ng-bind="news.CreationTimeStamp | date:'dd-MM-yyyy HH:mm:ss'" class="text-center"></td>
+                        <td ng-bind="news.LastModifiedTimeStamp | date:'dd-MM-yyyy HH:mm:ss'" class="text-center"></td>
+                        <td class="text-center">
+                            <a ng-click="edit(news)"><span class="glyphicon glyphicon-edit text-success"></span></a>
+                            <a ng-click="delete(news)"><span class="glyphicon glyphicon-remove text-danger"></span></a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

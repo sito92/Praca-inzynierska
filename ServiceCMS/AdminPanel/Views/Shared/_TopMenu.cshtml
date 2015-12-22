@@ -1,6 +1,12 @@
 ﻿@using Modules.Resources
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar kentico-color navbar-fixed-top">
     <div class="container-fluid">
+        <div class="navbar-left navbar-brand">
+            <a href="@Url.Action("Index","Home")"><span class="fa fa-scribd logo"></span></a>
+        </div>
+        <div class="navbar-left navbar-brand">
+            @ViewBag.Title
+        </div>
         <div class="navbar-right navbar-brand">
             <a class="glyphicon-button" href="@Url.Action("LogOff", "Account")"><span class="glyphicon glyphicon-off white"></span></a>
         </div>
@@ -8,8 +14,8 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Presentation.Language<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="@Url.Action("SetCulture","Language",new {culture = "pl-PL"})">Polski</a></li>
-                    <li><a href="@Url.Action("SetCulture","Language",new {culture = "en-US"})">English</a></li>
+                    <li><a href="@Url.Action("SetCulture", "Language", new {culture = "pl-PL"})">Polski</a></li>
+                    <li><a href="@Url.Action("SetCulture", "Language", new {culture = "en-US"})">English</a></li>
                 </ul>
             </li>
         </ul>
