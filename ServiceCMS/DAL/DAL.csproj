@@ -156,6 +156,10 @@
     <Compile Include="Migrations\201512221043486_NewsletterModule.Designer.cs">
       <DependentUpon>201512221043486_NewsletterModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512221302193_dunno.cs" />
+    <Compile Include="Migrations\201512221302193_dunno.Designer.cs">
+      <DependentUpon>201512221302193_dunno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -265,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512221043486_NewsletterModule.resx">
       <DependentUpon>201512221043486_NewsletterModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512221302193_dunno.resx">
+      <DependentUpon>201512221302193_dunno.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -283,3 +283,11 @@ span.logo {
     cursor: pointer;
 }
 
+.loginPanel {
+    background-color: #1175ae;
+}
+
+.loginPanelForm {
+    background-color: #F24F1E;
+    color: white;
+}
