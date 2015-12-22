@@ -127,6 +127,10 @@ namespace AdminPanel
                     "~/Scripts/Services/MenuButtonService.js",
                     "~/Scripts/Services/PageService.js"
                     ));
+            bundles.Add(new ScriptBundle("~/bundles/files").Include(
+                    "~/Scripts/Controllers/FileController.js",
+                    "~/Scripts/Services/FileService.js"
+                    ));
             bundles.Add(new ScriptBundle("~/bundles/angular-drag-and-drop").Include(
                     "~/Scripts/angular-drag-and-drop-lists.js"
                     ));
@@ -136,9 +140,12 @@ namespace AdminPanel
                    "~/Scripts/text-angular/textAngularSetup.js",
                    "~/Scripts/text-angular/textAngular.js"
                    ));
-            bundles.Add(new ScriptBundle("~/bundles/angular-ui-tree").Include(
-                    "~/Scripts/angular-ui-tree.js"
+            bundles.Add(new ScriptBundle("~/bundles/angular-file-upload").Include(
+                    "~/Scripts/angular-file-upload.js"
                     ));
+            bundles.Add(new ScriptBundle("~/bundles/angular-ui-tree").Include(
+                   "~/Scripts/angular-ui-tree.js"
+                   ));
 
 
 

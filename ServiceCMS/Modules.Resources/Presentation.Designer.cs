@@ -250,11 +250,29 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Extension.
+        /// </summary>
+        public static string Extension {
+            get {
+                return ResourceManager.GetString("Extension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Files.
         /// </summary>
         public static string Files {
             get {
                 return ResourceManager.GetString("Files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File type.
+        /// </summary>
+        public static string FileType {
+            get {
+                return ResourceManager.GetString("FileType", resourceCulture);
             }
         }
         
@@ -624,6 +642,15 @@ namespace Modules.Resources {
         public static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload.
+        /// </summary>
+        public static string Upload {
+            get {
+                return ResourceManager.GetString("Upload", resourceCulture);
             }
         }
         

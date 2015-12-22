@@ -63,3 +63,5 @@
 /// <reference path="angular-ui-tree.js" />
 /// <reference path="controllers/pagecontroller.js" />
 /// <reference path="modules/insetmodule.js" />
+/// <reference path="angular-file-upload.js" />
+/// <reference path="controllers/filecontroller.js" />

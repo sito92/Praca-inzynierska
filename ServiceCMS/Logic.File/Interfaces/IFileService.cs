@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using Common.Enums;
 using Common.Responses;
 using DAL.Models;
@@ -19,6 +20,8 @@ namespace Logic.File.Interfaces
         ResponseBase Insert(FileModel file);
 
         ResponseBase Update(FileModel file);
+
+        ResponseBase UploadWithInsert(HttpPostedFileBase file);
 
         ResponseBase Delete(int id);
 

@@ -1,0 +1,40 @@
+﻿@using Modules.Resources
+@{
+    ViewBag.Title = Presentation.Files;
+}
+@Scripts.Render("~/bundles/files")
+<div ng-controller="FileController">
+    @Html.Partial("Menu")
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped kentico-color">
+                <thead>
+                    <tr>
+                        <th class="text-center">
+                            @Presentation.Name
+                        </th>
+                        <th class="text-center">
+                            @Presentation.Extension
+                        </th>
+                        <th class="text-center">
+                            @Presentation.FileType
+                        </th>
+                        <th class="text-center">
+                            @Presentation.Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="file in files">
+                        <td ng-bind="file.Name" class="text-center"></td>
+                        <td ng-bind="file.Extension" class="text-center"></td>
+                        <td ng-bind="file.FileType" class="text-center"></td>
+                        <td class="text-center">                         
+                            <a ng-click="delete(file)"><span class="glyphicon glyphicon-remove text-danger"></span></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

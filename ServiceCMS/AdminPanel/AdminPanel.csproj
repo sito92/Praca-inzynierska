@@ -236,6 +236,7 @@
     </Compile>
     <Compile Include="Models\Calendar\JsonEventsListViewModel.cs" />
     <Compile Include="Models\Calendar\JsonEventViewModel.cs" />
+    <Compile Include="Models\File\UploadFile.cs" />
     <Compile Include="Models\User\AuthenticatedViewModel.cs" />
     <Compile Include="Models\User\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -331,6 +332,7 @@
     <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-csp.css" />
     <Content Include="Scripts\angular-drag-and-drop-lists.js" />
+    <Content Include="Scripts\angular-file-upload.js" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
     <Content Include="Scripts\angular-message-format.js" />
@@ -358,6 +360,7 @@
     <Content Include="Scripts\calendar\fullcalendar.js" />
     <Content Include="Scripts\calendar\gcal.js" />
     <Content Include="Scripts\calendar\lang-all.js" />
+    <Content Include="Scripts\Controllers\FileController.js" />
     <Content Include="Scripts\Controllers\MenuButtonController.js" />
     <Content Include="Scripts\Controllers\PageController.js" />
     <Content Include="Scripts\Controllers\ServiceProviderController.js" />
@@ -1243,6 +1246,9 @@
     <Content Include="Views\Page\Modals\ConfirmDelete.cshtml" />
     <Content Include="Views\Page\Modals\Add.cshtml" />
     <Content Include="Views\Page\Modals\ChooseFile.cshtml" />
+    <Content Include="Views\File\Index.cshtml" />
+    <Content Include="Views\File\Modals\Upload.cshtml" />
+    <Content Include="Views\File\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

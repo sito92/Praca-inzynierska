@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AdminPanel.Extensions;
+using AdminPanel.Models.File;
 using Common.Enums;
 using Logic.Common.Models;
 using Logic.File.Interfaces;
@@ -57,7 +59,12 @@ namespace AdminPanel.Controllers
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
-
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase file)
+        {
+            var response = _fileService.UploadWithInsert(file);
+            return new JsonNetResult(new {success=response.IsSucceed,message=response.Message});
+        }
         [HttpPost]
         public ActionResult Delete(FileModel model)
         {
@@ -68,6 +75,10 @@ namespace AdminPanel.Controllers
             }
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
+        public PartialViewResult GetModal(string name)
+        {
+            return PartialView("Modals/" + name);
         }
     }
 }

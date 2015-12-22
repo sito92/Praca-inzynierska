@@ -10,6 +10,8 @@ namespace Modules.FileManager.Interfaces
     {
         bool SaveFile(string filePath, string fileName, byte[] fileData);
 
+        bool SaveFile(string filePath, byte[] fileData);
+
         bool DeleteFile(string fullFilePath);
 
         bool DeleteFile(string filePath, string fileName);
