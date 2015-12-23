@@ -7,7 +7,7 @@ namespace AdminPanel.Models.File
 {
     public class UploadFile
     {
-        public byte[] FormData { get; set; }
-        public string File { get; set; }
+        public List<string> FormData  { get; set; }
+        public HttpPostedFileBase File { get; set; }
     }
 }
