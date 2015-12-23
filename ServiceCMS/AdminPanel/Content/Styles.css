@@ -358,4 +358,9 @@ span.logo {
         text-decoration: none;
     color: black;
 }
+.settings-form input[type="checkbox"] {
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+}
 
