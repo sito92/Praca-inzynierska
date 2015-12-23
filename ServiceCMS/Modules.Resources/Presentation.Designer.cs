@@ -88,6 +88,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel all.
+        /// </summary>
+        public static string CancelAll {
+            get {
+                return ResourceManager.GetString("CancelAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Categories.
         /// </summary>
         public static string Categories {
@@ -102,6 +111,15 @@ namespace Modules.Resources {
         public static string Choose {
             get {
                 return ResourceManager.GetString("Choose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose file....
+        /// </summary>
+        public static string ChooseFile {
+            get {
+                return ResourceManager.GetString("ChooseFile", resourceCulture);
             }
         }
         
@@ -259,6 +277,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File name.
+        /// </summary>
+        public static string FileName {
+            get {
+                return ResourceManager.GetString("FileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Files.
         /// </summary>
         public static string Files {
@@ -394,6 +421,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No choosen files.
+        /// </summary>
+        public static string NoChoosenFiles {
+            get {
+                return ResourceManager.GetString("NoChoosenFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No choosen page.
         /// </summary>
         public static string NoChoosenPage {
@@ -511,6 +547,24 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Progress.
+        /// </summary>
+        public static string Progress {
+            get {
+                return ResourceManager.GetString("Progress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Queue progress.
+        /// </summary>
+        public static string QueueProgress {
+            get {
+                return ResourceManager.GetString("QueueProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {
@@ -525,6 +579,24 @@ namespace Modules.Resources {
         public static string RememberMe {
             get {
                 return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove all.
+        /// </summary>
+        public static string RemoveAll {
+            get {
+                return ResourceManager.GetString("RemoveAll", resourceCulture);
             }
         }
         
@@ -601,11 +673,29 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        public static string Size {
+            get {
+                return ResourceManager.GetString("Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Statistics.
         /// </summary>
         public static string Statistics {
             get {
                 return ResourceManager.GetString("Statistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
             }
         }
         
@@ -651,6 +741,15 @@ namespace Modules.Resources {
         public static string Upload {
             get {
                 return ResourceManager.GetString("Upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload all.
+        /// </summary>
+        public static string UploadAll {
+            get {
+                return ResourceManager.GetString("UploadAll", resourceCulture);
             }
         }
         

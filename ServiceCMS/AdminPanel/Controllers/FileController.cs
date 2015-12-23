@@ -62,8 +62,8 @@ namespace AdminPanel.Controllers
         [HttpPost]
         public ActionResult Upload(HttpPostedFileBase file)
         {
-            var modelString = Request.Form["model"];
-            var response = _fileService.UploadWithInsert(file);
+            var name = Request.Form["name"];
+            var response = _fileService.UploadWithInsert(file,name);
             return new JsonNetResult(new {success=response.IsSucceed,message=response.Message});
         }
         [HttpPost]

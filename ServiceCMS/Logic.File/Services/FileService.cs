@@ -118,7 +118,7 @@ namespace Logic.File.Services
             }
             return response;
         }
-        public ResponseBase UploadWithInsert(HttpPostedFileBase file)
+        public ResponseBase UploadWithInsert(HttpPostedFileBase file, string name)
         {
             ResponseBase response;
             using (var unitOfWork = _unitOfWorkFactory.Create())
@@ -133,7 +133,16 @@ namespace Logic.File.Services
                         {
                             return new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.FileUpdateFailed };
                         }
+                        FileModel model = new FileModel()
+                        {
+                            Name = name,
+                            Path = filePath,
+                            FileType = GetFileType(file),
+                            Extension = Path.GetExtension(file.FileName),
+                            Size = file.ContentLength
 
+                        };
+                        unitOfWork.FileRepository.Insert(model.ToEntity());
                     }
 
                     unitOfWork.Save();
@@ -155,7 +164,15 @@ namespace Logic.File.Services
             {
                 try
                 {
-                    unitOfWork.FileRepository.Delete(id);
+                    var fileEntity = unitOfWork.FileRepository.Get(x => x.Id==id).FirstOrDefault();
+                    if (fileEntity != null)
+                    {
+                        if (!_fileManager.DeleteFile(fileEntity.Path))
+                        {
+                            return new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.FileDeleteFailed };
+                        }
+                        unitOfWork.FileRepository.Delete(id);
+                    }
                     unitOfWork.Save();
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.FileDeleteSuccess };
                 }
@@ -181,6 +198,20 @@ namespace Logic.File.Services
             var filesFolder = ConfigurationManager.AppSettings["filesFolder"];
             var fileName = Path.GetFileNameWithoutExtension(file.FileName) + Guid.NewGuid() + Path.GetExtension(file.FileName);
             return Path.Combine(rootFolder, filesFolder, fileName);
+        }
+
+        private FileTypeEnum GetFileType(HttpPostedFileBase file)
+        {
+            switch (file.ContentType)
+            {
+                case "image/jpeg":
+                    return FileTypeEnum.Image;
+                    break;
+                default:
+                    return FileTypeEnum.Other;
+                    break;
+
+            }
         }
     }
 }

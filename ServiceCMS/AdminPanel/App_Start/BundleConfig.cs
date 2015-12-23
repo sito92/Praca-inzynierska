@@ -146,6 +146,9 @@ namespace AdminPanel
             bundles.Add(new ScriptBundle("~/bundles/angular-ui-tree").Include(
                    "~/Scripts/angular-ui-tree.js"
                    ));
+            bundles.Add(new ScriptBundle("~/bundles/filters").Include(
+                  "~/Scripts/Filters/*.js"
+                  ));
 
 
 

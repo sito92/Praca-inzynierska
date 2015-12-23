@@ -321,4 +321,37 @@
   <data name="Upload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="ChooseFile" xml:space="preserve">
+    <value>Choose file...</value>
+  </data>
+  <data name="CancelAll" xml:space="preserve">
+    <value>Cancel all</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="NoChoosenFiles" xml:space="preserve">
+    <value>No choosen files</value>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="QueueProgress" xml:space="preserve">
+    <value>Queue progress</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RemoveAll" xml:space="preserve">
+    <value>Remove all</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="UploadAll" xml:space="preserve">
+    <value>Upload all</value>
+  </data>
 </root>

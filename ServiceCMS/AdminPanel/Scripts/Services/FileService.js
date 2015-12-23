@@ -25,6 +25,19 @@
 
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
+        },
+        delete: function (file) {
+            var deferred = $q.defer();
+            $http({
+                method: 'POST',
+                url: '/File/Delete',
+                data:
+                {
+                    id: file.Id
+                }
+
+            }).success(deferred.resolve).error(deferred.reject);
+            return deferred.promise;
         }
     }
 });

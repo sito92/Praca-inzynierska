@@ -21,7 +21,7 @@ namespace Logic.File.Interfaces
 
         ResponseBase Update(FileModel file);
 
-        ResponseBase UploadWithInsert(HttpPostedFileBase file);
+        ResponseBase UploadWithInsert(HttpPostedFileBase file,string name);
 
         ResponseBase Delete(int id);
 

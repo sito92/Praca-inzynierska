@@ -65,3 +65,4 @@
 /// <reference path="modules/insetmodule.js" />
 /// <reference path="angular-file-upload.js" />
 /// <reference path="controllers/filecontroller.js" />
+/// <reference path="filters/sizefilter.js" />

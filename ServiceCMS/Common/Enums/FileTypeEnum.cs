@@ -8,6 +8,7 @@ namespace Common.Enums
 {
     public enum FileTypeEnum
     {
-        Image=1
+        Image=1,
+        Other
     }
 }

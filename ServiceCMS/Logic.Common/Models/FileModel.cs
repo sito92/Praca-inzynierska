@@ -15,6 +15,7 @@ namespace Logic.Common.Models
         public FileTypeEnum FileType { get; set; }
         public string Extension { get; set; }
         public string Name { get; set; }
+        public long Size { get; set; }
 
         public FileModel()
         {
@@ -28,6 +29,7 @@ namespace Logic.Common.Models
             FileType = (FileTypeEnum) file.FileType;
             Extension = file.Extension;
             Name = file.Name;
+            Size = file.Size;
         }
 
         public File ToEntity()
@@ -38,7 +40,8 @@ namespace Logic.Common.Models
                 Path = this.Path,
                 FileType = (int) this.FileType,
                 Extension = this.Extension,
-                Name = this.Name
+                Name = this.Name,
+                Size = this.Size
             };
         }
     }
