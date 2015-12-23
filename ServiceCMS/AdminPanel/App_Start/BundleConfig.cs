@@ -149,6 +149,10 @@ namespace AdminPanel
             bundles.Add(new ScriptBundle("~/bundles/filters").Include(
                   "~/Scripts/Filters/*.js"
                   ));
+            bundles.Add(new ScriptBundle("~/bundles/settings").Include(
+                  "~/Scripts/Controllers/SettingsController.js",
+                    "~/Scripts/Services/SettingsService.js"
+                  ));
 
 
 

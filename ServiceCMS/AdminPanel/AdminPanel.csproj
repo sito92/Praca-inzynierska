@@ -239,6 +239,8 @@
     <Compile Include="Models\Calendar\JsonEventsListViewModel.cs" />
     <Compile Include="Models\Calendar\JsonEventViewModel.cs" />
     <Compile Include="Models\File\UploadFile.cs" />
+    <Compile Include="Models\Settings\ListSettingsViewModel.cs" />
+    <Compile Include="Models\Settings\SettingsViewModel.cs" />
     <Compile Include="Models\User\AuthenticatedViewModel.cs" />
     <Compile Include="Models\User\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -367,6 +369,7 @@
     <Content Include="Scripts\Controllers\PageController.js" />
     <Content Include="Scripts\Controllers\ServiceProviderController.js" />
     <Content Include="Scripts\Controllers\ServiceTypeController.js" />
+    <Content Include="Scripts\Controllers\SettingsController.js" />
     <Content Include="Scripts\Filters\SizeFilter.js" />
     <Content Include="Scripts\Modules\InsetModule.js" />
     <Content Include="Scripts\moment.js" />
@@ -1173,6 +1176,7 @@
     <Content Include="Scripts\Services\PageService.js" />
     <Content Include="Scripts\Services\ServicesService.js" />
     <Content Include="Scripts\Services\ServiceTypeService.js" />
+    <Content Include="Scripts\Services\SettingsService.js" />
     <Content Include="Scripts\text-angular\textAngular-rangy.js" />
     <Content Include="Scripts\text-angular\textAngular-sanitize.js" />
     <Content Include="Scripts\text-angular\textAngular.js" />
@@ -1253,6 +1257,7 @@
     <Content Include="Views\File\Modals\Upload.cshtml" />
     <Content Include="Views\File\Menu.cshtml" />
     <Content Include="Views\File\Modals\ConfirmDelete.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

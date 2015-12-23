@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AdminPanel.Extensions;
+using AdminPanel.Models.Settings;
 using Logic.Common.Models;
 using Logic.Settings.Interfaces;
 
@@ -53,6 +55,15 @@ namespace AdminPanel.Controllers
             }
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult GetAll()
+        {
+            var settings = _settingsService.GetAll();
+            ListSettingsViewModel model = new ListSettingsViewModel(settings);
+
+
+            return new JsonNetResult(new {success=true,data=model});
+
         }
 
         //[HttpPost]

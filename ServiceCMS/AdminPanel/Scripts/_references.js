@@ -66,3 +66,5 @@
 /// <reference path="angular-file-upload.js" />
 /// <reference path="controllers/filecontroller.js" />
 /// <reference path="filters/sizefilter.js" />
+/// <reference path="services/settingsservice.js" />
+/// <reference path="controllers/settingscontroller.js" />

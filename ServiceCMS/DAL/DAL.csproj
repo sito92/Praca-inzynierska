@@ -164,6 +164,10 @@
     <Compile Include="Migrations\201512231839465_AddedSizeToFile.Designer.cs">
       <DependentUpon>201512231839465_AddedSizeToFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512232009041_AddedTypeToSetting.cs" />
+    <Compile Include="Migrations\201512232009041_AddedTypeToSetting.Designer.cs">
+      <DependentUpon>201512232009041_AddedTypeToSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -279,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512231839465_AddedSizeToFile.resx">
       <DependentUpon>201512231839465_AddedSizeToFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512232009041_AddedTypeToSetting.resx">
+      <DependentUpon>201512232009041_AddedTypeToSetting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

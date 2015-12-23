@@ -327,6 +327,15 @@
   <data name="CancelAll" xml:space="preserve">
     <value>Cancel all</value>
   </data>
+  <data name="EmailHost" xml:space="preserve">
+    <value>Email host</value>
+  </data>
+  <data name="EmailPassword" xml:space="preserve">
+    <value>Email password</value>
+  </data>
+  <data name="EmailUsername" xml:space="preserve">
+    <value>Email username</value>
+  </data>
   <data name="FileName" xml:space="preserve">
     <value>File name</value>
   </data>

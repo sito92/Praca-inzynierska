@@ -259,6 +259,33 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email host.
+        /// </summary>
+        public static string EmailHost {
+            get {
+                return ResourceManager.GetString("EmailHost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email password.
+        /// </summary>
+        public static string EmailPassword {
+            get {
+                return ResourceManager.GetString("EmailPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email username.
+        /// </summary>
+        public static string EmailUsername {
+            get {
+                return ResourceManager.GetString("EmailUsername", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Error {

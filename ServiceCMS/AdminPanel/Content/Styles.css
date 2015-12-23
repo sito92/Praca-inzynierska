@@ -346,4 +346,16 @@ span.logo {
     margin-top: -20px;
     padding: 15px;
 }
+.tile-link {
+    text-decoration: none;
+    color: black;
+}
+.tile-link:hover {
+    text-decoration: none;
+    color: #404040;
+}
+.tile-link:visited {
+        text-decoration: none;
+    color: black;
+}
 

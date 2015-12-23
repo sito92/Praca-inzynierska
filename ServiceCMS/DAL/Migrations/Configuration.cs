@@ -63,9 +63,14 @@ namespace DAL.Migrations
             //    new Settings(){EmailAddress = "servicecmsthesis@gmail.com", EmailPassword = new NetworkCredential("cos", "arturikamil").SecurePassword});
             //context.SaveChanges();
             context.Settings.AddOrUpdate(x => x.Name,
-                new Settings() { Name = "EmailHost", Value = "smtp.gmail.com" },
-                new Settings() { Name = "EmailUsername", Value = "servicecmsthesis@gmail.com" },
-                new Settings() { Name = "EmailPassword", Value = "arturikamil" }
+                new Settings() { Name = "EmailHost", Value = "smtp.gmail.com",InputType = "text"},
+                new Settings() { Name = "EmailUsername", Value = "servicecmsthesis@gmail.com", InputType = "text" },
+                new Settings() { Name = "EmailPassword", Value = "arturikamil", InputType = "password" },
+                new Settings() { Name = "ShowingNewsNumber", Value = "10", InputType = "number" },
+                new Settings() { Name = "CompanyName", Value = "Simple Code", InputType = "text" },
+                new Settings() { Name = "ContactFormEnabled", Value = "true", InputType = "checkbox" },
+                new Settings() { Name = "RegisterServiceEnabled", Value = "true", InputType = "checkbox" },
+                new Settings() { Name = "ShowingPopUp", Value = "false", InputType = "checkbox" }
                 );
             context.SaveChanges();
         }
