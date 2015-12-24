@@ -70,3 +70,5 @@
 /// <reference path="controllers/settingscontroller.js" />
 /// <reference path="services/popupservice.js" />
 /// <reference path="controllers/popupcontroller.js" />
+/// <reference path="services/mailservice.js" />
+/// <reference path="controllers/mailcontroller.js" />

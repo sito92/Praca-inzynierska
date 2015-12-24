@@ -1,0 +1,55 @@
+﻿@using Modules.Resources
+@using Logic.Common.Models
+@model NewsModel
+<div class="modal-header">
+    <div class="row text-center">
+        <h2 class="text-modal-heading">@Presentation.Add</h2>
+    </div>
+</div>
+<div class="modal-body">
+    <form novalidate name="form">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="form-group form-field row">
+                    <div>
+                        <label class="control-label">@Presentation.Subject</label>
+                    </div>
+                    <div>
+                        <input class="form-control" ng-model="mail.Subject" name="subject" required="" />
+                        <span ng-show="form.subject.$error.required && form.subject.$dirty" class="text-danger">
+                            @Presentation.RequiredErrorMessage
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group form-field row">
+                    <div>
+                        <label class="control-label">@Presentation.Content</label>
+                    </div>
+                    <div>
+                        <div text-angular ng-model="mail.Content" name="content" required></div>
+                        <span ng-show="form.content.$error.required && form.content.$dirty" class="text-danger">
+                            @Presentation.RequiredErrorMessage
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group form-field row">
+                    <div>
+                        <label class="control-label">@Presentation.NewsletterRecivers</label>
+                        <button class="btn btn-sm kentico-color" ng-click="add()"><span class="glyphicon glyphicon-plus"></span></button>
+                        <button class="btn btn-sm kentico-color" ng-click="addAll()"><span>@Presentation.AddAll</span></button>
+                    </div>
+                    <div ng-repeat="reviver in mail.Subscribers" class="categories-container">
+                        <div class="category-box" role="alert">
+                            <button type="button" class="close" ng-click="remove($index)"><span aria-hidden="true">&times;</span></button>
+                            <span ng-bind="reviver.EmailAddress"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-disabled="form.$invalid || mail.Subscribers<=0" ng-click="send()">@Presentation.Send</button>
+    <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
+</div>

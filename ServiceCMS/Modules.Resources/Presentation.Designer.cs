@@ -88,6 +88,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add all.
+        /// </summary>
+        public static string AddAll {
+            get {
+                return ResourceManager.GetString("AddAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -156,6 +165,15 @@ namespace Modules.Resources {
         public static string Close {
             get {
                 return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compose mail.
+        /// </summary>
+        public static string ComposeMail {
+            get {
+                return ResourceManager.GetString("ComposeMail", resourceCulture);
             }
         }
         
@@ -255,6 +273,15 @@ namespace Modules.Resources {
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email address.
+        /// </summary>
+        public static string EmailAddress {
+            get {
+                return ResourceManager.GetString("EmailAddress", resourceCulture);
             }
         }
         
@@ -448,6 +475,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Newsletter recivers.
+        /// </summary>
+        public static string NewsletterRecivers {
+            get {
+                return ResourceManager.GetString("NewsletterRecivers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No categories.
         /// </summary>
         public static string NoCategories {
@@ -498,6 +534,15 @@ namespace Modules.Resources {
         public static string NoPages {
             get {
                 return ResourceManager.GetString("NoPages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No recivers.
+        /// </summary>
+        public static string NoRecivers {
+            get {
+                return ResourceManager.GetString("NoRecivers", resourceCulture);
             }
         }
         
@@ -664,6 +709,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string Send {
+            get {
+                return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Service providers.
         /// </summary>
         public static string ServiceProviders {
@@ -741,6 +795,15 @@ namespace Modules.Resources {
         public static string Status {
             get {
                 return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subject.
+        /// </summary>
+        public static string Subject {
+            get {
+                return ResourceManager.GetString("Subject", resourceCulture);
             }
         }
         

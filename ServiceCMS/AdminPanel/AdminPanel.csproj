@@ -366,6 +366,7 @@
     <Content Include="Scripts\calendar\gcal.js" />
     <Content Include="Scripts\calendar\lang-all.js" />
     <Content Include="Scripts\Controllers\FileController.js" />
+    <Content Include="Scripts\Controllers\MailController.js" />
     <Content Include="Scripts\Controllers\MenuButtonController.js" />
     <Content Include="Scripts\Controllers\PageController.js" />
     <Content Include="Scripts\Controllers\PopUpController.js" />
@@ -1171,6 +1172,7 @@
     <Content Include="Scripts\Modules\AppModule.js" />
     <Content Include="Scripts\Services\FileService.js" />
     <Content Include="Scripts\Services\InsetService.js" />
+    <Content Include="Scripts\Services\MailService.js" />
     <Content Include="Scripts\Services\MenuButtonService.js" />
     <Content Include="Scripts\Services\NewsCategoriesService.js" />
     <Content Include="Scripts\Services\PopUpService.js" />
@@ -1267,6 +1269,14 @@
     <Content Include="Views\PopUp\Modals\Add.cshtml" />
     <Content Include="Views\PopUp\Modals\Edit.cshtml" />
     <Content Include="Views\PopUp\Modals\ConfirmDelete.cshtml" />
+    <Content Include="Views\Mail\Index.cshtml" />
+    <Content Include="Views\Mail\Modals\ComposeMail.cshtml" />
+    <Content Include="Views\Mail\Modals\NewsletterRecivers.cshtml" />
+    <Content Include="Views\Mail\Modals\AddNewsletterReciver.cshtml" />
+    <Content Include="Views\Mail\Modals\EditNewsletterReciver.cshtml" />
+    <Content Include="Views\Mail\Modals\ConfirmDelete.cshtml" />
+    <Content Include="Views\Mail\Menu.cshtml" />
+    <Content Include="Views\Mail\Modals\ChooseReciver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

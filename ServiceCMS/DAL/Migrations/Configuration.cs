@@ -46,6 +46,7 @@ namespace DAL.Migrations
             SeedServicePhrases(context);
             SeedRegistratedServices(context);
             SeedPopUps(context);
+            SeedNewsletterRecivers(context);
         }
 
         private void SeedUsers(ServiceCMSContext context)
@@ -280,6 +281,17 @@ namespace DAL.Migrations
                 new PopUp() { Active = false,Content ="Salon wspomaga RocknRoll. Zapraszamy do udzia³u",Title = "RocknRoll"}
                 );
             context.SaveChanges();
+        }
+
+        public void SeedNewsletterRecivers(ServiceCMSContext context)
+        {
+            context.NewslettersReceivers.AddOrUpdate(x => x.EmailAddress,
+                new NewsletterReceiver() {EmailAddress = "arturstelmach92@gmail.com"},
+                new NewsletterReceiver() {EmailAddress = "fingo1311@gmail.com"},
+                new NewsletterReceiver() {EmailAddress = "fingolfin1311@gmail.com"}
+                );
+
+        context.SaveChanges();
         }
     }
 }

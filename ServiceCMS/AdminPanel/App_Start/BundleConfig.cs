@@ -157,7 +157,10 @@ namespace AdminPanel
                   "~/Scripts/Controllers/PopUpController.js",
                     "~/Scripts/Services/PopUpService.js"
                   ));
-
+            bundles.Add(new ScriptBundle("~/bundles/mail").Include(
+                  "~/Scripts/Controllers/MailController.js",
+                    "~/Scripts/Services/MailService.js"
+                  ));
 
 
         }

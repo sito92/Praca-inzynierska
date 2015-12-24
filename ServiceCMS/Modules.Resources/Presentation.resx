@@ -366,7 +366,28 @@
   <data name="Active" xml:space="preserve">
     <value>Active</value>
   </data>
+  <data name="AddAll" xml:space="preserve">
+    <value>Add all</value>
+  </data>
+  <data name="ComposeMail" xml:space="preserve">
+    <value>Compose mail</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email address</value>
+  </data>
+  <data name="NewsletterRecivers" xml:space="preserve">
+    <value>Newsletter recivers</value>
+  </data>
+  <data name="NoRecivers" xml:space="preserve">
+    <value>No recivers</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
   </data>
 </root>
