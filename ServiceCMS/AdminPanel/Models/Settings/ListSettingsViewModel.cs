@@ -25,5 +25,19 @@ namespace AdminPanel.Models.Settings
             }
         }
 
+        public Dictionary<string, string> ToDictionary()
+        {
+            Dictionary<string,string> result = new Dictionary<string, string>();
+
+            foreach (var settting in Settings)
+            {
+                var key = settting.Key;
+                var value = settting.Value.ToString();
+                result.Add(key,value);
+            }
+
+            return result;
+        }
+
     }
 }

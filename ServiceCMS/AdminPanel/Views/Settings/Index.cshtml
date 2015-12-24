@@ -4,14 +4,14 @@
 }
 @Scripts.Render("~/bundles/settings")
 <div ng-controller="SettingsController" class="settings-form">
+    @Html.Partial("Menu")
     <div class="row">
         <div class="col-md-4 text-center" ng-repeat="setting in model.Settings track by $index">
             <div class="form-group form-field row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-10">
                     <div class="well kentico-color">
                         <label class="control-label" ng-bind="setting.Name"></label>
-                        <input class="form-control" ng-model="setting.Value" type="{{setting.InputType}}" />
-                        {{setting.Value | json}}
+                        <input class="form-control" ng-model="setting.Value" type="{{setting.InputType}}"/>
                     </div>
                 </div>
             </div>

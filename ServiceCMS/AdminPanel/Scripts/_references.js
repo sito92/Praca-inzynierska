@@ -68,3 +68,5 @@
 /// <reference path="filters/sizefilter.js" />
 /// <reference path="services/settingsservice.js" />
 /// <reference path="controllers/settingscontroller.js" />
+/// <reference path="services/popupservice.js" />
+/// <reference path="controllers/popupcontroller.js" />

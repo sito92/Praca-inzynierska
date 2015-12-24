@@ -46,11 +46,11 @@ namespace AdminPanel.Controllers
         //}
 
         [HttpPost]
-        public ActionResult Update(Dictionary<string, string> settingsDictionary)
+        public ActionResult Update(ListSettingsViewModel model)
         {
-            if (settingsDictionary != null)
+            if (model != null)
             {
-                var response = _settingsService.Update(settingsDictionary);
+                var response = _settingsService.Update(model.ToDictionary());
                 return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else

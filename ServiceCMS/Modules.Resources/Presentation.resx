@@ -363,4 +363,10 @@
   <data name="UploadAll" xml:space="preserve">
     <value>Upload all</value>
   </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
 </root>

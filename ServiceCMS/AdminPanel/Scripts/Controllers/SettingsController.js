@@ -5,7 +5,7 @@
                 var model = jsonResult.data;
                 angular.forEach(model.Settings, function (val, key) {
                     if(val.InputType=="checkbox")
-                    model.Settings[key].Value = $.parseJSON(val.Value);
+                        model.Settings[key].Value = $.parseJSON(val.Value.toLowerCase());
                 });
                 $scope.model = model;
             } else {
@@ -16,4 +16,17 @@
         });
     }
     refresh();
+
+    $scope.save = function () {
+
+        SettingsService.save($scope.model).then(function (jsonResult) {
+            if (jsonResult.success) {
+                refresh();
+            } else {
+                alert(jsonResult.message);
+            }
+        }, function () {
+            alert("Error");
+        });
+    }
 });

@@ -29,7 +29,8 @@ namespace DAL.Models
         public DbSet<RegistratedService> RegistratedServices { get; set; }
         public DbSet<ServicePhase> Phases { get; set; }
         public DbSet<StatisticsInformation> StatisticsInformations { get; set; }
-        public DbSet<MenuButton> MenuButtons { get; set; } 
+        public DbSet<MenuButton> MenuButtons { get; set; }
+        public DbSet<PopUp> PopUps { get; set; } 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -45,6 +45,7 @@ namespace DAL.Migrations
             SeedServiceProviders(context);
             SeedServicePhrases(context);
             SeedRegistratedServices(context);
+            SeedPopUps(context);
         }
 
         private void SeedUsers(ServiceCMSContext context)
@@ -268,6 +269,16 @@ namespace DAL.Migrations
                 new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "24.232.0.0", Date = new DateTime(2015, 10, 11) },
                 new StatisticsInformation() { ActionName = "Index", ControllerName = "News", IP = "23.91.160.0", Date = new DateTime(2013, 12, 1) },
                 new StatisticsInformation(){ActionName = "Index", ControllerName = "News", IP = "168.145.113.100", Date = new DateTime(2015,11,1)}});
+            context.SaveChanges();
+        }
+        public void SeedPopUps(ServiceCMSContext context)
+        {
+            context.PopUps.AddOrUpdate(x=>x.Title,
+                new PopUp() { Active = true,Content ="01.01.2015 Salon nie czynny",Title = "Nieczynny"},
+                new PopUp() { Active = false,Content ="W salonie nast¹pi³a zmiana cen, zapraszamy do zapoznania siê z cennikiem",Title = "Ceny"},
+                new PopUp() { Active = false,Content ="W naszym salonie nowy fryzjer. Zapraszamy do umawiania siê na wizytê",Title = "Nowy fryzjer"},
+                new PopUp() { Active = false,Content ="Salon wspomaga RocknRoll. Zapraszamy do udzia³u",Title = "RocknRoll"}
+                );
             context.SaveChanges();
         }
     }

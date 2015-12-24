@@ -168,6 +168,10 @@
     <Compile Include="Migrations\201512232009041_AddedTypeToSetting.Designer.cs">
       <DependentUpon>201512232009041_AddedTypeToSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512241105284_PopUps.cs" />
+    <Compile Include="Migrations\201512241105284_PopUps.Designer.cs">
+      <DependentUpon>201512241105284_PopUps.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -286,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512232009041_AddedTypeToSetting.resx">
       <DependentUpon>201512232009041_AddedTypeToSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512241105284_PopUps.resx">
+      <DependentUpon>201512241105284_PopUps.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

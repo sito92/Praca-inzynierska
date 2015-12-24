@@ -153,6 +153,10 @@ namespace AdminPanel
                   "~/Scripts/Controllers/SettingsController.js",
                     "~/Scripts/Services/SettingsService.js"
                   ));
+            bundles.Add(new ScriptBundle("~/bundles/popUps").Include(
+                  "~/Scripts/Controllers/PopUpController.js",
+                    "~/Scripts/Services/PopUpService.js"
+                  ));
 
 
 
