@@ -97,6 +97,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Available services.
+        /// </summary>
+        public static string AvailableServices {
+            get {
+                return ResourceManager.GetString("AvailableServices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {

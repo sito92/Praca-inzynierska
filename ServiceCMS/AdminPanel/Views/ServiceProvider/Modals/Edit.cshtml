@@ -2,7 +2,7 @@
 @using Logic.Common.Models
 <div class="modal-header">
     <div class="row text-center">
-        <h2 class="text-modal-heading">@Presentation.Add</h2>
+        <h2 class="text-modal-heading">@Presentation.Edit</h2>
     </div>
 </div>
 <div class="modal-body">
@@ -22,12 +22,13 @@
             <div class="col-md-12">
 
                 <div class="add-button-container">
-                    <button class="btn btn-sm btn-primary" ng-click="add()"><span class="glyphicon glyphicon-plus"></span></button>
+                    <span>@Presentation.AvailableServices</span>
+                    <button class="btn btn-sm kentico-color" ng-click="add()"><span class="glyphicon glyphicon-plus"></span></button>
                 </div>
 
                 <div ng-repeat="type in provider.AvailableServices">
 
-                    <div class="alert alert-info" role="alert">
+                    <div class="alert kentico-color" role="alert">
                         <button type="button" class="close" ng-click="remove($index)"><span aria-hidden="true">&times;</span></button>
                         <span ng-bind="type.Name"></span>
                     </div>
@@ -38,7 +39,7 @@
         </div>
     </form>
     <div class="modal-footer">
-        <button class="btn btn-primary" ng-disabled="form.$invalid" ng-click="send()">@Presentation.Edit</button>
+        <button class="btn kentico-color" ng-disabled="form.$invalid" ng-click="send()">@Presentation.Edit</button>
         <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
     </div>
 </div>

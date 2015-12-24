@@ -369,6 +369,9 @@
   <data name="AddAll" xml:space="preserve">
     <value>Add all</value>
   </data>
+  <data name="AvailableServices" xml:space="preserve">
+    <value>Available services</value>
+  </data>
   <data name="ComposeMail" xml:space="preserve">
     <value>Compose mail</value>
   </data>
