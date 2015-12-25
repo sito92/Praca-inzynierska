@@ -55,30 +55,30 @@ namespace Logic.Statistics.Helpers
         //    return result;
         //}
 
-        //public static Dictionary<DateTime, int> GetUsersForEveryMonth(IEnumerable<StatisticsInformation> entities)
-        //{
-        //    var result = new Dictionary<DateTime, int>();
-
-        //    foreach (var entity in entities)
-        //    {
-        //        if (result.ContainsKey(entity.Date.Date))
-        //            result[entity.Date.Date] += 1;
-        //        else
-        //            result.Add(entity.Date.Date, 1);
-        //    }
-        //    return result;
-        //}
-
-        public static Dictionary<DateTime, int> GetUsersForStatistics(IEnumerable<StatisticsInformation> entities)
+        public static Dictionary<string, int> GetUsersForEveryMonth(IEnumerable<StatisticsInformation> entities)
         {
-            var result = new Dictionary<DateTime, int>();
+            var result = new Dictionary<string, int>();
 
             foreach (var entity in entities)
             {
-                if (result.ContainsKey(entity.Date.Date))
-                    result[entity.Date.Date] += 1;
+                if (result.ContainsKey(entity.Date.Date.Month.ToString()))
+                    result[entity.Date.Date.Month.ToString()] += 1;
                 else
-                    result.Add(entity.Date.Date, 1);
+                    result.Add(entity.Date.Date.Month.ToString(), 1);
+            }
+            return result;
+        }
+
+        public static Dictionary<string, int> GetUsersForStatistics(IEnumerable<StatisticsInformation> entities)
+        {
+            var result = new Dictionary<string, int>();
+
+            foreach (var entity in entities)
+            {
+                if (result.ContainsKey(entity.Date.Date.ToShortDateString()))
+                    result[entity.Date.Date.ToShortDateString()] += 1;
+                else
+                    result.Add(entity.Date.Date.ToShortDateString(), 1);
             }
             return result;
         }

@@ -87,7 +87,7 @@ namespace Logic.Statistics.Services
             {
                 try
                 {
-                    var entities = unitOfWork.StatisticInformationRepository.Get();
+                    var entities = unitOfWork.StatisticInformationRepository.Get().OrderBy(x => x.Date);
                     foreach (var entity in entities)
                     {
                         statisticsInformationUniqueModels.Add(new StatisticsInformationModel(entity));
@@ -124,9 +124,9 @@ namespace Logic.Statistics.Services
         #endregion
 
         #region BasedOnTime
-        public Dictionary<DateTime, int> GetUsersBetweenDates(DateTime? from, DateTime? to)
+        public Dictionary<string, int> GetUsersBetweenDates(DateTime? from, DateTime? to)
         {
-            var statisticsInformationBetweenDates = new Dictionary<DateTime, int>();
+            var statisticsInformationBetweenDates = new Dictionary<string, int>();
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
@@ -142,16 +142,16 @@ namespace Logic.Statistics.Services
             return statisticsInformationBetweenDates;
         }
 
-        public Dictionary<DateTime, int> GetUsersForSelectedMonth(int month, int year)
+        public Dictionary<string, int> GetUsersForSelectedMonth(int month, int year)
         {
-            var statisticsInformationForSelectedMonth = new Dictionary<DateTime, int>();
+            var statisticsInformationForSelectedMonth = new Dictionary<string, int>();
 
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
                     var entities = unitOfWork.StatisticInformationRepository.Get(x => x.Date.Month == month &&
-                                                                                      x.Date.Year == year);
+                                                                                      x.Date.Year == year).OrderBy(x => x.Date);
                     statisticsInformationForSelectedMonth = EntryStatisticsHelper.GetUsersForStatistics(entities);
                 }
                 catch (Exception e)
@@ -163,16 +163,16 @@ namespace Logic.Statistics.Services
         }
 
 
-        public Dictionary<DateTime, int> GetUsersForEveryMonth(int year)
+        public Dictionary<string, int> GetUsersForEveryMonth(int year)
         {
-            var statisticsInformationForEveryMonth = new Dictionary<DateTime, int>();
+            var statisticsInformationForEveryMonth = new Dictionary<string, int>();
 
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
                 {
-                    var entities = unitOfWork.StatisticInformationRepository.Get(x => x.Date.Year == year);
-                    statisticsInformationForEveryMonth = EntryStatisticsHelper.GetUsersForStatistics(entities);
+                    var entities = unitOfWork.StatisticInformationRepository.Get(x => x.Date.Year == year).OrderBy(x => x.Date);
+                    statisticsInformationForEveryMonth = EntryStatisticsHelper.GetUsersForEveryMonth(entities);
                 }
                 catch (Exception e)
                 {
