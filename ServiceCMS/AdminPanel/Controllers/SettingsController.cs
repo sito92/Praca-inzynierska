@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AdminPanel.Extensions;
+using AdminPanel.Models.Settings;
 using Logic.Common.Models;
 using Logic.Settings.Interfaces;
 
@@ -44,15 +46,24 @@ namespace AdminPanel.Controllers
         //}
 
         [HttpPost]
-        public ActionResult Update(Dictionary<string, string> settingsDictionary)
+        public ActionResult Update(ListSettingsViewModel model)
         {
-            if (settingsDictionary != null)
+            if (model != null)
             {
-                var response = _settingsService.Update(settingsDictionary);
+                var response = _settingsService.Update(model.ToDictionary());
                 return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
             }
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult GetAll()
+        {
+            var settings = _settingsService.GetAll();
+            ListSettingsViewModel model = new ListSettingsViewModel(settings);
+
+
+            return new JsonNetResult(new {success=true,data=model});
+
         }
 
         //[HttpPost]

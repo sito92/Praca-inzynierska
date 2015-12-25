@@ -22,12 +22,15 @@ namespace AdminPanel.Controllers
             _newsletterReceiverService = newsletterReceiverService;
             _mailManagementService = mailManagementService;
         }
-
+        public PartialViewResult GetModal(string name)
+        {
+            return PartialView("Modals/" + name);
+        }
         public ActionResult Index()
         {
             return View();
         }
-
+        [HttpPost]
         public ActionResult AddNewsletterReceiver(NewsletterReceiverModel model)
         {
             if (ModelState.IsValid)
@@ -38,7 +41,7 @@ namespace AdminPanel.Controllers
             else
                 return new JsonNetResult(new { success = false }, JsonRequestBehavior.AllowGet);
         }
-
+        [HttpPost]
         public ActionResult UpdateNewsletterReceiver(NewsletterReceiverModel model)
         {
             if (ModelState.IsValid)
@@ -49,7 +52,7 @@ namespace AdminPanel.Controllers
             else
                 return new JsonNetResult(new { success = false }, JsonRequestBehavior.AllowGet);
         }
-
+        [HttpPost]
         public ActionResult DeleteNewsletterReceiver(NewsletterReceiverModel model)
         {
             if (ModelState.IsValid)
@@ -64,10 +67,8 @@ namespace AdminPanel.Controllers
         public ActionResult GetAllNewsletterReceivers()
         {
             var result = _newsletterReceiverService.GetAll();
-            if(result.Any())
                 return new JsonNetResult(new { success = true, data = result }, JsonRequestBehavior.AllowGet); 
-            else
-                return new JsonNetResult(new { success = false }, JsonRequestBehavior.AllowGet); 
+
         }
 
         public ActionResult GetByIdNewsletterReceiver(NewsletterReceiverModel model)
@@ -81,12 +82,12 @@ namespace AdminPanel.Controllers
             else
                 return new JsonNetResult(new { success = false }, JsonRequestBehavior.AllowGet); 
         }
-
+        [HttpPost]
         public ActionResult SendMail(MailContentViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var subscribers = _newsletterReceiverService.GetAll().Select(x => x.EmailAddress).ToList();
+                var subscribers = model.Subscribers.Select(x => x.EmailAddress).ToList();
                 var response = _mailManagementService.SendMail(subscribers, model.Content, model.Subject);
                 return new JsonNetResult(new { success = true}, JsonRequestBehavior.AllowGet);
             }

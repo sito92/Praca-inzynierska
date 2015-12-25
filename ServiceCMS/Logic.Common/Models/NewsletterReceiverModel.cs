@@ -13,6 +13,10 @@ namespace Logic.Common.Models
 
         public string EmailAddress { get; set; }
 
+        public NewsletterReceiverModel()
+        {
+            
+        }
         public NewsletterReceiverModel(NewsletterReceiver entity)
         {
             this.Id = entity.Id;

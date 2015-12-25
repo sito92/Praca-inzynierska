@@ -38,6 +38,7 @@ namespace AdminPanel.Controllers
         {
             var isValid = _insetRecognizer.IsValid(inset);
 
+
             return Json(new {success = isValid},JsonRequestBehavior.AllowGet);
         }
     }

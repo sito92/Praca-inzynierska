@@ -312,4 +312,85 @@
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
   </data>
+  <data name="Extension" xml:space="preserve">
+    <value>Extension</value>
+  </data>
+  <data name="FileType" xml:space="preserve">
+    <value>File type</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="ChooseFile" xml:space="preserve">
+    <value>Choose file...</value>
+  </data>
+  <data name="CancelAll" xml:space="preserve">
+    <value>Cancel all</value>
+  </data>
+  <data name="EmailHost" xml:space="preserve">
+    <value>Email host</value>
+  </data>
+  <data name="EmailPassword" xml:space="preserve">
+    <value>Email password</value>
+  </data>
+  <data name="EmailUsername" xml:space="preserve">
+    <value>Email username</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="NoChoosenFiles" xml:space="preserve">
+    <value>No choosen files</value>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="QueueProgress" xml:space="preserve">
+    <value>Queue progress</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RemoveAll" xml:space="preserve">
+    <value>Remove all</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="UploadAll" xml:space="preserve">
+    <value>Upload all</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="AddAll" xml:space="preserve">
+    <value>Add all</value>
+  </data>
+  <data name="AvailableServices" xml:space="preserve">
+    <value>Available services</value>
+  </data>
+  <data name="ComposeMail" xml:space="preserve">
+    <value>Compose mail</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email address</value>
+  </data>
+  <data name="NewsletterRecivers" xml:space="preserve">
+    <value>Newsletter recivers</value>
+  </data>
+  <data name="NoRecivers" xml:space="preserve">
+    <value>No recivers</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
 </root>

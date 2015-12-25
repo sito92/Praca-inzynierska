@@ -10,8 +10,16 @@ namespace Logic.PopUp.Interfaces
 {
     public interface IPopUpService
     {
+        ResponseBase Delete(int id);
+
         ResponseBase Update(PopUpModel popUp);
 
+        ResponseBase Update(IList<PopUpModel> popUps);
+
         ResponseBase Insert(PopUpModel popUp);
+
+        IList<PopUpModel> GetAll();
+
+
     }
 }

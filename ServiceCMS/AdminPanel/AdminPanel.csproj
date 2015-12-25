@@ -27,6 +27,8 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>12.0</OldToolsVersion>
     <UseGlobalApplicationHostFile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -237,6 +239,10 @@
     </Compile>
     <Compile Include="Models\Calendar\JsonEventsListViewModel.cs" />
     <Compile Include="Models\Calendar\JsonEventViewModel.cs" />
+    <Compile Include="Models\File\UploadFile.cs" />
+    <Compile Include="Models\PopUp\ListPopUpsViewModel.cs" />
+    <Compile Include="Models\Settings\ListSettingsViewModel.cs" />
+    <Compile Include="Models\Settings\SettingsViewModel.cs" />
     <Compile Include="Models\User\AuthenticatedViewModel.cs" />
     <Compile Include="Models\User\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -333,6 +339,7 @@
     <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-csp.css" />
     <Content Include="Scripts\angular-drag-and-drop-lists.js" />
+    <Content Include="Scripts\angular-file-upload.js" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
     <Content Include="Scripts\angular-message-format.js" />
@@ -360,10 +367,15 @@
     <Content Include="Scripts\calendar\fullcalendar.js" />
     <Content Include="Scripts\calendar\gcal.js" />
     <Content Include="Scripts\calendar\lang-all.js" />
+    <Content Include="Scripts\Controllers\FileController.js" />
+    <Content Include="Scripts\Controllers\MailController.js" />
     <Content Include="Scripts\Controllers\MenuButtonController.js" />
     <Content Include="Scripts\Controllers\PageController.js" />
+    <Content Include="Scripts\Controllers\PopUpController.js" />
     <Content Include="Scripts\Controllers\ServiceProviderController.js" />
     <Content Include="Scripts\Controllers\ServiceTypeController.js" />
+    <Content Include="Scripts\Controllers\SettingsController.js" />
+    <Content Include="Scripts\Filters\SizeFilter.js" />
     <Content Include="Scripts\Modules\InsetModule.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\Controllers\InsetController.js" />
@@ -1162,13 +1174,16 @@
     <Content Include="Scripts\Modules\AppModule.js" />
     <Content Include="Scripts\Services\FileService.js" />
     <Content Include="Scripts\Services\InsetService.js" />
+    <Content Include="Scripts\Services\MailService.js" />
     <Content Include="Scripts\Services\MenuButtonService.js" />
     <Content Include="Scripts\Services\NewsCategoriesService.js" />
+    <Content Include="Scripts\Services\PopUpService.js" />
     <Content Include="Scripts\Services\ServiceProviderService.js" />
     <Content Include="Scripts\Services\NewsService.js" />
     <Content Include="Scripts\Services\PageService.js" />
     <Content Include="Scripts\Services\ServicesService.js" />
     <Content Include="Scripts\Services\ServiceTypeService.js" />
+    <Content Include="Scripts\Services\SettingsService.js" />
     <Content Include="Scripts\text-angular\textAngular-rangy.js" />
     <Content Include="Scripts\text-angular\textAngular-sanitize.js" />
     <Content Include="Scripts\text-angular\textAngular.js" />
@@ -1245,9 +1260,29 @@
     <Content Include="Views\Page\Modals\ConfirmDelete.cshtml" />
     <Content Include="Views\Page\Modals\Add.cshtml" />
     <Content Include="Views\Page\Modals\ChooseFile.cshtml" />
+    <Content Include="Views\File\Index.cshtml" />
+    <Content Include="Views\File\Modals\Upload.cshtml" />
+    <Content Include="Views\File\Menu.cshtml" />
+    <Content Include="Views\File\Modals\ConfirmDelete.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\Settings\Menu.cshtml" />
+    <Content Include="Views\PopUp\Index.cshtml" />
+    <Content Include="Views\PopUp\Menu.cshtml" />
+    <Content Include="Views\PopUp\Modals\Add.cshtml" />
+    <Content Include="Views\PopUp\Modals\Edit.cshtml" />
+    <Content Include="Views\PopUp\Modals\ConfirmDelete.cshtml" />
+    <Content Include="Views\Mail\Index.cshtml" />
+    <Content Include="Views\Mail\Modals\ComposeMail.cshtml" />
+    <Content Include="Views\Mail\Modals\NewsletterRecivers.cshtml" />
+    <Content Include="Views\Mail\Modals\AddNewsletterReciver.cshtml" />
+    <Content Include="Views\Mail\Modals\EditNewsletterReciver.cshtml" />
+    <Content Include="Views\Mail\Modals\ConfirmDelete.cshtml" />
+    <Content Include="Views\Mail\Menu.cshtml" />
+    <Content Include="Views\Mail\Modals\ChooseReciver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Settings\Modals\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1358,6 +1393,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -10,6 +10,8 @@ namespace Logic.Settings.Interfaces
 {
     public interface ISettingsService
     {
+        Dictionary<string, Tuple<object, string>> GetAll(); 
+
         string GetPropertyByName(string name);
 
         ResponseBase Update(Dictionary<string, string> mailSettings);

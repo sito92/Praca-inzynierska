@@ -22,7 +22,7 @@
                 <p>
                     <span ng-if="button.Page!=null" ng-bind="button.Page.Name"></span>
                     <span ng-show="button.Page == null">@Presentation.NoChoosenPage</span>
-                    <button class="btn btn-sm btn-primary" ng-click="choosePage()" style="margin-left: 10px">@Presentation.Choose</button>
+                    <button class="btn btn-sm kentico-color" ng-click="choosePage()" style="margin-left: 10px">@Presentation.Choose</button>
                     <button class="btn btn-sm btn-danger" ng-click="deletePage()" style="margin-left: 10px" ng-show="button.Page != null">@Presentation.Delete</button>
                 </p>
             </div>

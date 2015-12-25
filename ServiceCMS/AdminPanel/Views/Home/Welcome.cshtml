@@ -6,90 +6,112 @@
 <div class="tile-container col-lg-10 col-md-offset-1">
     <div class="row">
         <div class="col-md-4">
-            <div class="tile text-center">
-                <p><span class="fa fa-newspaper-o fa-tile"></span></p>
-                <p><span class="tile-title">@Presentation.News</span></p>
-                <div class="tile-footer"></div>
-            </div>
+            <a href="@Url.Action("Index","News")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-newspaper-o fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.News</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
         </div>
         <div class="col-md-4">
-            <div class="tile text-center">
-                <p><span class="fa fa-database fa-tile"></span></p>
-                <p><span class="tile-title">@Presentation.Files</span></p>
-                <div class="tile-footer"></div>
-            </div>
+            <a href="@Url.Action("Index","File")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-database fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.Files</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
         </div>
         <div class="col-md-4">
-            <div class="tile text-center">
-                <p><span class="fa fa-sitemap fa-tile"></span></p>
-                <p><span class="tile-title">@Presentation.MenuButtons</span></p>
-                <div class="tile-footer"></div>
-            </div>
-        </div>
-
-    </div>
-    <div class="row" style="margin-top: 15px">
-        <div class="col-md-4">
-            <div class="tile text-center">
-                <p><span class="fa fa-files-o fa-tile"></span></p>
-                <p><span class="tile-title">@Presentation.Pages</span></p>
-                <div class="tile-footer"></div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="tile text-center">
-                <p><span class="fa fa-users fa-tile"></span></p>
-                <p><span class="tile-title">@Presentation.ServiceProviders</span></p>
-                <div class="tile-footer"></div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="tile text-center">
-                <p><span class="fa fa-shopping-bag fa-tile"></span></p>
-                <p><span class="tile-title">@Presentation.Services</span></p>
-                <div class="tile-footer"></div>
-            </div>
+            <a href="@Url.Action("Index","MenuButton")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-sitemap fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.MenuButtons</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
         </div>
 
     </div>
     <div class="row" style="margin-top: 15px">
         <div class="col-md-4">
-            <div class="tile text-center">
-                <p><span class="fa fa-puzzle-piece fa-tile"></span></p>
-                <p><span class="tile-title">@Presentation.ServiceTypes</span></p>
-                <div class="tile-footer"></div>
-            </div>
+            <a href="@Url.Action("Index","Page")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-files-o fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.Pages</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
         </div>
         <div class="col-md-4">
-            <div class="tile text-center">
-                <p><span class="fa fa-line-chart fa-tile"></span></p>
-                <p><span class="tile-title">@Presentation.Statistics</span></p>
-                <div class="tile-footer"></div>
-            </div>
+            <a href="@Url.Action("Index","ServiceProvider")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-users fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.ServiceProviders</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
         </div>
         <div class="col-md-4">
-            <div class="tile text-center">
-                <p><span class="fa fa-cogs fa-tile"></span></p>
-                <p><span class="tile-title">@Presentation.Settings</span></p>
-                <div class="tile-footer"></div>
-            </div>
+            <a href="@Url.Action("Index","Services")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-shopping-bag fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.Services</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
         </div>
 
     </div>
     <div class="row" style="margin-top: 15px">
         <div class="col-md-4">
-            <div class="tile text-center">
-                <p><span class="fa fa-envelope fa-tile"></span></p>
-                <p><span class="tile-title">@Presentation.MailManagement</span></p>
-                <div class="tile-footer"></div>
-            </div>
+            <a href="@Url.Action("Index","ServiceType")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-puzzle-piece fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.ServiceTypes</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
         </div>
         <div class="col-md-4">
-            <div class="tile text-center">
-                <p><span class="fa fa-exclamation fa-tile"></span></p>
-                <p><span class="tile-title">@Presentation.PopUp</span></p>
-                <div class="tile-footer"></div>
-            </div>
+            <a href="@Url.Action("Index","Statistics")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-line-chart fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.Statistics</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Index","Settings")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-cogs fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.Settings</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <div class="row" style="margin-top: 15px">
+        <div class="col-md-4">
+            <a href="@Url.Action("Index", "MailManagement")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-envelope fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.MailManagement</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Index", "PopUp")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-exclamation fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.PopUp</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
         </div>
 
     </div>

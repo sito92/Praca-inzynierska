@@ -22,6 +22,27 @@ namespace Logic.Settings.Services
             _logger = logger;
         }
 
+        public Dictionary<string, Tuple<object,string>> GetAll()
+        {
+            Dictionary<string, Tuple<object, string>> result = new Dictionary<string, Tuple<object, string>>();
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entities = unitOfWork.SettingsRepository.Get();
+                    foreach (var setting in entities)
+                    {
+                        result.Add(setting.Name, new Tuple<object, string>(GetBoxedType(setting.Value,setting.InputType), setting.InputType));
+                    }
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return result;
+        }
+
         public string GetPropertyByName(string name)
         {
             string valueOfProperty = "";
@@ -63,6 +84,33 @@ namespace Logic.Settings.Services
                 }
             }
             return response;
+        }
+
+        private object GetBoxedType(string value, string inputType)
+        {
+            try
+            {
+                switch (inputType)
+                {
+                    case "radio":
+
+                        return Convert.ToBoolean(value);
+                        break;
+                    case "number":
+                        return Convert.ToInt32(value);
+                        break;
+                    default:
+                        return value;
+                        break;
+                        ;
+                }
+            }
+            catch (Exception)
+            {
+
+                return value;
+            }
+          
         }
     }
 }

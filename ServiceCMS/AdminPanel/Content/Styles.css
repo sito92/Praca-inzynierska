@@ -77,7 +77,7 @@
         padding-bottom: 5px;
         border-radius: 5px;
         border: 1px solid #ddd;
-        background-color: #CAE0FC;
+        background-color: #f05a22;
         padding: 10px 15px;
     }
 
@@ -107,7 +107,7 @@
 }
 
     .table-hover tbody tr.selectable.selected {
-        background-color: #3cb371;
+        background-color: #f05a22;
     }
 
 .add-button-container {
@@ -178,8 +178,8 @@
 
 .button-box {
     margin: 10px;
-    color: #438eb9;
-    background: #f4f6f7;
+    color: white;
+    background: #F24F1E;
     border-color: #dce2e8;
     border: 1px solid #dae2ea;
     padding: 10px 10px;
@@ -264,7 +264,7 @@ span.logo {
 }
 
 .tile .tile-title {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .tile .fa-tile {
@@ -324,5 +324,43 @@ span.logo {
 #page-content-wrapper.page-content {
     padding-left: 80px;
     margin-right: 20px;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.file-upload-progress {
+    margin-top: -20px;
+    padding: 15px;
+}
+.tile-link {
+    text-decoration: none;
+    color: black;
+}
+.tile-link:hover {
+    text-decoration: none;
+    color: #404040;
+}
+.tile-link:visited {
+        text-decoration: none;
+    color: black;
+}
+.settings-form input[type="checkbox"] {
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
 }
 

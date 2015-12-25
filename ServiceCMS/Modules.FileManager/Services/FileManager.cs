@@ -48,6 +48,34 @@ namespace Modules.FileManager.Services
             }
             return false;
         }
+        public bool SaveFile(string filePath, byte[] fileData)
+        {
+            if (fileData.Length > 0)
+            {
+                try
+                {
+                    var directory = Path.GetDirectoryName(filePath);
+                    if (!Directory.Exists(directory))
+                        Directory.CreateDirectory(directory);
+
+                    if (File.Exists(filePath))
+                        return false;
+
+                    using (var fileStream = new FileStream(filePath, FileMode.OpenOrCreate))
+                    {
+                        fileStream.Write(fileData, 0, fileData.Length);
+                        fileStream.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                    return false;
+                }
+                return true;
+            }
+            return false;
+        }
 
         public bool DeleteFile(string fullFilePath)
         {

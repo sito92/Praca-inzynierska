@@ -17,6 +17,10 @@ namespace Logic.Common.Models
 
         public bool Active { get; set; }
 
+        public PopUpModel()
+        {
+            
+        }
         public PopUpModel(PopUp popUp)
         {
             Id = popUp.Id;
