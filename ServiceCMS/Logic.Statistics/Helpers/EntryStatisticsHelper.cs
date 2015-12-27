@@ -75,10 +75,10 @@ namespace Logic.Statistics.Helpers
 
             foreach (var entity in entities)
             {
-                if (result.ContainsKey(entity.Date.Date.ToShortDateString()))
-                    result[entity.Date.Date.ToShortDateString()] += 1;
+                if (result.ContainsKey(entity.Date.Day + "." + entity.Date.Month))
+                    result[entity.Date.Day + "." +entity.Date.Month] += 1;
                 else
-                    result.Add(entity.Date.Date.ToShortDateString(), 1);
+                    result.Add(entity.Date.Day + "." + entity.Date.Month, 1);
             }
             return result;
         }
