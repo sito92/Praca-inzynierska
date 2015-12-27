@@ -61,7 +61,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Configuring SMTP client failed. Please try again..
         /// </summary>
         public static string ConfigureSmtpClientSettingsFailed {
             get {
@@ -70,7 +70,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Configuring SMTP client succeeded..
         /// </summary>
         public static string ConfigureSmtpClientSettingsSuccess {
             get {
@@ -79,7 +79,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Sending mail failed. Please try again..
         /// </summary>
         public static string ContactFormEmailSendFailed {
             get {
@@ -88,7 +88,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Sending mail succeeded..
         /// </summary>
         public static string ContactFormEmailSendSuccess {
             get {
@@ -106,7 +106,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to File deletion failed. Please try again..
         /// </summary>
         public static string FileDeleteFailed {
             get {
@@ -115,7 +115,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to File deletion succeeded..
         /// </summary>
         public static string FileDeleteSuccess {
             get {
@@ -124,7 +124,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to File insert failed. Please try again..
         /// </summary>
         public static string FileInsertFailed {
             get {
@@ -133,7 +133,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to File insert succeeded..
         /// </summary>
         public static string FileInsertSuccess {
             get {
@@ -142,7 +142,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to File update failed. Please try again..
         /// </summary>
         public static string FileUpdateFailed {
             get {
@@ -151,7 +151,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to File update succeeded..
         /// </summary>
         public static string FileUpdateSuccess {
             get {
@@ -178,7 +178,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Menu button deletion failed. Please try again..
         /// </summary>
         public static string MenuButtonDeleteFailed {
             get {
@@ -187,7 +187,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Menu button deletion succeeded..
         /// </summary>
         public static string MenuButtonDeleteSuccess {
             get {
@@ -196,7 +196,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Menu button insert failed. Please try again..
         /// </summary>
         public static string MenuButtonInsertFailed {
             get {
@@ -205,7 +205,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Menu button insert succeeded..
         /// </summary>
         public static string MenuButtonInsertSuccess {
             get {
@@ -214,7 +214,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Menu button update failed. Please try again..
         /// </summary>
         public static string MenuButtonUpdateFailed {
             get {
@@ -223,7 +223,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Menu button update succeeded..
         /// </summary>
         public static string MenuButtonUpdateSuccess {
             get {
@@ -232,7 +232,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modify news failed..
+        ///   Looks up a localized string similar to News update failed. Please try again..
         /// </summary>
         public static string ModifyNewsFailed {
             get {
@@ -241,7 +241,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modify news succeed..
+        ///   Looks up a localized string similar to News update succeeded..
         /// </summary>
         public static string ModifyNewsSuccess {
             get {
@@ -250,7 +250,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Page update failed. Please try again..
         /// </summary>
         public static string ModifyPageFailed {
             get {
@@ -259,7 +259,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Page update succeeded..
         /// </summary>
         public static string ModifyPageSuccess {
             get {
@@ -268,7 +268,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modify user failed..
+        ///   Looks up a localized string similar to User update failed. Please try again..
         /// </summary>
         public static string ModifyUserFailed {
             get {
@@ -277,7 +277,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modify user succeed..
+        ///   Looks up a localized string similar to User update succeeded..
         /// </summary>
         public static string ModifyUserSuccess {
             get {
@@ -286,7 +286,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to News category deletion failed. Please try again..
         /// </summary>
         public static string NewsCategoryDeleteFailed {
             get {
@@ -295,7 +295,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to News category deletion succeeded..
         /// </summary>
         public static string NewsCategoryDeleteSuccess {
             get {
@@ -304,7 +304,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to News category insert failed. Please try again..
         /// </summary>
         public static string NewsCategoryInsertFailed {
             get {
@@ -313,7 +313,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to News category insert succeeded..
         /// </summary>
         public static string NewsCategoryInsertSuccess {
             get {
@@ -322,7 +322,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to News category update failed. Please try again..
         /// </summary>
         public static string NewsCategoryUpdateFailed {
             get {
@@ -331,7 +331,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to News category update succeeded..
         /// </summary>
         public static string NewsCategoryUpdateSuccess {
             get {
@@ -340,7 +340,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Newsletter receiver deletion failed. Please try again..
         /// </summary>
         public static string NewsletterReceiverDeleteFailed {
             get {
@@ -349,7 +349,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Newsletter receiver deletion succeeded..
         /// </summary>
         public static string NewsletterReceiverDeleteSuccess {
             get {
@@ -358,7 +358,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Newsletter receiver insert failed. Please try again..
         /// </summary>
         public static string NewsletterReceiverInsertFailed {
             get {
@@ -367,7 +367,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Newsletter receiver insert succeeded..
         /// </summary>
         public static string NewsletterReceiverInsertSuccess {
             get {
@@ -376,7 +376,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Newsletter receiver update failed. Please try again..
         /// </summary>
         public static string NewsletterReceiverUpdateFailed {
             get {
@@ -385,7 +385,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Newsletter receiver update succeeded..
         /// </summary>
         public static string NewsletterReceiverUpdateSuccess {
             get {
@@ -394,7 +394,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Pop-up insert failed. Please try again..
         /// </summary>
         public static string PopUpInsertFailed {
             get {
@@ -403,7 +403,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Pop-up insert succeeded..
         /// </summary>
         public static string PopUpInsertSuccess {
             get {
@@ -412,7 +412,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Pop-up update failed. Please try again..
         /// </summary>
         public static string PopUpModifyFailed {
             get {
@@ -421,7 +421,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Pop-up update succeeded..
         /// </summary>
         public static string PopUpModifySuccess {
             get {
@@ -430,7 +430,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove news failed..
+        ///   Looks up a localized string similar to News deletion failed. Please try again..
         /// </summary>
         public static string RemoveNewsFailed {
             get {
@@ -439,7 +439,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove news succeed..
+        ///   Looks up a localized string similar to News deletion succeeded..
         /// </summary>
         public static string RemoveNewsSuccess {
             get {
@@ -448,7 +448,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Page deletion failed. Please try again..
         /// </summary>
         public static string RemovePageFailed {
             get {
@@ -457,7 +457,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Page deletion succeeded..
         /// </summary>
         public static string RemovePageSuccess {
             get {
@@ -466,7 +466,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove user failed..
+        ///   Looks up a localized string similar to User deletion failed. Please try again..
         /// </summary>
         public static string RemoveUserFailed {
             get {
@@ -475,7 +475,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove user succeed..
+        ///   Looks up a localized string similar to User deletion succeeded..
         /// </summary>
         public static string RemoveUserSuccess {
             get {
@@ -484,7 +484,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Saving news failed..
+        ///   Looks up a localized string similar to News save failed. Please try again..
         /// </summary>
         public static string SaveNewsFailed {
             get {
@@ -493,7 +493,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Saving news succeed..
+        ///   Looks up a localized string similar to News save succeeded.
         /// </summary>
         public static string SaveNewsSuccess {
             get {
@@ -502,7 +502,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Page save failed. Please try again..
         /// </summary>
         public static string SavePageFailed {
             get {
@@ -511,7 +511,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Page save succeeded..
         /// </summary>
         public static string SavePageSuccess {
             get {
@@ -520,7 +520,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Saving user failed..
+        ///   Looks up a localized string similar to User save failed. Please try again..
         /// </summary>
         public static string SaveUserFailed {
             get {
@@ -529,7 +529,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Saving user succeed..
+        ///   Looks up a localized string similar to User save succeed..
         /// </summary>
         public static string SaveUserSuccess {
             get {
@@ -538,7 +538,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Sending email failed. Please try again..
         /// </summary>
         public static string SendContactFormEmailFailed {
             get {
@@ -547,7 +547,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Sending email succeeded..
         /// </summary>
         public static string SendContactFormEmailSuccess {
             get {
@@ -556,7 +556,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Newsletter email sending failed. Please try again..
         /// </summary>
         public static string SendNewsletterEmailFailed {
             get {
@@ -565,7 +565,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Newsletter email sending succeeded..
         /// </summary>
         public static string SendNewsletterEmailSuccess {
             get {
@@ -574,7 +574,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service provider update failed. Please try again..
         /// </summary>
         public static string ServiceProviderModifyFailed {
             get {
@@ -583,7 +583,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service provider update succeeded..
         /// </summary>
         public static string ServiceProviderModifySuccess {
             get {
@@ -592,7 +592,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service provider remove failed. Please try again..
         /// </summary>
         public static string ServiceProviderRemoveFailed {
             get {
@@ -601,7 +601,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service provider remove succeeded..
         /// </summary>
         public static string ServiceProviderRemoveSuccess {
             get {
@@ -610,7 +610,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service provider insert failed. Please try again..
         /// </summary>
         public static string ServiceProviderSaveFailed {
             get {
@@ -619,7 +619,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service provider insert succeeded..
         /// </summary>
         public static string ServiceProviderSaveSuccess {
             get {
@@ -628,7 +628,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service type update failed. Please try again..
         /// </summary>
         public static string ServiceTypeModifyFailed {
             get {
@@ -637,7 +637,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service type update succeeded..
         /// </summary>
         public static string ServiceTypeModifySuccess {
             get {
@@ -646,7 +646,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service type remove failed. Please try again..
         /// </summary>
         public static string ServiceTypeRemoveFailed {
             get {
@@ -655,7 +655,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service type remove succeeded..
         /// </summary>
         public static string ServiceTypeRemoveSuccess {
             get {
@@ -664,7 +664,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service type insert failed. Please try again..
         /// </summary>
         public static string ServiceTypeSaveFailed {
             get {
@@ -673,7 +673,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Service type insert succeeded..
         /// </summary>
         public static string ServiceTypeSaveSuccess {
             get {
@@ -682,7 +682,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Settings deletion failed. Please try again..
         /// </summary>
         public static string SettingsDeleteFailed {
             get {
@@ -691,7 +691,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Settings deletion succeeded..
         /// </summary>
         public static string SettingsDeleteSuccess {
             get {
@@ -700,7 +700,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Settings insert failed. Please try again..
         /// </summary>
         public static string SettingsInsertFailed {
             get {
@@ -709,7 +709,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Settings insert succeeded..
         /// </summary>
         public static string SettingsInsertSuccess {
             get {
@@ -718,7 +718,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Settings update failed. Please try again..
         /// </summary>
         public static string SettingsUpdateFailed {
             get {
@@ -727,7 +727,7 @@ namespace Modules.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Settings update succeeded..
         /// </summary>
         public static string SettingsUpdateSuccess {
             get {

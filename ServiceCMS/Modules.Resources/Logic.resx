@@ -118,37 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ConfigureSmtpClientSettingsFailed" xml:space="preserve">
-    <value />
+    <value>Configuring SMTP client failed. Please try again.</value>
   </data>
   <data name="ConfigureSmtpClientSettingsSuccess" xml:space="preserve">
-    <value />
+    <value>Configuring SMTP client succeeded.</value>
   </data>
   <data name="ContactFormEmailSendFailed" xml:space="preserve">
-    <value />
+    <value>Sending mail failed. Please try again.</value>
   </data>
   <data name="ContactFormEmailSendSuccess" xml:space="preserve">
-    <value />
+    <value>Sending mail succeeded.</value>
   </data>
   <data name="ExternalLink" xml:space="preserve">
     <value>External link</value>
   </data>
   <data name="FileDeleteFailed" xml:space="preserve">
-    <value />
+    <value>File deletion failed. Please try again.</value>
   </data>
   <data name="FileDeleteSuccess" xml:space="preserve">
-    <value />
+    <value>File deletion succeeded.</value>
   </data>
   <data name="FileInsertFailed" xml:space="preserve">
-    <value />
+    <value>File insert failed. Please try again.</value>
   </data>
   <data name="FileInsertSuccess" xml:space="preserve">
-    <value />
+    <value>File insert succeeded.</value>
   </data>
   <data name="FileUpdateFailed" xml:space="preserve">
-    <value />
+    <value>File update failed. Please try again.</value>
   </data>
   <data name="FileUpdateSuccess" xml:space="preserve">
-    <value />
+    <value>File update succeeded.</value>
   </data>
   <data name="Images" xml:space="preserve">
     <value>Images</value>
@@ -157,189 +157,189 @@
     <value>Local link</value>
   </data>
   <data name="MenuButtonDeleteFailed" xml:space="preserve">
-    <value />
+    <value>Menu button deletion failed. Please try again.</value>
   </data>
   <data name="MenuButtonDeleteSuccess" xml:space="preserve">
-    <value />
+    <value>Menu button deletion succeeded.</value>
   </data>
   <data name="MenuButtonInsertFailed" xml:space="preserve">
-    <value />
+    <value>Menu button insert failed. Please try again.</value>
   </data>
   <data name="MenuButtonInsertSuccess" xml:space="preserve">
-    <value />
+    <value>Menu button insert succeeded.</value>
   </data>
   <data name="MenuButtonUpdateFailed" xml:space="preserve">
-    <value />
+    <value>Menu button update failed. Please try again.</value>
   </data>
   <data name="MenuButtonUpdateSuccess" xml:space="preserve">
-    <value />
+    <value>Menu button update succeeded.</value>
   </data>
   <data name="ModifyNewsFailed" xml:space="preserve">
-    <value>Modify news failed.</value>
+    <value>News update failed. Please try again.</value>
   </data>
   <data name="ModifyNewsSuccess" xml:space="preserve">
-    <value>Modify news succeed.</value>
+    <value>News update succeeded.</value>
   </data>
   <data name="ModifyPageFailed" xml:space="preserve">
-    <value />
+    <value>Page update failed. Please try again.</value>
   </data>
   <data name="ModifyPageSuccess" xml:space="preserve">
-    <value />
+    <value>Page update succeeded.</value>
   </data>
   <data name="ModifyUserFailed" xml:space="preserve">
-    <value>Modify user failed.</value>
+    <value>User update failed. Please try again.</value>
   </data>
   <data name="ModifyUserSuccess" xml:space="preserve">
-    <value>Modify user succeed.</value>
+    <value>User update succeeded.</value>
   </data>
   <data name="NewsCategoryDeleteFailed" xml:space="preserve">
-    <value />
+    <value>News category deletion failed. Please try again.</value>
   </data>
   <data name="NewsCategoryDeleteSuccess" xml:space="preserve">
-    <value />
+    <value>News category deletion succeeded.</value>
   </data>
   <data name="NewsCategoryInsertFailed" xml:space="preserve">
-    <value />
+    <value>News category insert failed. Please try again.</value>
   </data>
   <data name="NewsCategoryInsertSuccess" xml:space="preserve">
-    <value />
+    <value>News category insert succeeded.</value>
   </data>
   <data name="NewsCategoryUpdateFailed" xml:space="preserve">
-    <value />
+    <value>News category update failed. Please try again.</value>
   </data>
   <data name="NewsCategoryUpdateSuccess" xml:space="preserve">
-    <value />
+    <value>News category update succeeded.</value>
   </data>
   <data name="NewsletterReceiverDeleteFailed" xml:space="preserve">
-    <value />
+    <value>Newsletter receiver deletion failed. Please try again.</value>
   </data>
   <data name="NewsletterReceiverDeleteSuccess" xml:space="preserve">
-    <value />
+    <value>Newsletter receiver deletion succeeded.</value>
   </data>
   <data name="NewsletterReceiverInsertFailed" xml:space="preserve">
-    <value />
+    <value>Newsletter receiver insert failed. Please try again.</value>
   </data>
   <data name="NewsletterReceiverInsertSuccess" xml:space="preserve">
-    <value />
+    <value>Newsletter receiver insert succeeded.</value>
   </data>
   <data name="NewsletterReceiverUpdateFailed" xml:space="preserve">
-    <value />
+    <value>Newsletter receiver update failed. Please try again.</value>
   </data>
   <data name="NewsletterReceiverUpdateSuccess" xml:space="preserve">
-    <value />
+    <value>Newsletter receiver update succeeded.</value>
   </data>
   <data name="PopUpInsertFailed" xml:space="preserve">
-    <value />
+    <value>Pop-up insert failed. Please try again.</value>
   </data>
   <data name="PopUpInsertSuccess" xml:space="preserve">
-    <value />
+    <value>Pop-up insert succeeded.</value>
   </data>
   <data name="PopUpModifyFailed" xml:space="preserve">
-    <value />
+    <value>Pop-up update failed. Please try again.</value>
   </data>
   <data name="PopUpModifySuccess" xml:space="preserve">
-    <value />
+    <value>Pop-up update succeeded.</value>
   </data>
   <data name="RemoveNewsFailed" xml:space="preserve">
-    <value>Remove news failed.</value>
+    <value>News deletion failed. Please try again.</value>
   </data>
   <data name="RemoveNewsSuccess" xml:space="preserve">
-    <value>Remove news succeed.</value>
+    <value>News deletion succeeded.</value>
   </data>
   <data name="RemovePageFailed" xml:space="preserve">
-    <value />
+    <value>Page deletion failed. Please try again.</value>
   </data>
   <data name="RemovePageSuccess" xml:space="preserve">
-    <value />
+    <value>Page deletion succeeded.</value>
   </data>
   <data name="RemoveUserFailed" xml:space="preserve">
-    <value>Remove user failed.</value>
+    <value>User deletion failed. Please try again.</value>
   </data>
   <data name="RemoveUserSuccess" xml:space="preserve">
-    <value>Remove user succeed.</value>
+    <value>User deletion succeeded.</value>
   </data>
   <data name="SaveNewsFailed" xml:space="preserve">
-    <value>Saving news failed.</value>
+    <value>News save failed. Please try again.</value>
   </data>
   <data name="SaveNewsSuccess" xml:space="preserve">
-    <value>Saving news succeed.</value>
+    <value>News save succeeded</value>
   </data>
   <data name="SavePageFailed" xml:space="preserve">
-    <value />
+    <value>Page save failed. Please try again.</value>
   </data>
   <data name="SavePageSuccess" xml:space="preserve">
-    <value />
+    <value>Page save succeeded.</value>
   </data>
   <data name="SaveUserFailed" xml:space="preserve">
-    <value>Saving user failed.</value>
+    <value>User save failed. Please try again.</value>
   </data>
   <data name="SaveUserSuccess" xml:space="preserve">
-    <value>Saving user succeed.</value>
+    <value>User save succeed.</value>
   </data>
   <data name="SendContactFormEmailFailed" xml:space="preserve">
-    <value />
+    <value>Sending email failed. Please try again.</value>
   </data>
   <data name="SendContactFormEmailSuccess" xml:space="preserve">
-    <value />
+    <value>Sending email succeeded.</value>
   </data>
   <data name="SendNewsletterEmailFailed" xml:space="preserve">
-    <value />
+    <value>Newsletter email sending failed. Please try again.</value>
   </data>
   <data name="SendNewsletterEmailSuccess" xml:space="preserve">
-    <value />
+    <value>Newsletter email sending succeeded.</value>
   </data>
   <data name="ServiceProviderModifyFailed" xml:space="preserve">
-    <value />
+    <value>Service provider update failed. Please try again.</value>
   </data>
   <data name="ServiceProviderModifySuccess" xml:space="preserve">
-    <value />
+    <value>Service provider update succeeded.</value>
   </data>
   <data name="ServiceProviderRemoveFailed" xml:space="preserve">
-    <value />
+    <value>Service provider remove failed. Please try again.</value>
   </data>
   <data name="ServiceProviderRemoveSuccess" xml:space="preserve">
-    <value />
+    <value>Service provider remove succeeded.</value>
   </data>
   <data name="ServiceProviderSaveFailed" xml:space="preserve">
-    <value />
+    <value>Service provider insert failed. Please try again.</value>
   </data>
   <data name="ServiceProviderSaveSuccess" xml:space="preserve">
-    <value />
+    <value>Service provider insert succeeded.</value>
   </data>
   <data name="ServiceTypeModifyFailed" xml:space="preserve">
-    <value />
+    <value>Service type update failed. Please try again.</value>
   </data>
   <data name="ServiceTypeModifySuccess" xml:space="preserve">
-    <value />
+    <value>Service type update succeeded.</value>
   </data>
   <data name="ServiceTypeRemoveFailed" xml:space="preserve">
-    <value />
+    <value>Service type remove failed. Please try again.</value>
   </data>
   <data name="ServiceTypeRemoveSuccess" xml:space="preserve">
-    <value />
+    <value>Service type remove succeeded.</value>
   </data>
   <data name="ServiceTypeSaveFailed" xml:space="preserve">
-    <value />
+    <value>Service type insert failed. Please try again.</value>
   </data>
   <data name="ServiceTypeSaveSuccess" xml:space="preserve">
-    <value />
+    <value>Service type insert succeeded.</value>
   </data>
   <data name="SettingsDeleteFailed" xml:space="preserve">
-    <value />
+    <value>Settings deletion failed. Please try again.</value>
   </data>
   <data name="SettingsDeleteSuccess" xml:space="preserve">
-    <value />
+    <value>Settings deletion succeeded.</value>
   </data>
   <data name="SettingsInsertFailed" xml:space="preserve">
-    <value />
+    <value>Settings insert failed. Please try again.</value>
   </data>
   <data name="SettingsInsertSuccess" xml:space="preserve">
-    <value />
+    <value>Settings insert succeeded.</value>
   </data>
   <data name="SettingsUpdateFailed" xml:space="preserve">
-    <value />
+    <value>Settings update failed. Please try again.</value>
   </data>
   <data name="SettingsUpdateSuccess" xml:space="preserve">
-    <value />
+    <value>Settings update succeeded.</value>
   </data>
 </root>
