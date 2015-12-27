@@ -17,16 +17,11 @@ namespace Logic.Statistics.Filters
 
     public class StatisticsFilter : ActionFilterAttribute
     {
-        //private readonly IStatisticsService _service;
-
-        //public StatisticsFilter(IStatisticsService service)
-        //{
-        //    _service = service;
-        //}
+        public IStatisticsService _service { get; set; }
 
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-           var _service = new StatisticsService(new UnitOfWorkFactory(), new Logger());
+            //var _service = new StatisticsService(new UnitOfWorkFactory(), new Logger());
             base.OnActionExecuted(filterContext);
             if (filterContext.IsChildAction) //if action call was from view like @Html.Action do nothing
                 return;

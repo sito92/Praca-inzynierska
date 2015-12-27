@@ -18,7 +18,6 @@ namespace AdminPanel.Controllers
             _newsService = newsService;
         }
 
-        //[StatisticsFilter]
         public ActionResult Index()
         {
             return View();
