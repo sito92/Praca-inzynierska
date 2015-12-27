@@ -204,9 +204,13 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PopUpController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Extensions\JsonNetResult.cs" />
+    <Compile Include="Filters\StatisticsFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1122,6 +1126,11 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\PopUp\Index.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\News\Show.cshtml" />
+    <Content Include="Views\News\NewsNotFoundError.cshtml" />
+    <Content Include="Views\Mail\Index.cshtml" />
+    <Content Include="Views\Page\Show.cshtml" />
+    <Content Include="Views\Page\PageNotFoundError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1155,6 +1164,10 @@
       <Project>{6e7da60f-7779-421a-9af1-08e456396b62}</Project>
       <Name>Logic.File</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logic.MailManagement\Logic.MailManagement.csproj">
+      <Project>{d1d0d546-bbdc-49e8-b3af-0b96f62e6095}</Project>
+      <Name>Logic.MailManagement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic.News\Logic.News.csproj">
       <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
       <Name>Logic.News</Name>
@@ -1170,6 +1183,10 @@
     <ProjectReference Include="..\Logic.Settings\Logic.Settings.csproj">
       <Project>{1c7ca7da-a639-49b5-adcf-5a7c343e89ce}</Project>
       <Name>Logic.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Statistics\Logic.Statistics.csproj">
+      <Project>{4ca61fa0-141f-479f-8c0e-0fb4ab07fdeb}</Project>
+      <Name>Logic.Statistics</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules.Resources\Modules.Resources.csproj">
       <Project>{dc937e5f-1d71-488e-b00c-525fdfdd3b0d}</Project>

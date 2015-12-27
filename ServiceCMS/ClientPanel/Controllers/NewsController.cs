@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ClientPanel.Extensions;
+using ClientPanel.Filters;
 using Logic.News.Interfaces;
-using Logic.Statistics.Filters;
 
 namespace ClientPanel.Controllers
 {
-    [StatisticsFilter]
     public class NewsController : Controller
     {
         private readonly INewsService _newsService;
@@ -18,11 +18,13 @@ namespace ClientPanel.Controllers
             _newsService = newsService;
         }
 
+        [StatisticsFilter]
         public ViewResult Index()
         {
             return View();
         }
 
+        [StatisticsFilter]
         public ViewResult Show(int id)
         {
             var result = _newsService.GetById(id);
@@ -38,9 +40,9 @@ namespace ClientPanel.Controllers
             var resultCollection = _newsService.GetNewestNewsesCollection().OrderBy(x => x.LastModifiedTimeStamp).Take(amount*page).Skip(amount*page-amount).ToList();
 
             if(resultCollection.Any())
-                return Json(new { success = true, data = resultCollection }, JsonRequestBehavior.AllowGet);
+                return new JsonNetResult(new { success = true, data = resultCollection }, JsonRequestBehavior.AllowGet);
             else
-                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+                return new JsonNetResult(new { success = false }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult GetNewsCount()
@@ -48,9 +50,9 @@ namespace ClientPanel.Controllers
             var newsAmount = _newsService.GetNewestNewsesCollection().Count();
 
             if (newsAmount > 0)
-                return Json(new { success = true, data = newsAmount }, JsonRequestBehavior.AllowGet);
+                return new JsonNetResult(new { success = true, data = newsAmount }, JsonRequestBehavior.AllowGet);
             else
-                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+                return new JsonNetResult(new { success = false }, JsonRequestBehavior.AllowGet);
         }
     }
 }

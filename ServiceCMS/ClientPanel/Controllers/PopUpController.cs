@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ClientPanel.Extensions;
 using Logic.PopUp.Interfaces;
 
 namespace ClientPanel.Controllers
@@ -26,9 +27,9 @@ namespace ClientPanel.Controllers
             var result = _popUpService.GetActivePopUp();
 
             if (result != null)
-                return Json(new { success = true, data = result }, JsonRequestBehavior.AllowGet);
+                return new JsonNetResult(new { success = true, data = result }, JsonRequestBehavior.AllowGet);
             else
-                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+                return new JsonNetResult(new { success = false }, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -114,7 +114,7 @@ namespace Logic.Page.Services
                             RestorePageId = page.Id
                         };
                         var entity = updatedPage.ToEntity();
-                        UpdateFiles(entity,unitOfWork);
+                        UpdateFiles(entity, unitOfWork);
                         unitOfWork.PageRepository.Insert(entity);
                     }
 
@@ -271,6 +271,16 @@ namespace Logic.Page.Services
             foreach (var file in files)
             {
                 entity.Media.Add(file);
+            }
+        }
+
+        private void UpdateMenuButtons(DAL.Models.Page page, IUnitOfWork unitOfWork)
+        {
+            var currentPageMenuButtons = unitOfWork.MenuButtonRepository.Get(x => x.PageId == page.Id);
+
+            foreach (var currentPageMenuButton in currentPageMenuButtons)
+            {
+                currentPageMenuButton.PageId = page.Id;
             }
         }
     }

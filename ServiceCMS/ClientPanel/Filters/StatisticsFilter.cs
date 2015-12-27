@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using DAL.Factory;
-using DAL.UnitOfWork;
-using Logging;
+﻿using System.Web.Mvc;
 using Logic.Common.Models;
 using Logic.Statistics.Interfaces;
-using Logic.Statistics.Services; //DO WYJEBANIA
 
-namespace Logic.Statistics.Filters
+namespace ClientPanel.Filters
 {
     //public class MyAuthorizeAttribute : FilterAttribute { }
 
