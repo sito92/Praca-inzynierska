@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Logic.News.Interfaces;
+using Logic.Statistics.Filters;
 
 namespace ClientPanel.Controllers
 {
+    [StatisticsFilter]
     public class NewsController : Controller
     {
         private readonly INewsService _newsService;
@@ -16,9 +18,19 @@ namespace ClientPanel.Controllers
             _newsService = newsService;
         }
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
             return View();
+        }
+
+        public ViewResult Show(int id)
+        {
+            var result = _newsService.GetById(id);
+
+            if (result != null)
+                return View(result);
+            else
+                return View("NewsNotFoundError");
         }
 
         public ActionResult GetLatestNews(int amount,int page)
