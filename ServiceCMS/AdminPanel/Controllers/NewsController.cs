@@ -7,14 +7,18 @@ using AdminPanel.Extensions;
 using Logic.News.Interfaces;
 using Logic.Statistics.Filters;
 using Logic.Common.Models;
+using Logic.NewsCategory.Interfaces;
 
 namespace AdminPanel.Controllers
 {
     public class NewsController : BaseController
     {
         private readonly INewsService _newsService;
-        public NewsController(INewsService newsService)
+        private readonly INewsCategoryService _newsCategoryService;
+
+        public NewsController(INewsService newsService,INewsCategoryService newsCategoryService)
         {
+            _newsCategoryService = newsCategoryService;
             _newsService = newsService;
         }
 
@@ -27,7 +31,7 @@ namespace AdminPanel.Controllers
         {
             var categories = _newsService.GetAllCategories();
 
-            return new JsonNetResult(new { success = true, categories = categories }, JsonRequestBehavior.AllowGet);
+            return new JsonNetResult(new { success = true, data = categories }, JsonRequestBehavior.AllowGet);
         }
         public PartialViewResult GetModal(string name)
         {
@@ -56,6 +60,7 @@ namespace AdminPanel.Controllers
             else
                 return new JsonNetResult(new { success = false }, JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
         public ActionResult Add(NewsModel model)
         {
@@ -68,6 +73,7 @@ namespace AdminPanel.Controllers
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
 
         }
+
         [HttpPost]
         public ActionResult Edit(NewsModel model)
         {
@@ -79,6 +85,7 @@ namespace AdminPanel.Controllers
             else
                 return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
         public ActionResult Delete(int id)
         {
@@ -91,11 +98,57 @@ namespace AdminPanel.Controllers
 
             return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult GetAll()
         {
             var newses = _newsService.GetAll();
             return new JsonNetResult(new { success = true, data = newses }, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult GetCategoryById(int id)
+        {
+            var category = _newsService.GetById(id);
+
+            if(category != null)
+                return new JsonNetResult(new { success = true, data = category }, JsonRequestBehavior.AllowGet);
+            else
+                return new JsonNetResult(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult AddCategory(NewsCategoryModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = _newsCategoryService.Insert(model);
+                return Json(new { success = true, message = response }, JsonRequestBehavior.AllowGet);
+            }
+            else
+                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult EditCategory(NewsCategoryModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = _newsCategoryService.Update(model);
+                return Json(new { success = true, message = response }, JsonRequestBehavior.AllowGet);
+            }
+            else
+                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteCategory(int id)
+        {
+            if (id > 0)
+            {
+                var response = _newsCategoryService.Delete(id);
+                return Json(new { success = response.IsSucceed, message = response.Message }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
