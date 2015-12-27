@@ -43,6 +43,25 @@ namespace Logic.PopUp.Services
             }
             return popUpModels;
         }
+
+        public PopUpModel GetActivePopUp()
+        {
+            PopUpModel popUpModel = null;
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entity = unitOfWork.PopUpRepository.Get(x => x.Active).Single();
+                    popUpModel = new PopUpModel(entity);
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return popUpModel;
+        }
+
         public ResponseBase Update(PopUpModel popUp)
         {
             ResponseBase response;

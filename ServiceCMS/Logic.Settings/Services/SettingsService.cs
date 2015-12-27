@@ -45,7 +45,7 @@ namespace Logic.Settings.Services
 
         public string GetPropertyByName(string name)
         {
-            string valueOfProperty = "";
+            string valueOfProperty = null;
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try

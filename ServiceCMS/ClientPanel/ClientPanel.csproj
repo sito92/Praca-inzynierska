@@ -205,6 +205,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PopUpController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1117,6 +1119,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\PopUp\Index.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1158,10 +1163,21 @@
       <Project>{12a69c8e-3f8a-41d4-bd4c-8b776c46e769}</Project>
       <Name>Logic.Page</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logic.PopUp\Logic.PopUp.csproj">
+      <Project>{fb25d56e-5432-49dc-b5bf-1eced729625f}</Project>
+      <Name>Logic.PopUp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Settings\Logic.Settings.csproj">
+      <Project>{1c7ca7da-a639-49b5-adcf-5a7c343e89ce}</Project>
+      <Name>Logic.Settings</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules.Resources\Modules.Resources.csproj">
       <Project>{dc937e5f-1d71-488e-b00c-525fdfdd3b0d}</Project>
       <Name>Modules.Resources</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
