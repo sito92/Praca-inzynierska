@@ -6,9 +6,11 @@ using System.Web.Mvc;
 using AdminPanel.Extensions;
 using Logic.Common.Models;
 using Logic.Page.Interfaces;
+using Logic.Statistics.Filters;
 
 namespace AdminPanel.Controllers
 {
+
     public class PageController : BaseController
     {
         private IPageService _pageService;

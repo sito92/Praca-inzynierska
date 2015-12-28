@@ -39,7 +39,7 @@ namespace ClientPanel.App_Start
 
             //The line below tells autofac, when a controller is initialized, pass into its constructor, the implementations of the required interfaces
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
-
+            builder.RegisterFilterProvider();
             DIRegister.DIRegister.Register(builder);
         }
     }

@@ -117,10 +117,280 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>Akcje</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Aktywny</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="AddAll" xml:space="preserve">
+    <value>Dodaj wszystkie</value>
+  </data>
+  <data name="AvailableServices" xml:space="preserve">
+    <value>Dostępny usługi</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="CancelAll" xml:space="preserve">
+    <value>Anuluj wszystko</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Wybierz</value>
+  </data>
+  <data name="ChooseFile" xml:space="preserve">
+    <value>Wybierz plik...</value>
+  </data>
+  <data name="ChooseImages" xml:space="preserve">
+    <value>Wybierz obrazki</value>
+  </data>
+  <data name="ChoosePage" xml:space="preserve">
+    <value>Wybierz stronę</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="ComposeMail" xml:space="preserve">
+    <value>Stwórz e-mail</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Potwierdz</value>
+  </data>
+  <data name="ConfirmDeleteMessage" xml:space="preserve">
+    <value>Czy napewno chcesz usunąć tę wiadomość?</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Zawartość</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Data utworzenia</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Panel główny</value>
+  </data>
+  <data name="Decline" xml:space="preserve">
+    <value>Odmów</value>
+  </data>
+  <data name="DelayInMinutes" xml:space="preserve">
+    <value>Opóźnienie w minutach</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="DurationInMinutes" xml:space="preserve">
+    <value>Czas trwania w minutach</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Adres e-mail</value>
+  </data>
+  <data name="EmailErrorMessage" xml:space="preserve">
+    <value>Adres e-mail jest niepoprawny</value>
+  </data>
+  <data name="EmailHost" xml:space="preserve">
+    <value>Host e-mail jest niepoprawny</value>
+  </data>
+  <data name="EmailPassword" xml:space="preserve">
+    <value>Hasło jest niepoprawne</value>
+  </data>
+  <data name="EmailUsername" xml:space="preserve">
+    <value>Nazwa użytkownika e-mail jest niepoprawna.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="Extension" xml:space="preserve">
+    <value>Rozszerzenie</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Nazwa pliku</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Pliki</value>
+  </data>
+  <data name="FileType" xml:space="preserve">
+    <value>Typ pliku</value>
+  </data>
+  <data name="GreaterThanZeroMessage" xml:space="preserve">
+    <value>Ta wartość musi być większa od zera</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>Strona domowa</value>
+  </data>
+  <data name="InsetType" xml:space="preserve">
+    <value>Typ wstawki</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Język</value>
   </data>
+  <data name="LastModifyDate" xml:space="preserve">
+    <value>Ostatnio modyfikowane</value>
+  </data>
+  <data name="LocalLink" xml:space="preserve">
+    <value>Wewnętrzny link</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Wyloguj</value>
+  </data>
+  <data name="MailManagement" xml:space="preserve">
+    <value>Zarządzanie mailingiem</value>
+  </data>
+  <data name="MenuButtons" xml:space="preserve">
+    <value>Przyciski menu</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>Aktualność</value>
+  </data>
+  <data name="NewsletterRecivers" xml:space="preserve">
+    <value>Odbiorcy newslettera</value>
+  </data>
+  <data name="NoCategories" xml:space="preserve">
+    <value>Brak wybranych kategorii</value>
+  </data>
+  <data name="NoChoosenFiles" xml:space="preserve">
+    <value>Brak wybranych plików</value>
+  </data>
+  <data name="NoChoosenPage" xml:space="preserve">
+    <value>Brak wybranej strony</value>
+  </data>
+  <data name="NoFiles" xml:space="preserve">
+    <value>Brak plików</value>
+  </data>
+  <data name="NoName" xml:space="preserve">
+    <value>Brak nazwy</value>
+  </data>
+  <data name="NoPages" xml:space="preserve">
+    <value>Brak stron</value>
+  </data>
+  <data name="NoRecivers" xml:space="preserve">
+    <value>Brak odbiorców</value>
+  </data>
+  <data name="NoTypes" xml:space="preserve">
+    <value>Brak zdefiniowanych typów</value>
+  </data>
+  <data name="NumberErrorMessage" xml:space="preserve">
+    <value>Ta wartość musi być liczbą</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Strona</value>
+  </data>
+  <data name="Pages" xml:space="preserve">
+    <value>Storny</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Hasło</value>
+  </data>
+  <data name="Phase" xml:space="preserve">
+    <value>Faza</value>
+  </data>
+  <data name="Phases" xml:space="preserve">
+    <value>Fazy</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Numer telefonu</value>
+  </data>
+  <data name="PopUp" xml:space="preserve">
+    <value>Pop-up</value>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>Postęp</value>
+  </data>
+  <data name="QueueProgress" xml:space="preserve">
+    <value>Postęp kolejki</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Zarejestruj</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Pamiętaj mnie</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="RemoveAll" xml:space="preserve">
+    <value>Usuń wszystko</value>
+  </data>
+  <data name="RequiredErrorMessage" xml:space="preserve">
+    <value>To pole jest wymagane</value>
+  </data>
+  <data name="Reserved" xml:space="preserve">
+    <value>Zarezerwowane</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Wyślij</value>
+  </data>
+  <data name="ServiceProviders" xml:space="preserve">
+    <value>Wykonawcy</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Usługi</value>
+  </data>
+  <data name="ServiceType" xml:space="preserve">
+    <value>Typ usługi</value>
+  </data>
+  <data name="ServiceTypes" xml:space="preserve">
+    <value>Typy usług</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Zaloguj się</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Rozmiar</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Statystyki</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Temat</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Nazwisko</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Tytuł</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Wrzuć</value>
+  </data>
+  <data name="UploadAll" xml:space="preserve">
+    <value>Wrzuć wszystko</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
-    <value>Witaj</value>
+    <value>Witamy</value>
   </data>
 </root>

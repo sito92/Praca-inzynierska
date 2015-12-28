@@ -202,10 +202,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Extensions\JsonNetResult.cs" />
+    <Compile Include="Controllers\MailController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\PopUpController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Extensions\JsonNetResult.cs" />
+    <Compile Include="Filters\StatisticsFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1134,6 +1142,14 @@
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\PopUp\Index.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\News\Show.cshtml" />
+    <Content Include="Views\News\NewsNotFoundError.cshtml" />
+    <Content Include="Views\Mail\Index.cshtml" />
+    <Content Include="Views\Page\Show.cshtml" />
+    <Content Include="Views\Page\PageNotFoundError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1146,9 +1162,17 @@
       <Project>{537e20b2-92a9-4d7b-9e28-5673a5726839}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{45667f6f-9598-48ae-96bd-01aaa89e90ed}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DIRegister\DIRegister.csproj">
       <Project>{d20c9247-5cbc-40ee-90da-47ec36951ae1}</Project>
       <Name>DIRegister</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{2c569c22-8774-444a-be3a-ba804a524dea}</Project>
+      <Name>Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.Common\Logic.Common.csproj">
       <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>
@@ -1158,14 +1182,41 @@
       <Project>{258a87f6-b6fa-48f0-84d2-847cc600fe11}</Project>
       <Name>Logic.MenuButton</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logic.File\Logic.File.csproj">
+      <Project>{6e7da60f-7779-421a-9af1-08e456396b62}</Project>
+      <Name>Logic.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.MailManagement\Logic.MailManagement.csproj">
+      <Project>{d1d0d546-bbdc-49e8-b3af-0b96f62e6095}</Project>
+      <Name>Logic.MailManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.News\Logic.News.csproj">
+      <Project>{5a700e42-4cee-4863-abb0-ab91ba188db7}</Project>
+      <Name>Logic.News</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Page\Logic.Page.csproj">
+      <Project>{12a69c8e-3f8a-41d4-bd4c-8b776c46e769}</Project>
+      <Name>Logic.Page</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.PopUp\Logic.PopUp.csproj">
+      <Project>{fb25d56e-5432-49dc-b5bf-1eced729625f}</Project>
+      <Name>Logic.PopUp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic.Settings\Logic.Settings.csproj">
       <Project>{1c7ca7da-a639-49b5-adcf-5a7c343e89ce}</Project>
       <Name>Logic.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Statistics\Logic.Statistics.csproj">
+      <Project>{4ca61fa0-141f-479f-8c0e-0fb4ab07fdeb}</Project>
+      <Name>Logic.Statistics</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules.Resources\Modules.Resources.csproj">
       <Project>{dc937e5f-1d71-488e-b00c-525fdfdd3b0d}</Project>
       <Name>Modules.Resources</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

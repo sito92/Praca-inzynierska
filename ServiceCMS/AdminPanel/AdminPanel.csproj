@@ -1335,6 +1335,10 @@
       <Project>{258a87f6-b6fa-48f0-84d2-847cc600fe11}</Project>
       <Name>Logic.MenuButton</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logic.NewsCategory\Logic.NewsCategory.csproj">
+      <Project>{b9fb03b5-8809-40df-8bff-5d9e8c052b49}</Project>
+      <Name>Logic.NewsCategory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic.NewsletterReceiver\Logic.NewsletterReceiver.csproj">
       <Project>{9e312efe-5655-45f2-ac0e-920ee1bbd8f4}</Project>
       <Name>Logic.NewsletterReceiver</Name>

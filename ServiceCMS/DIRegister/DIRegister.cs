@@ -105,7 +105,6 @@ namespace DIRegister
 
         private static void RegisterFilters(ContainerBuilder builder)
         {
-            //builder.BindFilter<StatisticsFilter>(System.Web.Mvc.FilterScope.Controller, 0).WhenControllerHas<MyAuthorizeAttribute>();
         }
         private static void RegisterJobs(ContainerBuilder builder)
         {

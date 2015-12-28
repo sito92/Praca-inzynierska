@@ -20,6 +20,6 @@ namespace Logic.PopUp.Interfaces
 
         IList<PopUpModel> GetAll();
 
-
+        PopUpModel GetActivePopUp();
     }
 }

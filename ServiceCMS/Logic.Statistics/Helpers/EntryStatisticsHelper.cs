@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using DAL.Models;
 using Logic.Common.Models;
@@ -61,10 +62,10 @@ namespace Logic.Statistics.Helpers
 
             foreach (var entity in entities)
             {
-                if (result.ContainsKey(entity.Date.Date.Month.ToString()))
-                    result[entity.Date.Date.Month.ToString()] += 1;
+                if (result.ContainsKey(entity.Date.ToString("MMMM",CultureInfo.InvariantCulture)))
+                    result[entity.Date.ToString("MMMM",CultureInfo.InvariantCulture)] += 1;
                 else
-                    result.Add(entity.Date.Date.Month.ToString(), 1);
+                    result.Add(entity.Date.ToString("MMMM", CultureInfo.InvariantCulture), 1);
             }
             return result;
         }
@@ -75,10 +76,10 @@ namespace Logic.Statistics.Helpers
 
             foreach (var entity in entities)
             {
-                if (result.ContainsKey(entity.Date.Date.ToShortDateString()))
-                    result[entity.Date.Date.ToShortDateString()] += 1;
+                if (result.ContainsKey(entity.Date.Day + "." + entity.Date.Month))
+                    result[entity.Date.Day + "." +entity.Date.Month] += 1;
                 else
-                    result.Add(entity.Date.Date.ToShortDateString(), 1);
+                    result.Add(entity.Date.Day + "." + entity.Date.Month, 1);
             }
             return result;
         }
