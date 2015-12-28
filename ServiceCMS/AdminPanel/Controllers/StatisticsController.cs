@@ -25,6 +25,10 @@ namespace AdminPanel.Controllers
             return View();
         }
 
+        public ActionResult GetPage(string name)
+        {
+            return PartialView("Pages/"+name);
+        }
         public ActionResult GetUsersPerCountry()
         {
             var resultCollection = _statisticsService.GetUsersPerCountry();

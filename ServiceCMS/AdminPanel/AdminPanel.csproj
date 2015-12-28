@@ -335,6 +335,7 @@
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
     <Content Include="Scripts\angular-aria.min.js" />
+    <Content Include="Scripts\angular-chart.js" />
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-csp.css" />
@@ -367,6 +368,7 @@
     <Content Include="Scripts\calendar\fullcalendar.js" />
     <Content Include="Scripts\calendar\gcal.js" />
     <Content Include="Scripts\calendar\lang-all.js" />
+    <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Controllers\FileController.js" />
     <Content Include="Scripts\Controllers\MailController.js" />
     <Content Include="Scripts\Controllers\MenuButtonController.js" />
@@ -375,6 +377,8 @@
     <Content Include="Scripts\Controllers\ServiceProviderController.js" />
     <Content Include="Scripts\Controllers\ServiceTypeController.js" />
     <Content Include="Scripts\Controllers\SettingsController.js" />
+    <Content Include="Scripts\Controllers\StatisticsController.js" />
+    <Content Include="Scripts\Directives\BindHtmlCompileDirective.js" />
     <Content Include="Scripts\Filters\SizeFilter.js" />
     <Content Include="Scripts\Modules\InsetModule.js" />
     <Content Include="Scripts\moment.js" />
@@ -1184,6 +1188,7 @@
     <Content Include="Scripts\Services\ServicesService.js" />
     <Content Include="Scripts\Services\ServiceTypeService.js" />
     <Content Include="Scripts\Services\SettingsService.js" />
+    <Content Include="Scripts\Services\StatisticsService.js" />
     <Content Include="Scripts\text-angular\textAngular-rangy.js" />
     <Content Include="Scripts\text-angular\textAngular-sanitize.js" />
     <Content Include="Scripts\text-angular\textAngular.js" />
@@ -1279,6 +1284,12 @@
     <Content Include="Views\Mail\Modals\ConfirmDelete.cshtml" />
     <Content Include="Views\Mail\Menu.cshtml" />
     <Content Include="Views\Mail\Modals\ChooseReciver.cshtml" />
+    <Content Include="Views\Statistics\Index.cshtml" />
+    <Content Include="Views\Statistics\Menu.cshtml" />
+    <Content Include="Views\Statistics\Pages\UsersPerCountry.cshtml" />
+    <Content Include="Views\Statistics\Pages\UsersForSelectedMonth.cshtml" />
+    <Content Include="Views\Statistics\Pages\UsersForEveryMonth.cshtml" />
+    <Content Include="Views\Statistics\Pages\UsersBetweenDates.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

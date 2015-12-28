@@ -96,6 +96,10 @@ namespace AdminPanel
                     "~/Scripts/Services/ServiceProviderService.js",
                     "~/Scripts/Services/ServiceTypeService.js"
                     ));
+            bundles.Add(new ScriptBundle("~/bundles/angular-chart").Include(
+                   "~/Scripts/Chart.js",
+                   "~/Scripts/angular-chart.js"
+                   ));
             bundles.Add(new ScriptBundle("~/bundles/serviceType").Include(
                      "~/Scripts/Controllers/ServiceTypeController.js",
                      "~/Scripts/Services/ServiceTypeService.js"
@@ -160,6 +164,11 @@ namespace AdminPanel
             bundles.Add(new ScriptBundle("~/bundles/mail").Include(
                   "~/Scripts/Controllers/MailController.js",
                     "~/Scripts/Services/MailService.js"
+                  ));
+            bundles.Add(new ScriptBundle("~/bundles/statistics").Include(
+                  "~/Scripts/Controllers/StatisticsController.js",
+                    "~/Scripts/Services/StatisticsService.js",
+                    "~/Scripts/Directives/BindHtmlCompileDirective.js"
                   ));
 
 
