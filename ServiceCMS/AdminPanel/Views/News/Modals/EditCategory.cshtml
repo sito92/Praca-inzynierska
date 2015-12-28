@@ -1,0 +1,30 @@
+﻿@using Modules.Resources
+@using Logic.Common.Models
+<div class="modal-header">
+    <div class="row text-center">
+        <h2 class="text-modal-heading">@Presentation.Edit</h2>
+    </div>
+</div>
+<div class="modal-body">
+    <form novalidate name="form">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="form-group form-field row">
+                    <div>
+                        <label class="control-label">@Presentation.Name</label>
+                    </div>
+                    <div>
+                        <input class="form-control" ng-model="category.Category" name="category" required="" type="text" />
+                        <span ng-show="form.category.$error.required && form.category.$dirty" class="text-danger">
+                            @Presentation.RequiredErrorMessage
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn kentico-color" ng-disabled="form.$invalid" ng-click="save()">@Presentation.Save</button>
+    <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
+</div>

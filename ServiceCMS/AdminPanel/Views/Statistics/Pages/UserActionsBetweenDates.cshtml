@@ -1,6 +1,6 @@
 ﻿@using Modules.Resources
 
-<div ng-controller="UsersBetweenDatesController" class="text-center">
+<div ng-controller="UserActionsBetweenDatesController" class="text-center">
     <div class="form-group form-field row">
         <div class="col-md-10 col-md-offset-1">
             <div class="col-md-5">
@@ -23,7 +23,7 @@
     </div>
     <div class="row" ng-show="showChart">
         <div class="col-md-8 col-md-offset-2">
-            <canvas id="bar" class="chart chart-bar" chart-data="data"
+            <canvas id="doughnut" class="chart chart-doughnut" chart-data="data"
                     chart-labels="labels" chart-legend="false"></canvas>
         </div>
     </div>

@@ -1290,6 +1290,10 @@
     <Content Include="Views\Statistics\Pages\UsersForSelectedMonth.cshtml" />
     <Content Include="Views\Statistics\Pages\UsersForEveryMonth.cshtml" />
     <Content Include="Views\Statistics\Pages\UsersBetweenDates.cshtml" />
+    <Content Include="Views\Statistics\Pages\UserActionsBetweenDates.cshtml" />
+    <Content Include="Views\News\Modals\NewsCategories.cshtml" />
+    <Content Include="Views\News\Modals\AddCategory.cshtml" />
+    <Content Include="Views\News\Modals\EditCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

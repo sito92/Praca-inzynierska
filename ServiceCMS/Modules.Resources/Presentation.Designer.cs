@@ -232,6 +232,24 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date from.
+        /// </summary>
+        public static string DateFrom {
+            get {
+                return ResourceManager.GetString("DateFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date to.
+        /// </summary>
+        public static string DateTo {
+            get {
+                return ResourceManager.GetString("DateTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Decline.
         /// </summary>
         public static string Decline {
@@ -489,6 +507,15 @@ namespace Modules.Resources {
         public static string News {
             get {
                 return ResourceManager.GetString("News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to News categories.
+        /// </summary>
+        public static string NewsCategories {
+            get {
+                return ResourceManager.GetString("NewsCategories", resourceCulture);
             }
         }
         
@@ -885,6 +912,24 @@ namespace Modules.Resources {
         public static string Url {
             get {
                 return ResourceManager.GetString("Url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User actions between dates.
+        /// </summary>
+        public static string UserActionsBetweenDates {
+            get {
+                return ResourceManager.GetString("UserActionsBetweenDates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users between dates.
+        /// </summary>
+        public static string UsersBetweenDates {
+            get {
+                return ResourceManager.GetString("UsersBetweenDates", resourceCulture);
             }
         }
         

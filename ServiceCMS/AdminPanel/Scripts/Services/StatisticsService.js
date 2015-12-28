@@ -39,6 +39,30 @@
                 }
             }).success(deferred.resolve).error(deferred.reject);
             return deferred.promise;
+        },
+        getUsersBetweenDates: function (from,to) {
+            var deferred = $q.defer();
+            $http({
+                method: 'GET',
+                url: '/Statistics/GetUsersBetweenDates',
+                params: {
+                    from: from,
+                    to:to
+                }
+            }).success(deferred.resolve).error(deferred.reject);
+            return deferred.promise;
+        },
+        getUserActionsBetweenDates: function (from, to) {
+            var deferred = $q.defer();
+            $http({
+                method: 'GET',
+                url: '/Statistics/GetUserActionsBetweenDates',
+                params: {
+                    from: from,
+                    to: to
+                }
+            }).success(deferred.resolve).error(deferred.reject);
+            return deferred.promise;
         }
     }
 });

@@ -10,7 +10,7 @@ using Logic.PopUp.Interfaces;
 
 namespace AdminPanel.Controllers
 {
-    public class PopUpController : Controller
+    public class PopUpController : BaseController
     {
         private IPopUpService _popUpService;
 

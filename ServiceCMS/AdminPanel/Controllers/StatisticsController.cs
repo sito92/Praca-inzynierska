@@ -10,7 +10,7 @@ using Logic.Statistics.Interfaces;
 
 namespace AdminPanel.Controllers
 {
-    public class StatisticsController : Controller
+    public class StatisticsController : BaseController
     {
         private readonly IStatisticsService _statisticsService;
         private StatisticsViewModel viewModel;

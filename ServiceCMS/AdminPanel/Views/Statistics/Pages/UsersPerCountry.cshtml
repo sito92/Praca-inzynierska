@@ -1,7 +1,7 @@
 ﻿@using Modules.Resources
 
 <div ng-controller="UsersPerCountryController" class="text-center">
-    <div class="row">
+    <div class="row" ng-show="showChart">
         <div class="col-md-8 col-md-offset-2">
             <canvas id="bar" class="chart chart-bar" chart-data="data"
                     chart-labels="labels" chart-legend="false"></canvas>

@@ -25,16 +25,34 @@
 
         });
     }
+    $scope.usersBetweenDates = function () {
+        StatisticsService.getPage("UsersBetweenDates").then(function (jsonResult) {
+            $scope.pageHtml = jsonResult;
+        }, function () {
+            alert("Error");
+
+        });
+    }
+    $scope.userActionsBetweenDates = function () {
+        StatisticsService.getPage("UserActionsBetweenDates").then(function (jsonResult) {
+            $scope.pageHtml = jsonResult;
+        }, function () {
+            alert("Error");
+
+        });
+    }
 });
 app.controller('UsersPerCountryController', function ($scope, StatisticsService) {
     $scope.model = {};
     StatisticsService.getUsersPerCountry().then(function (jsonResult) {
         if (jsonResult.success) {
+            $scope.showChart = true;
             $scope.data = [];
             $scope.data.push(jsonResult.data.Visitors);
             $scope.labels = jsonResult.data.Keys;
         } else {
-            alert(jsonResult.message);
+
+            $scope.showChart = false;
         }
     }, function () {
         alert("Error");
@@ -57,12 +75,12 @@ app.controller('UsersForSelectedMonthController', function ($scope, StatisticsSe
     var refresh = function() {
         StatisticsService.getUsersForSelectedMonth($scope.month, $scope.year).then(function(jsonResult) {
             if (jsonResult.success) {
+                $scope.showChart = true;
                 $scope.data = [];
                 $scope.data.push(jsonResult.data.Visitors);
                 $scope.labels = jsonResult.data.Keys;
             } else {
-                $scope.labels = [];
-                $scope.data = [];
+                $scope.showChart = false;
             }
         }, function() {
             alert("Error");
@@ -82,16 +100,67 @@ app.controller('UsersForEveryMonthController', function ($scope, StatisticsServi
     var refresh = function () {
         StatisticsService.getUsersForEveryMonth($scope.year).then(function (jsonResult) {
             if (jsonResult.success) {
+                $scope.showChart = true;
                 $scope.data = [];
                 $scope.data=jsonResult.data.Visitors;
                 $scope.labels = jsonResult.data.Keys;
             } else {
-                $scope.labels = [];
-                $scope.data = [];
+                $scope.showChart = false;
             }
         }, function () {
             alert("Error");
         });
     }
+
+});
+app.controller('UsersBetweenDatesController', function ($scope, StatisticsService) {
+    $scope.dateFrom = new Date();
+    $scope.dateTo = new Date();
+    $scope.dateTo.setDate($scope.dateFrom.getDate() + 1);
+
+   
+
+    var refresh = function () {
+        StatisticsService.getUsersBetweenDates($scope.dateFrom, $scope.dateTo).then(function (jsonResult) {
+            if (jsonResult.success) {
+                $scope.showChart = true;
+                $scope.data = [];
+                $scope.data.push(jsonResult.data.Visitors);
+                $scope.labels = jsonResult.data.Keys;
+            } else {
+                $scope.showChart = false;
+            }
+        }, function () {
+            alert("Error");
+        });
+    }
+    $scope.$watchGroup(["dateFrom", "dateTo"], function (newVal, oldVal) {
+        refresh();
+    });
+
+});
+app.controller('UserActionsBetweenDatesController', function ($scope, StatisticsService) {
+    $scope.dateFrom = new Date();
+    $scope.dateTo = new Date();
+    $scope.dateTo.setDate($scope.dateFrom.getDate() + 1);
+
+
+
+    var refresh = function () {
+        StatisticsService.getUserActionsBetweenDates($scope.dateFrom, $scope.dateTo).then(function (jsonResult) {
+            if (jsonResult.success) {
+                $scope.showChart = true;
+                $scope.data = jsonResult.data.Visitors;
+                $scope.labels = jsonResult.data.Keys;
+            } else {
+                $scope.showChart = false;
+            }
+        }, function () {
+            alert("Error");
+        });
+    }
+    $scope.$watchGroup(["dateFrom", "dateTo"], function (newVal, oldVal) {
+        refresh();
+    });
 
 });

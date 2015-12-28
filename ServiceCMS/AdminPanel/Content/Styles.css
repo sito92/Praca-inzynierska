@@ -363,3 +363,6 @@ input[type="checkbox"] {
     width: 30px;
     height: 30px;
 }
+.statistics-date table {
+    margin: 0 auto;
+}

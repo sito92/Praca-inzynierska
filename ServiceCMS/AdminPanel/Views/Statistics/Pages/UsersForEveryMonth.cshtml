@@ -2,16 +2,14 @@
 
 <div ng-controller="UsersForEveryMonthController" class="text-center">
     <div class="form-group form-field row">
-        <div class="col-md-4">
-            <div class="col-md-3">
+        <div class="col-md-4 col-md-offset-4">
+            <div>
                 <label class="control-label">@Presentation.Year</label>
-            </div>
-            <div class="col-md-9">
-                <uib-datepicker ng-model="date" datepicker-mode="'year'" min-mode="'year'" max-mode="'year'" class="well well-sm"></uib-datepicker>
+                <uib-datepicker ng-model="date" datepicker-mode="'year'" min-mode="'year'" max-mode="'year'" class="well well-lg statistics-date"></uib-datepicker>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" ng-show="showChart">
         <div class="col-md-8 col-md-offset-2">
             <canvas id="doughnut" class="chart chart-doughnut" chart-data="data"
                     chart-labels="labels" chart-legend="false"></canvas>

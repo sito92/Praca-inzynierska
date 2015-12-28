@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace AdminPanel.Controllers
 {
-    public class ServicesController : Controller
+    public class ServicesController : BaseController
     {
         private readonly IServicesService _servicesService;
         public ServicesController(IServicesService servicesService)

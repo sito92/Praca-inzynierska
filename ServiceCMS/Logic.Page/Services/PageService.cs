@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Common.Responses;
@@ -115,6 +116,13 @@ namespace Logic.Page.Services
                         };
                         var entity = updatedPage.ToEntity();
                         UpdateFiles(entity, unitOfWork);
+
+                        var menuButtons = unitOfWork.MenuButtonRepository.Get(x => x.PageId == page.Id);
+                        foreach (var button in menuButtons)
+                        {
+                            button.Page = entity;
+
+                        }
                         unitOfWork.PageRepository.Insert(entity);
                     }
 

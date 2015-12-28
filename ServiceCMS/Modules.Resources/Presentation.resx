@@ -399,8 +399,23 @@
   <data name="UsersForSelectedMonth" xml:space="preserve">
     <value>Users for selected month</value>
   </data>
+  <data name="DateFrom" xml:space="preserve">
+    <value>Date from</value>
+  </data>
+  <data name="DateTo" xml:space="preserve">
+    <value>Date to</value>
+  </data>
   <data name="Month" xml:space="preserve">
     <value>Month</value>
+  </data>
+  <data name="NewsCategories" xml:space="preserve">
+    <value>News categories</value>
+  </data>
+  <data name="UserActionsBetweenDates" xml:space="preserve">
+    <value>User actions between dates</value>
+  </data>
+  <data name="UsersBetweenDates" xml:space="preserve">
+    <value>Users between dates</value>
   </data>
   <data name="UsersForEveryMonth" xml:space="preserve">
     <value>Users for every month</value>
