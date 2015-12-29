@@ -186,3 +186,9 @@ body {
         .client-calendar.calendar {
             color: white;
         }
+        .ninja {
+            display: none;
+        }
+        .show {
+            display: block;
+        }

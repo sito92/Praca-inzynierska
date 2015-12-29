@@ -29,16 +29,13 @@ namespace ClientPanel.Controllers
         {
             var contactFormActive = _settingsService.GetPropertyByName("ContactFormEnabled");
 
-            if (contactFormActive == "true")
-                return View();
-            else
-                return View("PageNotFound");
+            return contactFormActive == "True" ? View() : View("SiteNotFound");
         }
 
         public ActionResult SendMail(MailViewModel model)
         {
             var contactFormActive = _settingsService.GetPropertyByName("ContactFormEnabled");
-            if (contactFormActive == "true")
+            if (contactFormActive == "True")
             {
                 if (ModelState.IsValid)
                 {

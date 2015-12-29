@@ -10,5 +10,6 @@ namespace ClientPanel.Models.Menu
     {
         public string CompanyName { get; set; }
         public List<MenuButtonModel> Buttons { get; set; }
+        public Dictionary<string, Tuple<object,string>> Settings { get; set; } 
     }
 }

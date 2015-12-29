@@ -15,7 +15,7 @@
     <nav class="navbar kentico-color">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="@Url.Action("Index","Home")" ng-bind="model.CompanyName"></a>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")" ng-bind="model.Settings['CompanyName'].Item1"></a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -25,9 +25,9 @@
                         <ul class="dropdown-menu multi-level" ng-if="rootButton.Children.length > 0">
                             <li ng-repeat="node in rootButton.Children" ng-include="'nodes_renderer.html'" class="" ng-class="{'dropdown-submenu' : node.Children.length > 0}"></li>
                         </ul>
-                    </li>
-                    <li>@Html.ActionLink(Presentation.ContactForm, "ContactForm", "Mail")</li>
-                    <li>@Html.ActionLink(Presentation.RegisterForService, "Register", "Services")</li>
+                    </li>                    
+                    <li ng-if="model.Settings['ContactFormEnabled'].Item1 == 'True'">@Html.ActionLink(Presentation.ContactForm, "ContactForm", "Mail")</li>
+                    <li ng-if="model.Settings['RegisterServiceEnabled'].Item1 == 'True'">@Html.ActionLink(Presentation.RegisterForService, "Register", "Services")</li>
                 </ul>
             </div>
         </div>

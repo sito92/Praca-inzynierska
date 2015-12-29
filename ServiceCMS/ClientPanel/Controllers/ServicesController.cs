@@ -7,6 +7,7 @@ using ClientPanel.Extensions;
 using ClientPanel.Models.Calendar;
 using Logic.Common.Models;
 using Logic.Service.Interfaces;
+using Logic.Settings.Interfaces;
 using Modules.Resources;
 
 namespace ClientPanel.Controllers
@@ -14,14 +15,18 @@ namespace ClientPanel.Controllers
     public class ServicesController : Controller
     {
         private readonly IServicesService _servicesService;
-        public ServicesController(IServicesService servicesService)
+        private readonly ISettingsService _settingsService;
+        public ServicesController(IServicesService servicesService,ISettingsService settingsService)
         {
             _servicesService = servicesService;
+            _settingsService = settingsService;
         }
 
         public ViewResult Register()
         {
-            return View();
+            var registerServiceEnabled = _settingsService.GetPropertyByName("RegisterServiceEnabled");
+
+            return registerServiceEnabled == "True" ? View() : View("SiteNotFound");
         }
 
         [HttpPost]

@@ -2,6 +2,7 @@
         MenuService.getMenuData().then(function (jsonResult) {
             if (jsonResult.success) {
                 $scope.model = jsonResult.data;
+                console.log($scope.model);
 
             } else {
                 alert(jsonResult.message);

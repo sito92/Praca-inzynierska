@@ -2,6 +2,7 @@
     $scope.provider = null;
     $scope.events = [];
     $scope.date = null;
+    $scope.result = null;
     ServiceProviderService.getAll().then(function (jsonResult) {
         if (jsonResult.success) {
             
@@ -55,6 +56,7 @@
             }
         });
         modalInstance.result.then(function (result) {
+            console.log(result);
             $scope.result = result;
             $scope.refreshEvents($scope.provider, $scope.date.format("DD/MM/YYYY"));
         });

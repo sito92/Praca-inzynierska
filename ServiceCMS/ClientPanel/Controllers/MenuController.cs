@@ -29,8 +29,8 @@ namespace ClientPanel.Controllers
         {
             var buttons = _menuButtonService.GetAllRootButtons();
             var companyName = _settingsService.GetPropertyByName("CompanyName");
-
-            MenuDataViewModel model = new MenuDataViewModel() {Buttons = buttons.ToList(), CompanyName = companyName};
+            var setttings = _settingsService.GetAll();
+            MenuDataViewModel model = new MenuDataViewModel() { Buttons = buttons.ToList(), CompanyName = companyName, Settings = setttings };
 
             return new JsonNetResult(new {success = true,data= model});
         }
