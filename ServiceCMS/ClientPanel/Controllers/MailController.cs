@@ -50,6 +50,7 @@ namespace ClientPanel.Controllers
             {
                 return View("SiteNotFound");
             }
+            return View();
         }
 
     }

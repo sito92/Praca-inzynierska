@@ -396,4 +396,13 @@
   <data name="WrongEmailAddress" xml:space="preserve">
     <value>E-mail ma niepoprawną formę.</value>
   </data>
+  <data name="ContactForm" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="MainSite" xml:space="preserve">
+    <value>Strona główna</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Czytaj więcej...</value>
+  </data>
 </root>

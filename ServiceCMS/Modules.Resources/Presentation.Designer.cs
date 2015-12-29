@@ -205,6 +205,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact form.
+        /// </summary>
+        public static string ContactForm {
+            get {
+                return ResourceManager.GetString("ContactForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Content.
         /// </summary>
         public static string Content {
@@ -475,6 +484,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Main site.
+        /// </summary>
+        public static string MainSite {
+            get {
+                return ResourceManager.GetString("MainSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Menu buttons.
         /// </summary>
         public static string MenuButtons {
@@ -687,6 +705,15 @@ namespace Modules.Resources {
         public static string QueueProgress {
             get {
                 return ResourceManager.GetString("QueueProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Read more....
+        /// </summary>
+        public static string ReadMore {
+            get {
+                return ResourceManager.GetString("ReadMore", resourceCulture);
             }
         }
         

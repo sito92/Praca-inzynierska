@@ -26,6 +26,7 @@
                             <li ng-repeat="node in rootButton.Children" ng-include="'nodes_renderer.html'" class="" ng-class="{'dropdown-submenu' : node.Children.length > 0}"></li>
                         </ul>
                     </li>
+                    <li>@Html.ActionLink(Presentation.ContactForm, "ContactForm", "Mail")</li>
                 </ul>
             </div>
         </div>

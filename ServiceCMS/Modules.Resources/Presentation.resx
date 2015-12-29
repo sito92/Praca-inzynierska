@@ -426,4 +426,13 @@
   <data name="WrongEmailAddress" xml:space="preserve">
     <value>E-mail has to have valid form.</value>
   </data>
+  <data name="ContactForm" xml:space="preserve">
+    <value>Contact form</value>
+  </data>
+  <data name="MainSite" xml:space="preserve">
+    <value>Main site</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read more...</value>
+  </data>
 </root>

@@ -1143,7 +1143,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
-    <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\PopUp\Index.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\News\NewsNotFoundError.cshtml" />

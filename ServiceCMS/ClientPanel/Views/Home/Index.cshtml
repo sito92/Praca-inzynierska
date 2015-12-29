@@ -1,8 +1,8 @@
 ﻿@using Modules.Resources
 @model List<global::Logic.Common.Models.NewsModel>
-@*@{
+@{
     ViewBag.Title = Presentation.MainSite;
-}*@
+}
 
 @foreach (var news in @Model)
 {
@@ -17,6 +17,6 @@
                 <h4>@news.Content</h4>
             </div>
         </div>
-        <div class="readMoreLink">@Html.ActionLink(Presentation.News, "Show", "News",new {id=@news.Id},null)</div>
+        <div class="readMoreLink">@Html.ActionLink(Presentation.ReadMore, "Show", "News",new {id=@news.Id},null)</div>
     </div>
 }
