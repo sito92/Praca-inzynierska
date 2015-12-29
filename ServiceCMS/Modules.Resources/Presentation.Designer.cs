@@ -376,6 +376,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Register service failed. Please try again.
+        /// </summary>
+        public static string FailedRegisterService {
+            get {
+                return ResourceManager.GetString("FailedRegisterService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File name.
         /// </summary>
         public static string FileName {
@@ -885,6 +894,15 @@ namespace Modules.Resources {
         public static string Subject {
             get {
                 return ResourceManager.GetString("Subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register service succeed. We have sent mail to you with cofirmation..
+        /// </summary>
+        public static string SuccessRegisterService {
+            get {
+                return ResourceManager.GetString("SuccessRegisterService", resourceCulture);
             }
         }
         

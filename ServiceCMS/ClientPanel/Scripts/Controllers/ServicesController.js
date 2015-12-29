@@ -4,6 +4,7 @@
     $scope.date = null;
     ServiceProviderService.getAll().then(function (jsonResult) {
         if (jsonResult.success) {
+            
             $scope.providers = jsonResult.data;
             $scope.provider = jsonResult.data[0];
             $scope.refreshEvents($scope.provider, $scope.date.format("DD/MM/YYYY"));
@@ -53,6 +54,10 @@
                 }
             }
         });
+        modalInstance.result.then(function (result) {
+            $scope.result = result;
+            $scope.refreshEvents($scope.provider, $scope.date.format("DD/MM/YYYY"));
+        });
     }
 
     $scope.uiConfig = {
@@ -100,11 +105,7 @@ app.controller('ServiceRegisterModalCtrl', function ($scope, $modalInstance, Ser
     });
     $scope.send = function () {
         ServicesService.registerService($scope.registratedService).then(function (jsonResult) {
-            if (jsonResult.success) {
-                $modalInstance.close();
-            } else {
-                alert(jsonResult.message);
-            }
+            $modalInstance.close(jsonResult);
         }, function () {
             alert("Error");
             $modalInstance.dismiss();
