@@ -22,7 +22,7 @@ namespace ClientPanel.Models.Calendar
                     var timeOffset = previousPhases.Sum(x => x.DelayInMinutes)+previousPhases.Sum(x=>x.DurationInMinutes);
                     Events.Add(new JsonEventViewModel()
                     {
-                        Title = phase.Name + service.StartDate.ToString(),
+                        Title = Presentation.Reserved,
                         Start = service.StartDate.AddMinutes(timeOffset).ToString("o"),
                         End = service.StartDate.AddMinutes(phase.DurationInMinutes+timeOffset).ToString("o")
                     });

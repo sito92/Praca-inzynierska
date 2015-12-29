@@ -7,6 +7,7 @@ using ClientPanel.Extensions;
 using ClientPanel.Models.Calendar;
 using Logic.Common.Models;
 using Logic.Service.Interfaces;
+using Modules.Resources;
 
 namespace ClientPanel.Controllers
 {
@@ -29,10 +30,10 @@ namespace ClientPanel.Controllers
             if (ModelState.IsValid)
             {
                 var response = _servicesService.Insert(model);
-                return Json(new { success = response.IsSucceed, data = response.Message }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = response.IsSucceed, message = Presentation.SuccessRegisterService }, JsonRequestBehavior.AllowGet);
             }
             else
-                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+                return Json(new { success = false ,message = Presentation.FailedRegisterService}, JsonRequestBehavior.AllowGet);
 
         }
 

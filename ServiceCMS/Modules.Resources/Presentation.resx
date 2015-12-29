@@ -441,4 +441,10 @@
   <data name="RegisterForService" xml:space="preserve">
     <value>Register for service</value>
   </data>
+  <data name="FailedRegisterService" xml:space="preserve">
+    <value>Register service failed. Please try again</value>
+  </data>
+  <data name="SuccessRegisterService" xml:space="preserve">
+    <value>Register service succeed. We have sent mail to you with cofirmation.</value>
+  </data>
 </root>

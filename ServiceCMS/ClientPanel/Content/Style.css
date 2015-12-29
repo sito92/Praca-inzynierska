@@ -179,9 +179,10 @@ body {
         /*background-color: #00bfff;*/
     }
         .client-calendar.calendar th, .client-calendar.calendar td {
-            padding: 3px;
             background-color: #f05a22;
             border-style: solid;
-            border-radius: 5px;
             
+        }
+        .client-calendar.calendar {
+            color: white;
         }
