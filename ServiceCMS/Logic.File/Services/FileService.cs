@@ -74,6 +74,27 @@ namespace Logic.File.Services
             }
             return fileModels;
         }
+        public FileModel GetById(int id)
+        {
+
+            FileModel fileModel = null;
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    var entity = unitOfWork.FileRepository.Get(x => x.Id == id).FirstOrDefault();
+                
+                        fileModel  = new FileModel(entity);
+
+                    unitOfWork.Save();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                }
+            }
+            return fileModel;
+        }
 
         public ResponseBase Insert(FileModel file)
         {

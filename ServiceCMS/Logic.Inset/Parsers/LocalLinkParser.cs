@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
-using Logic.Common.Models;
 using Logic.Inset.Helpers;
+using Logic.Page.Interfaces;
 
 namespace Logic.Inset.Parsers
 {
-    class ExternalLinkParser:Parser
+    class LocalLinkParser:Parser
     {
-        private string url = "url";
+        private string id = "id";
+        private string pagesUrl = "/Page/Show/";
         private string text = "text";
-
         public override string Tag
         {
             get { return "a"; }
@@ -24,18 +22,17 @@ namespace Logic.Inset.Parsers
         {
             var arguments = InsetHelper.GetArgumetnsDictionary(inset);
 
-            var urlData = arguments[url];
-            ParserTagBuilder.Attributes.Add("href", urlData);
+            var pageId = arguments[id];
+            ParserTagBuilder.Attributes.Add("href", pagesUrl+pageId);
 
             if (arguments.ContainsKey(text))
             {
                 var textData = arguments[text];
                 ParserTagBuilder.SetInnerText(textData);
             }
-            
-                                  
-            return ParserTagBuilder.ToString();
 
+
+            return ParserTagBuilder.ToString();
         }
     }
 }

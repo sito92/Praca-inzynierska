@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Logic.Inset.Services
         public InsetParser(IInsetRecognizer insetRecognizer, IParsersFactory parsersFactory)
         {
             _insetRecognizer = insetRecognizer;
-            _parsersFactory = parsersFactory;
+           _parsersFactory = parsersFactory;
         }
         private string ParseInset(Match match)
         {
@@ -33,7 +34,9 @@ namespace Logic.Inset.Services
 
         public string ParseContent(string content)
         {
-            return Regex.Replace(content, RegularExpressions.Inset, ParseInset);
+            var decodedContent = WebUtility.HtmlDecode(content);
+            var parsed = Regex.Replace(decodedContent, RegularExpressions.Inset, ParseInset);
+            return parsed;
         }
     }
 }

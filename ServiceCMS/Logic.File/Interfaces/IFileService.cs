@@ -23,6 +23,8 @@ namespace Logic.File.Interfaces
 
         ResponseBase UploadWithInsert(HttpPostedFileBase file,string name);
 
+        FileModel GetById(int id);
+
         ResponseBase Delete(int id);
 
         //void DownloadFile(FileModel file);

@@ -82,6 +82,8 @@
     <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Interfaces\IParsersFactory.cs" />
     <Compile Include="Parsers\ExternalLinkParser.cs" />
+    <Compile Include="Parsers\ImagesParser.cs" />
+    <Compile Include="Parsers\LocalLinkParser.cs" />
     <Compile Include="Parsers\Parser.cs" />
     <Compile Include="Parsers\UserParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,9 +110,21 @@
       <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>
       <Name>Logic.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logic.File\Logic.File.csproj">
+      <Project>{6e7da60f-7779-421a-9af1-08e456396b62}</Project>
+      <Name>Logic.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Page\Logic.Page.csproj">
+      <Project>{12a69c8e-3f8a-41d4-bd4c-8b776c46e769}</Project>
+      <Name>Logic.Page</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic.Users\Logic.Users.csproj">
       <Project>{9f83685c-a7ae-495a-8303-4b3d70290ab1}</Project>
       <Name>Logic.Users</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules.FileManager\Modules.FileManager.csproj">
+      <Project>{6a6601bc-c3ee-4edf-8499-3e031d7c9c78}</Project>
+      <Name>Modules.FileManager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

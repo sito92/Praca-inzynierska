@@ -111,3 +111,17 @@ body {
 .kentico-color.sidebar-nav {
     border-radius: 5px;
 }
+.inset-images {
+    min-height: 100px;
+    overflow: auto;
+}
+.inset-image-container {
+    float: left;
+    margin-right: 10px;
+    height: 130px;
+    width: 100px;
+}
+.inset-image {
+    width: 100%;
+    height: 100%;
+}
