@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@*@Scripts.Render("~/bundles/calendar")*@
+@Scripts.Render("~/bundles/services")
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div ng-controller="ServicesController" style="max-width: 500px">
+            <div>
+                <select ng-model="provider" ng-options="prov.Name for prov in providers" ng-change="providerChange()" class="form-control"></select>
+            </div>
+            <div ui-calendar="uiConfig.calendar" class="span8 client-calendar calendar" ng-model="eventSources" calendar="serviceCalendar"></div>
+        </div>
+    </div>
+</div>

@@ -8,7 +8,17 @@ namespace ClientPanel
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/services").Include(
+       "~/Scripts/Controllers/ServicesController.js",
+        "~/Scripts/Services/ServicesService.js",
+        "~/Scripts/Services/ServiceProviderService.js",
+        "~/Scripts/Services/ServiceTypeService.js"
+       ));
+            bundles.Add(new ScriptBundle("~/bundles/calendar").Include(
+                               "~/Scripts/calendar/*.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                "~/Scripts/moment.js",
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
@@ -27,11 +37,15 @@ namespace ClientPanel
             bundles.Add(new StyleBundle("~/Content/css").Include(
                "~/Content/bootstrap.css",
                 "~/Content/Style.css",
-                "~/Content/navbar.css"
+                "~/Content/navbar.css",
+                 "~/Content/fullcalendar.css",
+                 "~/Content/calendarDemo.css"
                ));
 
             bundles.Add(new ScriptBundle("~/bundles/appModule").Include(
-           "~/Scripts/Modules/AppModule.js"
+                "~/Scripts/Modules/AppModule.js",
+                "~/Scripts/Directives/LoaderDirective.js",
+                "~/Scripts/Interceptors/HttpInterceptor.js"
            ));
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

@@ -37,8 +37,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.NewsCategory", "Logic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Settings", "Logic.Settings\Logic.Settings.csproj", "{1C7CA7DA-A639-49B5-ADCF-5A7C343E89CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Newsletter", "Logic.Newsletter\Logic.Newsletter.csproj", "{181771E1-4ABE-4FC1-8E45-4C38A75B75C7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Inset", "Logic.Inset\Logic.Inset.csproj", "{B9A9E81E-DE7C-4C2F-996A-DFB24AD44444}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Page", "Logic.Page\Logic.Page.csproj", "{12A69C8E-3F8A-41D4-BD4C-8B776C46E769}"
@@ -61,14 +59,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.MailManagement", "Log
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.MailManager", "Modules.MailManager\Modules.MailManager.csproj", "{7B5ADFBC-A7CC-4D6B-8106-235A05056C8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.NewsletterReceiver", "Logic.NewsletterReceiver\Logic.NewsletterReceiver.csproj", "{9E312EFE-5655-45F2-AC0E-920EE1BBD8F4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7CB16315-4985-4E78-90C0-A740A051F08B}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.NewsletterReceiver", "Logic.NewsletterReceiver\Logic.NewsletterReceiver.csproj", "{9E312EFE-5655-45F2-AC0E-920EE1BBD8F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -128,10 +126,6 @@ Global
 		{1C7CA7DA-A639-49B5-ADCF-5A7C343E89CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C7CA7DA-A639-49B5-ADCF-5A7C343E89CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C7CA7DA-A639-49B5-ADCF-5A7C343E89CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{181771E1-4ABE-4FC1-8E45-4C38A75B75C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{181771E1-4ABE-4FC1-8E45-4C38A75B75C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{181771E1-4ABE-4FC1-8E45-4C38A75B75C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{181771E1-4ABE-4FC1-8E45-4C38A75B75C7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9A9E81E-DE7C-4C2F-996A-DFB24AD44444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B9A9E81E-DE7C-4C2F-996A-DFB24AD44444}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9A9E81E-DE7C-4C2F-996A-DFB24AD44444}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -198,7 +192,6 @@ Global
 		{9F83685C-A7AE-495A-8303-4B3D70290AB1} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
 		{B9FB03B5-8809-40DF-8BFF-5D9E8C052B49} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
 		{1C7CA7DA-A639-49B5-ADCF-5A7C343E89CE} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
-		{181771E1-4ABE-4FC1-8E45-4C38A75B75C7} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
 		{B9A9E81E-DE7C-4C2F-996A-DFB24AD44444} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
 		{12A69C8E-3F8A-41D4-BD4C-8B776C46E769} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}
 		{6E7DA60F-7779-421A-9AF1-08E456396B62} = {FEF22C38-B7CB-4269-AA86-7073B74EF8C1}

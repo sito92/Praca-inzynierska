@@ -1,1 +1,1 @@
-﻿var app = angular.module('AppModule', ["ui.bootstrap", "ui.tree"]);
+﻿var app = angular.module('AppModule', ["ui.bootstrap", "ui.tree", "ui.calendar"]);

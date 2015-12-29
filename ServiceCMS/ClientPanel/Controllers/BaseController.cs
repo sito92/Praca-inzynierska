@@ -32,6 +32,10 @@ namespace ClientPanel.Controllers
 
             return base.BeginExecuteCore(callback, state);
         }
-
+        protected List<ModelError> GetModelErrors()
+        {
+            var allErrors = ModelState.Values.SelectMany(v => v.Errors).ToList();
+            return allErrors;
+        }
     }
 }

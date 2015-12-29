@@ -429,4 +429,16 @@
   <data name="WellDone" xml:space="preserve">
     <value>WellDone</value>
   </data>
+  <data name="ContactForm" xml:space="preserve">
+    <value>Contact form</value>
+  </data>
+  <data name="MainSite" xml:space="preserve">
+    <value>Main site</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read more...</value>
+  </data>
+  <data name="RegisterForService" xml:space="preserve">
+    <value>Register for service</value>
+  </data>
 </root>
