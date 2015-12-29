@@ -393,4 +393,7 @@
   <data name="Welcome" xml:space="preserve">
     <value>Witamy</value>
   </data>
+  <data name="WrongEmailAddress" xml:space="preserve">
+    <value>E-mail ma niepoprawną formę.</value>
+  </data>
 </root>

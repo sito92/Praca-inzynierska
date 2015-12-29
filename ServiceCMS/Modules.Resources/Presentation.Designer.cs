@@ -970,6 +970,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to E-mail has to have valid form..
+        /// </summary>
+        public static string WrongEmailAddress {
+            get {
+                return ResourceManager.GetString("WrongEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Year.
         /// </summary>
         public static string Year {

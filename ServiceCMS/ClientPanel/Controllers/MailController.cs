@@ -37,16 +37,19 @@ namespace ClientPanel.Controllers
 
         public ActionResult SendMail(MailViewModel model)
         {
-            var emailAddress = _settingsService.GetPropertyByName("EmailUsername");
             var contactFormActive = _settingsService.GetPropertyByName("ContactFormEnabled");
-            model.Content += ClientAddressEmailHelper.RefactorClientAddress(model.ClientEmailAddres);
+            if (contactFormActive == "true")
+            {
+                var emailAddress = _settingsService.GetPropertyByName("EmailUsername");
+                model.Content += ClientAddressEmailHelper.RefactorClientAddress(model.ClientEmailAddres);
 
-            var response = _mailManagementService.SendMail(emailAddress, model.Content, model.Subject);
-            
-            if(emailAddress != null && !String.IsNullOrEmpty(model.Content) && !String.IsNullOrEmpty(model.Subject) && contactFormActive == "true")
-                return new JsonNetResult(new { success = response.IsSucceed}, JsonRequestBehavior.AllowGet);
+                _mailManagementService.SendMail(emailAddress, model.Content, model.Subject);
+
+            }
             else
-                return new JsonNetResult(new { success = false}, JsonRequestBehavior.AllowGet);
+            {
+                return View("SiteNotFound");
+            }
         }
 
     }
