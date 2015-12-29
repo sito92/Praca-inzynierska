@@ -1,9 +1,10 @@
 ﻿@using Modules.Resources
 @Scripts.Render("~/bundles/menu")
 <script type="text/ng-template" id="nodes_renderer.html">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-bind="node.Content"></a>
-    <ul class="dropdown-menu">
-        <li ng-repeat="node in node.Children" ng-include="'nodes_renderer.html' " class="dropdown-submenu">
+    <a href="{{'/Page/Show/' + node.Page.Id}}"  ng-bind="node.Content" ng-if="node.Page!=null"></a>
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-bind="node.Content" ng-if="node.Page==null"></a>
+    <ul class="dropdown-menu" ng-if="node.Children.length > 0">
+        <li ng-repeat="node in node.Children" ng-include="'nodes_renderer.html' " class="" ng-class="{'dropdown-submenu' : node.Children.length > 0}">
         </li>
     </ul>
 
@@ -11,68 +12,24 @@
 </script>
 
 <div ng-controller="MenuController">
-    <nav class="navbar navbar-default">
+    <nav class="navbar kentico-color">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#" ng-bind="model.CompanyName"></a>
             </div>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" ng-model="model.Buttons">
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 1 <b class="caret"></b></a>
-                        <ul class="dropdown-menu multi-level">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                            <li class="dropdown-submenu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li class="dropdown-submenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="dropdown-submenu">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">One more separated link</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
                     <li ng-repeat="rootButton in model.Buttons">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span ng-bind="rootButton.Content"></span><b class="caret"></b></a>
-                        <ul class="dropdown-menu multi-level">
-                            <li ng-repeat="node in rootButton.Children" ng-include="'nodes_renderer.html'" class="dropdown-submenu"></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span ng-bind="rootButton.Content"></span><b class="caret" ng-if="rootButton.Children.length > 0"></b></a>
+                        <ul class="dropdown-menu multi-level" ng-if="rootButton.Children.length > 0">
+                            <li ng-repeat="node in rootButton.Children" ng-include="'nodes_renderer.html'" class="" ng-class="{'dropdown-submenu' : node.Children.length > 0}"></li>
                         </ul>
                     </li>
                 </ul>
-
-
-
-            </div><!-- /.navbar-collapse -->
+            </div>
         </div>
     </nav>
-
-    <div data-ui-tree="treeOptions" ng-repeat="rootButton in model.Buttons">
-        <ol ui-tree-nodes="" ng-model="rootButton.Children" id="tree-root">
-            <li ng-repeat="node in rootButton.Children" ui-tree-node ng-include="'nodes_renderer.html'"></li>
-        </ol>
-    </div>
 
 
 
