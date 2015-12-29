@@ -1,0 +1,9 @@
+﻿@using Modules.Resources
+@Scripts.Render("~/bundles/statistics")
+@{
+    ViewBag.Title = Presentation.Statistics;
+}
+<div ng-controller="StatisticsController">
+    @Html.Partial("Menu")
+    <div id="pageContainer" bind-html-compile="pageHtml"></div>
+</div>

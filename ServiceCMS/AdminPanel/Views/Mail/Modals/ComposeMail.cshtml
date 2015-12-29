@@ -39,7 +39,7 @@
                         <button class="btn btn-sm kentico-color" ng-click="addAll()"><span>@Presentation.AddAll</span></button>
                     </div>
                     <div ng-repeat="reviver in mail.Subscribers" class="categories-container">
-                        <div class="category-box" role="alert">
+                        <div class="category-box kentico-color" role="alert">
                             <button type="button" class="close" ng-click="remove($index)"><span aria-hidden="true">&times;</span></button>
                             <span ng-bind="reviver.EmailAddress"></span>
                         </div>
@@ -50,6 +50,6 @@
     </form>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-disabled="form.$invalid || mail.Subscribers<=0" ng-click="send()">@Presentation.Send</button>
+    <button class="btn kentico-color" ng-disabled="form.$invalid || mail.Subscribers<=0" ng-click="send()">@Presentation.Send</button>
     <button class="btn btn-default" ng-click="cancel()">@Presentation.Cancel</button>
 </div>

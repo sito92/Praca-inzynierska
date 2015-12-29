@@ -1,7 +1,7 @@
 ﻿@using Modules.Resources
 @Scripts.Render("~/bundles/popUps")
 @{
-    ViewBag.Title = Presentation.ServiceProviders;
+    ViewBag.Title = Presentation.PopUp;
 }
 <div ng-controller="PopUpController">
     @Html.Partial("Menu")
@@ -21,7 +21,7 @@
                 <tbody>
                     <tr ng-repeat="popUp in model.PopUps">
                         <td ng-bind="popUp.Title"></td>
-                        <td><input ng-model="popUp.Active" type="checkbox" ng-change="activatePopUp(popUp)" />
+                        <td><input ng-model="popUp.Active" type="checkbox" ng-change="activatePopUp(popUp)" class="form-control"/>
                         <td class="text-center">
                             <a ng-click="edit(popUp)"><span class="glyphicon glyphicon-edit text-success"></span></a>
                             <a ng-click="delete(popUp)"><span class="glyphicon glyphicon-remove text-danger"></span></a>

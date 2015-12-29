@@ -1,0 +1,19 @@
+﻿@using Modules.Resources
+
+<div ng-controller="UsersForSelectedMonthController" class="text-center">
+    <div class="form-group form-field row">
+        <div class="col-md-4 col-md-offset-4">
+            <div>
+                <label class="control-label">@Presentation.Month</label>
+                <uib-datepicker ng-model="date" datepicker-mode="'month'" min-mode="'month'" max-mode="'month'" class="well well-lg statistics-date"></uib-datepicker>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="showChart">
+        <div class="col-md-8 col-md-offset-2">
+            <canvas id="line" class="chart chart-line" chart-data="data"
+                    chart-labels="labels" chart-legend="false"></canvas>
+        </div>
+    </div>
+
+</div>

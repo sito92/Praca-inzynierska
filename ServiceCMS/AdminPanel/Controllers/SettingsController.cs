@@ -10,7 +10,7 @@ using Logic.Settings.Interfaces;
 
 namespace AdminPanel.Controllers
 {
-    public class SettingsController : Controller
+    public class SettingsController : BaseController
     {
         private ISettingsService _settingsService;
 

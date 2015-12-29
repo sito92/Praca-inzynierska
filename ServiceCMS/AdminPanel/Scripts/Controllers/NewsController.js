@@ -1,4 +1,4 @@
-﻿app.controller('NewsController', function ($scope, $modal,NewsService) {
+﻿app.controller('NewsController', function ($scope, $modal, NewsService) {
     var refresh = function () {
         $scope.selectedNews = null;
         NewsService.getNewestNewses().then(function (jsonResult) {
@@ -60,11 +60,22 @@
             refresh();
         });
     }
+    $scope.newsCategories = function () {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/News/GetModal?name=NewsCategories',
+            controller: 'NewsCategoriesModalCtrl',
+            size: "md"
+        });
+        modalInstance.result.then(function () {
+            refresh();
+        });
+    }
     $scope.select = function (news) {
         $scope.selectedNews = news;
     }
 });
-app.controller('NewsAddModalCtrl', function ($scope, $modalInstance, $filter, $modal,NewsService) {
+app.controller('NewsAddModalCtrl', function ($scope, $modalInstance, $filter, $modal, NewsService) {
     $scope.news =
 {
     Tilte: "",
@@ -114,7 +125,7 @@ app.controller('NewsChooseCategoryModalCtrl', function ($scope, $modalInstance, 
 
     NewsCategoriesService.getAll().then(function (jsonResult) {
         if (jsonResult.success) {
-            $scope.categories = jsonResult.categories;
+            $scope.categories = jsonResult.data;
 
         } else {
             alert(jsonResult.message);
@@ -135,10 +146,10 @@ app.controller('NewsChooseCategoryModalCtrl', function ($scope, $modalInstance, 
         $modalInstance.close($scope.selectedCategory);
     }
 });
-app.controller('NewsEditModalCtrl', function ($scope, $modalInstance, NewsService, news,$modal,$filter) {
+app.controller('NewsEditModalCtrl', function ($scope, $modalInstance, NewsService, news, $modal, $filter) {
     $scope.news = news;
-   
-    $scope.save = function () {    
+
+    $scope.save = function () {
 
         NewsService.edit($scope.news).then(function (jsonResult) {
             if (jsonResult.success) {
@@ -194,4 +205,131 @@ app.controller('NewsDeleteModalCtrl', function ($scope, $modalInstance, NewsServ
     }
 
 });
+app.controller('NewsCategoriesModalCtrl', function ($scope, $modalInstance, $modal, NewsCategoriesService) {
+    var refresh = function () {
+        NewsCategoriesService.getAll().then(function (jsonResult) {
+            if (jsonResult.success) {
+                $scope.categories = jsonResult.data;
 
+            } else {
+                alert(jsonResult.message);
+            }
+        }, function () {
+            alert("Error");
+        });
+    }
+    refresh();
+
+
+    $scope.add = function () {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/News/GetModal?name=AddCategory',
+            controller: 'AddCategoryModalCtrl',
+            size: "md"
+        });
+        modalInstance.result.then(function () {
+            refresh();
+        });
+    }
+    $scope.edit = function (category) {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/News/GetModal?name=EditCategory',
+            controller: 'EditCategoryModalCtrl',
+            size: "md",
+            resolve: {
+                category: function () {
+                    return angular.copy(category);
+                }
+            }
+        });
+        modalInstance.result.then(function () {
+            refresh();
+        });
+    }
+    $scope.delete = function (category) {
+        var modalInstance = $modal.open({
+            animation: true,
+            templateUrl: '/News/GetModal?name=ConfirmDelete',
+            controller: 'DeleteCategoryModalCtrl',
+            size: "sm",
+            resolve: {
+                category: function () {
+                    return category;
+                }
+            }
+        });
+        modalInstance.result.then(function () {
+            refresh();
+        });
+    }
+    $scope.cancel = function () {
+        $modalInstance.close();
+    }
+});
+app.controller('AddCategoryModalCtrl', function ($scope, $modalInstance, NewsCategoriesService) {
+    $scope.category = {
+        Category: ''
+    };
+
+    $scope.save = function () {
+        NewsCategoriesService.add($scope.category).then(function (jsonResult) {
+            if (jsonResult.success) {
+                $modalInstance.close();
+            } else {
+                alert(jsonResult.message);
+            }
+        }, function () {
+            alert("Error");
+            $modalInstance.dismiss();
+        });
+
+    };
+
+    $scope.cancel = function () {
+        $modalInstance.dismiss();
+    };
+});
+app.controller('EditCategoryModalCtrl', function ($scope, $modalInstance, NewsCategoriesService,category) {
+    $scope.category = category;
+
+    $scope.save = function () {
+        NewsCategoriesService.edit($scope.category).then(function (jsonResult) {
+            if (jsonResult.success) {
+                $modalInstance.close();
+            } else {
+                alert(jsonResult.message);
+            }
+        }, function () {
+            alert("Error");
+            $modalInstance.dismiss();
+        });
+
+    };
+
+    $scope.cancel = function () {
+        $modalInstance.dismiss();
+    };
+});
+
+app.controller('DeleteCategoryModalCtrl', function ($scope, $modalInstance, NewsCategoriesService, category) {
+    $scope.category = category;
+    $scope.confirm = function () {
+        NewsCategoriesService.delete($scope.category).then(function (jsonResult) {
+            if (jsonResult.success) {
+                $modalInstance.close();
+            } else {
+                alert(jsonResult.message);
+            }
+        }, function () {
+            alert("Error");
+            $modalInstance.dismiss();
+        });
+
+    };
+    $scope.decline = function (index) {
+        $modalInstance.close();
+    }
+
+});

@@ -1,0 +1,31 @@
+﻿@using Modules.Resources
+
+<div ng-controller="UserActionsBetweenDatesController" class="text-center">
+    <div class="form-group form-field row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-5">
+                <div class="col-md-3">
+                    <label class="control-label">@Presentation.DateFrom</label>
+                </div>
+                <div class="col-md-9">
+                    <uib-datepicker ng-model="dateFrom" min-mode="'day'" max-mode="'year'" class="well well-sm" max-date="dateTo"></uib-datepicker>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="col-md-3">
+                    <label class="control-label">@Presentation.DateTo</label>
+                </div>
+                <div class="col-md-9">
+                    <uib-datepicker ng-model="dateTo" min-mode="'day'" max-mode="'year'" class="well well-sm" min-date="dateFrom"></uib-datepicker>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="showChart">
+        <div class="col-md-8 col-md-offset-2">
+            <canvas id="doughnut" class="chart chart-doughnut" chart-data="data"
+                    chart-labels="labels" chart-legend="false"></canvas>
+        </div>
+    </div>
+
+</div>

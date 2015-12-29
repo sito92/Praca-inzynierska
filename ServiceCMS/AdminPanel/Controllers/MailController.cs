@@ -11,7 +11,7 @@ using Logic.NewsletterReceiver.Interfaces;
 
 namespace AdminPanel.Controllers
 {
-    public class MailController : Controller
+    public class MailController : BaseController
     {
         private readonly IMailManagementService _mailManagementService;
         private readonly INewsletterReceiverService _newsletterReceiverService;

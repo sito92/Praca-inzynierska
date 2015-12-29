@@ -358,9 +358,11 @@ span.logo {
         text-decoration: none;
     color: black;
 }
-.settings-form input[type="checkbox"] {
+input[type="checkbox"] {
     margin: 0 auto;
     width: 30px;
     height: 30px;
 }
-
+.statistics-date table {
+    margin: 0 auto;
+}

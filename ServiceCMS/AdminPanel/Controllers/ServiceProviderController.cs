@@ -9,7 +9,7 @@ using Logic.Service.Interfaces;
 
 namespace AdminPanel.Controllers
 {
-    public class ServiceProviderController : Controller
+    public class ServiceProviderController : BaseController
     {
         private IServiceProviderService _serviceProviderService;
 

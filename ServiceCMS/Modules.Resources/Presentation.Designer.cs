@@ -232,6 +232,24 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date from.
+        /// </summary>
+        public static string DateFrom {
+            get {
+                return ResourceManager.GetString("DateFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date to.
+        /// </summary>
+        public static string DateTo {
+            get {
+                return ResourceManager.GetString("DateTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Decline.
         /// </summary>
         public static string Decline {
@@ -466,6 +484,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Month.
+        /// </summary>
+        public static string Month {
+            get {
+                return ResourceManager.GetString("Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
@@ -480,6 +507,15 @@ namespace Modules.Resources {
         public static string News {
             get {
                 return ResourceManager.GetString("News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to News categories.
+        /// </summary>
+        public static string NewsCategories {
+            get {
+                return ResourceManager.GetString("NewsCategories", resourceCulture);
             }
         }
         
@@ -880,11 +916,65 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User actions between dates.
+        /// </summary>
+        public static string UserActionsBetweenDates {
+            get {
+                return ResourceManager.GetString("UserActionsBetweenDates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users between dates.
+        /// </summary>
+        public static string UsersBetweenDates {
+            get {
+                return ResourceManager.GetString("UsersBetweenDates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users for every month.
+        /// </summary>
+        public static string UsersForEveryMonth {
+            get {
+                return ResourceManager.GetString("UsersForEveryMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users for selected month.
+        /// </summary>
+        public static string UsersForSelectedMonth {
+            get {
+                return ResourceManager.GetString("UsersForSelectedMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users per country.
+        /// </summary>
+        public static string UsersPerCountry {
+            get {
+                return ResourceManager.GetString("UsersPerCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome.
         /// </summary>
         public static string Welcome {
             get {
                 return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Year.
+        /// </summary>
+        public static string Year {
+            get {
+                return ResourceManager.GetString("Year", resourceCulture);
             }
         }
     }
