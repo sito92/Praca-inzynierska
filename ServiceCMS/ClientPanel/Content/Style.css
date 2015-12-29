@@ -192,3 +192,6 @@ body {
         .show {
             display: block;
         }
+        .pagination li:hover {
+            cursor: pointer;
+        }

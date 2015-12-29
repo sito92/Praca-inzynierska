@@ -38,9 +38,9 @@ namespace ClientPanel.Controllers
         public ActionResult GetLatestNews(int amount,int page)
         {
             var resultCollection = _newsService.GetNewestNewsesCollection().OrderBy(x => x.LastModifiedTimeStamp).Take(amount*page).Skip(amount*page-amount).ToList();
-
+            var newsAmount = _newsService.GetNewestNewsesCollection().Count();
             if(resultCollection.Any())
-                return new JsonNetResult(new { success = true, data = resultCollection }, JsonRequestBehavior.AllowGet);
+                return new JsonNetResult(new { success = true, data = resultCollection, newsAmount = newsAmount }, JsonRequestBehavior.AllowGet);
             else
                 return new JsonNetResult(new { success = false }, JsonRequestBehavior.AllowGet);
         }

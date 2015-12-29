@@ -3,20 +3,42 @@
 @{
     ViewBag.Title = Presentation.MainSite;
 }
-
-@foreach (var news in @Model)
-{
-    <div class="well kentico-color">
+@Scripts.Render("~/bundles/news")
+<div ng-controller="NewsController">
+    @*@foreach (var news in @Model)
+    {
+        <div class="well kentico-color">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>@news.Title</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>@Html.Raw(@news.Content)</h4>
+                </div>
+            </div>
+            <div class="readMoreLink">@Html.ActionLink(Presentation.ReadMore, "Show", "News", new { id = @news.Id }, null)</div>
+        </div>
+    }*@
+    <div class="well kentico-color" ng-repeat="news in newses">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2>@news.Title</h2>
+                <h2 ng-bind="news.Title"></h2>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h4>@Html.Raw(@news.Content)</h4>
+                <h4 ng-bind-html="trusted(news.Content)"></h4>
             </div>
         </div>
-        <div class="readMoreLink">@Html.ActionLink(Presentation.ReadMore, "Show", "News",new {id=@news.Id},null)</div>
+        <div class="readMoreLink"><a href="#" ng-click="goTo(news)">@Presentation.ReadMore</a></div>
     </div>
-}
+    <nav>
+        <ul class="pagination pagination-lg">
+            <li><a href="#" aria-label="Previous" ng-click="first()"><span aria-hidden="true">&laquo;</span></a></li>
+            <li ng-repeat="i in getPageNumber() track by $index" ng-click="changePage(i)" ng-class="(i == page) ? 'active':''"><span ng-bind="i"></span></li>
+            <li><a href="#" aria-label="Next" ng-click="last()"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </nav>
+</div>

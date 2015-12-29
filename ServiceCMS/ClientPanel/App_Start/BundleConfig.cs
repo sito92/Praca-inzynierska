@@ -72,7 +72,11 @@ namespace ClientPanel
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/navbar.js"
                         ));
-
+            bundles.Add(new ScriptBundle("~/bundles/news").Include(
+                       "~/Scripts/Controllers/NewsController.js",
+                       "~/Scripts/Services/NewsService.js",
+                       "~/Scripts/Services/SettingsService.js"
+                       ));
             bundles.Add(new ScriptBundle("~/bundles/menu").Include(
                         "~/Scripts/Controllers/MenuController.js",
                         "~/Scripts/Services/MenuService.js"
