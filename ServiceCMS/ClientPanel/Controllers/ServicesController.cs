@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ClientPanel.Extensions;
 using ClientPanel.Models.Calendar;
 using Logic.Common.Models;
+using Logic.MailManagement.Interfaces;
 using Logic.Service.Interfaces;
 using Logic.Settings.Interfaces;
 using Modules.Resources;
@@ -17,6 +18,7 @@ namespace ClientPanel.Controllers
         private readonly IServicesService _servicesService;
         private readonly ISettingsService _settingsService;
         public ServicesController(IServicesService servicesService,ISettingsService settingsService)
+
         {
             _servicesService = servicesService;
             _settingsService = settingsService;

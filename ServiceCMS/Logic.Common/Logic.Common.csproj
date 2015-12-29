@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ClientConfirmationEmail.cs" />
     <Compile Include="Models\FileModel.cs" />
     <Compile Include="Models\InsetArgumentModel.cs" />
     <Compile Include="Models\InsetModel.cs" />

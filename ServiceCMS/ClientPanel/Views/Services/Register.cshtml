@@ -8,13 +8,13 @@
 @*@Scripts.Render("~/bundles/calendar")*@
 @Scripts.Render("~/bundles/services")
 <div class="row" ng-controller="ServicesController">
-    <div class="alert alert-danger alert-dismissible ninja" role="alert" ng-class="(result != null && !result.success) ? 'show' : 'aa'">
+    <div class="alert alert-danger alert-dismissible ninja" role="alert" ng-class="(result != null && !result.success) ? 'show' : ''">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong>@Presentation.Error!</strong><span ng-bind="result.message"></span>
     </div>
 
 
-    <div class="alert alert-success alert-dismissible ninja" role="alert" ng-class="(result.success) ? 'show' : 'aa' ">
+    <div class="alert alert-success alert-dismissible ninja" role="alert" ng-class="(result.success) ? 'show' : '' ">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong>@Presentation.WellDone.</strong><span ng-bind="result.message"></span>
     </div>

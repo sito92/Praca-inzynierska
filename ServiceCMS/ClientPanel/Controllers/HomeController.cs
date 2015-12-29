@@ -18,7 +18,7 @@ namespace ClientPanel.Controllers
 
         public ActionResult Index()
         {
-            var newses = _newsService.GetAll().ToList();
+            var newses = _newsService.GetNewestNewsesCollection().ToList();
    
             if(newses.Any())
                 return View(newses);

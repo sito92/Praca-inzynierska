@@ -35,15 +35,15 @@ namespace DAL.Migrations
             SeedInsetArguments(context);
             SeedInset(context);
             
-            SeedImages(context);
+            //SeedImages(context);
             SeedSettings(context);
             SeedStatisticsInformation(context);
             // SeedServiceTypes(context);
 
             // SeedServiceTypes(context);
             SeedNewses(context);
-            SeedServiceProviders(context);
-            SeedServicePhrases(context);
+            //SeedServiceProviders(context);
+            //SeedServicePhrases(context);
             SeedRegistratedServices(context);
             SeedPopUps(context);
             SeedNewsletterRecivers(context);
@@ -54,7 +54,7 @@ namespace DAL.Migrations
             IPasswordManager pManager = new PasswordManager(new HashComputer());
             string salt1;
             context.Users.AddOrUpdate(x => x.Login,
-                new User() { Login = "test", Password = _passwordManager.GeneratePasswordHash("test", out salt1), Salt = salt1 }
+                new User() { Login = "magda", Password = _passwordManager.GeneratePasswordHash("magda", out salt1), Salt = salt1 }
                 );
             context.SaveChanges();
         }
@@ -66,7 +66,7 @@ namespace DAL.Migrations
                 new Settings() { Name = "EmailUsername", Value = "servicecmsthesis@gmail.com", InputType = "text" },
                 new Settings() { Name = "EmailPassword", Value = "arturikamil", InputType = "password" },
                 new Settings() { Name = "ShowingNewsNumber", Value = "10", InputType = "number" },
-                new Settings() { Name = "CompanyName", Value = "Simple Code", InputType = "text" },
+                new Settings() { Name = "CompanyName", Value = "Lovely Look", InputType = "text" },
                 new Settings() { Name = "ContactFormEnabled", Value = "true", InputType = "checkbox" },
                 new Settings() { Name = "RegisterServiceEnabled", Value = "true", InputType = "checkbox" },
                 new Settings() { Name = "ShowingPopUp", Value = "false", InputType = "checkbox" }
@@ -77,47 +77,45 @@ namespace DAL.Migrations
         private void SeedNewses(ServiceCMSContext context)
         {
             context.Newses.AddOrUpdate(x => x.Title,
-                new News() { Content = "TestNews1", Title = "TestNews1Title", CreationTimeStamp = DateTime.Now },
-                new News() { Content = "TestNews2", Title = "TestNews2Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 1 },
-                new News() { Content = "TestNews3", Title = "TestNews3Title", CreationTimeStamp = DateTime.Now, RestoreNewsId = 2 },
-                new News() { Content = "TestNews4", Title = "TestNews4Title", CreationTimeStamp = DateTime.Now},
-                new News() { Content = "TestNews5", Title = "TestNews5Title", CreationTimeStamp = DateTime.Now }
+                new News() { Content = "Drodzy klienci! <br>Uprzejmie informujemy, ¿e dnia 10.10.15 r. bêdzie mia³o miejsce otwarcie salonu Lovely Look. W dniu otwarcia wszystkie us³ugi bêd¹ tañsze o 25%! <br>Serdecznie zapraszamy,<br>zespó³ Lovely Look", Title = "Otwarcie salonu", CreationTimeStamp = DateTime.Now },
+                new News() { Content = "Drodzy klienci! <br>Uprzejmie informujemy, ¿e dnia 1.10.15 r. bêdzie mia³o miejsce otwarcie salonu Lovely Look. W dniu otwarcia wszystkie us³ugi bêd¹ tañsze o 25%! <br>Serdecznie zapraszamy,<br>zespó³ Lovely Look", Title = "Otwarcie salonu w paŸdzierniku", CreationTimeStamp = DateTime.Now, RestoreNewsId = 1 },
+                new News() { Content = "Drodzy klienci! <br>Uprzejmie informujemy, ¿e dnia 1.10.15 r. bêdzie mia³o miejsce otwarcie salonu Lovely Look. W dniu otwarcia wszystkie us³ugi bêd¹ tañsze o 25%! <br>Serdecznie zapraszamy,<br>zespó³ Lovely Look", Title = "Otwarcie salonu", CreationTimeStamp = DateTime.Now, RestoreNewsId = 2 },
+                new News() { Content = "Drodzy klienci! <br>Uprzejmie informujemy, ¿e dnia 13.11.15 r. bêdzie mia³a miejsce podwy¿ka cen, spowodowana wzrostem kosztu lokalu i nieudolnym rz¹dom zamordystów. <br>Serdecznie zapraszamy,<br>zespó³ Lovely Look", Title = "Zni¿ka dla studentów", CreationTimeStamp = DateTime.Now },
+                new News() { Content = "Drodzy klienci! <br>Uprzejmie informujemy, ¿e w okresie œwi¹tecznym salon bêdzie czynny: <br>23.12 - 8-16<br>24.12 - 8-12<br>W okresie poprzedzaj¹cym nowy rok, salon bêdzie otwarty normalnie. Bo czemu nie?<br>Serdecznie zapraszamy,<br>zespó³ Lovely Look", Title = "Œwi¹tecznie dni otwarcia", CreationTimeStamp = DateTime.Now }
                 );
             context.SaveChanges();
         }
 
         private void SeedMenuButtons(ServiceCMSContext context)
         {
-            context.MenuButtons.AddOrUpdate(x => x.Content, new Models.MenuButton() { Content = "rodzic",Order = 0});
+            context.MenuButtons.AddOrUpdate(x => x.Content, new Models.MenuButton() { Content = "Us³ugi", Order = 0 });
             context.SaveChanges();
 
             context.MenuButtons.AddOrUpdate(x => x.Content,
-                new Models.MenuButton() { Content = "dziecko1", ParentId = 1 ,Order = 0,PageId = 1},
-                new Models.MenuButton() { Content = "dziecko2", ParentId = 1, Order = 0, PageId = 2 },
-                new Models.MenuButton() { Content = "dziecko11", ParentId = 2, Order = 0, PageId = 1 },
-                new Models.MenuButton() { Content = "dziecko111", ParentId = 4, Order = 0, PageId = 3 });
+                new Models.MenuButton() { Content = "Metamorfoza", ParentId = 1 ,Order = 0,PageId = 3},
+                new Models.MenuButton() { Content = "Flamboyage", ParentId = 1, Order = 0, PageId =4 },
+                new Models.MenuButton() { Content = "Prostowanie keratynowe", ParentId = 1, Order = 0, PageId = 5 },
+                new Models.MenuButton() { Content = "Trwa³a", ParentId = 1, Order = 0, PageId = 6 },
+                new Models.MenuButton() { Content = "Ombre", ParentId = 1, Order = 0, PageId = 8 });
             context.SaveChanges();
 
-            context.MenuButtons.AddOrUpdate(x => x.Content, new Models.MenuButton() { Content = "rodzic2", Order = 0 });
-            context.SaveChanges();
-            context.MenuButtons.AddOrUpdate(x => x.Content,
-               new Models.MenuButton() { Content = "dziecko21", ParentId = 6, Order = 0, PageId = 4 },
-               new Models.MenuButton() { Content = "dziecko22", ParentId = 6, Order = 0, PageId = 5 },
-               new Models.MenuButton() { Content = "dziecko211", ParentId = 7, Order = 0, PageId = 4 },
-               new Models.MenuButton() { Content = "dziecko2111", ParentId = 9, Order = 0, PageId = 5 });
-            context.SaveChanges();
+            //context.MenuButtons.AddOrUpdate(x => x.Content, new Models.MenuButton() { Content = "rodzic2", Order = 0 });
+            //context.SaveChanges();
+            //context.MenuButtons.AddOrUpdate(x => x.Content,
+            //   new Models.MenuButton() { Content = "dziecko21", ParentId = 6, Order = 0, PageId = 4 },
+            //   new Models.MenuButton() { Content = "dziecko22", ParentId = 6, Order = 0, PageId = 5 },
+            //   new Models.MenuButton() { Content = "dziecko211", ParentId = 7, Order = 0, PageId = 4 },
+            //   new Models.MenuButton() { Content = "dziecko2111", ParentId = 9, Order = 0, PageId = 5 });
+            //context.SaveChanges();
         }
 
         private void SeedNewsCategories(ServiceCMSContext context)
         {
             context.NewsCategories.AddOrUpdate(x => x.Category,
-                new NewsCategory() {Category = "Handlowy"},
-                new NewsCategory() {Category = "Aktualnoœci"},
-                new NewsCategory() {Category = "Us³ugi"},
                 new NewsCategory() {Category = "Promocja"},
                 new NewsCategory() {Category = "Godziny"},
-                new NewsCategory() {Category = "AVA"},
-                new NewsCategory() {Category = "Wystrój"}
+                new NewsCategory() {Category = "Personel"},
+                new NewsCategory() {Category = "Wydarzenie"}
                 );
             context.SaveChanges();
         }
@@ -154,68 +152,16 @@ namespace DAL.Migrations
         private void SeedPage(ServiceCMSContext context)
         {
             context.Page.AddOrUpdate(x => x.Name,
-                new Page() { Name = "Strona g³owna", Content = "DUPA"},
-                new Page() { Name = "Strona1", Content = "DUPA", RestorePageId = 1 },
-                new Page() { Name = "Strona2", Content = "DUPA", RestorePageId = 2 },
-                new Page() { Name = "StrAsdfsdona3", Content = "DUPA", RestorePageId = 3 },
-                new Page() { Name = "Fadas", Content = "DUPA"},
-                new Page() { Name = "CXCVx", Content = "DUPA"},
-                new Page() { Name = "ASDF", Content = "DUPA"}
+                new Page() { Name = "Metamorfoza", Content = "Metamorfoza" },
+                new Page() { Name = "Metamorfoza", Content = "Metamorfoza", RestorePageId = 1 },
+                new Page() { Name = "Metamorfoza", Content = "Metamorfoza", RestorePageId = 2 },
+                new Page() { Name = "Flamboyage", Content = "Flamboyage" },
+                new Page() { Name = "Prostowanie keratynowe", Content = "Prostowanie keratynowe" },
+                new Page() { Name = "Trwa³a", Content = "Trwa³a" },
+                new Page() { Name = "Ombre", Content = "Ombre" },
+                new Page() { Name = "Ombre", Content = "Ombre", RestorePageId = 7}
                 );
 
-            var firstPage = new Page() {Name = "SASD", Content = "DUPA", Media = new List<File>()};
-            var secondPage = new Page() {Name = "ASADA", Content = "DUPA", Media = new List<File>()};
-            var thirdPage = new Page() {Name = "EZFsd", Content = "DUPA", Media = new List<File>()};
-
-            var firstFile = new File() { Name = "Plik 1", Extension = ".jpg", FileType = 1, Path = "C:/obrazek.jpg" };
-            var secondFile = new File() { Name = "T³o", Extension = ".jpg", FileType = 1, Path = "C:/tlo.jpg" };
-            var thirdFile = new File() { Name = "Ulubiony obrazek", Extension = ".jpg", FileType = 1, Path = "C:/obraeksdfsd.jpg" };
-
-            firstPage.Media.Add(firstFile);
-            firstPage.Media.Add(secondFile);
-            secondPage.Media.Add(secondFile);
-            secondPage.Media.Add(thirdFile);
-            thirdPage.Media.Add(firstFile);
-
-            context.Page.AddOrUpdate(x => x.Name, firstPage,secondPage,thirdPage);
-
-            context.SaveChanges();
-        }
-
-        private void SeedImages(ServiceCMSContext context)
-        {
-            context.Files.AddOrUpdate(x => x.Name,
-                new File() { Name = "Plik 1", Extension = ".jpg", FileType = 1, Path = "C:/obrazek.jpg" },
-                new File() { Name = "Ulubiony obrazek", Extension = ".jpg", FileType = 1, Path = "C:/obraeksdfsd.jpg" },
-                new File() { Name = "Inny picture", Extension = ".jpg", FileType = 1, Path = "C:/obrasdzek.jpg" },
-                new File() { Name = "T³o", Extension = ".jpg", FileType = 1, Path = "C:/tlo.jpg" },
-                new File() { Name = "Do newsa", Extension = ".jpg", FileType = 1, Path = "C:/news.jpg" }
-                );
-        }
-
-        private void SeedServiceTypes(ServiceCMSContext context)
-        {
-            context.ServiceTypes.AddOrUpdate(x => x.Name,
-                new ServiceType() { Name = "Strzy¿enie mêskie" },
-                new ServiceType() { Name = "Strzy¿enie damskie" }
-                );
-            context.SaveChanges();
-        }
-
-        private void SeedServiceProviders(ServiceCMSContext context)
-        {
-            var a = new ServiceProvider() { Name = "Pani Krysia", AvailableServices = new List<ServiceType>() };
-            var b = new ServiceProvider() { Name = "Pan Marek", AvailableServices = new List<ServiceType>() };
-            var c = new ServiceProvider() { Name = "st. spec. Zenos³aw", AvailableServices = new List<ServiceType>() };
-
-            var firstType = new ServiceType() { Name = "Strzy¿enie mêskie" };
-            var secondType = new ServiceType() { Name = "Strzy¿enie damskie" };
-            a.AvailableServices.Add(firstType);
-            a.AvailableServices.Add(secondType);
-            b.AvailableServices.Add(firstType);
-            c.AvailableServices.Add(secondType);
-
-            context.ServiceProviders.AddOrUpdate(x => x.Name, a, b, c);
             context.SaveChanges();
         }
 
@@ -241,22 +187,22 @@ namespace DAL.Migrations
             context.SaveChanges();
         }
 
-        private void SeedServicePhrases(ServiceCMSContext context)
-        {
-            context.Phases.AddOrUpdate(x => x.Name,
-                // Strzy¿enie damskie
-                new ServicePhase() { Name = "Diagnoza F", DelayInMinutes = 0, DurationInMinutes = 10, Order = 1, ServiceTypeId = 2 },
-                new ServicePhase() { Name = "Strzy¿enie F", DelayInMinutes = 0, DurationInMinutes = 60, Order = 2, ServiceTypeId = 2 },
-                new ServicePhase() { Name = "Modelowanie F", DelayInMinutes = 60, DurationInMinutes = 30, Order = 3, ServiceTypeId = 2 },
-                new ServicePhase() { Name = "Farbowanie F", DelayInMinutes = 0, DurationInMinutes = 40, Order = 4, ServiceTypeId = 2 },
-                // Strzy¿enie mêskie
-                new ServicePhase() { Name = "Diagnoza M", DelayInMinutes = 0, DurationInMinutes = 10, Order = 1, ServiceTypeId = 1 },
-                new ServicePhase() { Name = "Strzy¿enie M", DelayInMinutes = 0, DurationInMinutes = 35, Order = 2, ServiceTypeId = 1 },
-                new ServicePhase() { Name = "Modelowanie M", DelayInMinutes = 80, DurationInMinutes = 15, Order = 4, ServiceTypeId = 1 },
-                new ServicePhase() { Name = "TEST PHASE", DelayInMinutes = 0, DurationInMinutes = 10, Order = 5, ServiceTypeId = 1 }
-                );
-            context.SaveChanges();
-        }
+        //private void SeedServicePhrases(ServiceCMSContext context)
+        //{
+        //    context.Phases.AddOrUpdate(x => x.Name,
+        //        // Strzy¿enie damskie
+        //        new ServicePhase() { Name = "Diagnoza F", DelayInMinutes = 0, DurationInMinutes = 10, Order = 1, ServiceTypeId = 2 },
+        //        new ServicePhase() { Name = "Strzy¿enie F", DelayInMinutes = 0, DurationInMinutes = 60, Order = 2, ServiceTypeId = 2 },
+        //        new ServicePhase() { Name = "Modelowanie F", DelayInMinutes = 60, DurationInMinutes = 30, Order = 3, ServiceTypeId = 2 },
+        //        new ServicePhase() { Name = "Farbowanie F", DelayInMinutes = 0, DurationInMinutes = 40, Order = 4, ServiceTypeId = 2 },
+        //        // Strzy¿enie mêskie
+        //        new ServicePhase() { Name = "Diagnoza M", DelayInMinutes = 0, DurationInMinutes = 10, Order = 1, ServiceTypeId = 1 },
+        //        new ServicePhase() { Name = "Strzy¿enie M", DelayInMinutes = 0, DurationInMinutes = 35, Order = 2, ServiceTypeId = 1 },
+        //        new ServicePhase() { Name = "Modelowanie M", DelayInMinutes = 80, DurationInMinutes = 15, Order = 4, ServiceTypeId = 1 },
+        //        new ServicePhase() { Name = "TEST PHASE", DelayInMinutes = 0, DurationInMinutes = 10, Order = 5, ServiceTypeId = 1 }
+        //        );
+        //    context.SaveChanges();
+        //}
 
         public void SeedStatisticsInformation(ServiceCMSContext context)
         {
@@ -277,7 +223,7 @@ namespace DAL.Migrations
         public void SeedPopUps(ServiceCMSContext context)
         {
             context.PopUps.AddOrUpdate(x=>x.Title,
-                new PopUp() { Active = true,Content ="01.01.2015 Salon nie czynny",Title = "Nieczynny"},
+                new PopUp() { Active = true,Content ="01.01.2016 r. Salon nie czynny",Title = "Nieczynny"},
                 new PopUp() { Active = false,Content ="W salonie nast¹pi³a zmiana cen, zapraszamy do zapoznania siê z cennikiem",Title = "Ceny"},
                 new PopUp() { Active = false,Content ="W naszym salonie nowy fryzjer. Zapraszamy do umawiania siê na wizytê",Title = "Nowy fryzjer"},
                 new PopUp() { Active = false,Content ="Salon wspomaga RocknRoll. Zapraszamy do udzia³u",Title = "RocknRoll"}
