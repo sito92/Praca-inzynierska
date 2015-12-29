@@ -6,12 +6,14 @@
 <div class="well kentico-color">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h2>@Model.Name</h2>
+            <h1>@Model.Name</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <h2>@Html.Raw(Model.Content)</h2>
+            <div class="show-page-content">
+                @Html.Raw(Model.Content)
+            </div>
         </div>
     </div>
     @{
@@ -20,9 +22,8 @@
             <div class="attachements">@Presentation.Title</div>
             foreach (var media in Model.Media)
             {
-                <div>@Html.ActionLink(@media.Name,"Download","File",new {fileId=@media.Id},null)</div>
+                <div>@Html.ActionLink(@media.Name, "Download", "File", new { fileId = @media.Id }, null)</div>
             }
-        } 
-     }
+        }
+    }
 </div>
-

@@ -140,3 +140,12 @@ body {
 .contactForm {
     min-height: 300px;
 }
+.show-page-content {
+    font-size: 25px;
+}
+.field-validation-error {
+    color: red;
+}
+.validation-summary-errors li {
+    color: red;
+}

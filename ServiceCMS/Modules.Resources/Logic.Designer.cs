@@ -178,6 +178,24 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mail send failed..
+        /// </summary>
+        public static string MailSendFailed {
+            get {
+                return ResourceManager.GetString("MailSendFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mail send success..
+        /// </summary>
+        public static string MailSendSuccess {
+            get {
+                return ResourceManager.GetString("MailSendSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Menu button deletion failed. Please try again..
         /// </summary>
         public static string MenuButtonDeleteFailed {

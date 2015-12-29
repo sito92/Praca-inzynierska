@@ -970,6 +970,15 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to WellDone.
+        /// </summary>
+        public static string WellDone {
+            get {
+                return ResourceManager.GetString("WellDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to E-mail has to have valid form..
         /// </summary>
         public static string WrongEmailAddress {

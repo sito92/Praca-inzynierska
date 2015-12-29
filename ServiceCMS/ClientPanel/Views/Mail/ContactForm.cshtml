@@ -3,6 +3,20 @@
 @{
     //ViewBag.Title = Presentation.ContactForm;
 }
+@if (TempData["ErrorMessage"]!=null)
+{
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>@Presentation.Error!</strong> @TempData["ErrorMessage"].ToString()
+    </div>
+}
+@if (TempData["SuccessMessage"]!=null)
+{
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>@Presentation.WellDone.</strong> @TempData["SuccessMessage"].ToString()
+    </div>
+}
 
 @using (Html.BeginForm("SendMail", "Mail", FormMethod.Post,
     new {enctype = "multipart/form-data"}))

@@ -1152,6 +1152,7 @@
     <Content Include="Views\Shared\_LeftMenu.cshtml" />
     <Content Include="Views\News\Show.cshtml" />
     <Content Include="Views\Mail\ContactForm.cshtml" />
+    <Content Include="Views\Shared\SiteNotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

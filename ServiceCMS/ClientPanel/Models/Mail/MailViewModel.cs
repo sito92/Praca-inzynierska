@@ -13,9 +13,9 @@ namespace ClientPanel.Models.Mail
         [Required]
         public string Content { get; set; }
 
-        [EmailAddress(ErrorMessage = "TO NIE")]
+        [EmailAddress(ErrorMessageResourceName = "EmailErrorMessage",ErrorMessageResourceType = typeof(Presentation))]
         public string ClientEmailAddres { get; set; }
-
+        
         [Required]
         public string Subject { get; set; }
     }

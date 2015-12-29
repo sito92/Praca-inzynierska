@@ -426,4 +426,7 @@
   <data name="WrongEmailAddress" xml:space="preserve">
     <value>E-mail has to have valid form.</value>
   </data>
+  <data name="WellDone" xml:space="preserve">
+    <value>WellDone</value>
+  </data>
 </root>

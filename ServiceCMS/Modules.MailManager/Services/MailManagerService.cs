@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using Modules.Resources;
 
 namespace Modules.MailManager.Services
 {
@@ -19,11 +20,11 @@ namespace Modules.MailManager.Services
             try
             {
                 client.Send(message);
-                response = new ResponseBase() { IsSucceed = true };
+                response = new ResponseBase() { IsSucceed = true,Message = Logic.MailSendSuccess };
             }
             catch (Exception e)
             {
-                response = new ResponseBase() { IsSucceed = false };
+                response = new ResponseBase() { IsSucceed = false, Message = Logic.ModifyUserFailed };
                 throw new SmtpException();
             }
 
@@ -39,11 +40,11 @@ namespace Modules.MailManager.Services
             try
             {
                 client.Send(message);
-                response = new ResponseBase() { IsSucceed = true };
+                response = new ResponseBase() { IsSucceed = true, Message = Logic.MailSendSuccess };
             }
             catch (Exception e)
             {
-                response = new ResponseBase() { IsSucceed = false };
+                response = new ResponseBase() { IsSucceed = false, Message = Logic.ModifyUserFailed };
                 throw new SmtpException();
             }
 

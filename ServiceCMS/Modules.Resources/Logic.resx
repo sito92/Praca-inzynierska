@@ -156,6 +156,12 @@
   <data name="LocalLink" xml:space="preserve">
     <value>Local link</value>
   </data>
+  <data name="MailSendFailed" xml:space="preserve">
+    <value>Mail send failed.</value>
+  </data>
+  <data name="MailSendSuccess" xml:space="preserve">
+    <value>Mail send success.</value>
+  </data>
   <data name="MenuButtonDeleteFailed" xml:space="preserve">
     <value>Menu button deletion failed. Please try again.</value>
   </data>

@@ -40,16 +40,26 @@ namespace ClientPanel.Controllers
             var contactFormActive = _settingsService.GetPropertyByName("ContactFormEnabled");
             if (contactFormActive == "true")
             {
-                var emailAddress = _settingsService.GetPropertyByName("EmailUsername");
-                model.Content += ClientAddressEmailHelper.RefactorClientAddress(model.ClientEmailAddres);
+                if (ModelState.IsValid)
+                {
 
-                _mailManagementService.SendMail(emailAddress, model.Content, model.Subject);
 
+                    var emailAddress = _settingsService.GetPropertyByName("EmailUsername");
+                    model.Content += ClientAddressEmailHelper.RefactorClientAddress(model.ClientEmailAddres);
+
+                    var response = _mailManagementService.SendMail(emailAddress, model.Content, model.Subject);
+                    if (response.IsSucceed)
+                    {
+                        TempData["SuccessMessage"] = response.Message;
+
+                        return View("ContactForm");
+                    }
+                    TempData["ErrorMessage"] = response.Message;
+                    return View("ContactForm");
+                }
+                return View("ContactForm",model);
             }
-            else
-            {
-                return View("SiteNotFound");
-            }
+            return View("SiteNotFound");
         }
 
     }
