@@ -202,7 +202,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
@@ -211,7 +210,6 @@
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PopUpController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
-    <Compile Include="Extensions\JsonNetResult.cs" />
     <Compile Include="Filters\StatisticsFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1149,6 +1147,7 @@
     <Content Include="Views\Mail\Index.cshtml" />
     <Content Include="Views\Page\Show.cshtml" />
     <Content Include="Views\Page\PageNotFoundError.cshtml" />
+    <Content Include="Views\Shared\_LeftMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1176,6 +1175,10 @@
     <ProjectReference Include="..\Logic.Common\Logic.Common.csproj">
       <Project>{96df7b56-1b0c-47d9-a96c-c47fa96c948d}</Project>
       <Name>Logic.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Inset\Logic.Inset.csproj">
+      <Project>{b9a9e81e-de7c-4c2f-996a-dfb24ad44444}</Project>
+      <Name>Logic.Inset</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.MenuButton\Logic.MenuButton.csproj">
       <Project>{258a87f6-b6fa-48f0-84d2-847cc600fe11}</Project>
