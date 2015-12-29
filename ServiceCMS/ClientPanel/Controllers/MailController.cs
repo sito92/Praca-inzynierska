@@ -25,15 +25,21 @@ namespace ClientPanel.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var contactFormActive = _settingsService.GetPropertyByName("ContactFormEnabled");
+
+            if (contactFormActive == "true")
+                return View();
+            else
+                return View("PageNotFound");
         }
 
         public ActionResult SendMail(string content, string subject)
         {
             var emailAddress = _settingsService.GetPropertyByName("EmailUsername");
+            var contactFormActive = _settingsService.GetPropertyByName("ContactFormEnabled");
             var response = _mailManagementService.SendMail(emailAddress, content, subject);
-
-            if(emailAddress != null && !String.IsNullOrEmpty(content) && !String.IsNullOrEmpty(subject))
+            
+            if(emailAddress != null && !String.IsNullOrEmpty(content) && !String.IsNullOrEmpty(subject) && contactFormActive == "true")
                 return new JsonNetResult(new { success = response.IsSucceed}, JsonRequestBehavior.AllowGet);
             else
                 return new JsonNetResult(new { success = false}, JsonRequestBehavior.AllowGet);
