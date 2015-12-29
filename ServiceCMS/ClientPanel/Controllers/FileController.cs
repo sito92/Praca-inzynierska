@@ -17,12 +17,12 @@ namespace ClientPanel.Controllers
             _fileService = fileService;
         }
 
-        //public ActionResult Download(int fileId)
-        //{
-        //    var response = _fileService.Download(fileId);
+        public ActionResult Download(int fileId)
+        {
+            //var response = _fileService.Download(fileId);
 
-        //    return new JsonNetResult(new { success = response.IsSucceed }, JsonRequestBehavior.AllowGet);
-        //}
+            return new JsonNetResult(new { success = true }, JsonRequestBehavior.AllowGet);
+        }
 
     }
 }

@@ -247,7 +247,7 @@
     <value>Wyloguj</value>
   </data>
   <data name="MailManagement" xml:space="preserve">
-    <value>Zarządzanie mailingiem</value>
+    <value>Newsletter</value>
   </data>
   <data name="MenuButtons" xml:space="preserve">
     <value>Przyciski menu</value>
@@ -292,7 +292,7 @@
     <value>Strona</value>
   </data>
   <data name="Pages" xml:space="preserve">
-    <value>Storny</value>
+    <value>Strony</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Hasło</value>
@@ -392,5 +392,8 @@
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Witamy</value>
+  </data>
+  <data name="WrongEmailAddress" xml:space="preserve">
+    <value>E-mail ma niepoprawną formę.</value>
   </data>
 </root>

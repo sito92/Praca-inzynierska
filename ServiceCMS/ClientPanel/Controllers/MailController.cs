@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using ClientPanel.Extensions;
 using ClientPanel.Filters;
+using ClientPanel.Helpers;
+using ClientPanel.Models.Mail;
 using Logic.MailManagement.Interfaces;
 using Logic.Settings.Interfaces;
 
@@ -23,20 +25,31 @@ namespace ClientPanel.Controllers
             _mailManagementService = mailManagementService;
         }
 
-        public ActionResult Index()
+        public ActionResult ContactForm()
         {
-            return View();
+            var contactFormActive = _settingsService.GetPropertyByName("ContactFormEnabled");
+
+            if (contactFormActive == "true")
+                return View();
+            else
+                return View("PageNotFound");
         }
 
-        public ActionResult SendMail(string content, string subject)
+        public ActionResult SendMail(MailViewModel model)
         {
-            var emailAddress = _settingsService.GetPropertyByName("EmailUsername");
-            var response = _mailManagementService.SendMail(emailAddress, content, subject);
+            var contactFormActive = _settingsService.GetPropertyByName("ContactFormEnabled");
+            if (contactFormActive == "true")
+            {
+                var emailAddress = _settingsService.GetPropertyByName("EmailUsername");
+                model.Content += ClientAddressEmailHelper.RefactorClientAddress(model.ClientEmailAddres);
 
-            if(emailAddress != null && !String.IsNullOrEmpty(content) && !String.IsNullOrEmpty(subject))
-                return new JsonNetResult(new { success = response.IsSucceed}, JsonRequestBehavior.AllowGet);
+                _mailManagementService.SendMail(emailAddress, model.Content, model.Subject);
+
+            }
             else
-                return new JsonNetResult(new { success = false}, JsonRequestBehavior.AllowGet);
+            {
+                return View("SiteNotFound");
+            }
         }
 
     }

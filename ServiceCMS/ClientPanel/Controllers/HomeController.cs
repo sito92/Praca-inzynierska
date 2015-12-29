@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Logic.News.Interfaces;
 
 namespace ClientPanel.Controllers
 {
     public class HomeController : BaseController
     {
+        private readonly INewsService _newsService;
+
+        public HomeController(INewsService newsService)
+        {
+            _newsService = newsService;
+        }
+
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            var newses = _newsService.GetAll().ToList();
+   
+            if(newses.Any())
+                return View(newses);
 
-            return View();
+            return View("PageNotFound");
         }
 
         public ActionResult About()
