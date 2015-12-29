@@ -202,6 +202,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
@@ -210,10 +211,13 @@
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PopUpController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Extensions\JsonNetResult.cs" />
     <Compile Include="Filters\StatisticsFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ClientAddressEmailHelper.cs" />
+    <Compile Include="Models\Mail\MailViewModel.cs" />
     <Compile Include="Models\Menu\MenuDataViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1142,12 +1146,12 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\PopUp\Index.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
-    <Content Include="Views\News\Show.cshtml" />
     <Content Include="Views\News\NewsNotFoundError.cshtml" />
-    <Content Include="Views\Mail\Index.cshtml" />
     <Content Include="Views\Page\Show.cshtml" />
     <Content Include="Views\Page\PageNotFoundError.cshtml" />
     <Content Include="Views\Shared\_LeftMenu.cshtml" />
+    <Content Include="Views\News\Show.cshtml" />
+    <Content Include="Views\Mail\ContactForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

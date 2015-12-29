@@ -1,4 +1,8 @@
-﻿.dropdown-submenu {
+﻿body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.dropdown-submenu {
     position: relative;
 }
 
@@ -67,8 +71,8 @@
     }
 
 .kentico-color {
-    background-color: #f05a22;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 body {
@@ -76,38 +80,49 @@ body {
 }
 
 .kentico-color a {
-    color: white;
+    color: black;
 }
 
 .kentico-color ul {
-    background-color: #f05a22;
-    color: white;
+    color: black;
 }
 
 .kentico-color li {
-    background-color: #f05a22;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 .kentico-color .dropdown-menu li a {
-    color: white;
+    color: black;
 }
 
     .kentico-color .dropdown-menu li a:hover {
-        background-color: #f37b4e;
+        background-color: #d3d3d3;
     }
 
 .kentico-color .nav li a:hover {
-    background-color: #f37b4e;
+    background-color: #d3d3d3;
 }
 
 .kentico-color .nav li a:focus {
-    background-color: #f37b4e;
+    background-color: #d3d3d3;
 }
 
 .nav .open > a {
-    background-color: #f37b4e;
+    background-color: #d3d3d3;
 }
 .kentico-color.sidebar-nav {
     border-radius: 5px;
+}
+
+.readMoreLink {
+    float: right;
+}
+
+.attachements {
+    font-size: 22px;
+}
+
+.contactForm {
+    min-height: 300px;
 }

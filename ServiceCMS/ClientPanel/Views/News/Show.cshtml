@@ -1,5 +1,25 @@
-﻿@{
-    ViewBag.Title = "Show";
+﻿@using Modules.Resources
+@model global::Logic.Common.Models.NewsModel
+@{string categoriesString = "";}
+@{
+    ViewBag.Title = Presentation.News;
 }
-
-<h2>Show</h2>
+<div class="newsCategories">
+    @foreach (var category in @Model.Categories)
+    {
+        categoriesString += category.Category + ",";
+    }
+</div>
+<div class="well kentico-color">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>@Model.Title</h2>
+        </div>
+    </div>
+    <div class="row">
+            @categoriesString
+        <div class="col-md-12">
+            <h2>@Model.Content</h2>
+        </div>
+    </div>
+</div>

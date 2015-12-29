@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using ClientPanel.Extensions;
 using ClientPanel.Filters;
+using ClientPanel.Helpers;
+using ClientPanel.Models.Mail;
 using Logic.MailManagement.Interfaces;
 using Logic.Settings.Interfaces;
 
@@ -23,7 +25,7 @@ namespace ClientPanel.Controllers
             _mailManagementService = mailManagementService;
         }
 
-        public ActionResult Index()
+        public ActionResult ContactForm()
         {
             var contactFormActive = _settingsService.GetPropertyByName("ContactFormEnabled");
 
@@ -33,13 +35,15 @@ namespace ClientPanel.Controllers
                 return View("PageNotFound");
         }
 
-        public ActionResult SendMail(string content, string subject)
+        public ActionResult SendMail(MailViewModel model)
         {
             var emailAddress = _settingsService.GetPropertyByName("EmailUsername");
             var contactFormActive = _settingsService.GetPropertyByName("ContactFormEnabled");
-            var response = _mailManagementService.SendMail(emailAddress, content, subject);
+            model.Content += ClientAddressEmailHelper.RefactorClientAddress(model.ClientEmailAddres);
+
+            var response = _mailManagementService.SendMail(emailAddress, model.Content, model.Subject);
             
-            if(emailAddress != null && !String.IsNullOrEmpty(content) && !String.IsNullOrEmpty(subject) && contactFormActive == "true")
+            if(emailAddress != null && !String.IsNullOrEmpty(model.Content) && !String.IsNullOrEmpty(model.Subject) && contactFormActive == "true")
                 return new JsonNetResult(new { success = response.IsSucceed}, JsonRequestBehavior.AllowGet);
             else
                 return new JsonNetResult(new { success = false}, JsonRequestBehavior.AllowGet);

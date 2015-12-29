@@ -1,4 +1,5 @@
-﻿@model Logic.Common.Models.PageModel
+﻿@using Modules.Resources
+@model global::Logic.Common.Models.PageModel
 @{
     ViewBag.Title = "Show";
 }
@@ -13,5 +14,15 @@
             <h2>@Model.Content</h2>
         </div>
     </div>
+    @{
+        if (@Model.Media.Any())
+        {
+            <div class="attachements">@Presentation.Title</div>
+            foreach (var media in Model.Media)
+            {
+                <div>@Html.ActionLink(@media.Name,"Download","File",new {fileId=@media.Id},null)</div>
+            }
+        } 
+     }
 </div>
 
