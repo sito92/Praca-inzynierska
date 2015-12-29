@@ -7,7 +7,9 @@ using Common.Responses;
 using DAL.Interfaces;
 using Logging.Interfaces;
 using Logic.Common.Models;
+using Logic.MailManagement.Interfaces;
 using Logic.Service.Interfaces;
+using Logic.Settings.Interfaces;
 
 namespace Logic.Service.Services
 {
@@ -15,9 +17,13 @@ namespace Logic.Service.Services
     {
         private IUnitOfWorkFactory _unitOfWorkFactory;
         private ILogger _logger;
+        private readonly ISettingsService _settingsService;
+        private readonly IMailManagementService _mailManagementService;
 
-        public ServicesService(IUnitOfWorkFactory unitOfWorkFactory, ILogger logger)
+        public ServicesService(IUnitOfWorkFactory unitOfWorkFactory, ILogger logger, ISettingsService settingsService, IMailManagementService mailManagementService)
         {
+            _mailManagementService = mailManagementService;
+            _settingsService = settingsService;
             _unitOfWorkFactory = unitOfWorkFactory;
             _logger = logger;
         }
@@ -33,6 +39,7 @@ namespace Logic.Service.Services
                         unitOfWork.RegistratedServiceRepository.Insert(model.ToEntity());
                     }
                     unitOfWork.Save();
+                    ComposeClientEmail(model);
                     response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ServiceTypeSaveSuccess };
                 }
                 catch (Exception e)
@@ -43,6 +50,20 @@ namespace Logic.Service.Services
                 return response;
             }
         }
+
+        private void ComposeClientEmail(RegistratedServiceModel model)
+        {
+            var listOfAddresses = new List<string>()
+            {
+                model.ClientEmail,
+                _settingsService.GetPropertyByName("EmailUsername")
+            };
+
+            _mailManagementService.SendMail(listOfAddresses,
+                ClientConfirmationEmail.CONTENT + model.ServiceType.Name + ClientConfirmationEmail.CONTENT_2 + model.StartDate + ClientConfirmationEmail.CONTENT_3 + ClientConfirmationEmail.FOOTER,
+                ClientConfirmationEmail.SUBJECT);
+        }
+
         public List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(DateTime date)
         {
             List<RegistratedServiceModel> serviceModels = new List<RegistratedServiceModel>();
