@@ -1,26 +1,15 @@
 ﻿@using Modules.Resources
+@using Newtonsoft.Json
 @model List<global::Logic.Common.Models.NewsModel>
 @{
     ViewBag.Title = Presentation.MainSite;
+    var showPopup = HttpContext.Current.Session["ShowPopUp"];
 }
+@Scripts.Render("~/bundles/popup")
 @Scripts.Render("~/bundles/news")
+<div ng-controller="PopupController" ng-init="showPopup = @JsonConvert.SerializeObject(showPopup)">
+</div>
 <div ng-controller="NewsController">
-    @*@foreach (var news in @Model)
-    {
-        <div class="well kentico-color">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h2>@news.Title</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>@Html.Raw(@news.Content)</h4>
-                </div>
-            </div>
-            <div class="readMoreLink">@Html.ActionLink(Presentation.ReadMore, "Show", "News", new { id = @news.Id }, null)</div>
-        </div>
-    }*@
     <div class="well kentico-color" ng-repeat="news in newses">
         <div class="row">
             <div class="col-md-12 text-center">

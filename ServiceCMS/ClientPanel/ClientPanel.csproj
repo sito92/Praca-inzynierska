@@ -332,6 +332,7 @@
     <Content Include="Scripts\calendar\lang-all.js" />
     <Content Include="Scripts\Controllers\MenuController.js" />
     <Content Include="Scripts\Controllers\NewsController.js" />
+    <Content Include="Scripts\Controllers\PopupController.js" />
     <Content Include="Scripts\Controllers\ServicesController.js" />
     <Content Include="Scripts\Directives\LoaderDirective.js" />
     <Content Include="Scripts\errors.json" />
@@ -1120,6 +1121,7 @@
     <Content Include="Scripts\navbar.js" />
     <Content Include="Scripts\Services\MenuService.js" />
     <Content Include="Scripts\Services\NewsService.js" />
+    <Content Include="Scripts\Services\PopupService.js" />
     <Content Include="Scripts\Services\ServiceProviderService.js" />
     <Content Include="Scripts\Services\ServicesService.js" />
     <Content Include="Scripts\Services\ServiceTypeService.js" />
@@ -1165,7 +1167,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
-    <Content Include="Views\PopUp\Index.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\News\NewsNotFoundError.cshtml" />
     <Content Include="Views\Page\Show.cshtml" />
@@ -1176,6 +1177,7 @@
     <Content Include="Views\Shared\SiteNotFound.cshtml" />
     <Content Include="Views\Services\Register.cshtml" />
     <Content Include="Views\Services\Modals\Register.cshtml" />
+    <Content Include="Views\PopUp\Modals\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

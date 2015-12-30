@@ -1,0 +1,13 @@
+﻿@using Modules.Resources
+@using Logic.Common.Models
+<div class="modal-header">
+    <div class="row text-center">
+        <h2 class="text-modal-heading" ng-bind="popUp.Title"></h2>
+    </div>
+</div>
+<div class="modal-body">
+  <span ng-bind="popUp.Content"></span>
+</div>
+<div class="modal-footer">  
+    <button class="btn btn-danger" ng-click="decline()">@Presentation.Close</button>
+</div>

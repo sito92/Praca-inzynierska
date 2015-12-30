@@ -31,5 +31,9 @@ namespace ClientPanel.Controllers
             else
                 return new JsonNetResult(new { success = false }, JsonRequestBehavior.AllowGet);
         }
+        public ActionResult GetModal(string name)
+        {
+            return PartialView("Modals/"+name);
+        }
     }
 }

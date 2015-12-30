@@ -47,7 +47,8 @@
     $scope.goTo = function(news) {
         $window.location.href = '/News/Show/'+news.Id;
     }
-    $scope.first = function() {
+    $scope.first = function () {
+        console.log($scope.showPopup);
         $scope.page = 1;
     }
     $scope.last = function () {

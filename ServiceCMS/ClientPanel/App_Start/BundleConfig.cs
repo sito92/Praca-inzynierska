@@ -81,6 +81,10 @@ namespace ClientPanel
                         "~/Scripts/Controllers/MenuController.js",
                         "~/Scripts/Services/MenuService.js"
                         ));
+            bundles.Add(new ScriptBundle("~/bundles/popup").Include(
+                      "~/Scripts/Controllers/PopupController.js",
+                      "~/Scripts/Services/PopupService.js"
+                      ));
             bundles.Add(new ScriptBundle("~/bundles/angular-ui-tree").Include(
                         "~/Scripts/angular-ui-tree.js"
                         ));
