@@ -1,0 +1,14 @@
+﻿@using Modules.Resources
+@using Logic.Common.Models
+<div class="modal-header">
+    <div class="row text-center">
+        <h2 class="text-modal-heading">@Presentation.Confirm</h2>
+    </div>
+</div>
+<div class="modal-body">
+    @Presentation.ConfirmDeleteMessage
+</div>
+<div class="modal-footer">
+    <button class="btn kentico-color" ng-click="confirm()">@Presentation.Confirm</button>
+    <button class="btn btn-danger" ng-click="decline()">@Presentation.Decline</button>
+</div>

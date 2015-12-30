@@ -51,6 +51,52 @@ namespace Logic.Service.Services
             }
         }
 
+        public ResponseBase Update(RegistratedServiceModel model)
+        {
+            ResponseBase response;
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    if (model != null)
+                    {
+                        unitOfWork.RegistratedServiceRepository.Update(model.ToEntity());
+                    }
+                    unitOfWork.Save();
+                    response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ServiceUpdateSuccess };
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.ServiceUpdateFailed };
+                }
+                return response;
+            }
+        }
+
+        public ResponseBase Delete(int id)
+        {
+            ResponseBase response;
+            using (var unitOfWork = _unitOfWorkFactory.Create())
+            {
+                try
+                {
+                    if (id > 0)
+                    {
+                        unitOfWork.RegistratedServiceRepository.Delete(id);
+                    }
+                    unitOfWork.Save();
+                    response = new ResponseBase() { IsSucceed = true, Message = Modules.Resources.Logic.ServiceDeleteSuccess };
+                }
+                catch (Exception e)
+                {
+                    _logger.LogToFile(_logger.CreateErrorMessage(e));
+                    response = new ResponseBase() { IsSucceed = false, Message = Modules.Resources.Logic.ServiceDeleteFailed };
+                }
+                return response;
+            }
+        }
+
         private void ComposeClientEmail(RegistratedServiceModel model)
         {
             var listOfAddresses = new List<string>()

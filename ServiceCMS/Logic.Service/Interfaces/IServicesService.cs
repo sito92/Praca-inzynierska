@@ -11,6 +11,8 @@ namespace Logic.Service.Interfaces
     public interface IServicesService
     {
         ResponseBase Insert(RegistratedServiceModel model);
+        ResponseBase Update(RegistratedServiceModel model);
+        ResponseBase Delete(int id);
         List<RegistratedServiceModel> GetAll();
         List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(ServiceProviderModel serviceProvider);
         List<RegistratedServiceModel> GetAllServicesWithMatchingCriteria(DateTime date);

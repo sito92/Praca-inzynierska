@@ -447,4 +447,22 @@
   <data name="SuccessRegisterService" xml:space="preserve">
     <value>Register service succeed. We have sent mail to you with cofirmation.</value>
   </data>
+  <data name="RegistredServices" xml:space="preserve">
+    <value>Registred services</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="ClientData" xml:space="preserve">
+    <value>Client data</value>
+  </data>
+  <data name="ClientName" xml:space="preserve">
+    <value>Client name</value>
+  </data>
+  <data name="ServiceProvider" xml:space="preserve">
+    <value>Service provider</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>StartDate</value>
+  </data>
 </root>

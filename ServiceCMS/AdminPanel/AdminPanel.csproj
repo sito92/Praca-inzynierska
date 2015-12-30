@@ -224,6 +224,7 @@
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PickerController.cs" />
     <Compile Include="Controllers\PopUpController.cs" />
+    <Compile Include="Controllers\RegistratedServicesController.cs" />
     <Compile Include="Controllers\ServiceProviderController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\ServiceTypeController.cs" />
@@ -374,12 +375,16 @@
     <Content Include="Scripts\Controllers\MenuButtonController.js" />
     <Content Include="Scripts\Controllers\PageController.js" />
     <Content Include="Scripts\Controllers\PopUpController.js" />
+    <Content Include="Scripts\Controllers\RegistratedServicesController.js" />
     <Content Include="Scripts\Controllers\ServiceProviderController.js" />
     <Content Include="Scripts\Controllers\ServiceTypeController.js" />
     <Content Include="Scripts\Controllers\SettingsController.js" />
     <Content Include="Scripts\Controllers\StatisticsController.js" />
     <Content Include="Scripts\Directives\BindHtmlCompileDirective.js" />
     <Content Include="Scripts\Filters\SizeFilter.js" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\Modules\InsetModule.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\Controllers\InsetController.js" />
@@ -411,7 +416,6 @@
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Globals\Events.js" />
@@ -1160,9 +1164,7 @@
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\Interceptors\HttpInterceptor.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
@@ -1182,6 +1184,7 @@
     <Content Include="Scripts\Services\MenuButtonService.js" />
     <Content Include="Scripts\Services\NewsCategoriesService.js" />
     <Content Include="Scripts\Services\PopUpService.js" />
+    <Content Include="Scripts\Services\RegistratedServicesService.js" />
     <Content Include="Scripts\Services\ServiceProviderService.js" />
     <Content Include="Scripts\Services\NewsService.js" />
     <Content Include="Scripts\Services\PageService.js" />
@@ -1294,6 +1297,10 @@
     <Content Include="Views\News\Modals\NewsCategories.cshtml" />
     <Content Include="Views\News\Modals\AddCategory.cshtml" />
     <Content Include="Views\News\Modals\EditCategory.cshtml" />
+    <Content Include="Views\RegistratedServices\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\RegistratedServices\Modals\ConfirmDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

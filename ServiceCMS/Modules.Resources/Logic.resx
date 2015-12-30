@@ -294,6 +294,12 @@
   <data name="SendNewsletterEmailSuccess" xml:space="preserve">
     <value>Newsletter email sending succeeded.</value>
   </data>
+  <data name="ServiceDeleteFailed" xml:space="preserve">
+    <value>Service delete failed.</value>
+  </data>
+  <data name="ServiceDeleteSuccess" xml:space="preserve">
+    <value>Service delete success.</value>
+  </data>
   <data name="ServiceProviderModifyFailed" xml:space="preserve">
     <value>Service provider update failed. Please try again.</value>
   </data>
@@ -329,6 +335,12 @@
   </data>
   <data name="ServiceTypeSaveSuccess" xml:space="preserve">
     <value>Service type insert succeeded.</value>
+  </data>
+  <data name="ServiceUpdateFailed" xml:space="preserve">
+    <value>Service update failed.</value>
+  </data>
+  <data name="ServiceUpdateSuccess" xml:space="preserve">
+    <value>Service update succeeded.</value>
   </data>
   <data name="SettingsDeleteFailed" xml:space="preserve">
     <value>Settings deletion failed. Please try again.</value>

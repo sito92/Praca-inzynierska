@@ -592,6 +592,24 @@ namespace Modules.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Service delete failed..
+        /// </summary>
+        public static string ServiceDeleteFailed {
+            get {
+                return ResourceManager.GetString("ServiceDeleteFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service delete success..
+        /// </summary>
+        public static string ServiceDeleteSuccess {
+            get {
+                return ResourceManager.GetString("ServiceDeleteSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Service provider update failed. Please try again..
         /// </summary>
         public static string ServiceProviderModifyFailed {
@@ -696,6 +714,24 @@ namespace Modules.Resources {
         public static string ServiceTypeSaveSuccess {
             get {
                 return ResourceManager.GetString("ServiceTypeSaveSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service update failed..
+        /// </summary>
+        public static string ServiceUpdateFailed {
+            get {
+                return ResourceManager.GetString("ServiceUpdateFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service update succeeded..
+        /// </summary>
+        public static string ServiceUpdateSuccess {
+            get {
+                return ResourceManager.GetString("ServiceUpdateSuccess", resourceCulture);
             }
         }
         

@@ -366,3 +366,7 @@ input[type="checkbox"] {
 .statistics-date table {
     margin: 0 auto;
 }
+.fa-hover:hover {
+    opacity: 0.2;
+    cursor: pointer;
+}

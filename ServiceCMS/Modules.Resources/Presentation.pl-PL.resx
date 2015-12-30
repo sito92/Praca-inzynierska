@@ -163,7 +163,7 @@
     <value>Potwierdz</value>
   </data>
   <data name="ConfirmDeleteMessage" xml:space="preserve">
-    <value>Czy napewno chcesz usunąć tę wiadomość?</value>
+    <value>Czy napewno chcesz to usunąć?</value>
   </data>
   <data name="Content" xml:space="preserve">
     <value>Zawartość</value>

@@ -96,7 +96,7 @@
     </div>
     <div class="row" style="margin-top: 15px">
         <div class="col-md-4">
-            <a href="@Url.Action("Index", "MailManagement")" class="tile-link">
+            <a href="@Url.Action("Index", "Mail")" class="tile-link">
                 <div class="tile text-center">
                     <p><span class="fa fa-envelope fa-tile"></span></p>
                     <p><span class="tile-title">@Presentation.MailManagement</span></p>
@@ -113,6 +113,14 @@
                 </div>
             </a>
         </div>
-
+        <div class="col-md-4">
+            <a href="@Url.Action("Index", "RegistratedServices")" class="tile-link">
+                <div class="tile text-center">
+                    <p><span class="fa fa-calendar fa-tile"></span></p>
+                    <p><span class="tile-title">@Presentation.RegistredServices</span></p>
+                    <div class="tile-footer"></div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
