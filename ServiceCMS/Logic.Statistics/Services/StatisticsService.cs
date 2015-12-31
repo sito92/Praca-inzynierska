@@ -111,8 +111,13 @@ namespace Logic.Statistics.Services
             {
                 try
                 {
-                    var entities = unitOfWork.StatisticInformationRepository.Get();
+                    var entities = unitOfWork.StatisticInformationRepository.Get().ToList();
                     result = EntryStatisticsHelper.GetUsersPerCountry(entities);
+                    foreach (var entity in entities)
+                    {
+                        unitOfWork.StatisticInformationRepository.Update(entity);
+                    }
+                    unitOfWork.Save();
                 }
                 catch (Exception e)
                 {

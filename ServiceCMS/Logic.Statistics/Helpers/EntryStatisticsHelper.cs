@@ -16,14 +16,13 @@ namespace Logic.Statistics.Helpers
  
             foreach (var entity in entities)
             {
-                string country = "";
-                if(entity.IP != null)
-                    country = IpInfoReader.GetIpInfo(entity.IP).country_name;
+                if(entity.IP != null && entity.Country == null)
+                    entity.Country = IpInfoReader.GetIpInfo(entity.IP).country_name;
 
-                if (result.ContainsKey(country))
-                    result[country] += 1;
+                if (result.ContainsKey(entity.Country))
+                    result[entity.Country] += 1;
                 else
-                    result.Add(country, 1);
+                    result.Add(entity.Country, 1);
             }
             return result;
         }

@@ -19,6 +19,8 @@ namespace Logic.Common.Models
 
         public string ActionName { get; set; }
 
+        public string Country { get; set; }
+
         public StatisticsInformationModel(StatisticsInformation entity)
         {
             Id = entity.Id;
@@ -26,6 +28,7 @@ namespace Logic.Common.Models
             Date = entity.Date;
             ControllerName = entity.ControllerName;
             ActionName = entity.ActionName;
+            Country = entity.Country;
         }
 
         public StatisticsInformationModel()
@@ -39,6 +42,7 @@ namespace Logic.Common.Models
             {
                 Id = this.Id,
                 IP = this.IP,
+                Country = this.Country,
                 Date = this.Date,
                 ControllerName = this.ControllerName,
                 ActionName = this.ActionName

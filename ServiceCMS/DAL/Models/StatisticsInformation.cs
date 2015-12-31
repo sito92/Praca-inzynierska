@@ -17,5 +17,7 @@ namespace DAL.Models
         public string ControllerName { get; set; }
 
         public string ActionName { get; set; }
+
+        public string Country { get; set; }
     }
 }

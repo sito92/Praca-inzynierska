@@ -166,6 +166,10 @@
     <Compile Include="Migrations\201512251447277_aftermerge.Designer.cs">
       <DependentUpon>201512251447277_aftermerge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512311924458_AddedCountryToStatInfo.cs" />
+    <Compile Include="Migrations\201512311924458_AddedCountryToStatInfo.Designer.cs">
+      <DependentUpon>201512311924458_AddedCountryToStatInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactInfo.cs" />
     <Compile Include="Models\DomainAndPorts.cs" />
@@ -281,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512251447277_aftermerge.resx">
       <DependentUpon>201512251447277_aftermerge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512311924458_AddedCountryToStatInfo.resx">
+      <DependentUpon>201512311924458_AddedCountryToStatInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
