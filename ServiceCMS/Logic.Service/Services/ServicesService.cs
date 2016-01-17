@@ -188,6 +188,7 @@ namespace Logic.Service.Services
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 try
+
                 {
                     var entities = unitOfWork.RegistratedServiceRepository.Get();
                     foreach (var entity in entities)

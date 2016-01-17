@@ -27,34 +27,6 @@ namespace Logic.Statistics.Helpers
             return result;
         }
 
-        //public static Dictionary<DateTime, int> GetUsersBetweenDates(IEnumerable<StatisticsInformation> entities)
-        //{
-        //    var result = new Dictionary<DateTime, int>();
-
-        //    foreach (var entity in entities)
-        //    {
-        //        if (result.ContainsKey(entity.Date.Date))
-        //            result[entity.Date.Date] += 1;
-        //        else
-        //            result.Add(entity.Date.Date, 1);
-        //    }
-        //    return result;
-        //}
-
-        //public static Dictionary<DateTime, int> GetUsersForSelectedMonth(IEnumerable<StatisticsInformation> entities)
-        //{
-        //    var result = new Dictionary<DateTime, int>();
-
-        //    foreach (var entity in entities)
-        //    {
-        //        if (result.ContainsKey(entity.Date.Date))
-        //            result[entity.Date.Date] += 1;
-        //        else
-        //            result.Add(entity.Date.Date, 1);
-        //    }
-        //    return result;
-        //}
-
         public static Dictionary<string, int> GetUsersForEveryMonth(IEnumerable<StatisticsInformation> entities)
         {
             var result = new Dictionary<string, int>();

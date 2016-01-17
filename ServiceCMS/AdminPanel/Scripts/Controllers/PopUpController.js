@@ -18,7 +18,6 @@
         angular.forEach($scope.model.PopUps, function (val, key) {
             if (val.Id == popUp.Id) {
                 val.Active = val.Active;
-
             }
             else {
                 val.Active = false;

@@ -74,10 +74,6 @@ namespace DIRegister
             builder.RegisterType<NewsService>().As<INewsService>();
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<NewsCategoryService>().As<INewsCategoryService>();
-            //builder.RegisterType<ContactFormService>().As<IContactFormService>();
-            //builder.RegisterType<NewsletterReceiverService>().As<INewsletterReceiverService>();
-            //builder.RegisterType<ContactFormService>().As<IContactFormService>();
-
             builder.RegisterType<ParsersFactory>().As<IParsersFactory>();
             builder.RegisterType<InsetRecognizer>().As<IInsetRecognizer>();
             builder.RegisterType<InsetParser>().As<IInsetParser>();
